@@ -1,0 +1,34 @@
+project:
+  type: website
+
+website:
+  sidebar:
+    logo: img/ntu_logo.png
+    title: "Research Methods & Data Analyses"
+    style: "docked"
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - regions.qmd
+      - section: Content
+        contents:
+          - href: intro.qmd
+            text: Week 1 - Introduction
+          - href: workbook.qmd
+            text: Week 2 - Workbook
+          - href: data_wrang.qmd
+            text: Week 3 - Data Wrangling
+          - href: explor_anal.qmd
+            text: Week 4 - Exploratory Analyses
+  page-footer:
+    left: Learn more about the
+    right: Source code available on
+          
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    page-layout: full
