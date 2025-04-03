@@ -11,10 +11,11 @@ website:
     contents:
       - href: index.qmd
         text: Home
-      - regions.qmd
+      - text: Module Overview
+        href: pages/overview.qmd
       - section: Content
         contents:
-          - href: intro.qmd
+          - href: pages/intro.qmd
             text: Week 1 - Introduction
           - href: workbook.qmd
             text: Week 2 - Workbook
@@ -29,7 +30,7 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: styles.scss
+    #css: styles.css
     toc: false
     page-layout: full

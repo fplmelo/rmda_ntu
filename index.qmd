@@ -1,5 +1,17 @@
 ---
 title: "Research Methods & Data Analyses"
+image: img/Rlogo.jpg # a great spot for your professional headshot :) 
+toc: false # disable table of contents for this page (if applicable)
+about: 
+  template: jolla 
+  image-shape: round
+  image-width: 17em
+  links: # create buttons
+    - text: GitHub
+      href: https://github.com/fplmelo
+      target: _blank 
+    - text: Email
+      href: mailto:felipe.melo@ntu.ac.uk
 ---
 
 ## Welcome

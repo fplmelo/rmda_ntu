@@ -30,13 +30,6 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "sessions.html",
     "href": "sessions.html",
     "title": "Sessions",
@@ -49,5 +42,148 @@
     "title": "Sessions",
     "section": "",
     "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "pages/intro.html",
+    "href": "pages/intro.html",
+    "title": "Customizing Quarto websites",
+    "section": "",
+    "text": "The Sass and CSS logos",
+    "crumbs": [
+      "Content",
+      "Week 1 - Introduction"
+    ]
+  },
+  {
+    "objectID": "pages/intro.html#anticipated-deliverables",
+    "href": "pages/intro.html#anticipated-deliverables",
+    "title": "Customizing Quarto websites",
+    "section": " Anticipated deliverable(s)",
+    "text": "Anticipated deliverable(s)\nBy the end of today’s class, you should have:\n\nyour personal branding guide (to be completed ahead of class)\na stylesheet (.scss file) for customizing your website’s appearance",
+    "crumbs": [
+      "Content",
+      "Week 1 - Introduction"
+    ]
+  },
+  {
+    "objectID": "pages/intro.html#pre-class-prep",
+    "href": "pages/intro.html#pre-class-prep",
+    "title": "Customizing Quarto websites",
+    "section": " Pre-class Prep",
+    "text": "Pre-class Prep\n\nA. Create your own personal branding guide\nThis week’s pre-class prep is to create your own personal branding guide – a collection of visual and messaging resources (e.g. colors, fonts, logos, key words) used to create a uniform image of a brand. Here, that brand is you!\nWhy is it important that you consider your brand identity? Bren Teaching Faculty and science communication professional, Alex Phillips, summarizes this nicely in her talk Establishing Your Online Presence. She explains that establishing your brand identity:\n\ngives you more control over your online presence \ncreates consistency, which builds trustworthiness and credibility \nfilters decision-making about your online content \n\n\n\n\n\n\n\nInterested in reading more about the benefits of developing a personal brand? Check out these resources:\n\n\n\n\n\nMany thanks to Miya Scheble (MEDS career Development Program Manager) for sharing these resources!\n\nHow to build your personal brand as a newbie data analyst., by Bright\nBuilding a Personal Brand in Data Science: Your Key to Career Advancement, by Kannan Kasi\nUsing data science to build a personal brand, by Abigail (Abby) Shockley\nHow To Build a Personal Brand: 10 Tips, by Shayna Joubert\nHow to Build a Personal Brand Website: 5 Essentials to Include, by Kathryn Lang\nBuilding a Data Science Brand, by Kate Strachnyi\n\n\n\n\nFill out this personal branding guide template ahead of class. Read through sections I - VI, below, for guidance. Here is my personal branding guide, as an example.\n\nI. Write down your personal branding adjectives and key messages\n\n\n\n\n\n\n Expand for information on branding adjectives and key messages\n\n\n\n\n\nYour personal branding adjectives are words that guide how you present yourself and your brand. While you don’t need to explicitly state these words on your website (though you certainly can!), they serve to:\n\ndefine your brand’s personality\nconnect with your target audience(s)\nshape your tone (in both your writing, visual, and overall aesthetic styles)\n\nWrite down 3-5 adjectives to describe your personal brand.\nConsider:\n\nHow do you want people to perceive you?\nWhat do you want to communicate about yourself?\nWhat are your qualities, motivations, values, strengths? Your personal branding adjectives do not need to describe everything you already are – they can be descriptors of your long-term goals, values, and motivations.\nYou can check out some curated lists as a starting point – see lists by Lead Through Strengths and Branding by Juls, or explore the many others online\n\nOnce you’ve determined your personal branding adjectives, jot down a few key messages that capture the core ideas you want to convey about your brand.\nConsider:\n\nHow do these key messages incorporate / add context to your personal branding adjectives?\nAim for ~2-3 sentences (can be bullet points)\nSimilar to your adjectives, these key messages do not need to be explicitly stated somewhere on your website. However, you may find that they work well as taglines on your landing page (or even your LinkedIn profile), or help you (re)frame your website bio.\n\n\n\n\n\n\nII. Define your target audience(s)\n\n\n\n\n\n\n Expand for information on defining your target audience(s)\n\n\n\n\n\nYour brand does not need to speak to or reach everyone – instead, you should have a target audience(s) in mind. Knowing your audience helps you make decisions on:\n\nwhat types of content you publish\nhow you arrange content\nwhat level or types of details you need to include\nyour tone\n\nWrite down your target audience(s).\nSome examples include:\n\npotential employers (feel free to be more specific here as well, e.g. potential employers in the environmental data science sector)\nearly career data scientists or environmental scientists\nenvironmental data scientists who are also passionate about &lt; fill in the blank &gt; (Jadey Ryan is a great example of this!)\n\n\n\n\n\n\nIII. Select your typefaces / fonts\n\n\n\n\n\n\n Expand for information on selecting typefaces / fonts\n\n\n\n\n\nFirst, a few important definitions:\n\ntypeface (aka font family): the underlying visual design (e.g. Times New Roman, Helvetica, Roboto)\nfont: an implementation / variation of a typeface (e.g. Times New Roman in bold, Times New Roman in italic)\n\nDuring class, we’ll learn how to import font families from Google Fonts for use across our website. Explore the vast selection, and choose 1-2 font families. Add their names and hyperlinks to your personal branding guide.\n\nTips on choosing your font family(ies):\n\nStick to 1-2 font families. Using too many typefaces can overwhelm a reader. You can use one typeface across your entire website, or alternatively, choose one typeface for things like header text and another for body text.\nWhen in doubt, use a sans-serif font family. Sans-serif fonts work great everywhere, but are especially ideal for body text since they’re cleaner and easier to read. If you do want to use a serif font, it’s best to reserve those for any header text.\nMake sure your font family choice(s) have a variety of styles. If your font family doesn’t include bold or italicized styles, you won’t actually be able to apply those styles to your website. For example, Nunito comes in a variety of weights (boldness levels) and italic, where Sen comes in a variety of weights, but not italic.\nCheck out some visually-pleasing font pairings. fontpair has hundreds of Google Font pairings to browse!\n\n\n\n\n\n\n\nIV. Build your color palette\n\n\n\n\n\n\n Expand for information on building color palettes\n\n\n\n\n\nOne of the most exciting parts of building a website is deciding on which colors you’ll use. This can take some time and tweaking, so it’s helpful to think a bit about your palette beforehand. We’ll consider updating colors for the following website elements:\n\nNavigation Bar: navbar background color, foreground (text) color, hover highlight color\nMain Body: body background color, body text color, hyperlink color, in-line code color, inline-code background color\nPage Footer: footer background color\n\nWe’ll be using a language called Sass to create variables for each of the colors we plan to use throughout our websites (more on that soon!).\nIt’s helpful to draft up your color variables ahead of time (and save them to your personal branding guide) so that you easily copy them into your stylesheet during class. Define your color variables using the syntax, $variable-name: value;, where you decide on your variable-name, and value is a HEX color code (htmlcolorcodes.com is my favorite site for grabbing HEX codes).\nFor example, here are the color variables I’ll use for my website during the workshop:\n\n$dark-green: #858E79;\n$light-green: #D1D9CE;\n$cream: #FDFBF7;\n$gray: #64605f;\n$purple: #9158A2;\n$orange: #ad7237;\n\n\nTips on choosing your color palette:\n\nStick to about 3-4 main colors. Choosing too many colors can overwhelm readers. Consider using different shades of the primary color throughout your site, with a couple complementing / contrasting colors for important highlighted text and / or features. A good general rule of thumb is the 60-30-10 rule – your primary color should be used in ~60% of your design, the secondary color should take up ~30%, and your accent color ~10%.\nConsider what emotions your color choices evoke: Colors influence perceptions, emotions, and even behavior. Consider which colors best reflect your branding adjectives and key messages. See this post on color psychology, by HubSpot for guidance.\nUse a random color generator. My favorite is https://coolors.co/ – press the space bar to generate new colors. When you see one (or more) that you like, “lock” them in place by clicking on the lock icon. Continue pressing the space bar to generate new colors in the “unlocked” positions.\nGenerate a color palette from a photo / image. Have an interesting background in your headshot? Consider generating a palette off of it! Check out Color Thief for all your color stealing needs. Alternatively, explore pre-made palettes generated from trending Adobe Stock photos.\nConsider contrast and colorblindness-friendly palettes. I love the Let’s get color blind Google Chrome extension for simulating color deficiencies in the web browser, and the coolers color contrast checker for calculating the contrast ratio of text and background colors (it’ll even suggest modified colors to improve your contrast, if needed).\nGet inspired by other websites. And you don’t need to take inspiration only from Quarto websites. Just a small handful of examples sites with color schemes that I really love:\n\nAngelina Miller\nMeghan Hall\nNicola Rennie\nSylvia Canelón\nEmil Hvitfeldt\nElla Kaye\nRobert Mitchell\nMaya Gans\n\n\n\n\n\n\n\n\nV. (Optional) Create a personal logo and / or favicon\n\n\n\n\n\n\n Expand for information on creating a personal logo\n\n\n\n\n\nQuarto supports adding a personal logo to the top left corner of your website’s navbar (e.g. see my website). While completely optional, logos can be attention-grabbing and memorable, offering a way to distinguish yourself. If you’d like to start workshopping your own logo, consider the following tips and try out some free logo makers:\n\nTips & resources for creating a personal logo:\n\nKeep it simple\nConsider incorporating your name or initials (though not necessarily required)\nColors and fonts should match / complement the rest of your branding guide\nConsider creating a favicon (image displayed in a web browser’s address bar) that matches / complements your logo\nTry out one of these free logo makers:\n\nAdobe Express (this is what I used for my personal logo)\nCanva\nWix\n\n\n\n\n\n\n\n\nVI. Curate potential image assets\n\n\n\n\n\n\n Expand for information on image assets\n\n\n\n\n\nBranding image assets are visual elements that help to define a brand’s identity.\nThese include your logo, headshot, and any other photos / images you plan to use across your website. You might also include images that influence the overall aesthetic of your brand, but that might not necessarily be used as content on your site.\nBegin gathering your image assets and add them to your personal branding guide. You may consider checking out the following image collections for additional or supplementary images:\n\nUC Santa Barbara’s Digital Asset Library\nFree Ocean Landscapes, by Alex Phillips\nUnsplash (though many images do require a paid subscription to access){target=“_blank”}",
+    "crumbs": [
+      "Content",
+      "Week 1 - Introduction"
+    ]
+  },
+  {
+    "objectID": "pages/intro.html#lecture-materials",
+    "href": "pages/intro.html#lecture-materials",
+    "title": "Customizing Quarto websites",
+    "section": " Lecture Materials",
+    "text": "Lecture Materials\nWe’ll spend our class time learning how to style our Quarto websites using a variety of approaches – from modifying our _quarto.yml file, to creating a stylesheet with Sass variables and CSS rules. Have your personal branding guide ready to reference throughout! All code and examples that we’ll cover can be found in these slides:\n\n Customizing Quarto websites",
+    "crumbs": [
+      "Content",
+      "Week 1 - Introduction"
+    ]
+  },
+  {
+    "objectID": "pages/intro.html#continue-working",
+    "href": "pages/intro.html#continue-working",
+    "title": "Customizing Quarto websites",
+    "section": " What should I continue working on?",
+    "text": "What should I continue working on?\n\nSeek feedback on your personal brand from those who know you well. Would they use the same adjectives to describe you? What strengths and characteristics do they perceive that you hadn’t identified yourself? What emotions do your colors, fonts, imagery, and tone evoke? It’s important to remember that your personal brand can (and should) evolve with you! This week is just a starting point.\nRevisit and revise your landing page content / bio, as needed. Does your landing page bio fit your personal brand? Consider what information you include and your tone – does it make sense to revise your bio to better fit your brand? Consider if your chosen template suits your needs, or if a different layout might work better.\nAdd pages to your website. Has thinking deeply about your personal brand inspired ideas for different web pages? Go ahead and add them! Recall that you can add / remove pages by modifying your _quarto.yml file (see last class’ materials if you need a reminder of how to do so). It’s sufficient to include placeholder text to those pages (e.g. Coming soon!) if you’re not quite ready to complete them. You may also remove pages (e.g. about.qmd and resources.qmd) if you don’t plan to use them (though note that you must keep index.qmd).\nFinish applying your colors to different website elements using Quarto’s Sass variables. And test out different color combos and / or fonts, if you’re not totally satisfied with your original choices. This is arguably the most fun part of building your website and where you can really let your personality and brand shine through. It can take a while to settle on something that you feel really represents you, and that’s okay (I’ve changed my entire color scheme and font styles multiple times over the years).\nConsider writing / borrowing / adapting CSS rules to refine your website styling. You can take your website styling far just by defining Quarto’s Sass variables. However, if you’re looking to fine-tune the appearance of certain web page elements, you may consider turning to more CSS. Review the workshop slides for suggested approaches and tools for guiding your CSS-writing journeys.",
+    "crumbs": [
+      "Content",
+      "Week 1 - Introduction"
+    ]
+  },
+  {
+    "objectID": "pages/intro.html#optional-lunch-with-an-nceas-data-scientist",
+    "href": "pages/intro.html#optional-lunch-with-an-nceas-data-scientist",
+    "title": "Customizing Quarto websites",
+    "section": " (Optional) Lunch with an NCEAS Data Scientist",
+    "text": "(Optional) Lunch with an NCEAS Data Scientist\nPlease see the fall lunch schedule for details on today’s NCEAS guests!",
+    "crumbs": [
+      "Content",
+      "Week 1 - Introduction"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html",
+    "href": "pages/overview.html",
+    "title": "Module Overview",
+    "section": "",
+    "text": "This module aims to provide you with advanced skills in interpretation of quantitative and qualitative research data relevant to whole-organism biology, and to develop critical understanding of the ethical considerations involved in the collection of data. The module also aims to underpin the other modules in the Masters Framework by investigating experimental design, ethics, project management and funding.\nYou will be able to present findings of scientific research in a variety of appropriate ways, as well as critically evaluating, interpreting and relaying knowledge gained from secondary sources to peers.",
+    "crumbs": [
+      "Module Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#module-aims",
+    "href": "pages/overview.html#module-aims",
+    "title": "Module Overview",
+    "section": "",
+    "text": "This module aims to provide you with advanced skills in interpretation of quantitative and qualitative research data relevant to whole-organism biology, and to develop critical understanding of the ethical considerations involved in the collection of data. The module also aims to underpin the other modules in the Masters Framework by investigating experimental design, ethics, project management and funding.\nYou will be able to present findings of scientific research in a variety of appropriate ways, as well as critically evaluating, interpreting and relaying knowledge gained from secondary sources to peers.",
+    "crumbs": [
+      "Module Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#delivery-mode",
+    "href": "pages/overview.html#delivery-mode",
+    "title": "Module Overview",
+    "section": "Delivery Mode",
+    "text": "Delivery Mode\nThe RMDA module takes a blended approach to learning, as such many of the sessions provided, including drop-in sessions, will be via TEAMS. This will allow you to use R in real time, in class, inputting commands and analysing data as we go. The idea behind this is that you will be able to highlight and rectify any issues using R at the point of learning so that you can then continue confidently with tasks in your own time.\nIssues will arise especially if this is your first opportunity to use R, that’s ok, we have a great team to support you so don’t be afraid to speak up and get the help you need right away. We will discuss how to do this and general guidelines on how you can contribute to the online sessions during our module introduction session (Face to Face classroom session)",
+    "crumbs": [
+      "Module Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#attendance-and-engagement",
+    "href": "pages/overview.html#attendance-and-engagement",
+    "title": "Module Overview",
+    "section": "Attendance and engagement",
+    "text": "Attendance and engagement\nPlease bear in mind that attendance and engagement with module content is vital for successful completion of the module. Please notify your year tutor immediately if you have any concerns regarding an inability to do this over an extended period. The demonstrator team and I will be monitoring engagement and I will contact you and your tutor to “check in” if I believe there are issues. If I do check in with you, remember I am doing this out of concern for your learning experience and not to chastise so please engage with these opportunities. The sooner we know there is a problem, the sooner we can help.",
+    "crumbs": [
+      "Module Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#knowledge-and-understanding",
+    "href": "pages/overview.html#knowledge-and-understanding",
+    "title": "Module Overview",
+    "section": "Knowledge and Understanding",
+    "text": "Knowledge and Understanding\nBy the end of this module, you should be able to:\n\nEvaluate ethical considerations of scientific research.\nEvaluate original research projects using an in-depth understanding of the scientific process.\nDemonstrate a level of expertise in highly specialised and advanced research and analytical tools, technical communication and professional skills.",
+    "crumbs": [
+      "Module Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#skills-qualities-and-attributes",
+    "href": "pages/overview.html#skills-qualities-and-attributes",
+    "title": "Module Overview",
+    "section": "Skills, Qualities and Attributes",
+    "text": "Skills, Qualities and Attributes\nBy the end of this module, you should be able to:\n\nSynthesise and critically analyse scientific data and current literature both generally and specifically and, where appropriate, propose new hypotheses.\nCommunicate current knowledge and latest research in a specific area of interest to a variety of audiences or specialist levels.\nDemonstrate independent or self-directed learning and initiative at a professional or equivalent level.",
+    "crumbs": [
+      "Module Overview"
+    ]
+  },
+  {
+    "objectID": "pages/overview.html#requesting-support-with-inaccessible-files-or-features",
+    "href": "pages/overview.html#requesting-support-with-inaccessible-files-or-features",
+    "title": "Module Overview",
+    "section": "Requesting support with inaccessible files or features",
+    "text": "Requesting support with inaccessible files or features\nIf you locate any resource within this Learning Room that you cannot access for any reason, please contact Felipe Melo via email felipe.melo@ntu.ac.uk",
+    "crumbs": [
+      "Module Overview"
+    ]
   }
 ]

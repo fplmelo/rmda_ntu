@@ -33,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -68,7 +67,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -115,8 +113,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
         <li class="sidebar-item">
- <span class="menu-text">regions.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./pages/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module Overview</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -128,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./pages/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1 - Introduction</span></a>
   </div>
 </li>
@@ -159,43 +160,42 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-jolla column-page-right">
+  <img src="img/Rlogo.jpg" class="about-image
+  round " style="height: 17em; width: 17em;">
+ <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Research Methods &amp; Data Analyses</h1>
 </div>
-
-
-
 <div class="quarto-title-meta column-page-right">
-
-    
-  
-    
   </div>
-  
-
-
-</header>
-
-
+</header><main class="content column-page-right" id="quarto-document-content">
 <section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
+<h2 data-anchor-id="welcome">Welcome</h2>
 <p>We hope this module will be an opportunity to enhance your critical and analytical skills, required for your future careers. This module is the only core module across all PG provision at ARES, reflecting its underpinning importance for your courses. It also gives you a great opportunity to meet colleagues with different interests and to broaden your own horizons.</p>
 <p>We have tried to make this module as accessible as possible, knowing that some of the content is challenging. We have based all materials in our own research expertise, we are not statisticians, rather we are statistic users, just like you!</p>
 <p>We are looking forward to meeting you all</p>
 </section>
 <section id="who-am-i" class="level2">
-<h2 class="anchored" data-anchor-id="who-am-i">Who am I?</h2>
+<h2 data-anchor-id="who-am-i">Who am I?</h2>
 <p>Felipe Melo (Module Leader): <a href="mailto:felipe.melo@ntu.ac.uk">felipe.melo@ntu.ac.uk</a></p>
 <p>About me: I am interested in all kinds of interactions between biodiversity and human activities that take place in working landscapes in the tropical regions of the world. My research products are shared between basic and applied sciences with a strong interdisciplinary integration.</p>
 <p>Visit my personal website at <a href="www.ecoaplic.org">www.ecoaplic.org</a></p>
 
 
 </section>
-
-</main> <!-- /main -->
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://github.com/fplmelo" class="about-link" rel="" target="_blank">
+     <span class="about-link-text">GitHub</span>
+  </a>
+  <a href="mailto:felipe.melo@ntu.ac.uk" class="about-link" rel="" target="">
+     <span class="about-link-text">Email</span>
+  </a>
+</div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -216,13 +216,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
