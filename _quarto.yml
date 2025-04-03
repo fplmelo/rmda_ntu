@@ -12,7 +12,7 @@ website:
       - href: index.qmd
         text: Home
       - text: Module Overview
-        href: pages/overview.qmd
+        # href: pages/overview.qmd
       - section: Content
         contents:
           - href: pages/intro.qmd
