@@ -65,6 +65,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #9e043d;
+      }
+</style>
 
 
 </head>
@@ -72,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -88,7 +94,15 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <h1 class="title">Research Methods &amp; Data Analyses</h1>
+                      </div>
+  </div>
+  <div class="quarto-title-meta column-page-right">
+    </div>
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
@@ -119,8 +133,17 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
         <li class="sidebar-item">
- <span class="menu-text">Module Overview</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./workbook.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Your Workbook</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pages/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module Overview</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -163,16 +186,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla column-page-right">
-  <img src="img/Rlogo.jpg" class="about-image
+<div class="quarto-about-marquee column-page-right">
+  <div class="about-image-container">
+    <img src="img/Rlogo.jpg" class="about-image
   round " style="height: 17em; width: 17em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Research Methods &amp; Data Analyses</h1>
-</div>
-<div class="quarto-title-meta column-page-right">
   </div>
-</header><main class="content column-page-right" id="quarto-document-content">
+  <div class="about-contents">
+     <main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
 <section id="welcome" class="level2">
 <h2 data-anchor-id="welcome">Welcome</h2>
 <p>We hope this module will be an opportunity to enhance your critical and analytical skills, required for your future careers. This module is the only core module across all PG provision at ARES, reflecting its underpinning importance for your courses. It also gives you a great opportunity to meet colleagues with different interests and to broaden your own horizons.</p>
@@ -181,6 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="who-am-i" class="level2">
 <h2 data-anchor-id="who-am-i">Who am I?</h2>
+<p><img src="img/eu.png" class="img-fluid" width="250"></p>
 <p>Felipe Melo (Module Leader): <a href="mailto:felipe.melo@ntu.ac.uk">felipe.melo@ntu.ac.uk</a></p>
 <p>About me: I am interested in all kinds of interactions between biodiversity and human activities that take place in working landscapes in the tropical regions of the world. My research products are shared between basic and applied sciences with a strong interdisciplinary integration.</p>
 <p>Visit my personal website at <a href="www.ecoaplic.org">www.ecoaplic.org</a></p>
@@ -188,8 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 </section>
 </main> 
-  <hr class="about-sep">
-   <div class="about-links">
+    <div class="about-footer"><div class="about-links">
   <a href="https://github.com/fplmelo" class="about-link" rel="" target="_blank">
      <span class="about-link-text">GitHub</span>
   </a>
@@ -197,6 +217,8 @@ ul.task-list li input[type="checkbox"] {
      <span class="about-link-text">Email</span>
   </a>
 </div>
+</div>
+  </div>
 </div>
  <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

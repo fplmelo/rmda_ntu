@@ -14,7 +14,7 @@ website:
       - text: Begin here
         href: setup.qmd
       - text: Your Workbook
-        href: workbook.qmd
+        href: pages/workbook.qmd
       - text: Module Overview
         href: pages/overview.qmd
         # href: pages/overview.qmd

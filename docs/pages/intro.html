@@ -106,6 +106,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         background: #9e043d;
       }
 </style>
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
 
 
 </head>
@@ -178,6 +186,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../pages/workbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Your Workbook</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../pages/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Module Overview</span></a>
   </div>
@@ -235,6 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
   <li><a href="#installing-r-packages" id="toc-installing-r-packages" class="nav-link" data-scroll-target="#installing-r-packages">Installing R packages</a></li>
   </ul></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
   </ul>
 </nav>
     </div>
@@ -300,9 +315,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You only need to install a package once unless you install a fresh version of R. You can install multiple packages at once by providing a character vector to <code>install.packages()</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span> ( <span class="fu">c</span> ( <span class="st">"tidyverse"</span> ,  <span class="st">"dslabs"</span> ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Installing some packages, like <code>tidyverse</code>, may also install other <strong>dependency</strong> packages. When you load a package with <code>library()</code>, its dependencies are also loaded. It is useful to keep a list of needed packages in a script for easy re-installation if required. You can see all installed packages using the <code>installed.packages()</code> function. Importantly, packages are installed in R, not RStudio.</p>
-
-
 </section>
+</section>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+    <p><a href="../docs/slides/01_intro_rmda.html#/title-slide" target="_blank">View slides in full screen</a></p>
+       <div class="ratio ratio-16x9">
+      <iframe class="slide-deck" src="../docs/slides/01_intro_rmda.html#/title-slide" height="500px"></iframe>
+    </div>
+  
+
+
 </section>
 
 </main> <!-- /main -->

@@ -80,3 +80,7 @@ install.packages ( c ( "tidyverse" ,  "dslabs" ))
 ```
 
 Installing some packages, like `tidyverse`, may also install other **dependency** packages. When you load a package with `library()`, its dependencies are also loaded. It is useful to keep a list of needed packages in a script for easy re-installation if required. You can see all installed packages using the `installed.packages()` function. Importantly, packages are installed in R, not RStudio.
+
+## Slides
+
+{{< revealjs file="/docs/slides/01_intro_rmda.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}

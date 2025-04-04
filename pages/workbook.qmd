@@ -64,7 +64,7 @@ Creating a multi-page website with Quarto involves a configuration file, typical
 
 Once you have your content pages (`.qmd` files`) and your website configuration (`_quarto.yml`), you can render your website.
 
-1.  In RStudio, with your Quarto project open, you can typically use the **Build** pane. Look for a **Build Website** option. Clicking this will process your project files according to your `_quarto.yml` configuration and generate your website.
+1.  In RStudio, with your Quarto project open, you can typically use the **Build** pane. Look for a **Render Website** option. Clicking this will process your project files according to your `_quarto.yml` configuration and generate your website.
 2.  Alternatively, you might be able to render the entire website from the R console within your project directory using the `quarto` package, though the specific command for a website render isn't detailed in the excerpts. It would likely be related to the `quarto::quarto_render()` function but applied at the project level.
 
 ## Previewing Your Webpage

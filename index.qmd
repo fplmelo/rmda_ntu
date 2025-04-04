@@ -1,9 +1,10 @@
 ---
 title: "Research Methods & Data Analyses"
+title-block-banner: "#9e043d"
 image: img/Rlogo.jpg # a great spot for your professional headshot :) 
 toc: false # disable table of contents for this page (if applicable)
 about: 
-  template: jolla 
+  template: marquee 
   image-shape: round
   image-width: 17em
   links: # create buttons
@@ -24,8 +25,10 @@ We are looking forward to meeting you all
 
 ## Who am I?
 
-Felipe Melo (Module Leader):  [felipe.melo@ntu.ac.uk](mailto:felipe.melo@ntu.ac.uk)
+![](img/eu.png){width="250"}
 
-About me:  I am interested in all kinds of interactions between biodiversity and human activities that take place in working landscapes in the tropical regions of the world. My research products are shared between basic and applied sciences with a strong interdisciplinary integration.
+Felipe Melo (Module Leader): [felipe.melo\@ntu.ac.uk](mailto:felipe.melo@ntu.ac.uk)
+
+About me: I am interested in all kinds of interactions between biodiversity and human activities that take place in working landscapes in the tropical regions of the world. My research products are shared between basic and applied sciences with a strong interdisciplinary integration.
 
 Visit my personal website at [www.ecoaplic.org](www.ecoaplic.org)
