@@ -88,7 +88,7 @@ Once you have your content pages (`.qmd` files`) and your website configuration 
 
 ## Previewing Your Webpage
 
-After rendering, Quarto will generate the necessary HTML and other files for your website. You can usually preview your webpage by navigating to the output directory specified in your project (often `_site`) and opening the `index.html` file (or the HTML file corresponding to your content page).
+After rendering, Quarto will generate the necessary HTML and other files for your website. You can usually preview your webpage by looking a the **Viewer** tab in bottom-right panel of your Rstudio window.
 
 ## Further Steps
 
@@ -99,6 +99,13 @@ This tutorial provides a basic introduction. Creating a full-fledged website wit
 *   Using **themes** to style your website.
 *   Including **assets** like images and CSS files.
 
-While the provided sources give a starting point by introducing Quarto as a tool capable of creating websites and its reliance on `.qmd` files and YAML [2, 5], you would need to consult further Quarto documentation for detailed instructions on website creation.
+This is a starting point to introduce Quarto as a tool capable of creating websites and its reliance on `.qmd` files and YAML. You would need to consult further Quarto documentation for detailed instructions on website creation.
 
-By following these initial steps, you can begin to explore the possibilities of creating webpages with Quarto in RStudio. Remember to consult the official Quarto documentation for comprehensive guidance on website features and configuration.
+By following these initial steps, you can begin to explore the possibilities of creating webpages with Quarto in RStudio. 
+
+## Publish your workbook
+
+There are many ways to publish your workbook and you might chose simple or more advanced ways.
+
+### Simple Rpubs page
+

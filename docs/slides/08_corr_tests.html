@@ -1024,7 +1024,7 @@ qsec 0.0377 0.0178 0.0350 0.0043 0.1519 0.0878       </code></pre>
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/fplmelo\.github\.io\/rmda_ntu\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

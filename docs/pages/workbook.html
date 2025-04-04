@@ -242,6 +242,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#rendering-your-quarto-webpages" id="toc-rendering-your-quarto-webpages" class="nav-link" data-scroll-target="#rendering-your-quarto-webpages">Rendering Your Quarto Webpage(s)</a></li>
   <li><a href="#previewing-your-webpage" id="toc-previewing-your-webpage" class="nav-link" data-scroll-target="#previewing-your-webpage">Previewing Your Webpage</a></li>
   <li><a href="#further-steps" id="toc-further-steps" class="nav-link" data-scroll-target="#further-steps">Further Steps</a></li>
+  <li><a href="#publish-your-workbook" id="toc-publish-your-workbook" class="nav-link" data-scroll-target="#publish-your-workbook">Publish your workbook</a>
+  <ul class="collapse">
+  <li><a href="#simple-rpubs-page" id="toc-simple-rpubs-page" class="nav-link" data-scroll-target="#simple-rpubs-page">Simple Rpubs page</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -336,7 +340,7 @@ Invest on your worbook
 </section>
 <section id="previewing-your-webpage" class="level2">
 <h2 class="anchored" data-anchor-id="previewing-your-webpage">Previewing Your Webpage</h2>
-<p>After rendering, Quarto will generate the necessary HTML and other files for your website. You can usually preview your webpage by navigating to the output directory specified in your project (often <code>_site</code>) and opening the <code>index.html</code> file (or the HTML file corresponding to your content page).</p>
+<p>After rendering, Quarto will generate the necessary HTML and other files for your website. You can usually preview your webpage by looking a the <strong>Viewer</strong> tab in bottom-right panel of your Rstudio window.</p>
 </section>
 <section id="further-steps" class="level2">
 <h2 class="anchored" data-anchor-id="further-steps">Further Steps</h2>
@@ -347,10 +351,17 @@ Invest on your worbook
 <li>Using <strong>themes</strong> to style your website.</li>
 <li>Including <strong>assets</strong> like images and CSS files.</li>
 </ul>
-<p>While the provided sources give a starting point by introducing Quarto as a tool capable of creating websites and its reliance on <code>.qmd</code> files and YAML [2, 5], you would need to consult further Quarto documentation for detailed instructions on website creation.</p>
-<p>By following these initial steps, you can begin to explore the possibilities of creating webpages with Quarto in RStudio. Remember to consult the official Quarto documentation for comprehensive guidance on website features and configuration.</p>
+<p>This is a starting point to introduce Quarto as a tool capable of creating websites and its reliance on <code>.qmd</code> files and YAML. You would need to consult further Quarto documentation for detailed instructions on website creation.</p>
+<p>By following these initial steps, you can begin to explore the possibilities of creating webpages with Quarto in RStudio.</p>
+</section>
+<section id="publish-your-workbook" class="level2">
+<h2 class="anchored" data-anchor-id="publish-your-workbook">Publish your workbook</h2>
+<p>There are many ways to publish your workbook and you might chose simple or more advanced ways.</p>
+<section id="simple-rpubs-page" class="level3">
+<h3 class="anchored" data-anchor-id="simple-rpubs-page">Simple Rpubs page</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -446,7 +457,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/fplmelo\.github\.io\/rmda_ntu\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
