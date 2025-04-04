@@ -6,7 +6,26 @@ title-block-banner: "#9e043d"
 toc: true
 ---
 
+## Why a Quarto webpage?
+
 This tutorial provides an introduction to creating a basic webpage using **Quarto** within **RStudio**. Quarto, the next-generation version of R Markdown, allows you to author dynamic content and can render to various formats, including websites.
+
+## Your workbook
+
+While learning *stats* and coding, you'll also learn how to build and publish **simple websites** using R and RStudio. This website is vital for you learning during this module. This is going to be your live coursebook. 
+
+See some examples how NTU students used this for the summative last year:
+
+- [Example 1](https://rpubs.com/katieprange/1265088)
+
+- [Example 2](https://rpubs.com/Tbowne911/1226661)
+
+::: {.callout-tip}
+## Invest on your worbook
+
+Your workbook is going to be your "best friend" during this module. There you can experiment, create personal notes and gather bibliograpy. It works like a paper notebook, but it is a website. 
+:::
+
 
 ## Prerequisites
 

@@ -1,0 +1,21 @@
+{
+  "hash": "9f1e42147601ce5960e4bbaba06e3760",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"7.1 - How to write good abstracts\"\nsubtitle: \" \"\nauthor: \"Felipe Melo\"\ninstitute: \"Nottingham Trent University - UK\"\nfrom: markdown+emoji\nformat:\n  revealjs:\n    theme: [default, custom.scss]\n    incremental: false\n    chalkboard: true\n    logo: img/ntu_logo.png\n    footer: \"Research Methods & Data Analysis\"\n    slide-number: true\n    transition: slide\n    background-transition: fade\n    #auto-stretch: true\n    title-block-banner: true\n\n---\n\n::: {.cell}\n\n:::\n\n\n\n\n## You should know today:\n\n- Identify a good and a bad abstract\n- Elements of a abstract\n- Why abstracts are important\n\n## Why to write abstracts\n:::{.columns}\n\n:::{.column}\n- They are the most read part of a paper (after title)\n- They also serve as index\n- Capture the atention\n- Inform the crucial\n:::\n\n:::{.column}\n![](https://plos.org/wp-content/uploads/2020/07/How-to-write-a-great-title-funnel_Abstract_1b-2048x1337.png)\n:::\n:::\n\nsource:<https://plos.org/resource/how-to-write-a-great-abstract/>\n\n## Main components{.center}\n\n## State of the art/Background\n\n![](https://www.orielstat.com/blog/wp-content/uploads/2018/05/Degree-of-Innovation-Ford-to-Driverless-car-e1583442189533.png){fig-align=center}\n\nsource:<https://www.orielstat.com/blog/eu-mdr-state-of-the-art/>{style=\"font-size: 50%;\"}\n\n## Knowldege gaps (premium)\n\n![](img/know_gaps.png)\n\n<https://medium.com/mind-cafe/the-three-gaps-in-knowledge-that-define-the-quality-of-our-lives-86f772acb898>{style=\"font-size: 50%;\"}\n\n## Objectives and Aims\n\n:::{.columns}\n\n:::{.column}\nAt this point you should:\n\n- Question\n- Hypothesis\n- Implications\n\nThan you know exactly the objective\n:::\n\n:::{.column}\n![](https://media1.tenor.com/m/JsS1AQuKxxcAAAAd/drawify-goal.gif)\n:::\n:::\n\n## Methods\n\n:::{.columns}\n\n:::{.column}\nPlease be brief:\n\n- Relevant procedures\n- Effort\n- Experimental Design\n\n\n:::\n\n:::{.column}\n![](https://media1.tenor.com/m/0DGtmzPFal0AAAAd/overflow-overpour.gif)\n:::\n:::\n\n## Results\n\nJust the most important!!\n\n![](https://ggplot2-book.org/arranging-plots_files/figure-html/unnamed-chunk-4-1.png)\n\n## Conlusions\n\nFeedback the theory!!\n\n![](img/sci_flux.png){fig-align=center}\n\n## Live examples\n\n## End of DA class{.center}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "supporting": [
+      "7.1_abstracts_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

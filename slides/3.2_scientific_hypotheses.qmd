@@ -147,8 +147,4 @@ countdown(minutes = 3, seconds = 00)
 
 ## End of session on RM {.center}
 
-```{r}
-
-renderthis::to_pdf("3.2_scientific_hypotheses.html")
-```
 
