@@ -22,7 +22,7 @@ format:
 ## You should know today:
 
 - How this module is structured
-- How to navigate NOW page
+- How to navigate the course page
 - What are the basic set-ups needed on your device
 - [Get the dimension]{style="color: red;"} of the work needed
 
@@ -70,7 +70,7 @@ more info: [My website](www.ecoaplic.org)
 
 - Cover the theoretical and philosophical aspects of **doing science**
 - Focused on making sense of science
-- Writing and reading skills
+- Experimetnal skills
 
 :::
 ::::

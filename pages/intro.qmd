@@ -4,6 +4,11 @@ subtitle: "Week 1"
 description: ""
 title-block-banner: "#9e043d"
 toc: true
+navbar:
+  - text: Pre-ssesion
+    href: index.qmd
+  - text: Post-ssesion
+    href: index.qmd
 ---
 
 ## Getting started with R and RStudio
@@ -47,7 +52,7 @@ When you first open RStudio, you typically see three panes:
 
 #### Key bindings
 
-RStudio allows you to use **key bindings** (keyboard shortcuts) for many tasks instead of using the mouse. The chapter recommends memorising key bindings for frequently used operations and notes that RStudio provides a cheat sheet with common commands.
+RStudio allows you to use **key bindings** (keyboard shortcuts) for many tasks instead of using the mouse. It is recommended to memorise key bindings for frequently used operations. [RStudio provides a cheat sheet with common commands](https://ucdavis-bioinformatics-training.github.io/Oct2017-ILRI-Workshop/Cheat_Sheets/rstudio-IDE-cheatsheet.pdf).
 
 #### Running commands while editing scripts
 
@@ -61,22 +66,22 @@ RStudio's look and functionality can be customised via *Tools* > *Global Options
 
 ### Installing R packages
 
-The functionality of a fresh R installation (referred to as **base R**) is limited. Additional functionality comes from **packages**, which are add-ons contributed by developers and available from repositories like CRAN and GitHub. To install a package, such as `dslabs`, you can use the `install.packages()` function in the R console:
+The functionality of a fresh R installation (referred to as **base R**) is limited. Additional functionality comes from **packages**, which are add-ons contributed by developers and available from repositories like CRAN and GitHub. To install a package, such as `tydiverse`, you can use the `install.packages()` function in the R console:
 
 ```R
-install.packages ( "dslabs" )
+install.packages ( "tydiverse" )
 ```
 
 Alternatively, you can use the *Tools* > *Install Packages* option in RStudio. Once installed, a package can be loaded into your R session using the `library()` function:
 
 ```R
-library (dslabs)
+library (tydiverse)
 ```
 
 You only need to install a package once unless you install a fresh version of R. You can install multiple packages at once by providing a character vector to `install.packages()`:
 
 ```R
-install.packages ( c ( "tidyverse" ,  "dslabs" ))
+install.packages ( c ( "tidyverse" ,  "vegan" ))
 ```
 
 Installing some packages, like `tidyverse`, may also install other **dependency** packages. When you load a package with `library()`, its dependencies are also loaded. It is useful to keep a list of needed packages in a script for easy re-installation if required. You can see all installed packages using the `installed.packages()` function. Importantly, packages are installed in R, not RStudio.
