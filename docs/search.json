@@ -2914,5 +2914,68 @@
     "crumbs": [
       "Home"
     ]
+  },
+  {
+    "objectID": "assessment.html",
+    "href": "assessment.html",
+    "title": "Assessment Brief 2025-26",
+    "section": "",
+    "text": "This Module covers the following courses:\n\nMSc/MRes Applied Ecology & Geospatial Techniques\nMSc/MRes Biodiversity Conservation\nMSc/MRes Endangered Species Recovery & Conservation\nMSc/MRes Equine Performance, Health & Welfare MSc/MRes Smart Agriculture"
+  },
+  {
+    "objectID": "assessment.html#summative-assessment-brief",
+    "href": "assessment.html#summative-assessment-brief",
+    "title": "Assessment Brief 2025-26",
+    "section": "",
+    "text": "This Module covers the following courses:\n\nMSc/MRes Applied Ecology & Geospatial Techniques\nMSc/MRes Biodiversity Conservation\nMSc/MRes Endangered Species Recovery & Conservation\nMSc/MRes Equine Performance, Health & Welfare MSc/MRes Smart Agriculture"
+  },
+  {
+    "objectID": "assessment.html#formative-assessments",
+    "href": "assessment.html#formative-assessments",
+    "title": "Assessment Brief 2025-26",
+    "section": "Formative Assessments",
+    "text": "Formative Assessments\nYour formative opportunities are related to the development of your workbook and sharing of this development with module leader and colleagues.\n\n\n\n\n\n\nShare your Workbook\n\n\n\nYou must not be shy or embarrassed to share your workbook. Nobody will judge you. We are all learning!"
+  },
+  {
+    "objectID": "assessment.html#type-of-assessment",
+    "href": "assessment.html#type-of-assessment",
+    "title": "Assessment Brief 2025-26",
+    "section": "Type of Assessment",
+    "text": "Type of Assessment\nTo produce a analytical workflow for a given dataset and critically interpret the results and draw conclusions."
+  },
+  {
+    "objectID": "assessment.html#transferable-skills-developed-in-this-assessment",
+    "href": "assessment.html#transferable-skills-developed-in-this-assessment",
+    "title": "Assessment Brief 2025-26",
+    "section": "Transferable skills developed in this assessment",
+    "text": "Transferable skills developed in this assessment\n\nAnalytical workflow\n\nCreate a attach to an analytical workflow that is reproducible\nGenerate good quality graphs and tables\nComment and understand R code\nIdentify core results within a set of exploratory analyses.\nInterpret and generate conclusions based on data analysed"
+  },
+  {
+    "objectID": "assessment.html#specific-tasks",
+    "href": "assessment.html#specific-tasks",
+    "title": "Assessment Brief 2025-26",
+    "section": "Specific tasks",
+    "text": "Specific tasks\n\nDesign an experimental design\nDescribe methods for reproducibility\nCreate a analytical workflow\nComment on the R codes in your workbook"
+  },
+  {
+    "objectID": "assessment.html#assessment-guidance",
+    "href": "assessment.html#assessment-guidance",
+    "title": "Assessment Brief 2025-26",
+    "section": "Assessment Guidance",
+    "text": "Assessment Guidance\n\nAnalytical workflow (15%)\nR code commented (15%)\nExploratory analysis (20%)\nQuality graphs and tables (25%)\nInterpretation of results (25%)"
+  },
+  {
+    "objectID": "assessment.html#further-information",
+    "href": "assessment.html#further-information",
+    "title": "Assessment Brief 2025-26",
+    "section": "Further information",
+    "text": "Further information\n\nExtenuating circumstances"
+  },
+  {
+    "objectID": "assessment.html#grading-matrix",
+    "href": "assessment.html#grading-matrix",
+    "title": "Assessment Brief 2025-26",
+    "section": "Grading Matrix",
+    "text": "Grading Matrix\n\n\n\n\n\n\n\n\n\n\n\n\nCriteria\nFail\nLow | Mid\nMarginal Fail\nPass\nLow | Mid | High\nCommendation\nLow | Mid | High\nDistinction\nLow | Mid |High\nDistinction\nExceptional\n\n\n\n\nAnalytical workflow\nNo clear analytical workflow\nWorkflow not easy to find; mixed analytical approach in search for any significant p-value\nWorkflow relatively reasonable but with excess of flaw analyses and lack of a logic sequence that goes from 1) preparation; 2) data wrangling; 3) Exploratory analyses; 4) Core analyses\nClear workflow but hard to reproduce because crucial steps were either omitted or non commented.\nVery good workflow with clear guidance for reproducibility\nHigh quality workflow, fully reproducible and extensively commented\n\n\nR code commented\nLittle to no comments on coding\nComments provided but non meaningful for crucial steps\nCodes mostly commented but crucial steps are not udnerstood\nCodes mostly commented and helping reproducibility.\nCodes fully commented but not excessively, avoiding visual pollution\nCodes fully commented and not affecting visual inspection of the script and allows full reproducibility and explanation in key steps\n\n\nExploratory analysis\nNo exploratory analyses done\nInsufficient exploratory analyses\nEnough exploratory analyses but not commented or justified\nGood exploratory analyses but poorly commented and little justified\nVery good exploratory analyses, commented and justified\nWorld-class and fully justified exploratory approach to data\n\n\nQuality graphs and tables\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow\n\n\nInterpretation of results\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow\nNo clear analytical workflow"
   }
 ]

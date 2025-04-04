@@ -1,0 +1,79 @@
+---
+title: "Assessment Brief 2025-26"
+subtitle: "How you'll be evaluated?"
+description: ""
+title-block-banner: "#9e043d"
+toc: true
+---
+
+## Summative Assessment Brief
+
+This Module covers the following courses:
+
+-   MSc/MRes Applied Ecology & Geospatial Techniques
+-   MSc/MRes Biodiversity Conservation
+-   MSc/MRes Endangered Species Recovery & Conservation
+-   MSc/MRes Equine Performance, Health & Welfare MSc/MRes Smart Agriculture
+
+## Formative Assessments
+
+Your formative opportunities are related to the development of your workbook and sharing of this development with module leader and colleagues.
+
+::: callout-note
+## Share your Workbook
+
+You must not be shy or embarrassed to share your workbook. Nobody will judge you. We are all learning!
+:::
+
+## Type of Assessment
+
+To produce a analytical workflow for a given dataset and critically interpret the results and draw conclusions.
+
+## Transferable skills developed in this assessment
+
+### Analytical workflow
+
+-   Create a attach to an analytical workflow that is reproducible
+-   Generate good quality graphs and tables
+-   Comment and understand R code
+-   Identify core results within a set of exploratory analyses.
+-   Interpret and generate conclusions based on data analysed
+
+## Specific tasks
+
+-   Design an experimental design
+-   Describe methods for reproducibility
+-   Create a analytical workflow
+-   Comment on the R codes in your **workbook**
+
+## Assessment Guidance
+
+-   Analytical workflow (15%)
+-   R code commented (15%)
+-   Exploratory analysis (20%)
+-   Quality graphs and tables (25%)
+-   Interpretation of results (25%)
+
+## Further information
+
+-   [Extenuating circumstances](https://www.ntu.ac.uk/studenthub/my-course/student-handbook/consideration-personal-circumstances)
+
+## Grading Matrix
+
++---------------------------+---------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Criteria                  | Fail                            | Marginal Fail                                                                               | Pass                                                                                                                                                                                     | Commendation                                                                                     | Distinction                                                          | Distinction                                                                                                                          |
+|                           |                                 |                                                                                             |                                                                                                                                                                                          |                                                                                                  |                                                                      |                                                                                                                                      |
+|                           | ###### Low \| Mid               |                                                                                             | ###### Low \| Mid \| High                                                                                                                                                                | ###### Low \| Mid \| High                                                                        | ###### Low \| Mid \|High                                             | ###### Exceptional                                                                                                                   |
++:=========================:+:===============================:+:===========================================================================================:+:========================================================================================================================================================================================:+:================================================================================================:+:====================================================================:+:====================================================================================================================================:+
+| Analytical workflow       | No clear analytical workflow    | Workflow not easy to find; mixed analytical approach in search for any significant p-value  | Workflow relatively reasonable but with excess of flaw analyses and lack of a logic sequence that goes from 1) preparation; 2) data wrangling; 3) Exploratory analyses; 4) Core analyses | Clear workflow but hard to reproduce because crucial steps were either omitted or non commented. | Very good workflow with clear guidance for reproducibility           | High quality workflow, fully reproducible and extensively commented                                                                  |
++---------------------------+---------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| R code commented          | Little to no comments on coding | Comments provided but non meaningful for crucial steps                                      | Codes mostly commented but crucial steps are not udnerstood                                                                                                                              | Codes mostly commented and helping reproducibility.                                              | Codes fully commented but not excessively, avoiding visual pollution | Codes fully commented and not affecting visual inspection of the script and allows full reproducibility and explanation in key steps |
++---------------------------+---------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Exploratory analysis      | No exploratory analyses done    | Insufficient exploratory analyses                                                           | Enough exploratory analyses but not commented or justified                                                                                                                               | Good exploratory analyses but poorly commented and little justified                              | Very good exploratory analyses, commented and justified              | World-class and fully justified exploratory approach to data                                                                         |
++---------------------------+---------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Quality graphs and tables | No clear analytical workflow    | No clear analytical workflow                                                                | No clear analytical workflow                                                                                                                                                             | No clear analytical workflow                                                                     | No clear analytical workflow                                         | No clear analytical workflow                                                                                                         |
++---------------------------+---------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Interpretation of results | No clear analytical workflow    | No clear analytical workflow                                                                | No clear analytical workflow                                                                                                                                                             | No clear analytical workflow                                                                     | No clear analytical workflow                                         | No clear analytical workflow                                                                                                         |
++---------------------------+---------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+|                           |                                 |                                                                                             |                                                                                                                                                                                          |                                                                                                  |                                                                      |                                                                                                                                      |
++---------------------------+---------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
