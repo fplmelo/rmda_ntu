@@ -53,9 +53,9 @@
   {
     "objectID": "pages/intro.html",
     "href": "pages/intro.html",
-    "title": "Customizing Quarto websites",
+    "title": "Intro do RM&DA",
     "section": "",
-    "text": "The Sass and CSS logos",
+    "text": "why R is a valuable tool? for your studies and how to begin using it effectively, particularly with the RStudio IDE.\n\n\nR was developed by statisticians as an interactive environment for data analysis, unlike programming languages like C or Java. This interactivity is crucial for the quick exploration of data, a necessity in data science. Although interactive, your work can be saved as reproducible scripts. While expert programmers may find its conventions different, R offers significant power in data analysis and data visualization.\nOther attractive features of R include:\n\nIt is free and open source.\nIt runs on all major platforms: Windows, Mac OS, UNIX/Linux.\nScripts and data objects can be shared seamlessly across platforms.\nIt has a large, growing, and active community providing numerous learning resources.\nIt is easy for others to contribute add-ons (packages), giving users access to the latest methodologies and tools for various disciplines.\n\nR’s primary design purpose was to serve as an interactive environment for data analysis, having been developed by statisticians rather than software engineers for software development. This interactivity is highlighted as an indispensable feature in data science because it allows for the ability to quickly explore data, which is crucial for success in the field.\nA key benefit of R, stemming directly from its design, is this interactivity, which enables data scientists to rapidly examine and understand their data. Furthermore, the ability to save interactive work as scripts that can be easily executed at any time provides a record of the analysis, making work reproducible. Beyond interactivity and reproducibility, the text also notes the “unequal power of R when it comes to data analysis and, specifically, data visualization” as a significant benefit that users will come to appreciate with patience.\n\n\n\nInteractive data analysis usually takes place in the R console, which executes commands as you type them. You can access it by starting R on your computer. The chapter provides an example of calculating a tip using the console and explains the book’s convention of using grey boxes for R code and #&gt; to denote console output.\n\n\n\nA major advantage of R is the ability to save your work as scripts, which can be edited and saved using a text editor. The material in the book was developed using the RStudio integrated development environment (IDE). RStudio offers an editor with R-specific features, a console, and other useful panes, including one for displaying figures. While some web-based R consoles offer script editing, not all allow saving. The R scripts used to generate the book are available on GitHub.\n\n\n\nRStudio is presented as the primary tool for data science projects. It provides an editor for creating and editing scripts and other useful tools.\n\n\nWhen you first open RStudio, you typically see three panes: * The left pane is the R console. * On the right, the top pane includes tabs like Environment and History. * The bottom pane shows tabs such as Files, Plots, Packages, Help, and Viewer.\n\n\n\nRStudio allows you to use key bindings (keyboard shortcuts) for many tasks instead of using the mouse. The chapter recommends memorising key bindings for frequently used operations and notes that RStudio provides a cheat sheet with common commands.\n\n\n\nRStudio is specifically designed for R and offers advantages over other editors, such as the ability to easily test code as you edit scripts. To start a new script, you can go to File &gt; New File &gt; R Script or use the key binding Ctrl+Shift+N (Windows) or command+shift+N (Mac). The chapter explains how to save a script (Ctrl+S or command+S) and recommends using a descriptive name with lowercase letters, hyphens, and the .R suffix (e.g., my-first-script.R).\nRStudio offers features like auto-completion when typing code, such as the library() function. To execute code from the script, you can click the Run button or use the key binding Ctrl+Shift+Enter (Windows) or command+shift+return (Mac), which will show the output in the R console and plots in the plots pane. You can also run one line at a time using Control-Enter (Windows) or command-return (Mac). The plots console allows you to navigate between plots, zoom, and save them.\n\n\n\nRStudio’s look and functionality can be customised via Tools &gt; Global Options…. The chapter highly recommends changing the default setting for “Save workspace to .RData on exit” to “Never” and unchecking “Restore .RData into workspace at start”. This is advised to prevent confusion, especially when sharing code, as it avoids the assumption that colleagues have the .RData file.\n\n\n\n\nThe functionality of a fresh R installation (referred to as base R) is limited. Additional functionality comes from packages, which are add-ons contributed by developers and available from repositories like CRAN and GitHub. To install a package, such as dslabs, you can use the install.packages() function in the R console:\ninstall.packages ( \"dslabs\" )\nAlternatively, you can use the Tools &gt; Install Packages option in RStudio. Once installed, a package can be loaded into your R session using the library() function:\nlibrary (dslabs)\nYou only need to install a package once unless you install a fresh version of R. You can install multiple packages at once by providing a character vector to install.packages():\ninstall.packages ( c ( \"tidyverse\" ,  \"dslabs\" ))\nInstalling some packages, like tidyverse, may also install other dependency packages. When you load a package with library(), its dependencies are also loaded. It is useful to keep a list of needed packages in a script for easy re-installation if required. You can see all installed packages using the installed.packages() function. Importantly, packages are installed in R, not RStudio.",
     "crumbs": [
       "Content",
       "Week 1 - Introduction"
@@ -121,7 +121,7 @@
     "href": "pages/overview.html",
     "title": "Module Overview",
     "section": "",
-    "text": "This module aims to provide you with advanced skills in interpretation of quantitative and qualitative research data relevant to whole-organism biology, and to develop critical understanding of the ethical considerations involved in the collection of data. The module also aims to underpin the other modules in the Masters Framework by investigating experimental design, ethics, project management and funding.\nYou will be able to present findings of scientific research in a variety of appropriate ways, as well as critically evaluating, interpreting and relaying knowledge gained from secondary sources to peers.",
+    "text": "Artwork by @allison_horst",
     "crumbs": [
       "Module Overview"
     ]
@@ -130,8 +130,8 @@
     "objectID": "pages/overview.html#module-aims",
     "href": "pages/overview.html#module-aims",
     "title": "Module Overview",
-    "section": "",
-    "text": "This module aims to provide you with advanced skills in interpretation of quantitative and qualitative research data relevant to whole-organism biology, and to develop critical understanding of the ethical considerations involved in the collection of data. The module also aims to underpin the other modules in the Masters Framework by investigating experimental design, ethics, project management and funding.\nYou will be able to present findings of scientific research in a variety of appropriate ways, as well as critically evaluating, interpreting and relaying knowledge gained from secondary sources to peers.",
+    "section": "Module Aims",
+    "text": "Module Aims\nThis module aims to provide you with advanced skills in interpretation of quantitative and qualitative research data relevant to whole-organism biology, and to develop critical understanding of the ethical considerations involved in the collection of data. The module also aims to underpin the other modules in the Masters Framework by investigating experimental design, ethics, project management and funding.\nYou will be able to present findings of scientific research in a variety of appropriate ways, as well as critically evaluating, interpreting and relaying knowledge gained from secondary sources to peers.",
     "crumbs": [
       "Module Overview"
     ]
@@ -185,5 +185,92 @@
     "crumbs": [
       "Module Overview"
     ]
+  },
+  {
+    "objectID": "pages/intro.html#getting-started-with-r-and-rstudio",
+    "href": "pages/intro.html#getting-started-with-r-and-rstudio",
+    "title": "Intro do RM&DA",
+    "section": "",
+    "text": "why R is a valuable tool? for your studies and how to begin using it effectively, particularly with the RStudio IDE.\n\n\nR was developed by statisticians as an interactive environment for data analysis, unlike programming languages like C or Java. This interactivity is crucial for the quick exploration of data, a necessity in data science. Although interactive, your work can be saved as reproducible scripts. While expert programmers may find its conventions different, R offers significant power in data analysis and data visualization.\nOther attractive features of R include:\n\nIt is free and open source.\nIt runs on all major platforms: Windows, Mac OS, UNIX/Linux.\nScripts and data objects can be shared seamlessly across platforms.\nIt has a large, growing, and active community providing numerous learning resources.\nIt is easy for others to contribute add-ons (packages), giving users access to the latest methodologies and tools for various disciplines.\n\nR’s primary design purpose was to serve as an interactive environment for data analysis, having been developed by statisticians rather than software engineers for software development. This interactivity is highlighted as an indispensable feature in data science because it allows for the ability to quickly explore data, which is crucial for success in the field.\nA key benefit of R, stemming directly from its design, is this interactivity, which enables data scientists to rapidly examine and understand their data. Furthermore, the ability to save interactive work as scripts that can be easily executed at any time provides a record of the analysis, making work reproducible. Beyond interactivity and reproducibility, the text also notes the “unequal power of R when it comes to data analysis and, specifically, data visualization” as a significant benefit that users will come to appreciate with patience.\n\n\n\nInteractive data analysis usually takes place in the R console, which executes commands as you type them. You can access it by starting R on your computer. The chapter provides an example of calculating a tip using the console and explains the book’s convention of using grey boxes for R code and #&gt; to denote console output.\n\n\n\nA major advantage of R is the ability to save your work as scripts, which can be edited and saved using a text editor. The material in the book was developed using the RStudio integrated development environment (IDE). RStudio offers an editor with R-specific features, a console, and other useful panes, including one for displaying figures. While some web-based R consoles offer script editing, not all allow saving. The R scripts used to generate the book are available on GitHub.\n\n\n\nRStudio is presented as the primary tool for data science projects. It provides an editor for creating and editing scripts and other useful tools.\n\n\nWhen you first open RStudio, you typically see three panes: * The left pane is the R console. * On the right, the top pane includes tabs like Environment and History. * The bottom pane shows tabs such as Files, Plots, Packages, Help, and Viewer.\n\n\n\nRStudio allows you to use key bindings (keyboard shortcuts) for many tasks instead of using the mouse. The chapter recommends memorising key bindings for frequently used operations and notes that RStudio provides a cheat sheet with common commands.\n\n\n\nRStudio is specifically designed for R and offers advantages over other editors, such as the ability to easily test code as you edit scripts. To start a new script, you can go to File &gt; New File &gt; R Script or use the key binding Ctrl+Shift+N (Windows) or command+shift+N (Mac). The chapter explains how to save a script (Ctrl+S or command+S) and recommends using a descriptive name with lowercase letters, hyphens, and the .R suffix (e.g., my-first-script.R).\nRStudio offers features like auto-completion when typing code, such as the library() function. To execute code from the script, you can click the Run button or use the key binding Ctrl+Shift+Enter (Windows) or command+shift+return (Mac), which will show the output in the R console and plots in the plots pane. You can also run one line at a time using Control-Enter (Windows) or command-return (Mac). The plots console allows you to navigate between plots, zoom, and save them.\n\n\n\nRStudio’s look and functionality can be customised via Tools &gt; Global Options…. The chapter highly recommends changing the default setting for “Save workspace to .RData on exit” to “Never” and unchecking “Restore .RData into workspace at start”. This is advised to prevent confusion, especially when sharing code, as it avoids the assumption that colleagues have the .RData file.\n\n\n\n\nThe functionality of a fresh R installation (referred to as base R) is limited. Additional functionality comes from packages, which are add-ons contributed by developers and available from repositories like CRAN and GitHub. To install a package, such as dslabs, you can use the install.packages() function in the R console:\ninstall.packages ( \"dslabs\" )\nAlternatively, you can use the Tools &gt; Install Packages option in RStudio. Once installed, a package can be loaded into your R session using the library() function:\nlibrary (dslabs)\nYou only need to install a package once unless you install a fresh version of R. You can install multiple packages at once by providing a character vector to install.packages():\ninstall.packages ( c ( \"tidyverse\" ,  \"dslabs\" ))\nInstalling some packages, like tidyverse, may also install other dependency packages. When you load a package with library(), its dependencies are also loaded. It is useful to keep a list of needed packages in a script for easy re-installation if required. You can see all installed packages using the installed.packages() function. Importantly, packages are installed in R, not RStudio.",
+    "crumbs": [
+      "Content",
+      "Week 1 - Introduction"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "Artwork by @allison_horst",
+    "crumbs": [
+      "Begin here"
+    ]
+  },
+  {
+    "objectID": "setup.html#video-tutorials",
+    "href": "setup.html#video-tutorials",
+    "title": "Installing R and RStudio",
+    "section": "Video Tutorials",
+    "text": "Video Tutorials",
+    "crumbs": [
+      "Begin here"
+    ]
+  },
+  {
+    "objectID": "pages/workbook.html",
+    "href": "pages/workbook.html",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "",
+    "text": "This tutorial provides an introduction to creating a basic webpage using Quarto within RStudio. Quarto, the next-generation version of R Markdown, allows you to author dynamic content and can render to various formats, including websites."
+  },
+  {
+    "objectID": "pages/workbook.html#prerequisites",
+    "href": "pages/workbook.html#prerequisites",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nBefore you begin, ensure you have the following:\n\nR installed on your computer.\nRStudio installed on your computer.\nThe quarto package may need to be installed if you intend to render from the R console:\n\n\ninstall.packages(\"quarto\")"
+  },
+  {
+    "objectID": "pages/workbook.html#creating-a-quarto-project-recommended-for-websites",
+    "href": "pages/workbook.html#creating-a-quarto-project-recommended-for-websites",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "Creating a Quarto Project (Recommended for Websites)",
+    "text": "Creating a Quarto Project (Recommended for Websites)\nWhile not explicitly detailed in these short excerpts, for creating a webpage (which often involves multiple pages and assets), it is generally recommended to start with a Quarto project. This helps organise your website files.\n\nIn RStudio, go to File &gt; New Project….\nChoose New Directory.\nSelect Quarto Project.\nChoose a name for your project and a location to save it.\nClick Create Project.\n\nThis will create a basic Quarto project structure."
+  },
+  {
+    "objectID": "pages/workbook.html#creating-your-webpage-content",
+    "href": "pages/workbook.html#creating-your-webpage-content",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "Creating Your Webpage Content",
+    "text": "Creating Your Webpage Content\nWebpages in a Quarto website are typically created as .qmd files, similar to standard Quarto documents.\n\nWithin your Quarto project, go to File &gt; New File &gt; Quarto Document….\nChoose your desired default format (this might be less critical for individual content pages within a website structure, as the website configuration will largely dictate the final output). Click Create.\nThis will open a new .qmd file where you can write your webpage content using a combination of:\n\nYAML Header: Each page can have an optional YAML header (demarcated by --- at the start and end) to specify metadata like the title.\n---\ntitle: \"My Webpage\"\n---\nMarkdown Text: Use standard Markdown syntax to format your text, headings, lists, links, images, etc.. RStudio’s Visual editor can be helpful for this, offering a WYSIWYM experience [1]. You can switch between Visual and Source modes using the toolbar or the shortcut ⌘⇧ F4 (macOS) or Ctrl+Shift+F4 (Windows/Linux) [1].\nCode Chunks: You can embed and execute code (primarily R in this context, indicated by ```{r}) within your webpage to create dynamic content [2, 3]. You can run individual code chunks interactively in RStudio by clicking the Run icon or using the keyboard shortcut (⇧⌘⏎ on macOS or Ctrl+Shift+Enter on Windows/Linux)."
+  },
+  {
+    "objectID": "pages/workbook.html#configuring-your-quarto-website",
+    "href": "pages/workbook.html#configuring-your-quarto-website",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "Configuring Your Quarto Website",
+    "text": "Configuring Your Quarto Website\nCreating a multi-page website with Quarto involves a configuration file, typically named _quarto.yml, in the root of your project. This file defines the navigation, theme, and other website-level settings.\nNote: The provided sources do not contain specific details on the structure and content of the _quarto.yml file. However, based on Quarto’s nature as a next-generation version of R Markdown [4], it leverages YAML for configuration. You would typically define your website’s navigation links to your different .qmd content pages within this file."
+  },
+  {
+    "objectID": "pages/workbook.html#rendering-your-quarto-webpages",
+    "href": "pages/workbook.html#rendering-your-quarto-webpages",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "Rendering Your Quarto Webpage(s)",
+    "text": "Rendering Your Quarto Webpage(s)\nOnce you have your content pages (.qmd files) and your website configuration (_quarto.yml`), you can render your website.\n\nIn RStudio, with your Quarto project open, you can typically use the Build pane. Look for a Build Website option. Clicking this will process your project files according to your _quarto.yml configuration and generate your website.\nAlternatively, you might be able to render the entire website from the R console within your project directory using the quarto package, though the specific command for a website render isn’t detailed in the excerpts. It would likely be related to the quarto::quarto_render() function but applied at the project level."
+  },
+  {
+    "objectID": "pages/workbook.html#previewing-your-webpage",
+    "href": "pages/workbook.html#previewing-your-webpage",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "Previewing Your Webpage",
+    "text": "Previewing Your Webpage\nAfter rendering, Quarto will generate the necessary HTML and other files for your website. You can usually preview your webpage by navigating to the output directory specified in your project (often _site) and opening the index.html file (or the HTML file corresponding to your content page)."
+  },
+  {
+    "objectID": "pages/workbook.html#further-steps",
+    "href": "pages/workbook.html#further-steps",
+    "title": "Tutorial: Getting Started with a Quarto Webpage",
+    "section": "Further Steps",
+    "text": "Further Steps\nThis tutorial provides a basic introduction. Creating a full-fledged website with Quarto involves learning more about:\n\nThe _quarto.yml configuration file to control navigation, theme, and other website settings.\nOrganising your content into multiple .qmd pages.\nUsing themes to style your website.\nIncluding assets like images and CSS files.\n\nWhile the provided sources give a starting point by introducing Quarto as a tool capable of creating websites and its reliance on .qmd files and YAML [2, 5], you would need to consult further Quarto documentation for detailed instructions on website creation.\nBy following these initial steps, you can begin to explore the possibilities of creating webpages with Quarto in RStudio. Remember to consult the official Quarto documentation for comprehensive guidance on website features and configuration."
   }
 ]

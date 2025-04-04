@@ -9,9 +9,12 @@ website:
     style: "docked"
     search: true
     contents:
-      - href: index.qmd
-        text: Home
+      - text: Home
+        href: index.qmd
+      - text: Begin here
+        href: setup.qmd
       - text: Module Overview
+        href: pages/overview.qmd
         # href: pages/overview.qmd
       - section: Content
         contents:

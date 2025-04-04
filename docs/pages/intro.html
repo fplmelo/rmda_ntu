@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -97,14 +131,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-right"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/intro.html">Content</a></li><li class="breadcrumb-item"><a href="../pages/intro.html">Week 1 - Introduction</a></li></ol></nav>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/intro.html">Content</a></li><li class="breadcrumb-item"><a href="../pages/intro.html">Week 1 - Introduction</a></li></ol></nav>
       <h1 class="title">Intro do RM&amp;DA</h1>
             <p class="subtitle lead">Week 1</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-right">
+  <div class="quarto-title-meta column-body">
 
       
     
@@ -134,6 +168,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Begin here</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -182,18 +222,88 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started-with-r-and-rstudio" id="toc-getting-started-with-r-and-rstudio" class="nav-link active" data-scroll-target="#getting-started-with-r-and-rstudio">Getting started with R and RStudio</a>
+  <ul class="collapse">
+  <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r">Why R?</a></li>
+  <li><a href="#the-r-console" id="toc-the-r-console" class="nav-link" data-scroll-target="#the-r-console">The R Console</a></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#installing-r-packages" id="toc-installing-r-packages" class="nav-link" data-scroll-target="#installing-r-packages">Installing R packages</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
 
 
 
 
+<section id="getting-started-with-r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-r-and-rstudio">Getting started with R and RStudio</h2>
+<p><strong>why R is a valuable tool?</strong> for your studies and how to begin using it effectively, particularly with the RStudio IDE.</p>
+<section id="why-r" class="level3">
+<h3 class="anchored" data-anchor-id="why-r">Why R?</h3>
+<p>R was developed by statisticians as an <strong>interactive environment for data analysis</strong>, unlike programming languages like C or Java. This interactivity is crucial for the quick exploration of data, a necessity in data science. Although interactive, your work can be saved as <strong>reproducible scripts</strong>. While expert programmers may find its conventions different, R offers significant power in data analysis and data visualization.</p>
+<p>Other attractive features of R include:</p>
+<ul>
+<li>It is <strong>free and open source</strong>.</li>
+<li>It runs on all major platforms: Windows, Mac OS, UNIX/Linux.</li>
+<li>Scripts and data objects can be shared seamlessly across platforms.</li>
+<li>It has a <strong>large, growing, and active community</strong> providing numerous learning resources.</li>
+<li>It is easy for others to contribute add-ons (packages), giving users access to the latest methodologies and tools for various disciplines.</li>
+</ul>
+<p>R’s <strong>primary design purpose</strong> was to serve as an <strong>interactive environment for data analysis</strong>, having been developed by statisticians rather than software engineers for software development. This interactivity is highlighted as an <strong>indispensable feature in data science</strong> because it allows for the <strong>ability to quickly explore data</strong>, which is crucial for success in the field.</p>
+<p>A <strong>key benefit</strong> of R, stemming directly from its design, is this <strong>interactivity</strong>, which enables data scientists to rapidly examine and understand their data. Furthermore, the ability to save interactive work as <strong>scripts that can be easily executed</strong> at any time provides a record of the analysis, making work <strong>reproducible</strong>. Beyond interactivity and reproducibility, the text also notes the <strong>“unequal power of R when it comes to data analysis and, specifically, data visualization”</strong> as a significant benefit that users will come to appreciate with patience.</p>
+</section>
+<section id="the-r-console" class="level3">
+<h3 class="anchored" data-anchor-id="the-r-console">The R Console</h3>
+<p>Interactive data analysis usually takes place in the <strong>R console</strong>, which executes commands as you type them. You can access it by starting R on your computer. The chapter provides an example of calculating a tip using the console and explains the book’s convention of using grey boxes for R code and <code>#&gt;</code> to denote console output.</p>
+</section>
+<section id="scripts" class="level3">
+<h3 class="anchored" data-anchor-id="scripts">Scripts</h3>
+<p>A major advantage of R is the ability to <strong>save your work as scripts</strong>, which can be edited and saved using a text editor. The material in the book was developed using the <strong>RStudio integrated development environment (IDE)</strong>. RStudio offers an editor with R-specific features, a console, and other useful panes, including one for displaying figures. While some web-based R consoles offer script editing, not all allow saving. The R scripts used to generate the book are available on GitHub.</p>
+</section>
+<section id="rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
+<p>RStudio is presented as the primary tool for data science projects. It provides an editor for creating and editing scripts and other useful tools.</p>
+<section id="the-panes" class="level4">
+<h4 class="anchored" data-anchor-id="the-panes">The panes</h4>
+<p>When you first open RStudio, you typically see three panes: * The <strong>left pane</strong> is the R console. * On the <strong>right</strong>, the <strong>top pane</strong> includes tabs like <em>Environment</em> and <em>History</em>. * The <strong>bottom pane</strong> shows tabs such as <em>Files</em>, <em>Plots</em>, <em>Packages</em>, <em>Help</em>, and <em>Viewer</em>.</p>
+</section>
+<section id="key-bindings" class="level4">
+<h4 class="anchored" data-anchor-id="key-bindings">Key bindings</h4>
+<p>RStudio allows you to use <strong>key bindings</strong> (keyboard shortcuts) for many tasks instead of using the mouse. The chapter recommends memorising key bindings for frequently used operations and notes that RStudio provides a cheat sheet with common commands.</p>
+</section>
+<section id="running-commands-while-editing-scripts" class="level4">
+<h4 class="anchored" data-anchor-id="running-commands-while-editing-scripts">Running commands while editing scripts</h4>
+<p>RStudio is specifically designed for R and offers advantages over other editors, such as the ability to <strong>easily test code as you edit scripts</strong>. To start a new script, you can go to <em>File</em> &gt; <em>New File</em> &gt; <em>R Script</em> or use the key binding Ctrl+Shift+N (Windows) or command+shift+N (Mac). The chapter explains how to save a script (Ctrl+S or command+S) and recommends using a descriptive name with lowercase letters, hyphens, and the <code>.R</code> suffix (e.g., <code>my-first-script.R</code>).</p>
+<p>RStudio offers features like <strong>auto-completion</strong> when typing code, such as the <code>library()</code> function. To execute code from the script, you can click the <strong>Run button</strong> or use the key binding Ctrl+Shift+Enter (Windows) or command+shift+return (Mac), which will show the output in the R console and plots in the plots pane. You can also run <strong>one line at a time</strong> using Control-Enter (Windows) or command-return (Mac). The plots console allows you to navigate between plots, zoom, and save them.</p>
+</section>
+<section id="changing-global-options" class="level4">
+<h4 class="anchored" data-anchor-id="changing-global-options">Changing global options</h4>
+<p>RStudio’s look and functionality can be customised via <em>Tools</em> &gt; <em>Global Options…</em>. The chapter <strong>highly recommends</strong> changing the default setting for <strong>“Save workspace to .RData on exit” to “Never”</strong> and unchecking <strong>“Restore .RData into workspace at start”</strong>. This is advised to prevent confusion, especially when sharing code, as it avoids the assumption that colleagues have the <code>.RData</code> file.</p>
+</section>
+</section>
+<section id="installing-r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="installing-r-packages">Installing R packages</h3>
+<p>The functionality of a fresh R installation (referred to as <strong>base R</strong>) is limited. Additional functionality comes from <strong>packages</strong>, which are add-ons contributed by developers and available from repositories like CRAN and GitHub. To install a package, such as <code>dslabs</code>, you can use the <code>install.packages()</code> function in the R console:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span> ( <span class="st">"dslabs"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively, you can use the <em>Tools</em> &gt; <em>Install Packages</em> option in RStudio. Once installed, a package can be loaded into your R session using the <code>library()</code> function:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (dslabs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You only need to install a package once unless you install a fresh version of R. You can install multiple packages at once by providing a character vector to <code>install.packages()</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span> ( <span class="fu">c</span> ( <span class="st">"tidyverse"</span> ,  <span class="st">"dslabs"</span> ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Installing some packages, like <code>tidyverse</code>, may also install other <strong>dependency</strong> packages. When you load a package with <code>library()</code>, its dependencies are also loaded. It is useful to keep a list of needed packages in a script for easy re-installation if required. You can see all installed packages using the <code>installed.packages()</code> function. Importantly, packages are installed in R, not RStudio.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
