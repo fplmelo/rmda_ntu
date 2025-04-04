@@ -83,4 +83,4 @@ Installing some packages, like `tidyverse`, may also install other **dependency*
 
 ## Slides
 
-{{< revealjs file="/docs/slides/01_intro_rmda.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
+{{< revealjs file="https://fplmelo.github.io/rmda_ntu/docs/slides/01_intro_rmda.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
