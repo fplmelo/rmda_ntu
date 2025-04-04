@@ -1,0 +1,432 @@
+---
+title: "5-Choosing the right analysis"
+subtitle: " "
+author: "Felipe Melo"
+institute: "Nottingham Trent University - UK"
+from: markdown+emoji
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    incremental: false
+    chalkboard: true
+    logo: img/ntu_logo.png
+    footer: "Research Methods & Data Analysis"
+    slide-number: true
+    transition: slide
+    background-transition: fade
+    #auto-stretch: true
+    title-block-banner: true
+
+---
+
+## You should know today:
+
+- Identify the nature of variables
+- Foresee the types of analyses
+- Draw graphics of predicted results
+
+
+## Types of variables (review)
+
+::::{.columns}
+:::{.column .fragment}
+**Categorical**
+
+![](https://static-assets.codecademy.com/Courses/Hypothesis-Testing/Intro_to_variable_types_3.png)
+
+:::
+
+:::{.column .fragment}
+**Numerical**
+
+![](https://static-assets.codecademy.com/Courses/Hypothesis-Testing/Intro_to_variable_types_4.png)
+
+:::
+::::
+
+## Back to the toolbox
+
+![](img/toolkit.png){fig-align="center"}
+
+## Check your variables
+
+```{r}
+#| label: load penguins
+#| include: true
+#| echo: true
+
+library(palmerpenguins)
+library(tidyverse)
+
+penguins %>% 
+  glimpse()
+
+```
+
+## Is there an association between "Species" and "Sex"?
+
+```{r}
+#| label: cat_cat_graph
+#| include: true
+#| echo: true
+#| output-location: column
+penguins %>% 
+  na.omit() %>% 
+  ggplot(aes(
+    x= species, 
+    color=sex, 
+    fill=sex))+
+  geom_bar(position = "dodge")-> cat_x_cat
+cat_x_cat
+```
+
+## How species differ in bill length?
+
+
+```{r}
+#| label: cat_num_graph
+#| include: true
+#| echo: true
+#| output-location: column
+penguins %>% 
+  na.omit() %>% 
+  ggplot(aes(
+    x= species, 
+    y= bill_length_mm,
+    color=species, 
+    fill=species))+
+  geom_boxplot(alpha=0.7)-> cat_x_num
+
+cat_x_num
+```
+
+## What is the relationship between bill leght and flipper lenght?
+
+
+```{r}
+#| label: num_num_graph
+#| include: true
+#| echo: true
+#| output-location: column
+penguins %>% 
+  na.omit() %>% 
+  ggplot(aes(
+    x= bill_length_mm, 
+    y= flipper_length_mm,
+    color=species))+
+  geom_point()-> num_x_num
+
+num_x_num
+```
+
+## Can body mass predict sex?
+
+
+```{r}
+#| label: num_cat_graph
+#| include: true
+#| echo: true
+#| output-location: column
+penguins %>% 
+  na.omit() %>% 
+  ggplot(aes(
+    x= body_mass_g, 
+    y= sex,
+    color=species))+
+  geom_point()-> num_x_cat
+
+num_x_cat
+```
+
+
+## The four families of statistical tests
+
+```{r}
+#| label: all graphs
+
+library(cowplot)
+
+plot_grid(cat_x_cat,num_x_cat, cat_x_num,num_x_num)
+
+
+```
+
+## Frequency tests
+
+:::{.columns}
+:::{.column width="50%"}
+
+```{r}
+#| label: freq test
+#| 
+cat_x_cat
+```
+
+:::
+
+:::{.column width="50%"}
+
+- Chi-square
+- G-tests
+- Contingecy tables
+- Log-linear models
+
+:::
+:::
+
+:::{.fragment}
+Powerful for testing associations between categorical variables
+:::
+
+## Examples of frequency tests
+Contingency tables
+
+
+
+|  | Pro-refugees | Anti-refugees | 
+|---------|:-----:|:------:|
+| Tories      | 12   |    68 |   
+| Labours     | 55  |   45 |  
+| Socialists   | 65    |    2 | 
+| Reform UK | 5  |  87 |
+
+## Let's code it
+
+```{r}
+#| label: cont table
+#| echo: true
+#| output-location: column-fragment
+
+tibble(
+  party = c("tories", "labours", "socialists", "reform uk"),
+  pro_refugees = c(12, 55, 65, 5),
+  anti_refugees = c(68, 45, 2, 87)) |> 
+  pivot_longer(cols = c(pro_refugees, anti_refugees),
+               names_to = "stance",
+               values_to = "count") |>  
+  uncount(count) |> 
+  mutate(value=rep(1, 339)) |> 
+  summarise(n = dplyr::n(), .by = c(party, stance)) -> refugee
+
+refugee
+```
+
+## Let's graph it
+
+```{r}
+refugee |> 
+  ggplot(aes(party, n, color=stance, fill=stance))+
+  geom_col(position = "dodge")
+
+```
+
+## Let's test it
+
+```{r}
+#| label: chi tests
+#| echo: true
+#| output-location: column
+
+refugee |> 
+  pivot_wider(names_from = stance, values_from = n) |> # make it iinto a contingency table
+  select(-party) |> # remove first column
+  chisq.test() # run the test
+
+
+```
+
+The interpretation of frequency tests are quite challenging!
+
+## Mean tests
+:::{.columns}
+:::{.column width="50%"}
+
+```{r}
+#| label: mean test
+#| 
+cat_x_num
+```
+
+:::
+
+:::{.column width="50%"}
+
+- T-tests (two levels)
+- Anovas (3+ levels)
+- Non-parametric equivalents
+- Nested and two-way...
+- Post-hoc tests (Tukey HSD, Student, etc.)
+
+:::
+:::
+
+:::{.fragment}
+Widely used for testing differences in means
+:::
+
+## Example of Mean Tests
+:::{.columns}
+:::{.column}
+
+Graph
+
+```{r}
+#| label: mean test2
+#| output-location: default
+#| echo: true
+
+penguins |> 
+  na.omit() |> 
+  ggplot(aes(sex,bill_length_mm, color=sex, fill=sex))+
+  geom_jitter(size=2)+
+  geom_boxplot(alpha=0.7)
+  
+```
+:::
+:::{.column}
+
+T-test
+```{r}
+#| echo: true
+
+summary(lm(bill_length_mm~sex, data=penguins))
+```
+:::
+:::
+
+## Example of Mean Tests
+
+```{r}
+#| label: mean test3
+#| output-location: column
+penguins |> 
+  na.omit() |> 
+  ggplot(aes(species,bill_length_mm, color=species, fill=species))+
+  geom_jitter(size=2)+
+  geom_boxplot(alpha=0.7)
+  
+```
+
+## Correlations and models
+:::{.columns}
+:::{.column width="50%"}
+
+```{r}
+#| label: corr test
+#| 
+num_x_num
+```
+
+:::
+
+:::{.column width="50%"}
+
+- Correlations
+
+-- many variations
+
+- Linear models
+
+-- many variations
+
+:::
+:::
+
+:::{.fragment}
+
+Highly predictive and powerful but depend on many conditions
+
+:::
+
+## Logistic models
+:::{.columns}
+:::{.column width="50%"}
+
+```{r}
+#| label: log test
+#| 
+num_x_cat
+```
+
+:::
+
+:::{.column width="50%"}
+
+- Logistic models
+- Predictive of odds
+- Similar inlogic to frequency tests
+- Similar in calculation to linear models
+
+:::
+:::
+
+:::{.fragment}
+
+Highly predictive and powerful but  can be complex to interpret
+
+:::
+
+## Your turn
+
+![](img/life_exp.png){width="70%" fig-align="center"}
+
+source: [Our World in Data](https://ourworldindata.org/the-history-of-global-economic-inequality)
+
+
+```{r}
+#| echo: false
+
+library(countdown)
+countdown(minutes = 2, seconds = 15)
+
+```
+
+## Your turn again
+
+<iframe src="https://ourworldindata.org/grapher/income-share-distribution-after-tax-lis?showSelectionOnlyInTable=1&tab=chart" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+
+source: [Our World in Data](https://ourworldindata.org/economic-inequality)
+
+
+```{r}
+#| echo: false
+
+library(countdown)
+countdown(minutes = 2, seconds = 15)
+
+```
+
+## It is very important to practice{.center}
+
+## Step 1 - Make a question
+
+- Name the variables in your question
+
+## Step 2 - Make a prediction with a graph
+
+```{r}
+#| echo: false
+
+library(countdown)
+countdown(minutes = 2, seconds = 00)
+
+```
+
+
+## Step 3 - Identify the "family" of tests
+
+```{r}
+#| label: all graphs2
+
+plot_grid(cat_x_cat,num_x_cat, cat_x_num,num_x_num)
+
+
+```
+
+## A change in our timetable
+
+![](img/timetable.png)
+
+
+## End of DA class{.center}
+
