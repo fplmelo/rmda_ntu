@@ -3,31 +3,51 @@ project:
   output-dir: docs
 
 website:
-  sidebar:
+  navbar:
+    background: light
     logo: img/ntu_logo.png
-    title: "Research Methods & Data Analyses"
-    style: "docked"
-    search: true
-    contents:
-      - text: Home
+    logo-alt: "Quarto logo."
+    title: false
+    collapse-below: lg
+    left:
+      - text: "Home"
         href: index.qmd
-      - text: Begin here
-        href: setup.qmd
-      - text: Your Workbook
-        href: pages/workbook.qmd
-      - text: Module Overview
-        href: pages/overview.qmd
-        # href: pages/overview.qmd
-      - section: Content
-        contents:
-          - href: pages/intro.qmd
-            text: Week 1 - Introduction
-          - href: workbook.qmd
-            text: Week 2 - Workbook
-          - href: data_wrang.qmd
-            text: Week 3 - Data Wrangling
-          - href: explor_anal.qmd
-            text: Week 4 - Exploratory Analyses
+      - text: "Syllabus"
+        href: syllabus.qmd
+      - text: "Get Started"
+        href: get-started/index.qmd
+      - text: "Content"
+        href: sessions/index.qmd
+      - text: "Bibliography"
+        href: bibliography/index.qmd
+      - text: "Resources"
+        href: resources/index.qmd
+      - text: "Assignment"
+        href: Assignment/index.qmd
+      - text: "Blog"
+        href: docs/blog/index.qmd
+      - text: "Help"
+        menu:
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/quarto-dev/quarto-cli/issues"
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/quarto-dev/quarto-cli/discussions"
+          - text: "FAQ"
+            icon: "question-circle"
+            href: docs/faq/index.qmd
+    tools:
+      - icon: twitter
+        href: https://twitter.com/quarto_pub
+        text: Quarto Twitter
+      - icon: github
+        href: https://github.com/quarto-dev/quarto-cli
+        text: Quarto GitHub
+      - icon: rss
+        href: https://quarto.org/docs/blog/index.xml
+        text: Quarto Blog RSS
+ 
   page-footer:
     left: Learn more about the
     right: Source code available on

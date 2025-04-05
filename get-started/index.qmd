@@ -1,0 +1,64 @@
+---
+title: "Installing R and RStudio "
+subtitle: "Basic set-up"
+description: ""
+title-block-banner: "#9e043d"
+toc: true
+---
+
+![](/img/witches.png){fig-align="center"}
+
+[Artwork by \@allison_horst](https://twitter.com/allison_horst){style="text-align: center"}
+
+<br>
+
+### Tutorial: Installing R and RStudio
+
+This tutorial will guide you through the process of installing **R**, the programming language, and **RStudio**, a popular integrated development environment (IDE) for R. **You must install R before installing RStudio**.
+
+#### 1. Install R
+
+R is available for download from the [official R website](https://www.r-project.org/). The specific steps depend on your operating system.
+
+**For Mac OS X**:
+
+-   Go to the official R website and select **"Download R for (Mac) OS X"**.
+-   Look for the **most up-to-date version of R** (new versions are released frequently and appear towards the top of the page) and click the **`.pkg` file** to download it.
+-   Open the downloaded **`.pkg` file** and follow the **standard instructions for installing applications on Mac OS X**.
+-   **Drag and drop the R application into the `Applications` folder.**
+
+**For Windows**:
+
+-   Go to the official R website and select **"Download R for Windows"**.
+-   Select **"base"**, as this is your first installation of R.
+-   Follow the **standard instructions for installing programs for Windows**. If prompted to select "Customize Startup" or "Accept Default Startup Options", **choose the default options**.
+
+**For Linux/Ubuntu**:
+
+-   Go to the official R website and select **"Download R for Linux"**.
+-   Select the **"Ubuntu"** option.
+-   Alternatively, select the **Linux package management system relevant to you if you are not using Ubuntu**.
+
+#### 2. Install RStudio
+
+Once R is installed on your computer, you can proceed to install RStudio.
+
+-   Navigate to the [**Posit downloads page**](https://posit.co/download/rstudio-desktop/).
+-   Scroll down to the **"All installers"** section of the page.
+-   Find your operation system ![](img/rstudio.png)
+-   Click on the linf to download and;
+-   Follow the **standard installation instructions** for your operating system to install RStudio.
+
+Once both R and RStudio are installed, you can launch RStudio. **It's important to open RStudio, not just R**, to access the integrated environment. You can usually find RStudio by searching on your desktop and it's recommended to pin the RStudio icon to your preferred location for easy access.
+
+Congratulations, you have now successfully installed R and RStudio! You are ready to begin your data science journey.
+
+## Video Tutorials
+
+<iframe width="779" height="438" src="https://www.youtube.com/embed/aCUM4r1ONhg" title="Getting Started with RStudio and R | Part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+
+<iframe width="779" height="438" src="https://www.youtube.com/embed/FIrsOBy5k58" title="RStudio for the Total Beginner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>

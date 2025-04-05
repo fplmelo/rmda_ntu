@@ -1,0 +1,7 @@
+---
+title: "Sessions"
+title-block-banner: "#9e043d"
+listing: 
+  contents: /
+  type: grid
+---

@@ -1,19 +1,54 @@
 ---
 title: "Research Methods & Data Analyses"
 title-block-banner: "#9e043d"
-image: img/Rlogo.jpg # a great spot for your professional headshot :) 
-toc: false # disable table of contents for this page (if applicable)
-about: 
-  template: marquee 
-  image-shape: round
-  image-width: 17em
-  links: # create buttons
-    - text: GitHub
-      href: https://github.com/fplmelo
-      target: _blank 
-    - text: Email
-      href: mailto:felipe.melo@ntu.ac.uk
+subtitle: "Stats, Coding, Data Science and more"
+details: |
+  ARES40011 • Autumn 2025<br>School of Animal Rural and Environmental Sciences<br>Nottingham Trent University
+sidebar: false
+toc: false
+page-layout: full
+format:
+  html:
+    template-partials:
+      - html/home/title-block.html
+course-logo: img/course_logo.png
 ---
+
+::: {.home}
+
+:::: {.grid .course-details}
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Instructor
+
+- {{< fa user >}} [Felipe Melo]()
+- {{< fa university >}} [NTU](www.ntu.ac.uk)
+- {{< fa house >}} [ecoaplic.org](www.ecoaplic.org)
+
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Course details
+
+- {{< fa calendar >}} Any day
+- {{< fa calendar-alt >}} Sep-Dec 2025
+- {{< fa clock >}} Asynchronous
+- {{< fa location-dot >}} This is a FLEXI module
+:::
+
+::: {.g-col-12 .g-col-md-4 .contact-policy}
+### Contacting 
+
+Doubts and enquires are preferably brought to tutorial sessions. It is not possible to solve problems via e-mail individually for large cohorts.
+
+:::
+
+::::
+
+:::
+
+
+
 
 ## Welcome
 
@@ -23,12 +58,4 @@ We have tried to make this module as accessible as possible, knowing that some o
 
 We are looking forward to meeting you all
 
-## Who am I?
 
-![](img/eu.png){width="250"}
-
-Felipe Melo (Module Leader): [felipe.melo\@ntu.ac.uk](mailto:felipe.melo@ntu.ac.uk)
-
-About me: I am interested in all kinds of interactions between biodiversity and human activities that take place in working landscapes in the tropical regions of the world. My research products are shared between basic and applied sciences with a strong interdisciplinary integration.
-
-Visit my personal website at [www.ecoaplic.org](www.ecoaplic.org)
