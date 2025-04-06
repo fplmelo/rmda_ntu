@@ -284,7 +284,7 @@ If you edit the `webpage.qmd` file, you will need to re-render the html file, an
 
 Now create your own quarto workbook:
 
-1 - Download the [zip file of the project](exercises/week1-exercise.zip)
+1 - Download the [zip file of the project](https://github.com/fplmelo/rmda_ntu/blob/01f73a18d64f4d744df5db7f7f1150a585344fd5/exercises/week1-exercise.zip)
 
 2- Tweak the `*qmd file` as you wish
 
