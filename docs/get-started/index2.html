@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -137,12 +103,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-get-started">    
         <li>
-    <a class="dropdown-item" href="../get-started/index.html"><i class="bi bi-tools" role="img">
+    <a class="dropdown-item" href="../get-started/index.html"><i class="bi bi-emoji-sunglasses-fill" role="img">
 </i> 
  <span class="dropdown-text">Begin here</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../get-started/index2.html"><i class="bi bi-tools" role="img">
+    <a class="dropdown-item" href="../get-started/basic-intro.html"><i class="bi bi-tools" role="img">
 </i> 
  <span class="dropdown-text">Know the basics of R</span></a>
   </li>  
@@ -204,26 +170,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#r-for-biologists-course" id="toc-r-for-biologists-course" class="nav-link active" data-scroll-target="#r-for-biologists-course">R for Biologists course</a></li>
-  <li><a href="#intro-to-r-and-rstudio" id="toc-intro-to-r-and-rstudio" class="nav-link" data-scroll-target="#intro-to-r-and-rstudio">1. Intro to R and RStudio</a>
-  <ul class="collapse">
-  <li><a href="#r-script-vs-console" id="toc-r-script-vs-console" class="nav-link" data-scroll-target="#r-script-vs-console">R script vs console</a></li>
-  <li><a href="#commenting" id="toc-commenting" class="nav-link" data-scroll-target="#commenting">Commenting</a></li>
-  <li><a href="#working-directory" id="toc-working-directory" class="nav-link" data-scroll-target="#working-directory">Working directory</a></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
-  <li><a href="#objects" id="toc-objects" class="nav-link" data-scroll-target="#objects">Objects</a></li>
-  </ul></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">2. R Packages</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -233,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -257,255 +208,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="r-for-biologists-course" class="level1">
-<h1>R for Biologists course</h1>
-<p>R takes time to learn, like a spoken language. No one can expect to be an R expert after learning R for a few hours. This course has been designed to introduce biologists to R, showing some basics, and also some powerful things R can do (things that would be more difficult to do with Excel). The aim is to give beginners the confidence to continue learning R, so the focus here is on tidyverse and visualisation of biological data, as we believe this is a productive and engaging way to start learning R. After this short introduction you can read <a href="https://bookdown.org/ansellbr/WEHI_tidyR_course_book">this book</a> to dive a bit deeper.</p>
-<p>Most R programmers do not remember all the command lines we share in this document. R is a language that is continuously evolving. They use Google extensively to use many new tricks. Do not hesitate to do the same!</p>
-<p><br></p>
-</section>
-<section id="intro-to-r-and-rstudio" class="level1">
-<h1>1. Intro to R and RStudio</h1>
-<p>RStudio is an interface that makes it easier to use R. There are four windows in RStudio. The screenshot below shows an <a href="https://twitter.com/RLadiesNCL/status/1138812826917724160">analogy linking the different RStudio windows to cooking</a>.</p>
-<p><img src="../img/rstudio_cooking.jpg" class="img-fluid"></p>
-<section id="r-script-vs-console" class="level2">
-<h2 class="anchored" data-anchor-id="r-script-vs-console">R script vs console</h2>
-<p>There are two ways to work in RStudio in the console or in a script.</p>
-<p>Let’s start by running a command in the console.</p>
-<p><strong>Your turn 1.1:</strong> Run the command below in the console.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once you’ve typed in the command into your console, just press enter. The output should be printed into the console.</p>
-<p>Alternatively, we can use an R script. An R script allows us to have a record (recipe) of what we have done, whilst commands we type into the console are not saved. Keeping a record speeds up our analysis because we can re-use code, its also helpful to remember what we have done before!</p>
-<p><strong>Your turn 1.2:</strong> Create a script from the top menu in RStudio: <code>File &gt; New File &gt; R Script</code>, then type the command below in your new script.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>To run a command in a script, we place the cursor on the line you want to run, and then either:</p>
-<ul>
-<li>Click on the <code>run</code> button on top of the panel</li>
-<li>Use <code>Ctrl</code> + <code>Enter</code> (Windows/Linux) or <code>Cmd</code> + <code>Enter</code> (MacOS).</li>
-</ul>
-<p>You can also highlight multiple lines at once and run them at once - have a go!</p>
-<p><br></p>
-<p>
-</p><div class="info">
-<p><strong>✔️ Recommended Practice: Use Scripts</strong><br>
-The console is great for quick tests or running single lines of code. However, for more complex analyses, using scripts is best practice. Scripts help keep your work organized and reproducible. We’ll use scripts for the rest of this workshop.</p>
-</div>
-<p></p>
-<p><br></p>
-</section>
-<section id="commenting" class="level2">
-<h2 class="anchored" data-anchor-id="commenting">Commenting</h2>
-<p>Comments are notes to ourself or others about the commands in the script. They are useful also when you share code with others. Comments start with a <code>#</code> which tells R not to run them as commands.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># testing R</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Keeping an accurate record of how you have manipulated your data is important for <a href="https://ropensci-archive.github.io/reproducibility-guide/">reproducible research</a>. Writing detailed comments and documenting your work are useful reminders to your future self (and anyone else reading your scripts) on what your code does.</p>
-<p>Commenting code is good practice, why not try commenting on the code you write in this session to get into the habit, it will also male your R script more informative when you come back to it in the future.</p>
-<p><br></p>
-</section>
-<section id="working-directory" class="level2">
-<h2 class="anchored" data-anchor-id="working-directory">Working directory</h2>
-<p>Opening an RStudio session launches it from a specific location. This is the ‘working directory’.</p>
-<p><br></p>
-<div class="info">
-<p><strong>ⓘ Understanding the Working Directory</strong><br>
-The working directory is the folder where R reads and saves files on your computer. When working in R, you’ll often read data files and write outputs like analysis results or plots. Knowing where your working directory is set helps ensure R finds your files and saves outputs in the right place.</p>
-</div>
-<p><br></p>
-<p>You can find out where the working directory is set to by using two different approaches:</p>
-<ul>
-<li>Run the command <code>getwd()</code>. This will print out the path to your working directory in the console. It will be in this format: <code>/path/to/working/directory</code> (Mac) or <code>C:\path\to\working\directory</code> (Windows).</li>
-<li>Click the <code>cog icon/More &gt; Go To Working Directory</code> in the menu at the top of the bottom right panel. This will show you the location and files in your working directory in the files window.</li>
-</ul>
-<p><strong>Your turn 1.3:</strong> Where is you working directory set to at the moment? Is this a useful place to have it set?</p>
-<p>By default the working directory is often your home directory. To keep data and scripts organised its good practice to set your working directory as a specific folder.</p>
-<p><strong>Your turn 1.4:</strong> Create a folder for this course somewhere on your computer. Name the folder for example, <code>Intro_R_course</code>. Then, to set this folder as your working directory, you can do this in multiple ways, e.g.:</p>
-<ul>
-<li>Click in the menu at the top on <code>Session &gt; Set Working Directory &gt; Choose directory</code> and choose your folder</li>
-<li>In the bottom right panel, navigate to the folder that you want to be your working directory. Then click in the menu in the bottom right panel <code>cog icon/More &gt; Set As Working Directory</code></li>
-</ul>
-<p>You will see that once you have set your working directory, the files inside your new folder will appear in the ‘Files’ window on RStudio.</p>
-<p><strong>Your turn 1.5:</strong> Save the script you created in the previous section as <code>intro.R</code> in this directory. You can do this by clicking on <code>File &gt; Save</code> and the default location should be the current working directory (e.g.&nbsp;<code>Intro_R_course</code>).</p>
-<p><br></p>
-<div class="info">
-<p><strong>🔧 Multiple Ways to Achieve the Same Goal in R</strong><br>
-You might have noticed by now that in R, there are often several ways to accomplish the same task. You might find one method more intuitive or easier to use than others — and that’s okay! Experiment, explore, and choose the approach that works best for you.</p>
-</div>
-<p><br></p>
-<p>You might have noticed that when you set your working directory in the previous step, a line appeared in your console saying something like <code>setwd("~/Desktop/Intro_R_course")</code>. As well as the point-and-click methods described above, you can also set your working directory using the <code>setwd()</code> command in the console or in a script.</p>
-<p><strong>Your turn 1.6:</strong> What might be an advantage of using the command line option (<code>setwd</code>) instead of point-and-click to set your working directory?</p>
-<button onclick="myFunction('q313')">
-<p>Show solution</p>
-</button>
-<div id="q313" style="display:none">
-<p>There is no easy way to record what you point and click on (unless you write it all down!). Putting a command at the top of the script means you are less likely to forget where you have your working directory, and when you come back to it another day you can quickly re-run it.</p>
-<p>Add a line at the top of your newly created script <code>intro.R</code> so that the working directory is set to your newly made folder <code>Intro_R_course</code>.</p>
-</div>
-<!-- end solutions -->
-<p><br></p>
-</section>
-<section id="functions" class="level2">
-<h2 class="anchored" data-anchor-id="functions">Functions</h2>
-<p>In mathematics, a function defines a relation between inputs and output. In R (and other coding languages) it is the same. A function (also called a command) takes inputs called <em>arguments</em> inside parentheses, and output some results.</p>
-<p>We have actually already used two functions in this workshop - <code>getwd()</code> and <code>setwd()</code>. <code>getwd()</code> does not take an input, but outputs your working directory. <code>setwd()</code> takes a path as its input, and sets it as your working directory.</p>
-<p>Let’s take a look at some more functions below.</p>
-<p><strong>Your turn 1.7:</strong> Compare these two outputs. In the second line we use the function <code>sum()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">2</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Your turn 1.8:</strong> Try using the below function with different inputs, what does it do?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">9</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">81</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
-</section>
-<section id="objects" class="level2">
-<h2 class="anchored" data-anchor-id="objects">Objects</h2>
-<p>It is useful to store data or result so that we can use them later on for other parts of the analysis. To do this, we turn the data into an <strong>object</strong> (also called a variable). We can use either the operator <code>=</code> or <code>&lt;-</code> to do this. In both cases the object where we store the result is on the left-hand-side, and the result from the operation is on the right-hand-side.</p>
-<p>For example, the below code assigns the number <code>5</code> to the object <code>X</code> using the <code>=</code> operator. You can print out what the <code>X</code> object is by just typing it into the console or running it in your script.</p>
-<p><strong>Your turn 1.9:</strong> Make an object called <code>X</code> and print it.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>As described above, you can assign objects using eith the <code>=</code> or <code>&lt;-</code> operator.</p>
-<p><strong>Your turn 1.10:</strong> Compare the two outputs.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">=</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>result1</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>result2 <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">3</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>result2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once you have assigned objects, you can perform manipulations on them using functions.</p>
-<p><strong>Your turn 1.11:</strong> Compare the two outputs.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(X,Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Remember, if you use the same object name multiple times, R will overwrite the previous object you had created.</p>
-<p><strong>Your turn 1.12:</strong> What is the value of X after running this code?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<button onclick="myFunction('q3')">
-<p>Show solutions</p>
-</button>
-<div id="q3" style="display:none">
-<p>X is 10, the previous value of 5 has been overwritten.</p>
-</div>
-<!-- end solutions -->
-<p>
-</p><p><strong>Your turn 1.13:</strong> Can you write code to calculate the sum of the square root of 9 and 16?</p>
-<button onclick="myFunction('q303')">
-<p>Show solutions</p>
-</button>
-<div id="q303" style="display:none">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">sqrt</span>(<span class="dv">9</span>), <span class="fu">sqrt</span>(<span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<!-- end solutions -->
-<p>
-</p><p><br></p>
-<div class="info">
-<p><strong>✔️ Recommended Practice: Name your objects with care</strong><br>
-</p>
-<p>Use clear and descriptive names for your objects, such as <code>data_raw</code> and <code>data_normalised</code>, instead of vague names like <code>data1</code> and <code>data2</code>. This makes it easier to track different steps in your analysis.</p>
-</div>
-<p></p>
-<p><br></p>
-<p>So far we have looked at objects which are numbers. However objects can also be made of characters, these are called <em>strings</em>. To create a string you need to use speech marks <code>""</code>. Note that you can either use <code>print()</code> to print out your object, or just run the object name directly.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="ot">&lt;-</span> <span class="st">"Hello!"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(my_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Hello!"</code></pre>
-</div>
-</div>
-<p>There are a whole host of different objects you can make in R, too many to cover in this session! Later on when we do some data wrangling we will work with objects which are <em>dataframes</em> (i.e.&nbsp;tables) and <em>vectors</em> (a series of numbers and/or strings). Let’s make a simple vector now to get familiar. To make a vector you need to use the command <code>c()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>my_vector</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 2 3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_new_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"World"</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>my_new_vector</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Hello" "World"</code></pre>
-</div>
-</div>
-<p><strong>Your turn 1.14:</strong> Try making an object and setting it as <code>1:5</code>, what does this object look like?</p>
-<button onclick="myFunction('q323')">
-<p>Show solutions</p>
-</button>
-<div id="q323" style="display:none">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 2 3 4 5</code></pre>
-</div>
-</div>
-<p><code>1:5</code> creates a vector with a sequence of numbers from 1 to 5.</p>
-</div>
-<p><br></p>
-<p>Once you have a vector, you can subset it. We will cover this further when we do some data wrangling but lets try a simple example here.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>my_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># extract the first element from the vector</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>my_vector[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "A"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract the last element from the vector</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>my_vector[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "C"</code></pre>
-</div>
-</div>
-<p><strong>Your turn 1.15:</strong> Create a vector from 1 to 10 and print the 9th element of the vector.</p>
-<button onclick="myFunction('q333')">
-<p>Show solutions</p>
-</button>
-<div id="q333" style="display:none">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>vector <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(vector[<span class="dv">9</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<p>
-</p><p><br></p>
-</section>
-</section>
-<section id="r-packages" class="level1">
-<h1>2. R Packages</h1>
-<p>We have seen that functions are really useful tools which can be used to manipulate data. Although some basic functions, like <code>sum()</code> and <code>setwd()</code> are avaliable by default when you install R, some more exciting functions are not. There are thousands of R functions avaliable for you to use, and functions are organised into groups called <em>packages</em> or <em>libraries</em>. An R package contains a collection of functions (usually that perform related tasks), as well as documentation to explain how to use the functions. Packages are made by R developers who wish to share their methods with others.</p>
-<p>Once we have identified a package we want to use, we can install and load it so we can use it. Here we will use the <code>tidyverse</code> package which includes lots of useful functions for data managing, we will use the package later in this session.</p>
-<p><strong>Your turn 2.1:</strong> Install the <code>tidyverse</code> package.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We then load the package in our working directory:</p>
-<p><strong>Your turn 2.2:</strong> Load the <code>tidyverse</code> package so we can use it.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

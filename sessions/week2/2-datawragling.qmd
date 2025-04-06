@@ -132,3 +132,5 @@ Furthermore, when you render your Quarto document (e.g., to HTML), the code chun
 To render your Quarto document in RStudio, click the Render button at the top of the editor pane. You can also use the keyboard shortcut Shift + Ctrl + K (Windows) or Shift + Command + K (Mac).
 
 By following these steps, you can upload data, perform basic summarisation, create figures, and maintain a reproducible workflow in R using RStudio and the tidyverse, with the underlying Quarto document and rendered output being suitable for plain text representation of your analysis. Remember to consult the documentation for the individual packages (?readr, ?dplyr, ?ggplot2) for more advanced functionalities.
+
+# Let's do more?

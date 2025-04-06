@@ -16,12 +16,15 @@ website:
         href: syllabus.qmd
       - text: "Get Started"
         menu:
-          - text: "Begin here"
+          - text: "1 - Install R and Rstudio"
             icon: "emoji-sunglasses-fill"
             href: get-started/index.qmd
-          - text: "Know the basics of R"
+          - text: "2 - Basic Introduction to R and Rstudio"
             icon: "tools"
-            href: get-started/basic-intro.qmd
+            href: get-started/2-basic-intro.qmd
+          - text: "3 - Syntax & Data Structures"
+            icon: "tools"
+            href: get-started/3-syntax.qmd
       - text: "Content"
         href: sessions/index.qmd
       - text: "Bibliography"
