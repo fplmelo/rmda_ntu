@@ -1,14 +1,14 @@
 ---
 title: "Week 1 - Sorting out"
-subtitle: "Week 1"
-description: ""
-title-block-banner: "#9e043d"
-toc: true
-navbar:
-  - text: Pre-ssesion
-    href: index.qmd
-  - text: Post-ssesion
-    href: index.qmd
+author: "Felipe Melo"
+date: "04-06-2025"
+date-format: "long"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: true
+
 ---
 
 ![](/img/intro_fig.png)

@@ -1,12 +1,15 @@
 ---
 title: "Installing R and RStudio "
-subtitle: "Basic set-up"
-description: ""
-title-block-banner: "#9e043d"
-toc: true
+subtitle: "RMDA ARES40011"
+author: "Felipe Melo"
+date: "last-modified"
+date-format: "long"
+format:
+  html:
+    toc: true
 ---
 
-![](/img/witches.png){fig-align="center"}
+![](/img/witches.png){fig-align="center" width="500"}
 
 [Artwork by \@allison_horst](https://twitter.com/allison_horst){style="text-align: center"}
 

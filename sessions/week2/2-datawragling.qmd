@@ -1,0 +1,134 @@
+---
+title: "Week 2 - Data Wrangling"
+subtitle: "RMDA ARES40011"
+author: "Felipe Melo"
+date: "last-modified"
+date-format: "long"
+format:
+  html:
+    toc: true
+---
+
+![](/img/dplyr_wrangling.png){width="500"}
+
+[Artwork by \@allison_horst](https://twitter.com/allison_horst){style="text-align: center"}
+
+## Introduction
+
+This tutorial will guide you through the process of **uploading data into R** and performing **basic summarisation** using the **tidyverse** collection of R packages within the **RStudio** environment. **R is an interactive environment for data analysis** developed by statisticians \[1\]. **RStudio** is a widely used **integrated development environment (IDE)** that provides an editor for writing scripts, a console for executing code, and other helpful tools for data science projects \[2-5\]. The **tidyverse** is an **opinionated collection of R packages designed for data science**, sharing an underlying design philosophy and grammar \[6, 7\]. This tutorial aims to help you get started with these essential tools for data analysis, emphasising **reproducible work** by saving your analysis as scripts \[1, 2\].
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+-   **R**: You can download the latest version from the official R website. Instructions for different operating systems (Windows, Mac OS, UNIX/Linux) are available \[8\]. **R must be installed before installing RStudio** \[9\].
+
+-   **RStudio**: Download and install RStudio Desktop from <https://www.rstudio.com/> \[10\]. To open RStudio, locate it in your applications and launch it \[11\].
+
+-   **tidyverse package**: Install the **tidyverse** package within R. Open RStudio and in the **Console** pane, type and run the following command \[12\]:
+
+    ``` r
+    install.packages("tidyverse")
+    ```
+
+This command needs to be run **only the first time** you want to use the **tidyverse**. You can also install packages by navigating to **Tools** -\> **Install Packages** in RStudio.
+
+## Step 1: Loading the tidyverse
+
+Once the **tidyverse** is installed, you need to **load it into your current R session** to access its functions \[13-15\]. In the **Console** or within an R script (which we will discuss later), run the following command:
+
+``` r
+library(tidyverse)
+```
+
+When you load the tidyverse, you'll see a message in the console listing the core packages that are loaded, such as ggplot2 (for data visualisation), dplyr (for data manipulation), tidyr (for data tidying), and readr (for data import).
+
+## Step 2: Uploading Data
+
+The readr package within the tidyverse provides functions for reading various data file formats. Reading CSV Files Comma-Separated Values (CSV) files are a common format for storing tabular data. You can read a CSV file into R using the read_csv() function:
+
+``` r
+# Assuming you have a CSV file named 'your_data.csv' in your working directory
+your_data <- read_csv("your_data.csv")
+
+# To view the first few rows of your uploaded data
+head(your_data)
+```
+
+Note: If your data file is not in your current working directory, you will need to provide the full path to the file. You can find your current working directory using getwd() in the R console.
+
+### Reading Other Delimited Files
+
+For text files where data is separated by delimiters other than commas (e.g., tabs, spaces), you can use the read_delim() function:
+
+``` r
+# For a tab-separated file named 'your_data.txt'
+tab_separated_data <- read_delim("your_data.txt", delim = "\t")
+
+# For a space-separated file
+space_separated_data <- read_delim("your_data.txt", delim = " ")
+
+head(space_separated_data)
+```
+
+## Step 3: Basic Data Summarisation
+
+Once your data is uploaded, you can use the dplyr package to perform basic summarisation. The summarize() function calculates summary statistics. Often, you'll want to do this for different groups within your data, which can be achieved using the group_by() function.
+
+``` r
+# Assuming your data frame is named 'your_data' and has columns 'group' and 'value'
+
+# Calculate the mean of the 'value' column for the entire dataset
+summary_all <- your_data %>%
+  summarize(mean_value = mean(value, na.rm = TRUE)) # na.rm = TRUE handles missing values
+
+print(summary_all)
+
+# Group the data by the 'group' column and then calculate the mean and standard deviation of 'value' for each group
+grouped_summary <- your_data %>%
+  group_by(group) %>%
+  summarize(mean_value = mean(value, na.rm = TRUE),
+            sd_value = sd(value, na.rm = TRUE),
+            n = n()) # n() counts the number of observations in each group
+
+print(grouped_summary)
+```
+
+## Step 4: Creating Basic Figures
+
+The ggplot2 package, also part of the tidyverse, is powerful for creating visualisations. \# Assuming your data frame 'your_data' has columns 'x_variable' and 'y_variable'
+
+``` r
+library(ggplot2)
+# Create a scatter plot
+scatter_plot <- ggplot(your_data, aes(x = x_variable, y = y_variable)) +
+  geom_point()
+
+# Display the plot
+print(scatter_plot)
+
+# Add labels and a title
+scatter_plot_labeled <- ggplot(your_data, aes(x = x_variable, y = y_variable)) +
+  geom_point() +
+  labs(title = "Scatter Plot of Y vs X",
+       x = "X Variable",
+       y = "Y Variable")
+
+print(scatter_plot_labeled)
+```
+
+When you run this code in RStudio, the plot will appear in the Plots pane in the bottom right by default. Quarto will automatically include these generated plots in your rendered document.
+
+## Step 5: Saving Your Work as a Script
+
+One of the key advantages of R and RStudio is the ability to save your work as scripts. To create a new script in RStudio, click on File -\> New File -\> R Script. A new pane will open where you can type your R code. Save this script by clicking the Save icon or using the key binding Ctrl+S (Windows) or Command+S (Mac). Give your script a descriptive name ending with .R (e.g., data_analysis.R). By saving your work as a script, you can easily execute it at any moment and have a record of the analysis you performed, which is crucial for reproducible work.
+
+## Exporting as Plain Text
+
+While Quarto's primary function is to render documents into formats like HTML, PDF, and MS Word, the .qmd file itself is a plain text file. You can open it with any text editor to view its contents, including your markdown text and R code.
+
+Furthermore, when you render your Quarto document (e.g., to HTML), the code chunks and their output (including the text-based summary statistics) are presented in a readable format. You can typically select and copy this text directly from the rendered output and paste it into a plain text file if needed.
+
+To render your Quarto document in RStudio, click the Render button at the top of the editor pane. You can also use the keyboard shortcut Shift + Ctrl + K (Windows) or Shift + Command + K (Mac).
+
+By following these steps, you can upload data, perform basic summarisation, create figures, and maintain a reproducible workflow in R using RStudio and the tidyverse, with the underlying Quarto document and rendered output being suitable for plain text representation of your analysis. Remember to consult the documentation for the individual packages (?readr, ?dplyr, ?ggplot2) for more advanced functionalities.

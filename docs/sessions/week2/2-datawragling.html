@@ -9,7 +9,7 @@
 <meta name="author" content="Felipe Melo">
 <meta name="dcterms.date" content="2025-04-06">
 
-<title>Installing R and RStudio</title>
+<title>Week 2 - Data Wrangling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,25 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,8 +113,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/ntu_logo.png" alt="Quarto logo." class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/ntu_logo.png" alt="Quarto logo." class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -90,11 +124,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.qmd"> 
+    <a class="nav-link" href="../../syllabus.qmd"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -103,35 +137,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-get-started">    
         <li>
-    <a class="dropdown-item" href="../get-started/index.html"><i class="bi bi-emoji-sunglasses-fill" role="img">
+    <a class="dropdown-item" href="../../get-started/index.html"><i class="bi bi-emoji-sunglasses-fill" role="img">
 </i> 
  <span class="dropdown-text">Begin here</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../get-started/basic-intro.html"><i class="bi bi-tools" role="img">
+    <a class="dropdown-item" href="../../get-started/basic-intro.html"><i class="bi bi-tools" role="img">
 </i> 
  <span class="dropdown-text">Know the basics of R</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../sessions/index.html"> 
+    <a class="nav-link" href="../../sessions/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../bibliography/index.qmd"> 
+    <a class="nav-link" href="../../bibliography/index.qmd"> 
 <span class="menu-text">Bibliography</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.qmd"> 
+    <a class="nav-link" href="../../resources/index.qmd"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../Assignment/index.qmd"> 
+    <a class="nav-link" href="../../Assignment/index.qmd"> 
 <span class="menu-text">Assignment</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../docs/blog/index.qmd"> 
+    <a class="nav-link" href="../../docs/blog/index.qmd"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -150,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Ask a Question</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../docs/faq/index.qmd"><i class="bi bi-question-circle" role="img">
+    <a class="dropdown-item" href="../../docs/faq/index.qmd"><i class="bi bi-question-circle" role="img">
 </i> 
  <span class="dropdown-text">FAQ</span></a>
   </li>  
@@ -175,8 +209,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tutorial-installing-r-and-rstudio" id="toc-tutorial-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#tutorial-installing-r-and-rstudio">Tutorial: Installing R and RStudio</a></li>
-  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video Tutorials</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#step-1-loading-the-tidyverse" id="toc-step-1-loading-the-tidyverse" class="nav-link" data-scroll-target="#step-1-loading-the-tidyverse">Step 1: Loading the tidyverse</a></li>
+  <li><a href="#step-2-uploading-data" id="toc-step-2-uploading-data" class="nav-link" data-scroll-target="#step-2-uploading-data">Step 2: Uploading Data</a>
+  <ul class="collapse">
+  <li><a href="#reading-other-delimited-files" id="toc-reading-other-delimited-files" class="nav-link" data-scroll-target="#reading-other-delimited-files">Reading Other Delimited Files</a></li>
+  </ul></li>
+  <li><a href="#step-3-basic-data-summarisation" id="toc-step-3-basic-data-summarisation" class="nav-link" data-scroll-target="#step-3-basic-data-summarisation">Step 3: Basic Data Summarisation</a></li>
+  <li><a href="#step-4-creating-basic-figures" id="toc-step-4-creating-basic-figures" class="nav-link" data-scroll-target="#step-4-creating-basic-figures">Step 4: Creating Basic Figures</a></li>
+  <li><a href="#step-5-saving-your-work-as-a-script" id="toc-step-5-saving-your-work-as-a-script" class="nav-link" data-scroll-target="#step-5-saving-your-work-as-a-script">Step 5: Saving Your Work as a Script</a></li>
+  <li><a href="#exporting-as-plain-text" id="toc-exporting-as-plain-text" class="nav-link" data-scroll-target="#exporting-as-plain-text">Exporting as Plain Text</a></li>
   </ul>
 </nav>
     </div>
@@ -185,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Installing R and RStudio</h1>
+<h1 class="title">Week 2 - Data Wrangling</h1>
 <p class="subtitle lead">RMDA ARES40011</p>
 </div>
 
@@ -215,59 +258,101 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/witches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
-</figure>
-</div>
+<p><img src="../../img/dplyr_wrangling.png" class="img-fluid" width="500"></p>
 <p><a href="https://twitter.com/allison_horst" style="text-align: center">Artwork by @allison_horst</a></p>
-<p><br></p>
-<section id="tutorial-installing-r-and-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="tutorial-installing-r-and-rstudio">Tutorial: Installing R and RStudio</h3>
-<p>This tutorial will guide you through the process of installing <strong>R</strong>, the programming language, and <strong>RStudio</strong>, a popular integrated development environment (IDE) for R. <strong>You must install R before installing RStudio</strong>.</p>
-<section id="install-r" class="level4">
-<h4 class="anchored" data-anchor-id="install-r">1. Install R</h4>
-<p>R is available for download from the <a href="https://www.r-project.org/">official R website</a>. The specific steps depend on your operating system.</p>
-<p><strong>For Mac OS X</strong>:</p>
-<ul>
-<li>Go to the official R website and select <strong>“Download R for (Mac) OS X”</strong>.</li>
-<li>Look for the <strong>most up-to-date version of R</strong> (new versions are released frequently and appear towards the top of the page) and click the <strong><code>.pkg</code> file</strong> to download it.</li>
-<li>Open the downloaded <strong><code>.pkg</code> file</strong> and follow the <strong>standard instructions for installing applications on Mac OS X</strong>.</li>
-<li><strong>Drag and drop the R application into the <code>Applications</code> folder.</strong></li>
-</ul>
-<p><strong>For Windows</strong>:</p>
-<ul>
-<li>Go to the official R website and select <strong>“Download R for Windows”</strong>.</li>
-<li>Select <strong>“base”</strong>, as this is your first installation of R.</li>
-<li>Follow the <strong>standard instructions for installing programs for Windows</strong>. If prompted to select “Customize Startup” or “Accept Default Startup Options”, <strong>choose the default options</strong>.</li>
-</ul>
-<p><strong>For Linux/Ubuntu</strong>:</p>
-<ul>
-<li>Go to the official R website and select <strong>“Download R for Linux”</strong>.</li>
-<li>Select the <strong>“Ubuntu”</strong> option.</li>
-<li>Alternatively, select the <strong>Linux package management system relevant to you if you are not using Ubuntu</strong>.</li>
-</ul>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This tutorial will guide you through the process of <strong>uploading data into R</strong> and performing <strong>basic summarisation</strong> using the <strong>tidyverse</strong> collection of R packages within the <strong>RStudio</strong> environment. <strong>R is an interactive environment for data analysis</strong> developed by statisticians [1]. <strong>RStudio</strong> is a widely used <strong>integrated development environment (IDE)</strong> that provides an editor for writing scripts, a console for executing code, and other helpful tools for data science projects [2-5]. The <strong>tidyverse</strong> is an <strong>opinionated collection of R packages designed for data science</strong>, sharing an underlying design philosophy and grammar [6, 7]. This tutorial aims to help you get started with these essential tools for data analysis, emphasising <strong>reproducible work</strong> by saving your analysis as scripts [1, 2].</p>
 </section>
-<section id="install-rstudio" class="level4">
-<h4 class="anchored" data-anchor-id="install-rstudio">2. Install RStudio</h4>
-<p>Once R is installed on your computer, you can proceed to install RStudio.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>Before you begin, ensure you have the following installed:</p>
 <ul>
-<li>Navigate to the <a href="https://posit.co/download/rstudio-desktop/"><strong>Posit downloads page</strong></a>.</li>
-<li>Scroll down to the <strong>“All installers”</strong> section of the page.</li>
-<li>Find your operation system <img src="img/rstudio.png" class="img-fluid"></li>
-<li>Click on the linf to download and;</li>
-<li>Follow the <strong>standard installation instructions</strong> for your operating system to install RStudio.</li>
+<li><p><strong>R</strong>: You can download the latest version from the official R website. Instructions for different operating systems (Windows, Mac OS, UNIX/Linux) are available [8]. <strong>R must be installed before installing RStudio</strong> [9].</p></li>
+<li><p><strong>RStudio</strong>: Download and install RStudio Desktop from <a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a> [10]. To open RStudio, locate it in your applications and launch it [11].</p></li>
+<li><p><strong>tidyverse package</strong>: Install the <strong>tidyverse</strong> package within R. Open RStudio and in the <strong>Console</strong> pane, type and run the following command [12]:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-<p>Once both R and RStudio are installed, you can launch RStudio. <strong>It’s important to open RStudio, not just R</strong>, to access the integrated environment. You can usually find RStudio by searching on your desktop and it’s recommended to pin the RStudio icon to your preferred location for easy access.</p>
-<p>Congratulations, you have now successfully installed R and RStudio! You are ready to begin your data science journey.</p>
+<p>This command needs to be run <strong>only the first time</strong> you want to use the <strong>tidyverse</strong>. You can also install packages by navigating to <strong>Tools</strong> -&gt; <strong>Install Packages</strong> in RStudio.</p>
+</section>
+<section id="step-1-loading-the-tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-loading-the-tidyverse">Step 1: Loading the tidyverse</h2>
+<p>Once the <strong>tidyverse</strong> is installed, you need to <strong>load it into your current R session</strong> to access its functions [13-15]. In the <strong>Console</strong> or within an R script (which we will discuss later), run the following command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you load the tidyverse, you’ll see a message in the console listing the core packages that are loaded, such as ggplot2 (for data visualisation), dplyr (for data manipulation), tidyr (for data tidying), and readr (for data import).</p>
+</section>
+<section id="step-2-uploading-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-uploading-data">Step 2: Uploading Data</h2>
+<p>The readr package within the tidyverse provides functions for reading various data file formats. Reading CSV Files Comma-Separated Values (CSV) files are a common format for storing tabular data. You can read a CSV file into R using the read_csv() function:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming you have a CSV file named 'your_data.csv' in your working directory</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>your_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"your_data.csv"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># To view the first few rows of your uploaded data</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(your_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note: If your data file is not in your current working directory, you will need to provide the full path to the file. You can find your current working directory using getwd() in the R console.</p>
+<section id="reading-other-delimited-files" class="level3">
+<h3 class="anchored" data-anchor-id="reading-other-delimited-files">Reading Other Delimited Files</h3>
+<p>For text files where data is separated by delimiters other than commas (e.g., tabs, spaces), you can use the read_delim() function:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For a tab-separated file named 'your_data.txt'</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tab_separated_data <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"your_data.txt"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For a space-separated file</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>space_separated_data <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"your_data.txt"</span>, <span class="at">delim =</span> <span class="st">" "</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(space_separated_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="video-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h2>
-<iframe width="779" height="438" src="https://www.youtube.com/embed/aCUM4r1ONhg" title="Getting Started with RStudio and R | Part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<iframe width="779" height="438" src="https://www.youtube.com/embed/FIrsOBy5k58" title="RStudio for the Total Beginner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
+<section id="step-3-basic-data-summarisation" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-basic-data-summarisation">Step 3: Basic Data Summarisation</h2>
+<p>Once your data is uploaded, you can use the dplyr package to perform basic summarisation. The summarize() function calculates summary statistics. Often, you’ll want to do this for different groups within your data, which can be achieved using the group_by() function.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your data frame is named 'your_data' and has columns 'group' and 'value'</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of the 'value' column for the entire dataset</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>summary_all <span class="ot">&lt;-</span> your_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_value =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="co"># na.rm = TRUE handles missing values</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(summary_all)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Group the data by the 'group' column and then calculate the mean and standard deviation of 'value' for each group</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>grouped_summary <span class="ot">&lt;-</span> your_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_value =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_value =</span> <span class="fu">sd</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>()) <span class="co"># n() counts the number of observations in each group</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(grouped_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-4-creating-basic-figures" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-creating-basic-figures">Step 4: Creating Basic Figures</h2>
+<p>The ggplot2 package, also part of the tidyverse, is powerful for creating visualisations. # Assuming your data frame ‘your_data’ has columns ‘x_variable’ and ‘y_variable’</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>scatter_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(your_data, <span class="fu">aes</span>(<span class="at">x =</span> x_variable, <span class="at">y =</span> y_variable)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(scatter_plot)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and a title</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>scatter_plot_labeled <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(your_data, <span class="fu">aes</span>(<span class="at">x =</span> x_variable, <span class="at">y =</span> y_variable)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Scatter Plot of Y vs X"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X Variable"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y Variable"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(scatter_plot_labeled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you run this code in RStudio, the plot will appear in the Plots pane in the bottom right by default. Quarto will automatically include these generated plots in your rendered document.</p>
+</section>
+<section id="step-5-saving-your-work-as-a-script" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-saving-your-work-as-a-script">Step 5: Saving Your Work as a Script</h2>
+<p>One of the key advantages of R and RStudio is the ability to save your work as scripts. To create a new script in RStudio, click on File -&gt; New File -&gt; R Script. A new pane will open where you can type your R code. Save this script by clicking the Save icon or using the key binding Ctrl+S (Windows) or Command+S (Mac). Give your script a descriptive name ending with .R (e.g., data_analysis.R). By saving your work as a script, you can easily execute it at any moment and have a record of the analysis you performed, which is crucial for reproducible work.</p>
+</section>
+<section id="exporting-as-plain-text" class="level2">
+<h2 class="anchored" data-anchor-id="exporting-as-plain-text">Exporting as Plain Text</h2>
+<p>While Quarto’s primary function is to render documents into formats like HTML, PDF, and MS Word, the .qmd file itself is a plain text file. You can open it with any text editor to view its contents, including your markdown text and R code.</p>
+<p>Furthermore, when you render your Quarto document (e.g., to HTML), the code chunks and their output (including the text-based summary statistics) are presented in a readable format. You can typically select and copy this text directly from the rendered output and paste it into a plain text file if needed.</p>
+<p>To render your Quarto document in RStudio, click the Render button at the top of the editor pane. You can also use the keyboard shortcut Shift + Ctrl + K (Windows) or Shift + Command + K (Mac).</p>
+<p>By following these steps, you can upload data, perform basic summarisation, create figures, and maintain a reproducible workflow in R using RStudio and the tidyverse, with the underlying Quarto document and rendered output being suitable for plain text representation of your analysis. Remember to consult the documentation for the individual packages (?readr, ?dplyr, ?ggplot2) for more advanced functionalities.</p>
 
 
 </section>

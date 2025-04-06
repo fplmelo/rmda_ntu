@@ -1,0 +1,10 @@
+---
+title: "Brief Intro do R"
+subtitle: "RMDA ARES40011"
+author: "Felipe Melo"
+date: "last-modified"
+date-format: "long"
+format:
+  html:
+    toc: true
+---

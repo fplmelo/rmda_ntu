@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sessions</title>
+<title>Content</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -161,10 +161,23 @@ window.Quarto = {
     <a class="nav-link" href="../syllabus.qmd"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../get-started/index.html"> 
-<span class="menu-text">Get Started</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-started" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Get Started</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-get-started">    
+        <li>
+    <a class="dropdown-item" href="../get-started/index.html"><i class="bi bi-emoji-sunglasses-fill" role="img">
+</i> 
+ <span class="dropdown-text">Begin here</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../get-started/basic-intro.html"><i class="bi bi-tools" role="img">
+</i> 
+ <span class="dropdown-text">Know the basics of R</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link active" href="../sessions/index.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
@@ -221,7 +234,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
-      <h1 class="title">Sessions</h1>
+      <h1 class="title">Content</h1>
                       </div>
   </div>
     
@@ -251,7 +264,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1743936205610" data-listing-reading-time-sort="11" data-listing-word-count-sort="2035">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1743894000000" data-listing-file-modified-sort="1743940131747" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2035">
 <a href="../sessions/week1/intro.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../img/intro_fig.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -262,9 +275,35 @@ Week 1 - Sorting out
 <div class="card-text listing-description">
 <strong>Why R is a valuable tool?</strong> for your studies and how to begin using it effectively, particularly with the RStudio IDE.
 </div>
-<div class="card-attribution card-text-small start">
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
-
+Felipe Melo
+</div>
+<div class="listing-date">
+Apr 6, 2025
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1743965764000" data-listing-file-modified-sort="1743965764929" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1069">
+<a href="../sessions/week2/2-datawragling.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="../img/dplyr_wrangling.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Week 2 - Data Wrangling
+</h5>
+<div class="card-text listing-description">
+Artwork by @allison_horst
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Felipe Melo
+</div>
+<div class="listing-date">
+Apr 6, 2025
 </div>
 </div>
 </div>

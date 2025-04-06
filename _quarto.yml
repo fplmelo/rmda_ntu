@@ -15,7 +15,13 @@ website:
       - text: "Syllabus"
         href: syllabus.qmd
       - text: "Get Started"
-        href: get-started/index.qmd
+        menu:
+          - text: "Begin here"
+            icon: "emoji-sunglasses-fill"
+            href: get-started/index.qmd
+          - text: "Know the basics of R"
+            icon: "tools"
+            href: get-started/basic-intro.qmd
       - text: "Content"
         href: sessions/index.qmd
       - text: "Bibliography"
