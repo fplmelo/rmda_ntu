@@ -2,16 +2,79 @@
   {
     "objectID": "sessions/week1/intro.html#getting-started-with-r-and-rstudio",
     "href": "sessions/week1/intro.html#getting-started-with-r-and-rstudio",
-    "title": "Creating a Simple Quarto Webpage",
+    "title": "Week 1 - Sorting out",
     "section": "Getting started with R and RStudio",
     "text": "Getting started with R and RStudio\nWhy R is a valuable tool? for your studies and how to begin using it effectively, particularly with the RStudio IDE.\n\nWhy R?\nR was developed by statisticians as an interactive environment for data analysis, unlike programming languages like C or Java. This interactivity is crucial for the quick exploration of data, a necessity in data science. Although interactive, your work can be saved as reproducible scripts. While expert programmers may find its conventions different, R offers significant power in data analysis and data visualization.\nOther attractive features of R include:\n\nIt is free and open source.\nIt runs on all major platforms: Windows, Mac OS, UNIX/Linux.\nScripts and data objects can be shared seamlessly across platforms.\nIt has a large, growing, and active community providing numerous learning resources.\nIt is easy for others to contribute add-ons (packages), giving users access to the latest methodologies and tools for various disciplines.\n\nR’s primary design purpose was to serve as an interactive environment for data analysis, having been developed by statisticians rather than software engineers for software development. This interactivity is highlighted as an indispensable feature in data science because it allows for the ability to quickly explore data, which is crucial for success in the field.\nA key benefit of R, stemming directly from its design, is this interactivity, which enables data scientists to rapidly examine and understand their data. Furthermore, the ability to save interactive work as scripts that can be easily executed at any time provides a record of the analysis, making work reproducible. Beyond interactivity and reproducibility, the text also notes the “unequal power of R when it comes to data analysis and, specifically, data visualization” as a significant benefit that users will come to appreciate with patience.\n\n\nThe R Console\nInteractive data analysis usually takes place in the R console, which executes commands as you type them. You can access it by starting R on your computer. The chapter provides an example of calculating a tip using the console and explains the book’s convention of using grey boxes for R code and #&gt; to denote console output.\n\n\nScripts\nA major advantage of R is the ability to save your work as scripts, which can be edited and saved using a text editor. The material in the book was developed using the RStudio integrated development environment (IDE). RStudio offers an editor with R-specific features, a console, and other useful panes, including one for displaying figures. While some web-based R consoles offer script editing, not all allow saving. The R scripts used to generate the book are available on GitHub.\n\n\nRStudio\nRStudio is presented as the primary tool for data science projects. It provides an editor for creating and editing scripts and other useful tools.\n\nThe panes\nWhen you first open RStudio, you typically see three panes: * The left pane is the R console. * On the right, the top pane includes tabs like Environment and History. * The bottom pane shows tabs such as Files, Plots, Packages, Help, and Viewer.\n\n\nKey bindings\nRStudio allows you to use key bindings (keyboard shortcuts) for many tasks instead of using the mouse. It is recommended to memorise key bindings for frequently used operations. RStudio provides a cheat sheet with common commands.\n\n\nRunning commands while editing scripts\nRStudio is specifically designed for R and offers advantages over other editors, such as the ability to easily test code as you edit scripts. To start a new script, you can go to File &gt; New File &gt; R Script or use the key binding Ctrl+Shift+N (Windows) or command+shift+N (Mac). The chapter explains how to save a script (Ctrl+S or command+S) and recommends using a descriptive name with lowercase letters, hyphens, and the .R suffix (e.g., my-first-script.R).\nRStudio offers features like auto-completion when typing code, such as the library() function. To execute code from the script, you can click the Run button or use the key binding Ctrl+Shift+Enter (Windows) or command+shift+return (Mac), which will show the output in the R console and plots in the plots pane. You can also run one line at a time using Control-Enter (Windows) or command-return (Mac). The plots console allows you to navigate between plots, zoom, and save them.\n\n\nChanging global options\nRStudio’s look and functionality can be customised via Tools &gt; Global Options…. The chapter highly recommends changing the default setting for “Save workspace to .RData on exit” to “Never” and unchecking “Restore .RData into workspace at start”. This is advised to prevent confusion, especially when sharing code, as it avoids the assumption that colleagues have the .RData file.\n\n\n\nInstalling R packages\nThe functionality of a fresh R installation (referred to as base R) is limited. Additional functionality comes from packages, which are add-ons contributed by developers and available from repositories like CRAN and GitHub. To install a package, such as tydiverse, you can use the install.packages() function in the R console:\ninstall.packages ( \"tydiverse\" )\nAlternatively, you can use the Tools &gt; Install Packages option in RStudio. Once installed, a package can be loaded into your R session using the library() function:\nlibrary (tydiverse)\nYou only need to install a package once unless you install a fresh version of R. You can install multiple packages at once by providing a character vector to install.packages():\ninstall.packages ( c ( \"tidyverse\" ,  \"vegan\" ))\nInstalling some packages, like tidyverse, may also install other dependency packages. When you load a package with library(), its dependencies are also loaded. It is useful to keep a list of needed packages in a script for easy re-installation if required. You can see all installed packages using the installed.packages() function. Importantly, packages are installed in R, not RStudio."
   },
   {
     "objectID": "sessions/week1/intro.html#slides",
     "href": "sessions/week1/intro.html#slides",
-    "title": "Creating a Simple Quarto Webpage",
+    "title": "Week 1 - Sorting out",
     "section": "Slides",
     "text": "Slides\n    View slides in full screen"
+  },
+  {
+    "objectID": "sessions/week1/intro.html#create-your-workbook",
+    "href": "sessions/week1/intro.html#create-your-workbook",
+    "title": "Week 1 - Sorting out",
+    "section": "Create your workbook",
+    "text": "Create your workbook"
+  },
+  {
+    "objectID": "sessions/week1/intro.html#introduction",
+    "href": "sessions/week1/intro.html#introduction",
+    "title": "Week 1 - Sorting out",
+    "section": "Introduction",
+    "text": "Introduction\nQuarto is a powerful tool for creating dynamic documents and websites. This tutorial will guide you through the process of creating a simple webpage using Quarto."
+  },
+  {
+    "objectID": "sessions/week1/intro.html#prerequisites",
+    "href": "sessions/week1/intro.html#prerequisites",
+    "title": "Week 1 - Sorting out",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nBefore you begin, make sure you have the following installed:\n\nQuarto: You can download and install Quarto from quarto.org.\nRstudio: However, any text editor will work, such as VS Code, Sublime Text, or Notepad++.\n\n\nStep 1: Create a New Quarto Document\n\nOpen your terminal or command prompt.\nNavigate to the directory where you want to create your webpage.\nRun the following command to create a new Quarto document:\nquarto create webpage.qmd\nThis command creates a file named webpage.qmd.\n\n\n\nStep 2: Edit the Quarto Document\n\nOpen webpage.qmd in your text editor.\nYou’ll see some default content, including a title and some example text.\nModify the content to create your webpage. For example:\n---\ntitle: \"My First Quarto Webpage\"\nformat: html\n---\n\n## Welcome!\n\nThis is my first webpage created with Quarto.\n\nHere's a simple list:\n\n* Item 1\n* Item 2\n* Item 3\n\nYou can also include code blocks:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Hello, Quarto!\")\n\n[1] \"Hello, Quarto!\"\n\n:::\nAnd mathematical equations:\n\\[\nE = mc^2\n\\]\nYou can add images too:\n\nknitr::include_graphics(\"https://quarto.org/quarto.png\")\n\n\n\n\n\n\n\n\n```\nExplanation of the code:\n\n--- title: \"My First Quarto Webpage\" format: html --- : This is the YAML header, which sets the title of your webpage and specifies the output format (HTML in this case).\n## Welcome! : This is a level 2 heading.\n* Item 1 : This creates a bulleted list.\n```{r}: This begins a R code block.\n$$E = mc^2$$: This inserts a LaTeX equation.\n```{r}: This begins an R code block.\nknitr::include_graphics(\"https://quarto.org/quarto.png\"): This includes an image from a URL.\n\n\n\n\nStep 3: Render the Webpage\n\nIn your terminal or command prompt, navigate to the directory containing webpage.qmd.\nRun the following command to render the webpage:\nquarto render webpage.qmd\nThis command will create an HTML file named webpage.html in the same directory.\n\n\n\nStep 4: View the Webpage\n\nOpen webpage.html in your web browser.\nYou should see your webpage with the content you created."
+  },
+  {
+    "objectID": "sessions/week1/intro.html#adding-more-content",
+    "href": "sessions/week1/intro.html#adding-more-content",
+    "title": "Week 1 - Sorting out",
+    "section": "Adding more content",
+    "text": "Adding more content\nYou can add more content to your webpage by editing webpage.qmd. Quarto supports various types of content, including:\n\nHeadings: Use #, ##, ###, etc. for different heading levels.\nParagraphs: Just type your text.\nLists: Use * or - for unordered lists, and 1., 2., etc. for ordered lists.\nCode Blocks: Use ```{language} to insert code blocks.\nMathematical Equations: Use $$ for LaTeX equations.\nImages: Use ![alt text](path/to/image.png) or {r} knitr::include_graphics(\"path/to/image.png\").\nLinks: Use [link text](url).\nTables: Use Markdown table syntax."
+  },
+  {
+    "objectID": "sessions/week1/intro.html#further-exploration",
+    "href": "sessions/week1/intro.html#further-exploration",
+    "title": "Week 1 - Sorting out",
+    "section": "Further Exploration",
+    "text": "Further Exploration\n\nExplore the Quarto documentation for more advanced features: quarto.org.\nExperiment with different output formats, such as PDF or Word.\nLearn about Quarto projects for creating multi-page websites.\nLook into adding CSS and Javascript for styling and interactivity."
+  },
+  {
+    "objectID": "sessions/week1/intro.html#publishing-to-quarto-pub",
+    "href": "sessions/week1/intro.html#publishing-to-quarto-pub",
+    "title": "Week 1 - Sorting out",
+    "section": "Publishing to Quarto Pub",
+    "text": "Publishing to Quarto Pub\nKnow how to publish your Quarto webpage to Quarto Pub, making it accessible online."
+  },
+  {
+    "objectID": "sessions/week1/intro.html#prerequisites-1",
+    "href": "sessions/week1/intro.html#prerequisites-1",
+    "title": "Week 1 - Sorting out",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nAll the prerequisites from the previous tutorial.\nA Quarto Pub account. You can create one at quarto.pub.\n\n\nStep 1: Create a Quarto Webpage (If you haven’t already)\nIf you haven’t already created a Quarto webpage, follow the steps in the previous tutorial to create webpage.qmd and render it into webpage.html.\n\n\nStep 2: Initialize Quarto Pub\n\nOpen your terminal or command prompt.\nNavigate to the directory containing webpage.qmd.\nRun the following command to initialize Quarto Pub:\nquarto publish quarto-pub\nThis command will prompt you to log in to your Quarto Pub account. Follow the instructions to authenticate.\n\n\n\nStep 3: Publish Your Webpage\n\nAfter successful authentication, Quarto will detect the webpage.html file and ask you if you want to publish it.\nConfirm that you want to publish the webpage.\nQuarto will upload your webpage to Quarto Pub.\nYou’ll receive a URL where your webpage is hosted.\n\n\n\nStep 4: View Your Published Webpage\n\nOpen the URL provided by Quarto in your web browser.\nYou should see your webpage hosted on Quarto Pub.\n\n\n\nStep 5: Updating your published page.\nIf you edit the webpage.qmd file, you will need to re-render the html file, and then republish.\n\nEdit webpage.qmd with your text editor.\nRender the html file again.\nquarto render webpage.qmd\nRepublish the webpage.\nquarto publish quarto-pub\nQuarto Pub will update the existing webpage with the new content."
+  },
+  {
+    "objectID": "sessions/week1/intro.html#important-considerations",
+    "href": "sessions/week1/intro.html#important-considerations",
+    "title": "Week 1 - Sorting out",
+    "section": "Important Considerations",
+    "text": "Important Considerations\n\nFile Organization: For more complex websites, consider creating a Quarto project. This will help you organize your files and manage your website more effectively.\nCustom Domains: Quarto Pub allows you to use custom domains for your websites. Refer to the Quarto Pub documentation for instructions.\nSecurity: Be mindful of the content you publish online. Avoid sharing sensitive information.\nQuarto Pub Limitations: Quarto Pub has some limitations, especially for large or complex websites. For more advanced hosting options, consider using other platforms like Netlify or GitHub Pages.\nFree tier limitations: The free tier of Quarto Pub has some limitations, regarding the number of deployments, and storage. Refer to the Quarto Pub documentation for the most up to date limitations."
+  },
+  {
+    "objectID": "sessions/week1/intro.html#further-exploration-1",
+    "href": "sessions/week1/intro.html#further-exploration-1",
+    "title": "Week 1 - Sorting out",
+    "section": "Further Exploration",
+    "text": "Further Exploration\n\nExplore the Quarto Pub documentation for more advanced features: quarto.pub.\nLearn about Quarto projects for creating multi-page websites.\nExperiment with different Quarto Pub settings and options."
   },
   {
     "objectID": "assessment.html",
@@ -1428,13 +1491,6 @@
     "text": "End of DA class\n\n\n\n\nResearch Methods & Data Analysis"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "sessions.html",
     "href": "sessions.html",
     "title": "Sessions",
@@ -1447,6 +1503,34 @@
     "title": "Sessions",
     "section": "",
     "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "t-test.html",
+    "href": "t-test.html",
+    "title": "Performing T-Tests with R and Palmer Penguins Data",
+    "section": "",
+    "text": "This tutorial demonstrates how to perform t-tests in R using the Palmer Penguins dataset. T-tests are statistical tests used to compare the means of two groups. We’ll cover one-sample, independent two-sample, and paired t-tests."
+  },
+  {
+    "objectID": "t-test.html#introduction",
+    "href": "t-test.html#introduction",
+    "title": "Performing T-Tests with R and Palmer Penguins Data",
+    "section": "",
+    "text": "This tutorial demonstrates how to perform t-tests in R using the Palmer Penguins dataset. T-tests are statistical tests used to compare the means of two groups. We’ll cover one-sample, independent two-sample, and paired t-tests."
+  },
+  {
+    "objectID": "t-test.html#prerequisites",
+    "href": "t-test.html#prerequisites",
+    "title": "Performing T-Tests with R and Palmer Penguins Data",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nR and RStudio installed.\nThe palmerpenguins and dplyr packages installed.\n\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\n\nLoading the Data We’ll use the penguins dataset from the palmerpenguins package. We remove any rows with missing values to simplify the analysis.data(penguins) penguins_complete &lt;- penguins %&gt;% filter(!is.na(flipper_length_mm), !is.na(species)) One-Sample T-TestA one-sample t-test compares the mean of a single group to a known or hypothesized mean.Example: Test if the mean flipper length of all penguins is significantly different from 200 mm.t.test(penguins_complete$flipper_length_mm, mu = 200) Interpretation:t: The calculated t-statistic.df: Degrees of freedom.p-value: The probability of observing the data if the null hypothesis (mean = 200) is true.alternative hypothesis: The alternative hypothesis tested.95 percent confidence interval: The range within which we are 95% confident the true mean lies.sample estimates: The sample mean.If the p-value is less than the significance level (e.g., 0.05), we reject the null hypothesis.Independent Two-Sample T-TestAn independent two-sample t-test compares the means of two independent groups.Example: Test if the mean flipper length differs between Adelie and Gentoo penguins.adelie_gentoo &lt;- penguins_complete %&gt;% filter(species %in% c(“Adelie”, “Gentoo”))\nt.test(flipper_length_mm ~ species, data = adelie_gentoo) Interpretation:The output is similar to the one-sample t-test, but it compares the means of the two groups specified by the formula flipper_length_mm ~ species.Paired T-TestA paired t-test compares the means of two related groups (e.g., measurements taken before and after a treatment). The Palmer Penguins dataset does not contain paired data, so we’ll create a simulated example.# Simulating paired data set.seed(123) before &lt;- rnorm(50, mean = 200, sd = 10) after &lt;- before + rnorm(50, mean = 5, sd = 5) # Adding an average of 5 to simulate change\npaired_data &lt;- data.frame(before, after)\nt.test(paired_data\\(before, paired_data\\)after, paired = TRUE) Interpretation:The paired = TRUE argument specifies a paired t-test. The output shows the difference between the means of the paired samples.Assumptions of T-TestsOne-Sample T-Test:The data should be approximately normally distributed.Independent Two-Sample T-Test:The data in each group should be approximately normally distributed.The variances of the two groups should be approximately equal (unless var.equal = FALSE is specified).The observations should be independent.Paired T-Test:The differences between the paired observations should be approximately normally distributed.Checking AssumptionsWe can check the normality assumption using histograms and QQ plots. For the independent t-test, we can check the equal variance assumption using the Bartlett test.# Example normality check for one-sample hist(penguins_complete\\(flipper_length_mm, main = \"Histogram of Flipper Length\")\nqqnorm(penguins_complete\\)flipper_length_mm, main = “QQ Plot of Flipper Length”) qqline(penguins_complete$flipper_length_mm)"
   },
   {
     "objectID": "slides/7.1_abstracts.html#you-should-know-today",
@@ -2835,13 +2919,6 @@
     "text": "Welcome\nWe hope this module will be an opportunity to enhance your critical and analytical skills, required for your future careers. This module is the only core module across all PG provision at ARES, reflecting its underpinning importance for your courses. It also gives you a great opportunity to meet colleagues with different interests and to broaden your own horizons.\nWe have tried to make this module as accessible as possible, knowing that some of the content is challenging. We have based all materials in our own research expertise, we are not statisticians, rather we are statistic users, just like you!\nWe are looking forward to meeting you all"
   },
   {
-    "objectID": "index.html#who-am-i",
-    "href": "index.html#who-am-i",
-    "title": "\n            Research Methods & Data Analyses\n        ",
-    "section": "Who am I?",
-    "text": "Who am I?\n\nFelipe Melo (Module Leader): felipe.melo@ntu.ac.uk\nAbout me: I am interested in all kinds of interactions between biodiversity and human activities that take place in working landscapes in the tropical regions of the world. My research products are shared between basic and applied sciences with a strong interdisciplinary integration.\nVisit my personal website at www.ecoaplic.org"
-  },
-  {
     "objectID": "overview/overview.html",
     "href": "overview/overview.html",
     "title": "Module Overview",
@@ -2895,153 +2972,27 @@
     "href": "sessions/index.html",
     "title": "Sessions",
     "section": "",
-    "text": "Creating a Simple Quarto Webpage\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Week 1 - Sorting out\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "sessions/week1/intro.html#create-your-workbook",
-    "href": "sessions/week1/intro.html#create-your-workbook",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Create your workbook",
-    "text": "Create your workbook"
-  },
-  {
-    "objectID": "sessions/week1/intro.html#introduction",
-    "href": "sessions/week1/intro.html#introduction",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Introduction",
-    "text": "Introduction\nQuarto is a powerful tool for creating dynamic documents and websites. This tutorial will guide you through the process of creating a simple webpage using Quarto."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#prerequisites",
-    "href": "sessions/week1/intro.html#prerequisites",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nBefore you begin, make sure you have the following installed:\n\nQuarto: You can download and install Quarto from quarto.org.\nRstudio: However, any text editor will work, such as VS Code, Sublime Text, or Notepad++.\n\n\nStep 1: Create a New Quarto Document\n\nOpen your terminal or command prompt.\nNavigate to the directory where you want to create your webpage.\nRun the following command to create a new Quarto document:\nquarto create webpage.qmd\nThis command creates a file named webpage.qmd.\n\n\n\nStep 2: Edit the Quarto Document\n\nOpen webpage.qmd in your text editor.\nYou’ll see some default content, including a title and some example text.\nModify the content to create your webpage. For example:\n---\ntitle: \"My First Quarto Webpage\"\nformat: html\n---\n\n## Welcome!\n\nThis is my first webpage created with Quarto.\n\nHere's a simple list:\n\n* Item 1\n* Item 2\n* Item 3\n\nYou can also include code blocks:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Hello, Quarto!\")\n\n[1] \"Hello, Quarto!\"\n\n:::\nAnd mathematical equations:\n\\[\nE = mc^2\n\\]\nYou can add images too:\n\nknitr::include_graphics(\"https://quarto.org/quarto.png\")\n\n\n\n\n\n\n\n\n```\nExplanation of the code:\n\n--- title: \"My First Quarto Webpage\" format: html --- : This is the YAML header, which sets the title of your webpage and specifies the output format (HTML in this case).\n## Welcome! : This is a level 2 heading.\n* Item 1 : This creates a bulleted list.\n```{r}: This begins a R code block.\n$$E = mc^2$$: This inserts a LaTeX equation.\n```{r}: This begins an R code block.\nknitr::include_graphics(\"https://quarto.org/quarto.png\"): This includes an image from a URL.\n\n\n\n\nStep 3: Render the Webpage\n\nIn your terminal or command prompt, navigate to the directory containing webpage.qmd.\nRun the following command to render the webpage:\nquarto render webpage.qmd\nThis command will create an HTML file named webpage.html in the same directory.\n\n\n\nStep 4: View the Webpage\n\nOpen webpage.html in your web browser.\nYou should see your webpage with the content you created."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-1-create-a-new-quarto-document",
-    "href": "sessions/week1/intro.html#step-1-create-a-new-quarto-document",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 1: Create a New Quarto Document",
-    "text": "Step 1: Create a New Quarto Document\n\nOpen your terminal or command prompt.\nNavigate to the directory where you want to create your webpage.\nRun the following command to create a new Quarto document:\nquarto create webpage.qmd\nThis command creates a file named webpage.qmd."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-2-edit-the-quarto-document",
-    "href": "sessions/week1/intro.html#step-2-edit-the-quarto-document",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 2: Edit the Quarto Document",
-    "text": "Step 2: Edit the Quarto Document\n\nOpen webpage.qmd in your text editor.\nYou’ll see some default content, including a title and some example text.\nModify the content to create your webpage. For example:\n---\ntitle: \"My First Quarto Webpage\"\nformat: html\n---\n\n## Welcome!\n\nThis is my first webpage created with Quarto.\n\nHere's a simple list:\n\n* Item 1\n* Item 2\n* Item 3\n\nYou can also include code blocks:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Hello, Quarto!\")\n\n[1] \"Hello, Quarto!\"\n\n:::\nAnd mathematical equations:\n\\[\nE = mc^2\n\\]\nYou can add images too:\n\nknitr::include_graphics(\"https://quarto.org/quarto.png\")\n\n\n\n\n\n\n\n\n```\nExplanation of the code:\n\n--- title: \"My First Quarto Webpage\" format: html --- : This is the YAML header, which sets the title of your webpage and specifies the output format (HTML in this case).\n## Welcome! : This is a level 2 heading.\n* Item 1 : This creates a bulleted list.\n```{r}: This begins a R code block.\n$$E = mc^2$$: This inserts a LaTeX equation.\n```{r}: This begins an R code block.\nknitr::include_graphics(\"https://quarto.org/quarto.png\"): This includes an image from a URL."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-3-render-the-webpage",
-    "href": "sessions/week1/intro.html#step-3-render-the-webpage",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 3: Render the Webpage",
-    "text": "Step 3: Render the Webpage\n\nIn your terminal or command prompt, navigate to the directory containing webpage.qmd.\nRun the following command to render the webpage:\nquarto render webpage.qmd\nThis command will create an HTML file named webpage.html in the same directory."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-4-view-the-webpage",
-    "href": "sessions/week1/intro.html#step-4-view-the-webpage",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 4: View the Webpage",
-    "text": "Step 4: View the Webpage\n\nOpen webpage.html in your web browser.\nYou should see your webpage with the content you created."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#adding-more-content",
-    "href": "sessions/week1/intro.html#adding-more-content",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Adding more content",
-    "text": "Adding more content\nYou can add more content to your webpage by editing webpage.qmd. Quarto supports various types of content, including:\n\nHeadings: Use #, ##, ###, etc. for different heading levels.\nParagraphs: Just type your text.\nLists: Use * or - for unordered lists, and 1., 2., etc. for ordered lists.\nCode Blocks: Use ```{language} to insert code blocks.\nMathematical Equations: Use $$ for LaTeX equations.\nImages: Use ![alt text](path/to/image.png) or {r} knitr::include_graphics(\"path/to/image.png\").\nLinks: Use [link text](url).\nTables: Use Markdown table syntax."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#further-exploration",
-    "href": "sessions/week1/intro.html#further-exploration",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Further Exploration",
-    "text": "Further Exploration\n\nExplore the Quarto documentation for more advanced features: quarto.org.\nExperiment with different output formats, such as PDF or Word.\nLearn about Quarto projects for creating multi-page websites.\nLook into adding CSS and Javascript for styling and interactivity."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#publishing-to-quarto-pub",
-    "href": "sessions/week1/intro.html#publishing-to-quarto-pub",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Publishing to Quarto Pub",
-    "text": "Publishing to Quarto Pub\nKnow how to publish your Quarto webpage to Quarto Pub, making it accessible online."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#prerequisites-1",
-    "href": "sessions/week1/intro.html#prerequisites-1",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nAll the prerequisites from the previous tutorial.\nA Quarto Pub account. You can create one at quarto.pub.\n\n\nStep 1: Create a Quarto Webpage (If you haven’t already)\nIf you haven’t already created a Quarto webpage, follow the steps in the previous tutorial to create webpage.qmd and render it into webpage.html.\n\n\nStep 2: Initialize Quarto Pub\n\nOpen your terminal or command prompt.\nNavigate to the directory containing webpage.qmd.\nRun the following command to initialize Quarto Pub:\nquarto publish quarto-pub\nThis command will prompt you to log in to your Quarto Pub account. Follow the instructions to authenticate.\n\n\n\nStep 3: Publish Your Webpage\n\nAfter successful authentication, Quarto will detect the webpage.html file and ask you if you want to publish it.\nConfirm that you want to publish the webpage.\nQuarto will upload your webpage to Quarto Pub.\nYou’ll receive a URL where your webpage is hosted.\n\n\n\nStep 4: View Your Published Webpage\n\nOpen the URL provided by Quarto in your web browser.\nYou should see your webpage hosted on Quarto Pub.\n\n\n\nStep 5: Updating your published page.\nIf you edit the webpage.qmd file, you will need to re-render the html file, and then republish.\n\nEdit webpage.qmd with your text editor.\nRender the html file again.\nquarto render webpage.qmd\nRepublish the webpage.\nquarto publish quarto-pub\nQuarto Pub will update the existing webpage with the new content."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-1-create-a-quarto-webpage-if-you-havent-already",
-    "href": "sessions/week1/intro.html#step-1-create-a-quarto-webpage-if-you-havent-already",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 1: Create a Quarto Webpage (If you haven’t already)",
-    "text": "Step 1: Create a Quarto Webpage (If you haven’t already)\nIf you haven’t already created a Quarto webpage, follow the steps in the previous tutorial to create webpage.qmd and render it into webpage.html."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-2-initialize-quarto-pub",
-    "href": "sessions/week1/intro.html#step-2-initialize-quarto-pub",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 2: Initialize Quarto Pub",
-    "text": "Step 2: Initialize Quarto Pub\n\nOpen your terminal or command prompt.\nNavigate to the directory containing webpage.qmd.\nRun the following command to initialize Quarto Pub:\nquarto publish quarto-pub\nThis command will prompt you to log in to your Quarto Pub account. Follow the instructions to authenticate."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-3-publish-your-webpage",
-    "href": "sessions/week1/intro.html#step-3-publish-your-webpage",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 3: Publish Your Webpage",
-    "text": "Step 3: Publish Your Webpage\n\nAfter successful authentication, Quarto will detect the webpage.html file and ask you if you want to publish it.\nConfirm that you want to publish the webpage.\nQuarto will upload your webpage to Quarto Pub.\nYou’ll receive a URL where your webpage is hosted."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-4-view-your-published-webpage",
-    "href": "sessions/week1/intro.html#step-4-view-your-published-webpage",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 4: View Your Published Webpage",
-    "text": "Step 4: View Your Published Webpage\n\nOpen the URL provided by Quarto in your web browser.\nYou should see your webpage hosted on Quarto Pub."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#step-5-updating-your-published-page.",
-    "href": "sessions/week1/intro.html#step-5-updating-your-published-page.",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Step 5: Updating your published page.",
-    "text": "Step 5: Updating your published page.\nIf you edit the webpage.qmd file, you will need to re-render the html file, and then republish.\n\nEdit webpage.qmd with your text editor.\nRender the html file again.\nquarto render webpage.qmd\nRepublish the webpage.\nquarto publish quarto-pub\nQuarto Pub will update the existing webpage with the new content."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#important-considerations",
-    "href": "sessions/week1/intro.html#important-considerations",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Important Considerations",
-    "text": "Important Considerations\n\nFile Organization: For more complex websites, consider creating a Quarto project. This will help you organize your files and manage your website more effectively.\nCustom Domains: Quarto Pub allows you to use custom domains for your websites. Refer to the Quarto Pub documentation for instructions.\nSecurity: Be mindful of the content you publish online. Avoid sharing sensitive information.\nQuarto Pub Limitations: Quarto Pub has some limitations, especially for large or complex websites. For more advanced hosting options, consider using other platforms like Netlify or GitHub Pages.\nFree tier limitations: The free tier of Quarto Pub has some limitations, regarding the number of deployments, and storage. Refer to the Quarto Pub documentation for the most up to date limitations."
-  },
-  {
-    "objectID": "sessions/week1/intro.html#further-exploration-1",
-    "href": "sessions/week1/intro.html#further-exploration-1",
-    "title": "Creating a Simple Quarto Webpage",
-    "section": "Further Exploration",
-    "text": "Further Exploration\n\nExplore the Quarto Pub documentation for more advanced features: quarto.pub.\nLearn about Quarto projects for creating multi-page websites.\nExperiment with different Quarto Pub settings and options."
-  },
-  {
-    "objectID": "t-test.html",
-    "href": "t-test.html",
-    "title": "Performing T-Tests with R and Palmer Penguins Data",
+    "objectID": "exercises/10-exercise/your-name_exercise-10.html",
+    "href": "exercises/10-exercise/your-name_exercise-10.html",
+    "title": "My Quarto WorkBook",
     "section": "",
-    "text": "This tutorial demonstrates how to perform t-tests in R using the Palmer Penguins dataset. T-tests are statistical tests used to compare the means of two groups. We’ll cover one-sample, independent two-sample, and paired t-tests."
+    "text": "Task 1: Reflection\nPut your reflection here\n\n\nTask 2: Enhanced plot\nWhen you knit this document, you will create and save a basic bar chart of hot dog eating contest winners. You will then open the resulting file in a vector editing program.\nBe sure that you save your file with a different name. You don’t want to accidentally overwrite all your enhancements and updates when you knit this document. That would be so sad.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(svglite)\n\nhotdogs &lt;- read_csv(\"data/hot-dog-contest-winners.csv\") |&gt;\n  rename(dogs = `Dogs eaten`, record = `New record`) |&gt;\n  mutate(record = factor(record))\n\nRows: 31 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): Winner, Country\ndbl (3): Year, Dogs eaten, New record\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# Change the colors here if you want\n# (or anything else if you want too)\nplot_hotdogs &lt;- ggplot(hotdogs, \n                       aes(x = Year, y = dogs, fill = record)) + \n  geom_col() + \n  scale_fill_manual(values = c(\"grey80\", \"#FC7300\")) +\n  scale_x_continuous(breaks = seq(1980, 2010, 2), \n                     expand = c(0, 0)) +\n  scale_y_continuous(breaks = seq(0, 70, 10), \n                     expand = c(0, 0)) +\n  guides(fill = \"none\") +\n  labs(y = \"Hot dogs and buns\", x = NULL) +\n  theme_minimal() +\n  theme(panel.background = element_rect(fill = \"transparent\", colour = NA),\n        plot.background = element_rect(fill = \"transparent\", colour = NA),\n        axis.ticks.x = element_line(linewidth = 0.25),\n        panel.grid.major.x = element_blank(),\n        panel.grid.major.y = element_line(linewidth = 0.5, linetype = \"dashed\"),\n        panel.grid.minor = element_blank())\n\n# Change the dimensions here if you want\nggsave(plot_hotdogs, filename = \"hotdogs.pdf\", device = cairo_pdf,\n       width = 7, height = 4, units = \"in\", bg = \"transparent\")\n\nggsave(plot_hotdogs, filename = \"hotdogs.svg\",\n       width = 7, height = 4, units = \"in\", bg = \"transparent\")"
   },
   {
-    "objectID": "t-test.html#introduction",
-    "href": "t-test.html#introduction",
-    "title": "Performing T-Tests with R and Palmer Penguins Data",
+    "objectID": "sessions/week1/intro.html#exercise",
+    "href": "sessions/week1/intro.html#exercise",
+    "title": "Week 1 - Sorting out",
+    "section": "Exercise",
+    "text": "Exercise\nNow create your own quarto workbook:\n1 - Download the zip file of the project\n2- Tweak the *qmd file as you wish\n3 - Publish your workbook\n4 - Submit to the link to NOW dropbox folder"
+  },
+  {
+    "objectID": "exercises/week1-exercise/your-name_exercise-10.html",
+    "href": "exercises/week1-exercise/your-name_exercise-10.html",
+    "title": "My Quarto WorkBook",
     "section": "",
-    "text": "This tutorial demonstrates how to perform t-tests in R using the Palmer Penguins dataset. T-tests are statistical tests used to compare the means of two groups. We’ll cover one-sample, independent two-sample, and paired t-tests."
-  },
-  {
-    "objectID": "t-test.html#prerequisites",
-    "href": "t-test.html#prerequisites",
-    "title": "Performing T-Tests with R and Palmer Penguins Data",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nR and RStudio installed.\nThe palmerpenguins and dplyr packages installed.\n\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\n\nLoading the Data We’ll use the penguins dataset from the palmerpenguins package. We remove any rows with missing values to simplify the analysis.data(penguins) penguins_complete &lt;- penguins %&gt;% filter(!is.na(flipper_length_mm), !is.na(species)) One-Sample T-TestA one-sample t-test compares the mean of a single group to a known or hypothesized mean.Example: Test if the mean flipper length of all penguins is significantly different from 200 mm.t.test(penguins_complete$flipper_length_mm, mu = 200) Interpretation:t: The calculated t-statistic.df: Degrees of freedom.p-value: The probability of observing the data if the null hypothesis (mean = 200) is true.alternative hypothesis: The alternative hypothesis tested.95 percent confidence interval: The range within which we are 95% confident the true mean lies.sample estimates: The sample mean.If the p-value is less than the significance level (e.g., 0.05), we reject the null hypothesis.Independent Two-Sample T-TestAn independent two-sample t-test compares the means of two independent groups.Example: Test if the mean flipper length differs between Adelie and Gentoo penguins.adelie_gentoo &lt;- penguins_complete %&gt;% filter(species %in% c(“Adelie”, “Gentoo”))\nt.test(flipper_length_mm ~ species, data = adelie_gentoo) Interpretation:The output is similar to the one-sample t-test, but it compares the means of the two groups specified by the formula flipper_length_mm ~ species.Paired T-TestA paired t-test compares the means of two related groups (e.g., measurements taken before and after a treatment). The Palmer Penguins dataset does not contain paired data, so we’ll create a simulated example.# Simulating paired data set.seed(123) before &lt;- rnorm(50, mean = 200, sd = 10) after &lt;- before + rnorm(50, mean = 5, sd = 5) # Adding an average of 5 to simulate change\npaired_data &lt;- data.frame(before, after)\nt.test(paired_data\\(before, paired_data\\)after, paired = TRUE) Interpretation:The paired = TRUE argument specifies a paired t-test. The output shows the difference between the means of the paired samples.Assumptions of T-TestsOne-Sample T-Test:The data should be approximately normally distributed.Independent Two-Sample T-Test:The data in each group should be approximately normally distributed.The variances of the two groups should be approximately equal (unless var.equal = FALSE is specified).The observations should be independent.Paired T-Test:The differences between the paired observations should be approximately normally distributed.Checking AssumptionsWe can check the normality assumption using histograms and QQ plots. For the independent t-test, we can check the equal variance assumption using the Bartlett test.# Example normality check for one-sample hist(penguins_complete\\(flipper_length_mm, main = \"Histogram of Flipper Length\")\nqqnorm(penguins_complete\\)flipper_length_mm, main = “QQ Plot of Flipper Length”) qqline(penguins_complete$flipper_length_mm)"
+    "text": "Task 1: Reflection\nPut your reflection here\n\n\nTask 2: Enhanced plot\nWhen you knit this document, you will create and save a basic bar chart of hot dog eating contest winners. You will then open the resulting file in a vector editing program.\nBe sure that you save your file with a different name. You don’t want to accidentally overwrite all your enhancements and updates when you knit this document. That would be so sad.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(svglite)\n\nhotdogs &lt;- read_csv(\"data/hot-dog-contest-winners.csv\") |&gt;\n  rename(dogs = `Dogs eaten`, record = `New record`) |&gt;\n  mutate(record = factor(record))\n\nRows: 31 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): Winner, Country\ndbl (3): Year, Dogs eaten, New record\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# Change the colors here if you want\n# (or anything else if you want too)\nplot_hotdogs &lt;- ggplot(hotdogs, \n                       aes(x = Year, y = dogs, fill = record)) + \n  geom_col() + \n  scale_fill_manual(values = c(\"grey80\", \"#FC7300\")) +\n  scale_x_continuous(breaks = seq(1980, 2010, 2), \n                     expand = c(0, 0)) +\n  scale_y_continuous(breaks = seq(0, 70, 10), \n                     expand = c(0, 0)) +\n  guides(fill = \"none\") +\n  labs(y = \"Hot dogs and buns\", x = NULL) +\n  theme_minimal() +\n  theme(panel.background = element_rect(fill = \"transparent\", colour = NA),\n        plot.background = element_rect(fill = \"transparent\", colour = NA),\n        axis.ticks.x = element_line(linewidth = 0.25),\n        panel.grid.major.x = element_blank(),\n        panel.grid.major.y = element_line(linewidth = 0.5, linetype = \"dashed\"),\n        panel.grid.minor = element_blank())\n\n# Change the dimensions here if you want\nggsave(plot_hotdogs, filename = \"hotdogs.pdf\", device = cairo_pdf,\n       width = 7, height = 4, units = \"in\", bg = \"transparent\")\n\nggsave(plot_hotdogs, filename = \"hotdogs.svg\",\n       width = 7, height = 4, units = \"in\", bg = \"transparent\")"
   }
 ]

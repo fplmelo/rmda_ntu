@@ -1,5 +1,5 @@
 ---
-title: "Week 1 - Intro do RM&DA "
+title: "Week 1 - Sorting out"
 subtitle: "Week 1"
 description: ""
 title-block-banner: "#9e043d"
@@ -99,11 +99,6 @@ Installing some packages, like `tidyverse`, may also install other **dependency*
 # Post-session
 
 ## Create your workbook
-
----
-title: "Creating a Simple Quarto Webpage"
-format: html
----
 
 ## Introduction
 
@@ -284,3 +279,15 @@ If you edit the `webpage.qmd` file, you will need to re-render the html file, an
 * Explore the Quarto Pub documentation for more advanced features: [quarto.pub](https://quarto.pub/docs/).
 * Learn about Quarto projects for creating multi-page websites.
 * Experiment with different Quarto Pub settings and options.
+
+## Exercise
+
+Now create your own quarto workbook:
+
+1 - Download the [zip file of the project](~/rmda_ntu/exercises/week1-exercise.zip)
+
+2- Tweak the `*qmd file` as you wish
+
+3 - Publish your workbook
+
+4 - Submit to the link to [NOW dropbox folder]()
