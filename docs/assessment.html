@@ -39,6 +39,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,10 +103,28 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./syllabus.qmd"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./get-started/index.html"> 
-<span class="menu-text">Get Started</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-started" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Get Started</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-get-started">    
+        <li>
+    <a class="dropdown-item" href="./get-started/1-install.html"><i class="bi bi-emoji-sunglasses-fill" role="img">
+</i> 
+ <span class="dropdown-text">1 - Install R and Rstudio</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./get-started/2-basic-intro.html"><i class="bi bi-tools" role="img">
+</i> 
+ <span class="dropdown-text">2 - Basic Introduction to R and Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./get-started/3-syntax.html"><i class="bi bi-tools" role="img">
+</i> 
+ <span class="dropdown-text">3 - Syntax &amp; Data Structures</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./sessions/index.html"> 
 <span class="menu-text">Content</span></a>
@@ -118,8 +138,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Assignment/index.qmd"> 
-<span class="menu-text">Assignment</span></a>
+    <a class="nav-link active" href="./assessment.html" aria-current="page"> 
+<span class="menu-text">Assessment</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./docs/blog/index.qmd"> 
@@ -185,7 +205,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summative-assessment-brief" id="toc-summative-assessment-brief" class="nav-link active" data-scroll-target="#summative-assessment-brief">Summative Assessment Brief</a></li>
   <li><a href="#formative-assessments" id="toc-formative-assessments" class="nav-link" data-scroll-target="#formative-assessments">Formative Assessments</a></li>
-  <li><a href="#type-of-assessment" id="toc-type-of-assessment" class="nav-link" data-scroll-target="#type-of-assessment">Type of Assessment</a></li>
+  <li><a href="#type-of-assessment" id="toc-type-of-assessment" class="nav-link" data-scroll-target="#type-of-assessment">Type of Assessment</a>
+  <ul class="collapse">
+  <li><a href="#step-1---context" id="toc-step-1---context" class="nav-link" data-scroll-target="#step-1---context">Step 1 - Context</a></li>
+  <li><a href="#step-2---the-dataset" id="toc-step-2---the-dataset" class="nav-link" data-scroll-target="#step-2---the-dataset">Step 2 - The dataset</a></li>
+  <li><a href="#step-3---your-workbook" id="toc-step-3---your-workbook" class="nav-link" data-scroll-target="#step-3---your-workbook">Step 3 - Your Workbook</a></li>
+  </ul></li>
   <li><a href="#transferable-skills-developed-in-this-assessment" id="toc-transferable-skills-developed-in-this-assessment" class="nav-link" data-scroll-target="#transferable-skills-developed-in-this-assessment">Transferable skills developed in this assessment</a>
   <ul class="collapse">
   <li><a href="#analytical-workflow" id="toc-analytical-workflow" class="nav-link" data-scroll-target="#analytical-workflow">Analytical workflow</a></li>
@@ -233,14 +258,39 @@ Share your Workbook
 </section>
 <section id="type-of-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="type-of-assessment">Type of Assessment</h2>
-<p>To produce a analytical workflow for a given dataset and critically interpret the results and draw conclusions.</p>
+<p><strong>Your Summative</strong> is to produce an “article-like” dynamic document containing an analytical workflow for a given dataset where critically interpret the results and draw your conclusions.</p>
+<section id="step-1---context" class="level3">
+<h3 class="anchored" data-anchor-id="step-1---context">Step 1 - Context</h3>
+<p>You will be given a context of a scientific problem. This context will introduce you to a real-world problem that is going to be used as a background for the data that you are going to analyse.</p>
+</section>
+<section id="step-2---the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="step-2---the-dataset">Step 2 - The dataset</h3>
+<p>You will have access to a pre-built dataset in a <code>.csv</code> format that will contain all the data and metadata needed for your analyses. The data is the same for everyone and I am not providing data on your specific subject of studies.</p>
+</section>
+<section id="step-3---your-workbook" class="level3">
+<h3 class="anchored" data-anchor-id="step-3---your-workbook">Step 3 - Your Workbook</h3>
+<p>You are going to work on the assessment using your <strong>Quarto workbook</strong> constructed over the course of the whole module. This is going to be your submission. I’ll collect your exams using a NOW Dropbox where you can paste the link to your published workbook.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>dataset</strong> and <strong>context description</strong> for the Summative exam will be shared by the end of the module sessions (probably in the last week of classes).</p>
+</div>
+</div>
+</section>
 </section>
 <section id="transferable-skills-developed-in-this-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="transferable-skills-developed-in-this-assessment">Transferable skills developed in this assessment</h2>
 <section id="analytical-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="analytical-workflow">Analytical workflow</h3>
 <ul>
-<li>Create a attach to an analytical workflow that is reproducible</li>
+<li>Create and attach to an analytical workflow that is reproducible</li>
 <li>Generate good quality graphs and tables</li>
 <li>Comment and understand R code</li>
 <li>Identify core results within a set of exploratory analyses.</li>
@@ -277,13 +327,13 @@ Share your Workbook
 <h2 class="anchored" data-anchor-id="grading-matrix">Grading Matrix</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 5%">
-<col style="width: 14%">
-<col style="width: 28%">
+<col style="width: 3%">
+<col style="width: 9%">
 <col style="width: 15%">
-<col style="width: 10%">
-<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 17%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -331,21 +381,21 @@ Share your Workbook
 </tr>
 <tr class="even">
 <td>Quality graphs and tables</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
+<td>Poor graphs, lacking crucial elements such as axis title and captions</td>
+<td>Poor graphs and tables with some elements present but poorly explained while other elements are missig</td>
+<td>Graphs and tables present with most elements, but some missing components preclude full understanding of the info presented</td>
+<td>Graphs and tables of acceptable quality with all elements present but not clearly descripted</td>
+<td>Good quality graphs and tables that could be accepted for publication in any serious scientific journal</td>
+<td>Outstading graphs and tables with graphical abstracts and schematic figures. All elements present and fully explained.</td>
 </tr>
 <tr class="odd">
 <td>Interpretation of results</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
-<td>No clear analytical workflow</td>
+<td>Poor or inexistant critical interpretation of the results found</td>
+<td>Deficient interpretation of the results and misuse of statistical concepts and wrong translation of tests and graphs</td>
+<td>Results are just reported with no critical interpretation or further discussion</td>
+<td>Results correctly reported and critically interpreted but excessive speculation is present</td>
+<td>Results are fully reported in a correct manner with string attachment to the proposed workflow and are discussed without much speculation</td>
+<td>Excellent interpretation, creative and fully connected with scientific hypotheses</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -787,13 +837,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Learn more about the</p>
+<p>Content <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <strong>?var:course.copyright_year</strong> by <a href="?var:instructor.url"><strong>?var:instructor.name_no_title</strong></a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Source code available on</p>
+<p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="?var:course.github">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>
   </div>
 </footer>

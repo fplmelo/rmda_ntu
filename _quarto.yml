@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  freeze: auto  # Re-render only when source changes
+
 website:
   navbar:
     background: light
@@ -18,7 +21,7 @@ website:
         menu:
           - text: "1 - Install R and Rstudio"
             icon: "emoji-sunglasses-fill"
-            href: get-started/index.qmd
+            href: get-started/1-install.qmd
           - text: "2 - Basic Introduction to R and Rstudio"
             icon: "tools"
             href: get-started/2-basic-intro.qmd
@@ -31,8 +34,8 @@ website:
         href: bibliography/index.qmd
       - text: "Resources"
         href: resources/index.qmd
-      - text: "Assignment"
-        href: Assignment/index.qmd
+      - text: "Assessment"
+        href: assessment.qmd
       - text: "Blog"
         href: docs/blog/index.qmd
       - text: "Help"
@@ -56,10 +59,17 @@ website:
       - icon: rss
         href: https://quarto.org/docs/blog/index.xml
         text: Quarto Blog RSS
+  
  
   page-footer:
-    left: Learn more about the
-    right: Source code available on
+    left: |
+      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}) <br>
+      All content licensed under a {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
+      [Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
+    right: |
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
+      [View the source at {{< fa brands github >}} GitHub]({{< var course.github >}})
           
 
 format:

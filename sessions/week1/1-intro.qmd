@@ -1,0 +1,230 @@
+---
+title: "Week 1 - Introduction to RMDA"
+author: "Felipe Melo"
+date: "04-06-2025"
+date-format: "long"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: true
+
+---
+
+# Module workflow
+
+![](/img/class-workflow.png)
+
+Today you are going to understand how this modules works.
+
+
+# Preparation
+
+First, this is a asynchronous module delivered in using the concept of [FLEXI modules](https://www.ntu.ac.uk/about-us/teaching/academic-development-and-quality/course-design/design-for-online-learning) held by NTU. The idea of having an assynchronous module for teaching stats and research methods makes sense because you'll need time to read and train both before and after the each main session and tutorials.
+
+
+# Lessons
+
+These comprise the slides and videos recorded by the tutor and intriduce the oibjectives, learnign outcomes and some demonstrations.
+
+## Slides
+
+{{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/01_intro_rmda.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
+
+## Videos
+
+# Exercise
+
+## Exercise 1 - Create your workbook
+
+## Introduction
+
+Quarto is a powerful tool for creating dynamic documents and websites. This tutorial will guide you through the process of creating a simple webpage using Quarto.
+
+## Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+* **Quarto:** You can download and install Quarto from [quarto.org](https://quarto.org/docs/get-started/).
+* **Rstudio:** However, any text editor will work, such as VS Code, Sublime Text, or Notepad++.
+
+### Step 1: Create a New Quarto Document
+
+1.  Open your terminal or command prompt.
+2.  Navigate to the directory where you want to create your webpage.
+3.  Run the following command to create a new Quarto document:
+
+    ```bash
+    quarto create webpage.qmd
+    ```
+
+    This command creates a file named `webpage.qmd`.
+
+### Step 2: Edit the Quarto Document
+
+1.  Open `webpage.qmd` in your text editor.
+2.  You'll see some default content, including a title and some example text.
+3.  Modify the content to create your webpage. For example:
+
+    ```qmd
+    ---
+    title: "My First Quarto Webpage"
+    format: html
+    ---
+
+    ## Welcome!
+
+    This is my first webpage created with Quarto.
+
+    Here's a simple list:
+
+    * Item 1
+    * Item 2
+    * Item 3
+
+    You can also include code blocks:
+
+    ```{r}
+    print("Hello, Quarto!")
+    ```
+
+    And mathematical equations:
+
+    $$
+    E = mc^2
+    $$
+
+    You can add images too:
+
+    ```{r}
+    knitr::include_graphics("https://quarto.org/quarto.png")
+    ```
+    ```
+
+    **Explanation of the code:**
+
+    * `--- title: "My First Quarto Webpage" format: html ---` : This is the YAML header, which sets the title of your webpage and specifies the output format (HTML in this case).
+    * `## Welcome!` : This is a level 2 heading.
+    * `* Item 1` : This creates a bulleted list.
+    * ````{r}`: This begins a R code block.
+    * `$$E = mc^2$$`: This inserts a LaTeX equation.
+    * ````{r}`: This begins an R code block.
+    * `knitr::include_graphics("https://quarto.org/quarto.png")`: This includes an image from a URL.
+
+### Step 3: Render the Webpage
+
+1.  In your terminal or command prompt, navigate to the directory containing `webpage.qmd`.
+2.  Run the following command to render the webpage:
+
+    ```bash
+    quarto render webpage.qmd
+    ```
+
+    This command will create an HTML file named `webpage.html` in the same directory.
+
+### Step 4: View the Webpage
+
+1.  Open `webpage.html` in your web browser.
+2.  You should see your webpage with the content you created.
+
+## Adding more content
+
+You can add more content to your webpage by editing `webpage.qmd`. Quarto supports various types of content, including:
+
+* **Headings:** Use `#`, `##`, `###`, etc. for different heading levels.
+* **Paragraphs:** Just type your text.
+* **Lists:** Use `*` or `-` for unordered lists, and `1.`, `2.`, etc. for ordered lists.
+* **Code Blocks:** Use ````{language}` to insert code blocks.
+* **Mathematical Equations:** Use `$$` for LaTeX equations.
+* **Images:** Use `![alt text](path/to/image.png)` or ````{r} knitr::include_graphics("path/to/image.png") ````.
+* **Links:** Use `[link text](url)`.
+* **Tables:** Use Markdown table syntax.
+
+## Further Exploration
+
+* Explore the Quarto documentation for more advanced features: [quarto.org](https://quarto.org/).
+* Experiment with different output formats, such as PDF or Word.
+* Learn about Quarto projects for creating multi-page websites.
+* Look into adding CSS and Javascript for styling and interactivity.
+
+## Publishing to Quarto Pub
+
+Know how to publish your Quarto webpage to Quarto Pub, making it accessible online.
+
+## Prerequisites
+
+* All the prerequisites from the previous tutorial.
+* A Quarto Pub account. You can create one at [quarto.pub](https://quarto.pub/).
+
+### Step 1: Create a Quarto Webpage (If you haven't already)
+
+If you haven't already created a Quarto webpage, follow the steps in the previous tutorial to create `webpage.qmd` and render it into `webpage.html`.
+
+### Step 2: Initialize Quarto Pub
+
+1.  Open your terminal or command prompt.
+2.  Navigate to the directory containing `webpage.qmd`.
+3.  Run the following command to initialize Quarto Pub:
+
+    ```bash
+    quarto publish quarto-pub
+    ```
+
+    This command will prompt you to log in to your Quarto Pub account. Follow the instructions to authenticate.
+
+### Step 3: Publish Your Webpage
+
+1.  After successful authentication, Quarto will detect the `webpage.html` file and ask you if you want to publish it.
+2.  Confirm that you want to publish the webpage.
+3.  Quarto will upload your webpage to Quarto Pub.
+4.  You'll receive a URL where your webpage is hosted.
+
+### Step 4: View Your Published Webpage
+
+1.  Open the URL provided by Quarto in your web browser.
+2.  You should see your webpage hosted on Quarto Pub.
+
+### Step 5: Updating your published page.
+
+If you edit the `webpage.qmd` file, you will need to re-render the html file, and then republish.
+
+1.  Edit `webpage.qmd` with your text editor.
+2.  Render the html file again.
+
+    ```bash
+    quarto render webpage.qmd
+    ```
+
+3.  Republish the webpage.
+
+    ```bash
+    quarto publish quarto-pub
+    ```
+
+    Quarto Pub will update the existing webpage with the new content.
+
+## Important Considerations
+
+* **File Organization:** For more complex websites, consider creating a Quarto project. This will help you organize your files and manage your website more effectively.
+* **Custom Domains:** Quarto Pub allows you to use custom domains for your websites. Refer to the Quarto Pub documentation for instructions.
+* **Security:** Be mindful of the content you publish online. Avoid sharing sensitive information.
+* **Quarto Pub Limitations:** Quarto Pub has some limitations, especially for large or complex websites. For more advanced hosting options, consider using other platforms like Netlify or GitHub Pages.
+* **Free tier limitations:** The free tier of Quarto Pub has some limitations, regarding the number of deployments, and storage. Refer to the Quarto Pub documentation for the most up to date limitations.
+
+## Further Exploration
+
+* Explore the Quarto Pub documentation for more advanced features: [quarto.pub](https://quarto.pub/docs/).
+* Learn about Quarto projects for creating multi-page websites.
+* Experiment with different Quarto Pub settings and options.
+
+## Exercise
+
+Now create your own quarto workbook:
+
+1 - Download the [zip file of the project](https://github.com/fplmelo/rmda_ntu/blob/01f73a18d64f4d744df5db7f7f1150a585344fd5/exercises/week1-exercise.zip?raw=true)
+
+2- Tweak the `*qmd file` as you wish
+
+3 - Publish your workbook
+
+4 - Submit to the link to [NOW dropbox folder]()

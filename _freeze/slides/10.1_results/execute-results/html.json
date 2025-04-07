@@ -1,0 +1,19 @@
+{
+  "hash": "bb46669eda2f1bdcb3b58a76d1ba7397",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"10.1-Results session\"\nsubtitle: \" \"\nauthor: \"Felipe Melo\"\ninstitute: \"Nottingham Trent University - UK\"\nfrom: markdown+emoji\nformat:\n  revealjs:\n    theme: [default, custom.scss]\n    incremental: false\n    chalkboard: true\n    logo: img/ntu_logo.png\n    footer: \"Research Methods & Data Analysis\"\n    slide-number: true\n    transition: slide\n    background-transition: fade\n    #auto-stretch: true\n    title-block-banner: true\n\n---\n\n::: {.cell}\n\n:::\n\n\n\n\n## You should know today:\n\n- How to write results\n- Clarity and good practices\n- Importance of visualization\n\n## Use the same order as in methods\n:::{.columns}\n:::{.column}\n**Methods**\n\n- Measure A\n\n- Measure B\n\n- Measure C\n\n:::\n\n:::{.column}\n**Results**\n\n- Text with A\n\n- Table with B\n\n- Graph with C\n\n:::\n:::\n\n## Care about accuracy\n\nTables and Graphs should not be repeated in text\n\n![](http://www.clips.edu.au/wp-content/uploads/table_anatomy.png){fig-align=center}\n\n:::{.footer}\n\n[Communicating results with scientific graphs](https://www.clips.edu.au/displaying-data/)\n\n:::\n\n## Care about accuracy\n\nTables and Graphs should not be repeated in text\n\n![](http://www.clips.edu.au/wp-content/uploads/graph_anatomy.png){fig-align=center}\n\n:::{.footer}\n\n[Communicating results with scientific graphs](https://www.clips.edu.au/displaying-data/)\n\n:::\n\n## Legends\n\n![](http://www.clips.edu.au/wp-content/uploads/figurelegend1_lrg.png){fig-align=center}\n\n:::{.footer}\n\n[Communicating results with scientific graphs](https://www.clips.edu.au/displaying-data/)\n\n:::\n\n## Use nice figures\n\n![](img/nice-figs.png){fig-align=center}\n\n:::{.footer}\n\n[ggplot2 gallery](https://r-graph-gallery.com/ggplot2-package.html)\n:::\n\n## Don't discuss but give a taste\n\n- \"X was greater than Y, thus suggesting that our hypothesis was correct\"\n\n- \"We found an important increase of 25% on X when compared to Y\"\n\n- \"Species diversity in habitat A was 2.3 higher than in habitat B, thus suggesting a positive effect of habitat feature X\"\n\n## End of Class RM\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

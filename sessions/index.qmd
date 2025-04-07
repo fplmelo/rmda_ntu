@@ -1,7 +1,8 @@
 ---
 title: "Content"
 title-block-banner: "#9e043d"
-listing: 
+listing:
   contents: /
   type: grid
 ---
+

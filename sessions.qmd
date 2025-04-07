@@ -1,9 +1,0 @@
----
-title: "Sessions"
----
-
-## Weeks
-
-```{r}
-1 + 1
-```
