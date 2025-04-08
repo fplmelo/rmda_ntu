@@ -15,7 +15,13 @@ format:
 
 # Preparation
 
-This tutorial will guide you through the process of **uploading data into R** and performing **basic summarisation** using the **tidyverse** collection of R packages within the **RStudio** environment. **R is an interactive environment for data analysis** developed by statisticians \[1\]. **RStudio** is a widely used **integrated development environment (IDE)** that provides an editor for writing scripts, a console for executing code, and other helpful tools for data science projects \[2-5\]. The **tidyverse** is an **opinionated collection of R packages designed for data science**, sharing an underlying design philosophy and grammar \[6, 7\]. This tutorial aims to help you get started with these essential tools for data analysis, emphasising **reproducible work** by saving your analysis as scripts \[1, 2\].
+## Learning objectives
+
+| Research Methods | Data Analyses |
+|----|----|
+| Reflect on how to make good research questions | Manipulate datasets as needed |
+|  | Use **Tidyverse** R package |
+|  | Produce simple tables and summaries |
 
 ## Prerequisites
 
@@ -42,6 +48,9 @@ This command needs to be run **only the first time** you want to use the **tidyv
 # Lesson
 
 {{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/02_data_wrangling.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
+
+
+{{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/2.2_research_question.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
 
 # Exercise
 

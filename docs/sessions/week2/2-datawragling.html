@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Felipe Melo">
-<meta name="dcterms.date" content="2025-04-07">
+<meta name="dcterms.date" content="2025-04-08">
 
 <title>Week 2 - Data Wrangling</title>
 <style>
@@ -236,13 +236,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a>
   <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
   </ul></li>
   <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#learning-objectives-1" id="toc-learning-objectives-1" class="nav-link" data-scroll-target="#learning-objectives-1">Learning Objectives</a></li>
   </ul></li>
   <li><a href="#data-wrangling-with-tidyverse" id="toc-data-wrangling-with-tidyverse" class="nav-link" data-scroll-target="#data-wrangling-with-tidyverse">Data Wrangling with Tidyverse</a>
   <ul class="collapse">
@@ -291,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 7, 2025</p>
+      <p class="date">April 8, 2025</p>
     </div>
   </div>
   
@@ -307,7 +308,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://twitter.com/allison_horst" style="text-align: center">Artwork by @allison_horst</a></p>
 <section id="preparation" class="level1">
 <h1>Preparation</h1>
-<p>This tutorial will guide you through the process of <strong>uploading data into R</strong> and performing <strong>basic summarisation</strong> using the <strong>tidyverse</strong> collection of R packages within the <strong>RStudio</strong> environment. <strong>R is an interactive environment for data analysis</strong> developed by statisticians [1]. <strong>RStudio</strong> is a widely used <strong>integrated development environment (IDE)</strong> that provides an editor for writing scripts, a console for executing code, and other helpful tools for data science projects [2-5]. The <strong>tidyverse</strong> is an <strong>opinionated collection of R packages designed for data science</strong>, sharing an underlying design philosophy and grammar [6, 7]. This tutorial aims to help you get started with these essential tools for data analysis, emphasising <strong>reproducible work</strong> by saving your analysis as scripts [1, 2].</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Research Methods</th>
+<th>Data Analyses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Reflect on how to make good research questions</td>
+<td>Manipulate datasets as needed</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Use <strong>Tidyverse</strong> R package</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Produce simple tables and summaries</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you have the following installed:</p>
@@ -335,12 +364,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <iframe class="slide-deck" src="https://fplmelo.github.io/rmda_ntu/slides/02_data_wrangling.html#/title-slide" height="500px"></iframe>
     </div>
   
+    <p><a href="https://fplmelo.github.io/rmda_ntu/slides/2.2_research_question.html#/title-slide" target="_blank">View slides in full screen</a></p>
+       <div class="ratio ratio-16x9">
+      <iframe class="slide-deck" src="https://fplmelo.github.io/rmda_ntu/slides/2.2_research_question.html#/title-slide" height="500px"></iframe>
+    </div>
+  
 </section>
 <section id="exercise" class="level1">
 <h1>Exercise</h1>
 <p>Approximate time: 60 min</p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<section id="learning-objectives-1" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives-1">Learning Objectives</h2>
 <ul>
 <li>Demonstrate how to subset, merge, and create new datasets from existing data structures in R.</li>
 <li>Perform basic data wrangling with functions in the Tidyverse package.</li>

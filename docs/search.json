@@ -67,7 +67,7 @@
     "href": "sessions/index.html",
     "title": "Content",
     "section": "",
-    "text": "Week 1 - Introduction to RMDA\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 - Data Wrangling\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 7, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Week 1 - Introduction to RMDA\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 - Data Wrangling\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 8, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "sessions/week1/1-intro.html",
@@ -283,8 +283,8 @@
     "objectID": "sessions/week2/2-datawragling.html#learning-objectives",
     "href": "sessions/week2/2-datawragling.html#learning-objectives",
     "title": "Week 2 - Data Wrangling",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nDemonstrate how to subset, merge, and create new datasets from existing data structures in R.\nPerform basic data wrangling with functions in the Tidyverse package."
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\n\n\n\n\n\nResearch Methods\nData Analyses\n\n\n\n\nReflect on how to make good research questions\nManipulate datasets as needed\n\n\n\nUse Tidyverse R package\n\n\n\nProduce simple tables and summaries"
   },
   {
     "objectID": "sessions/week2/2-datawragling.html#tidyverse-basics",
@@ -362,5 +362,12 @@
     "title": "Week 2 - Data Wrangling",
     "section": "Next steps",
     "text": "Next steps\nNow that we have our results ready for plotting, we can use the ggplot2 package to plot our results. If you are interested, you can follow this lesson and dive into how to use ggplot2 to create the plots with this dataset.\n\nAdditional resources\n\nR for Data Science\nteach the tidyverse\ntidy style guide\n\n\nThis lesson has been developed by members of the teaching team at the Harvard Chan Bioinformatics Core (HBC). These are open access materials distributed under the terms of the Creative Commons Attribution license (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited."
+  },
+  {
+    "objectID": "sessions/week2/2-datawragling.html#learning-objectives-1",
+    "href": "sessions/week2/2-datawragling.html#learning-objectives-1",
+    "title": "Week 2 - Data Wrangling",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nDemonstrate how to subset, merge, and create new datasets from existing data structures in R.\nPerform basic data wrangling with functions in the Tidyverse package."
   }
 ]
