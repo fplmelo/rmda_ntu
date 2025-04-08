@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "assessment.html",
+    "href": "assessment.html",
+    "title": "Assessment Brief 2025-26",
+    "section": "",
+    "text": "This Module covers the following courses:\n\nMSc/MRes Applied Ecology & Geospatial Techniques\nMSc/MRes Biodiversity Conservation\nMSc/MRes Endangered Species Recovery & Conservation\nMSc/MRes Equine Performance, Health & Welfare MSc/MRes Smart Agriculture"
+  },
+  {
+    "objectID": "assessment.html#summative-assessment-brief",
+    "href": "assessment.html#summative-assessment-brief",
+    "title": "Assessment Brief 2025-26",
+    "section": "",
+    "text": "This Module covers the following courses:\n\nMSc/MRes Applied Ecology & Geospatial Techniques\nMSc/MRes Biodiversity Conservation\nMSc/MRes Endangered Species Recovery & Conservation\nMSc/MRes Equine Performance, Health & Welfare MSc/MRes Smart Agriculture"
+  },
+  {
+    "objectID": "assessment.html#formative-assessments",
+    "href": "assessment.html#formative-assessments",
+    "title": "Assessment Brief 2025-26",
+    "section": "Formative Assessments",
+    "text": "Formative Assessments\nYour formative opportunities are related to the development of your workbook and sharing of this development with module leader and colleagues.\n\n\n\n\n\n\nShare your Workbook\n\n\n\nYou must not be shy or embarrassed to share your workbook. Nobody will judge you. We are all learning!"
+  },
+  {
+    "objectID": "assessment.html#type-of-assessment",
+    "href": "assessment.html#type-of-assessment",
+    "title": "Assessment Brief 2025-26",
+    "section": "Type of Assessment",
+    "text": "Type of Assessment\nYour Summative is to produce an “article-like” dynamic document containing an analytical workflow for a given dataset where critically interpret the results and draw your conclusions.\n\nStep 1 - Context\nYou will be given a context of a scientific problem. This context will introduce you to a real-world problem that is going to be used as a background for the data that you are going to analyse.\n\n\nStep 2 - The dataset\nYou will have access to a pre-built dataset in a .csv format that will contain all the data and metadata needed for your analyses. The data is the same for everyone and I am not providing data on your specific subject of studies.\n\n\nStep 3 - Your Workbook\nYou are going to work on the assessment using your Quarto workbook constructed over the course of the whole module. This is going to be your submission. I’ll collect your exams using a NOW Dropbox where you can paste the link to your published workbook.\n\n\n\n\n\n\nNote\n\n\n\nThe dataset and context description for the Summative exam will be shared by the end of the module sessions (probably in the last week of classes)."
+  },
+  {
+    "objectID": "assessment.html#transferable-skills-developed-in-this-assessment",
+    "href": "assessment.html#transferable-skills-developed-in-this-assessment",
+    "title": "Assessment Brief 2025-26",
+    "section": "Transferable skills developed in this assessment",
+    "text": "Transferable skills developed in this assessment\n\nAnalytical workflow\n\nCreate and attach to an analytical workflow that is reproducible\nGenerate good quality graphs and tables\nComment and understand R code\nIdentify core results within a set of exploratory analyses.\nInterpret and generate conclusions based on data analysed"
+  },
+  {
+    "objectID": "assessment.html#specific-tasks",
+    "href": "assessment.html#specific-tasks",
+    "title": "Assessment Brief 2025-26",
+    "section": "Specific tasks",
+    "text": "Specific tasks\n\nDesign an experimental design\nDescribe methods for reproducibility\nCreate a analytical workflow\nComment on the R codes in your workbook"
+  },
+  {
+    "objectID": "assessment.html#assessment-guidance",
+    "href": "assessment.html#assessment-guidance",
+    "title": "Assessment Brief 2025-26",
+    "section": "Assessment Guidance",
+    "text": "Assessment Guidance\n\nAnalytical workflow (15%)\nR code commented (15%)\nExploratory analysis (20%)\nQuality graphs and tables (25%)\nInterpretation of results (25%)"
+  },
+  {
+    "objectID": "assessment.html#further-information",
+    "href": "assessment.html#further-information",
+    "title": "Assessment Brief 2025-26",
+    "section": "Further information",
+    "text": "Further information\n\nExtenuating circumstances"
+  },
+  {
+    "objectID": "assessment.html#grading-matrix",
+    "href": "assessment.html#grading-matrix",
+    "title": "Assessment Brief 2025-26",
+    "section": "Grading Matrix",
+    "text": "Grading Matrix\n\n\n\n\n\n\n\n\n\n\n\n\nCriteria\nFail\nLow | Mid\nMarginal Fail\nPass\nLow | Mid | High\nCommendation\nLow | Mid | High\nDistinction\nLow | Mid |High\nDistinction\nExceptional\n\n\n\n\nAnalytical workflow\nNo clear analytical workflow\nWorkflow not easy to find; mixed analytical approach in search for any significant p-value\nWorkflow relatively reasonable but with excess of flaw analyses and lack of a logic sequence that goes from 1) preparation; 2) data wrangling; 3) Exploratory analyses; 4) Core analyses\nClear workflow but hard to reproduce because crucial steps were either omitted or non commented.\nVery good workflow with clear guidance for reproducibility\nHigh quality workflow, fully reproducible and extensively commented\n\n\nR code commented\nLittle to no comments on coding\nComments provided but non meaningful for crucial steps\nCodes mostly commented but crucial steps are not udnerstood\nCodes mostly commented and helping reproducibility.\nCodes fully commented but not excessively, avoiding visual pollution\nCodes fully commented and not affecting visual inspection of the script and allows full reproducibility and explanation in key steps\n\n\nExploratory analysis\nNo exploratory analyses done\nInsufficient exploratory analyses\nEnough exploratory analyses but not commented or justified\nGood exploratory analyses but poorly commented and little justified\nVery good exploratory analyses, commented and justified\nWorld-class and fully justified exploratory approach to data\n\n\nQuality graphs and tables\nPoor graphs, lacking crucial elements such as axis title and captions\nPoor graphs and tables with some elements present but poorly explained while other elements are missig\nGraphs and tables present with most elements, but some missing components preclude full understanding of the info presented\nGraphs and tables of acceptable quality with all elements present but not clearly descripted\nGood quality graphs and tables that could be accepted for publication in any serious scientific journal\nOutstading graphs and tables with graphical abstracts and schematic figures. All elements present and fully explained.\n\n\nInterpretation of results\nPoor or inexistant critical interpretation of the results found\nDeficient interpretation of the results and misuse of statistical concepts and wrong translation of tests and graphs\nResults are just reported with no critical interpretation or further discussion\nResults correctly reported and critically interpreted but excessive speculation is present\nResults are fully reported in a correct manner with string attachment to the proposed workflow and are discussed without much speculation\nExcellent interpretation, creative and fully connected with scientific hypotheses"
+  },
+  {
+    "objectID": "sessions/index.html",
+    "href": "sessions/index.html",
+    "title": "Content",
+    "section": "",
+    "text": "Week 1 - Introduction to RMDA\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 - Data Wrangling\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 7, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html",
+    "href": "sessions/week1/1-intro.html",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "",
+    "text": "Today you are going to understand how this modules works."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#slides",
+    "href": "sessions/week1/1-intro.html#slides",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Slides",
+    "text": "Slides\n    View slides in full screen"
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#videos",
+    "href": "sessions/week1/1-intro.html#videos",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Videos",
+    "text": "Videos"
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#exercise-1---create-your-workbook",
+    "href": "sessions/week1/1-intro.html#exercise-1---create-your-workbook",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Exercise 1 - Create your workbook",
+    "text": "Exercise 1 - Create your workbook"
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#introduction",
+    "href": "sessions/week1/1-intro.html#introduction",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Introduction",
+    "text": "Introduction\nQuarto is a powerful tool for creating dynamic documents and websites. This tutorial will guide you through the process of creating a simple webpage using Quarto."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#prerequisites",
+    "href": "sessions/week1/1-intro.html#prerequisites",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nBefore you begin, make sure you have the following installed:\n\nQuarto: You can download and install Quarto from quarto.org.\nRstudio: However, any text editor will work, such as VS Code, Sublime Text, or Notepad++.\n\n\nStep 1: Create a New Quarto Document\n\nOpen your terminal or command prompt.\nNavigate to the directory where you want to create your webpage.\nRun the following command to create a new Quarto document:\nquarto create webpage.qmd\nThis command creates a file named webpage.qmd.\n\n\n\nStep 2: Edit the Quarto Document\n\nOpen webpage.qmd in your text editor.\nYou’ll see some default content, including a title and some example text.\nModify the content to create your webpage. For example:\n---\ntitle: \"My First Quarto Webpage\"\nformat: html\n---\n\n## Welcome!\n\nThis is my first webpage created with Quarto.\n\nHere's a simple list:\n\n* Item 1\n* Item 2\n* Item 3\n\nYou can also include code blocks:\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Hello, Quarto!\")\n\n[1] \"Hello, Quarto!\"\n\n:::\nAnd mathematical equations:\n\\[\nE = mc^2\n\\]\nYou can add images too:\n\nknitr::include_graphics(\"https://quarto.org/quarto.png\")\n\n\n\n\n\n\n\n\n```\nExplanation of the code:\n\n--- title: \"My First Quarto Webpage\" format: html --- : This is the YAML header, which sets the title of your webpage and specifies the output format (HTML in this case).\n## Welcome! : This is a level 2 heading.\n* Item 1 : This creates a bulleted list.\n```{r}: This begins a R code block.\n$$E = mc^2$$: This inserts a LaTeX equation.\n```{r}: This begins an R code block.\nknitr::include_graphics(\"https://quarto.org/quarto.png\"): This includes an image from a URL.\n\n\n\n\nStep 3: Render the Webpage\n\nIn your terminal or command prompt, navigate to the directory containing webpage.qmd.\nRun the following command to render the webpage:\nquarto render webpage.qmd\nThis command will create an HTML file named webpage.html in the same directory.\n\n\n\nStep 4: View the Webpage\n\nOpen webpage.html in your web browser.\nYou should see your webpage with the content you created."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#adding-more-content",
+    "href": "sessions/week1/1-intro.html#adding-more-content",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Adding more content",
+    "text": "Adding more content\nYou can add more content to your webpage by editing webpage.qmd. Quarto supports various types of content, including:\n\nHeadings: Use #, ##, ###, etc. for different heading levels.\nParagraphs: Just type your text.\nLists: Use * or - for unordered lists, and 1., 2., etc. for ordered lists.\nCode Blocks: Use ```{language} to insert code blocks.\nMathematical Equations: Use $$ for LaTeX equations.\nImages: Use ![alt text](path/to/image.png) or {r} knitr::include_graphics(\"path/to/image.png\").\nLinks: Use [link text](url).\nTables: Use Markdown table syntax."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#further-exploration",
+    "href": "sessions/week1/1-intro.html#further-exploration",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Further Exploration",
+    "text": "Further Exploration\n\nExplore the Quarto documentation for more advanced features: quarto.org.\nExperiment with different output formats, such as PDF or Word.\nLearn about Quarto projects for creating multi-page websites.\nLook into adding CSS and Javascript for styling and interactivity."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#publishing-to-quarto-pub",
+    "href": "sessions/week1/1-intro.html#publishing-to-quarto-pub",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Publishing to Quarto Pub",
+    "text": "Publishing to Quarto Pub\nKnow how to publish your Quarto webpage to Quarto Pub, making it accessible online."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#prerequisites-1",
+    "href": "sessions/week1/1-intro.html#prerequisites-1",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nAll the prerequisites from the previous tutorial.\nA Quarto Pub account. You can create one at quarto.pub.\n\n\nStep 1: Create a Quarto Webpage (If you haven’t already)\nIf you haven’t already created a Quarto webpage, follow the steps in the previous tutorial to create webpage.qmd and render it into webpage.html.\n\n\nStep 2: Initialize Quarto Pub\n\nOpen your terminal or command prompt.\nNavigate to the directory containing webpage.qmd.\nRun the following command to initialize Quarto Pub:\nquarto publish quarto-pub\nThis command will prompt you to log in to your Quarto Pub account. Follow the instructions to authenticate.\n\n\n\nStep 3: Publish Your Webpage\n\nAfter successful authentication, Quarto will detect the webpage.html file and ask you if you want to publish it.\nConfirm that you want to publish the webpage.\nQuarto will upload your webpage to Quarto Pub.\nYou’ll receive a URL where your webpage is hosted.\n\n\n\nStep 4: View Your Published Webpage\n\nOpen the URL provided by Quarto in your web browser.\nYou should see your webpage hosted on Quarto Pub.\n\n\n\nStep 5: Updating your published page.\nIf you edit the webpage.qmd file, you will need to re-render the html file, and then republish.\n\nEdit webpage.qmd with your text editor.\nRender the html file again.\nquarto render webpage.qmd\nRepublish the webpage.\nquarto publish quarto-pub\nQuarto Pub will update the existing webpage with the new content."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#important-considerations",
+    "href": "sessions/week1/1-intro.html#important-considerations",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Important Considerations",
+    "text": "Important Considerations\n\nFile Organization: For more complex websites, consider creating a Quarto project. This will help you organize your files and manage your website more effectively.\nCustom Domains: Quarto Pub allows you to use custom domains for your websites. Refer to the Quarto Pub documentation for instructions.\nSecurity: Be mindful of the content you publish online. Avoid sharing sensitive information.\nQuarto Pub Limitations: Quarto Pub has some limitations, especially for large or complex websites. For more advanced hosting options, consider using other platforms like Netlify or GitHub Pages.\nFree tier limitations: The free tier of Quarto Pub has some limitations, regarding the number of deployments, and storage. Refer to the Quarto Pub documentation for the most up to date limitations."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#further-exploration-1",
+    "href": "sessions/week1/1-intro.html#further-exploration-1",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Further Exploration",
+    "text": "Further Exploration\n\nExplore the Quarto Pub documentation for more advanced features: quarto.pub.\nLearn about Quarto projects for creating multi-page websites.\nExperiment with different Quarto Pub settings and options."
+  },
+  {
+    "objectID": "sessions/week1/1-intro.html#exercise-1",
+    "href": "sessions/week1/1-intro.html#exercise-1",
+    "title": "Week 1 - Introduction to RMDA",
+    "section": "Exercise",
+    "text": "Exercise\nNow create your own quarto workbook:\n1 - Download the zip file of the project\n2- Tweak the *qmd file as you wish\n3 - Publish your workbook\n4 - Submit to the link to NOW dropbox folder"
+  }
+]

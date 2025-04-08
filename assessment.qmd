@@ -3,7 +3,11 @@ title: "Assessment Brief 2025-26"
 subtitle: "How you'll be evaluated?"
 description: ""
 title-block-banner: "#9e043d"
-toc: true
+format:
+  html:
+    toc: true
+  pdf:
+    toc: true
 ---
 
 ## Summative Assessment Brief

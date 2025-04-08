@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.5.57" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-
-<meta name="author" content="Felipe Melo" />
-<meta name="dcterms.date" content="2025-04-06" />
+<meta name="author" content="Felipe Melo">
+<meta name="dcterms.date" content="2025-04-06">
 
 <title>Week 1 - Introduction to RMDA</title>
 <style>
@@ -60,7 +58,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,110 +145,90 @@ window.Quarto = {
 
 </head>
 
-<body>
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="/index.html" class="navbar-brand navbar-brand-logo">
-    <img src="/img/ntu_logo.png" alt="Quarto logo." class="navbar-logo" />
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/ntu_logo.png" alt="Quarto logo." class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/syllabus.qmd"> 
+    <a class="nav-link" href="../../syllabus.qmd"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-started" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-started" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Get Started</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-get-started">    
         <li>
-    <a class="dropdown-item" href="/get-started/1-install.html"><i 
-  class="bi bi-emoji-sunglasses-fill" 
-  role="img" 
->
+    <a class="dropdown-item" href="../../get-started/1-install.html"><i class="bi bi-emoji-sunglasses-fill" role="img">
 </i> 
  <span class="dropdown-text">1 - Install R and Rstudio</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/get-started/2-basic-intro.html"><i 
-  class="bi bi-tools" 
-  role="img" 
->
+    <a class="dropdown-item" href="../../get-started/2-basic-intro.html"><i class="bi bi-tools" role="img">
 </i> 
  <span class="dropdown-text">2 - Basic Introduction to R and Rstudio</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/get-started/3-syntax.html"><i 
-  class="bi bi-tools" 
-  role="img" 
->
+    <a class="dropdown-item" href="../../get-started/3-syntax.html"><i class="bi bi-tools" role="img">
 </i> 
  <span class="dropdown-text">3 - Syntax &amp; Data Structures</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/sessions/index.html"> 
+    <a class="nav-link" href="../../sessions/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/bibliography/index.qmd"> 
+    <a class="nav-link" href="../../bibliography/index.qmd"> 
 <span class="menu-text">Bibliography</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/resources/index.qmd"> 
+    <a class="nav-link" href="../../resources/index.qmd"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/assessment.html"> 
+    <a class="nav-link" href="../../assessment.html"> 
 <span class="menu-text">Assessment</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/docs/blog/index.qmd"> 
+    <a class="nav-link" href="../../docs/blog/index.qmd"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Help</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="https://github.com/quarto-dev/quarto-cli/issues"><i 
-  class="bi bi-bug" 
-  role="img" 
->
+    <a class="dropdown-item" href="https://github.com/quarto-dev/quarto-cli/issues"><i class="bi bi-bug" role="img">
 </i> 
  <span class="dropdown-text">Report a Bug</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/quarto-dev/quarto-cli/discussions"><i 
-  class="bi bi-chat-right-text" 
-  role="img" 
->
+    <a class="dropdown-item" href="https://github.com/quarto-dev/quarto-cli/discussions"><i class="bi bi-chat-right-text" role="img">
 </i> 
  <span class="dropdown-text">Ask a Question</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/docs/faq/index.qmd"><i 
-  class="bi bi-question-circle" 
-  role="img" 
->
+    <a class="dropdown-item" href="../../docs/faq/index.qmd"><i class="bi bi-question-circle" role="img">
 </i> 
  <span class="dropdown-text">FAQ</span></a>
   </li>  
@@ -241,9 +237,9 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
-    <a href="https://twitter.com/quarto_pub"  title="Quarto Twitter" class="quarto-navigation-tool px-1" aria-label="Quarto Twitter"><i class="bi bi-twitter"></i></a>
-    <a href="https://github.com/quarto-dev/quarto-cli"  title="Quarto GitHub" class="quarto-navigation-tool px-1" aria-label="Quarto GitHub"><i class="bi bi-github"></i></a>
-    <a href="https://quarto.org/docs/blog/index.xml"  title="Quarto Blog RSS" class="quarto-navigation-tool px-1" aria-label="Quarto Blog RSS"><i class="bi bi-rss"></i></a>
+    <a href="https://twitter.com/quarto_pub" title="Quarto Twitter" class="quarto-navigation-tool px-1" aria-label="Quarto Twitter"><i class="bi bi-twitter"></i></a>
+    <a href="https://github.com/quarto-dev/quarto-cli" title="Quarto GitHub" class="quarto-navigation-tool px-1" aria-label="Quarto GitHub"><i class="bi bi-github"></i></a>
+    <a href="https://quarto.org/docs/blog/index.xml" title="Quarto Blog RSS" class="quarto-navigation-tool px-1" aria-label="Quarto Blog RSS"><i class="bi bi-rss"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -253,10 +249,48 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-workflow" id="toc-module-workflow" class="nav-link active" data-scroll-target="#module-workflow">Module workflow</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">Preparation</a></li>
+  <li><a href="#lessons" id="toc-lessons" class="nav-link" data-scroll-target="#lessons">Lessons</a>
+  <ul class="collapse">
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
+  </ul></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1---create-your-workbook" id="toc-exercise-1---create-your-workbook" class="nav-link" data-scroll-target="#exercise-1---create-your-workbook">Exercise 1 - Create your workbook</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a>
+  <ul class="collapse">
+  <li><a href="#step-1-create-a-new-quarto-document" id="toc-step-1-create-a-new-quarto-document" class="nav-link" data-scroll-target="#step-1-create-a-new-quarto-document">Step 1: Create a New Quarto Document</a></li>
+  <li><a href="#step-2-edit-the-quarto-document" id="toc-step-2-edit-the-quarto-document" class="nav-link" data-scroll-target="#step-2-edit-the-quarto-document">Step 2: Edit the Quarto Document</a></li>
+  <li><a href="#step-3-render-the-webpage" id="toc-step-3-render-the-webpage" class="nav-link" data-scroll-target="#step-3-render-the-webpage">Step 3: Render the Webpage</a></li>
+  <li><a href="#step-4-view-the-webpage" id="toc-step-4-view-the-webpage" class="nav-link" data-scroll-target="#step-4-view-the-webpage">Step 4: View the Webpage</a></li>
+  </ul></li>
+  <li><a href="#adding-more-content" id="toc-adding-more-content" class="nav-link" data-scroll-target="#adding-more-content">Adding more content</a></li>
+  <li><a href="#further-exploration" id="toc-further-exploration" class="nav-link" data-scroll-target="#further-exploration">Further Exploration</a></li>
+  <li><a href="#publishing-to-quarto-pub" id="toc-publishing-to-quarto-pub" class="nav-link" data-scroll-target="#publishing-to-quarto-pub">Publishing to Quarto Pub</a></li>
+  <li><a href="#prerequisites-1" id="toc-prerequisites-1" class="nav-link" data-scroll-target="#prerequisites-1">Prerequisites</a>
+  <ul class="collapse">
+  <li><a href="#step-1-create-a-quarto-webpage-if-you-havent-already" id="toc-step-1-create-a-quarto-webpage-if-you-havent-already" class="nav-link" data-scroll-target="#step-1-create-a-quarto-webpage-if-you-havent-already">Step 1: Create a Quarto Webpage (If you haven’t already)</a></li>
+  <li><a href="#step-2-initialize-quarto-pub" id="toc-step-2-initialize-quarto-pub" class="nav-link" data-scroll-target="#step-2-initialize-quarto-pub">Step 2: Initialize Quarto Pub</a></li>
+  <li><a href="#step-3-publish-your-webpage" id="toc-step-3-publish-your-webpage" class="nav-link" data-scroll-target="#step-3-publish-your-webpage">Step 3: Publish Your Webpage</a></li>
+  <li><a href="#step-4-view-your-published-webpage" id="toc-step-4-view-your-published-webpage" class="nav-link" data-scroll-target="#step-4-view-your-published-webpage">Step 4: View Your Published Webpage</a></li>
+  <li><a href="#step-5-updating-your-published-page." id="toc-step-5-updating-your-published-page." class="nav-link" data-scroll-target="#step-5-updating-your-published-page.">Step 5: Updating your published page.</a></li>
+  </ul></li>
+  <li><a href="#important-considerations" id="toc-important-considerations" class="nav-link" data-scroll-target="#important-considerations">Important Considerations</a></li>
+  <li><a href="#further-exploration-1" id="toc-further-exploration-1" class="nav-link" data-scroll-target="#further-exploration-1">Further Exploration</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="1-intro.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -265,7 +299,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -288,48 +322,10 @@ window.Quarto = {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#module-workflow" id="toc-module-workflow">Module workflow</a></li>
-  <li><a href="#preparation" id="toc-preparation">Preparation</a></li>
-  <li><a href="#lessons" id="toc-lessons">Lessons</a>
-  <ul>
-  <li><a href="#slides" id="toc-slides">Slides</a></li>
-  <li><a href="#videos" id="toc-videos">Videos</a></li>
-  </ul></li>
-  <li><a href="#exercise" id="toc-exercise">Exercise</a>
-  <ul>
-  <li><a href="#exercise-1---create-your-workbook" id="toc-exercise-1---create-your-workbook">Exercise 1 - Create your workbook</a></li>
-  <li><a href="#introduction" id="toc-introduction">Introduction</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites">Prerequisites</a>
-  <ul>
-  <li><a href="#step-1-create-a-new-quarto-document" id="toc-step-1-create-a-new-quarto-document">Step 1: Create a New Quarto Document</a></li>
-  <li><a href="#step-2-edit-the-quarto-document" id="toc-step-2-edit-the-quarto-document">Step 2: Edit the Quarto Document</a></li>
-  <li><a href="#step-3-render-the-webpage" id="toc-step-3-render-the-webpage">Step 3: Render the Webpage</a></li>
-  <li><a href="#step-4-view-the-webpage" id="toc-step-4-view-the-webpage">Step 4: View the Webpage</a></li>
-  </ul></li>
-  <li><a href="#adding-more-content" id="toc-adding-more-content">Adding more content</a></li>
-  <li><a href="#further-exploration" id="toc-further-exploration">Further Exploration</a></li>
-  <li><a href="#publishing-to-quarto-pub" id="toc-publishing-to-quarto-pub">Publishing to Quarto Pub</a></li>
-  <li><a href="#prerequisites-1" id="toc-prerequisites-1">Prerequisites</a>
-  <ul>
-  <li><a href="#step-1-create-a-quarto-webpage-if-you-havent-already" id="toc-step-1-create-a-quarto-webpage-if-you-havent-already">Step 1: Create a Quarto Webpage (If you haven’t already)</a></li>
-  <li><a href="#step-2-initialize-quarto-pub" id="toc-step-2-initialize-quarto-pub">Step 2: Initialize Quarto Pub</a></li>
-  <li><a href="#step-3-publish-your-webpage" id="toc-step-3-publish-your-webpage">Step 3: Publish Your Webpage</a></li>
-  <li><a href="#step-4-view-your-published-webpage" id="toc-step-4-view-your-published-webpage">Step 4: View Your Published Webpage</a></li>
-  <li><a href="#step-5-updating-your-published-page." id="toc-step-5-updating-your-published-page.">Step 5: Updating your published page.</a></li>
-  </ul></li>
-  <li><a href="#important-considerations" id="toc-important-considerations">Important Considerations</a></li>
-  <li><a href="#further-exploration-1" id="toc-further-exploration-1">Further Exploration</a></li>
-  <li><a href="#exercise-1" id="toc-exercise-1">Exercise</a></li>
-  </ul></li>
-  </ul>
-</nav>
+
 <section id="module-workflow" class="level1">
 <h1>Module workflow</h1>
-<p><img src="../../img/class-workflow.png" class="img-fluid" /></p>
+<p><img src="../../img/class-workflow.png" class="img-fluid"></p>
 <p>Today you are going to understand how this modules works.</p>
 </section>
 <section id="preparation" class="level1">
@@ -340,7 +336,7 @@ window.Quarto = {
 <h1>Lessons</h1>
 <p>These comprise the slides and videos recorded by the tutor and intriduce the oibjectives, learnign outcomes and some demonstrations.</p>
 <section id="slides" class="level2">
-<h2>Slides</h2>
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
     <p><a href="https://fplmelo.github.io/rmda_ntu/slides/01_intro_rmda.html#/title-slide" target="_blank">View slides in full screen</a></p>
        <div class="ratio ratio-16x9">
       <iframe class="slide-deck" src="https://fplmelo.github.io/rmda_ntu/slides/01_intro_rmda.html#/title-slide" height="500px"></iframe>
@@ -348,43 +344,43 @@ window.Quarto = {
   
 </section>
 <section id="videos" class="level2">
-<h2>Videos</h2>
+<h2 class="anchored" data-anchor-id="videos">Videos</h2>
 </section>
 </section>
 <section id="exercise" class="level1">
 <h1>Exercise</h1>
 <section id="exercise-1---create-your-workbook" class="level2">
-<h2>Exercise 1 - Create your workbook</h2>
+<h2 class="anchored" data-anchor-id="exercise-1---create-your-workbook">Exercise 1 - Create your workbook</h2>
 </section>
 <section id="introduction" class="level2">
-<h2>Introduction</h2>
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Quarto is a powerful tool for creating dynamic documents and websites. This tutorial will guide you through the process of creating a simple webpage using Quarto.</p>
 </section>
 <section id="prerequisites" class="level2">
-<h2>Prerequisites</h2>
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>Before you begin, make sure you have the following installed:</p>
 <ul>
 <li><strong>Quarto:</strong> You can download and install Quarto from <a href="https://quarto.org/docs/get-started/">quarto.org</a>.</li>
 <li><strong>Rstudio:</strong> However, any text editor will work, such as VS Code, Sublime Text, or Notepad++.</li>
 </ul>
 <section id="step-1-create-a-new-quarto-document" class="level3">
-<h3>Step 1: Create a New Quarto Document</h3>
+<h3 class="anchored" data-anchor-id="step-1-create-a-new-quarto-document">Step 1: Create a New Quarto Document</h3>
 <ol type="1">
 <li><p>Open your terminal or command prompt.</p></li>
 <li><p>Navigate to the directory where you want to create your webpage.</p></li>
 <li><p>Run the following command to create a new Quarto document:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create webpage.qmd</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create webpage.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This command creates a file named <code>webpage.qmd</code>.</p></li>
 </ol>
 </section>
 <section id="step-2-edit-the-quarto-document" class="level3">
-<h3>Step 2: Edit the Quarto Document</h3>
+<h3 class="anchored" data-anchor-id="step-2-edit-the-quarto-document">Step 2: Edit the Quarto Document</h3>
 <ol type="1">
 <li><p>Open <code>webpage.qmd</code> in your text editor.</p></li>
 <li><p>You’ll see some default content, including a title and some example text.</p></li>
 <li><p>Modify the content to create your webpage. For example:</p>
 <pre class="qmd"><code>---
-title: &quot;My First Quarto Webpage&quot;
+title: "My First Quarto Webpage"
 format: html
 ---
 
@@ -392,7 +388,7 @@ format: html
 
 This is my first webpage created with Quarto.
 
-Here&#39;s a simple list:
+Here's a simple list:
 
 * Item 1
 * Item 2
@@ -406,9 +402,9 @@ You can also include code blocks:
 ::: {.cell}
 
 ```{.r .cell-code}
-print(&quot;Hello, Quarto!&quot;)</code></pre>
+print("Hello, Quarto!")</code></pre>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;Hello, Quarto!&quot;</code></pre>
+<pre><code>[1] "Hello, Quarto!"</code></pre>
 </div>
 <p>:::</p>
 <p>And mathematical equations:</p>
@@ -417,11 +413,11 @@ E = mc^2
 \]</span></p>
 <p>You can add images too:</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://quarto.org/quarto.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"https://quarto.org/quarto.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="https://quarto.org/quarto.png" class="img-fluid" /></p>
+<figure class="figure">
+<p><img src="https://quarto.org/quarto.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -440,16 +436,16 @@ E = mc^2
 </ol>
 </section>
 <section id="step-3-render-the-webpage" class="level3">
-<h3>Step 3: Render the Webpage</h3>
+<h3 class="anchored" data-anchor-id="step-3-render-the-webpage">Step 3: Render the Webpage</h3>
 <ol type="1">
 <li><p>In your terminal or command prompt, navigate to the directory containing <code>webpage.qmd</code>.</p></li>
 <li><p>Run the following command to render the webpage:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render webpage.qmd</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render webpage.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This command will create an HTML file named <code>webpage.html</code> in the same directory.</p></li>
 </ol>
 </section>
 <section id="step-4-view-the-webpage" class="level3">
-<h3>Step 4: View the Webpage</h3>
+<h3 class="anchored" data-anchor-id="step-4-view-the-webpage">Step 4: View the Webpage</h3>
 <ol type="1">
 <li>Open <code>webpage.html</code> in your web browser.</li>
 <li>You should see your webpage with the content you created.</li>
@@ -457,7 +453,7 @@ E = mc^2
 </section>
 </section>
 <section id="adding-more-content" class="level2">
-<h2>Adding more content</h2>
+<h2 class="anchored" data-anchor-id="adding-more-content">Adding more content</h2>
 <p>You can add more content to your webpage by editing <code>webpage.qmd</code>. Quarto supports various types of content, including:</p>
 <ul>
 <li><strong>Headings:</strong> Use <code>#</code>, <code>##</code>, <code>###</code>, etc. for different heading levels.</li>
@@ -471,7 +467,7 @@ E = mc^2
 </ul>
 </section>
 <section id="further-exploration" class="level2">
-<h2>Further Exploration</h2>
+<h2 class="anchored" data-anchor-id="further-exploration">Further Exploration</h2>
 <ul>
 <li>Explore the Quarto documentation for more advanced features: <a href="https://quarto.org/">quarto.org</a>.</li>
 <li>Experiment with different output formats, such as PDF or Word.</li>
@@ -480,31 +476,31 @@ E = mc^2
 </ul>
 </section>
 <section id="publishing-to-quarto-pub" class="level2">
-<h2>Publishing to Quarto Pub</h2>
+<h2 class="anchored" data-anchor-id="publishing-to-quarto-pub">Publishing to Quarto Pub</h2>
 <p>Know how to publish your Quarto webpage to Quarto Pub, making it accessible online.</p>
 </section>
 <section id="prerequisites-1" class="level2">
-<h2>Prerequisites</h2>
+<h2 class="anchored" data-anchor-id="prerequisites-1">Prerequisites</h2>
 <ul>
 <li>All the prerequisites from the previous tutorial.</li>
 <li>A Quarto Pub account. You can create one at <a href="https://quarto.pub/">quarto.pub</a>.</li>
 </ul>
 <section id="step-1-create-a-quarto-webpage-if-you-havent-already" class="level3">
-<h3>Step 1: Create a Quarto Webpage (If you haven’t already)</h3>
+<h3 class="anchored" data-anchor-id="step-1-create-a-quarto-webpage-if-you-havent-already">Step 1: Create a Quarto Webpage (If you haven’t already)</h3>
 <p>If you haven’t already created a Quarto webpage, follow the steps in the previous tutorial to create <code>webpage.qmd</code> and render it into <code>webpage.html</code>.</p>
 </section>
 <section id="step-2-initialize-quarto-pub" class="level3">
-<h3>Step 2: Initialize Quarto Pub</h3>
+<h3 class="anchored" data-anchor-id="step-2-initialize-quarto-pub">Step 2: Initialize Quarto Pub</h3>
 <ol type="1">
 <li><p>Open your terminal or command prompt.</p></li>
 <li><p>Navigate to the directory containing <code>webpage.qmd</code>.</p></li>
 <li><p>Run the following command to initialize Quarto Pub:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This command will prompt you to log in to your Quarto Pub account. Follow the instructions to authenticate.</p></li>
 </ol>
 </section>
 <section id="step-3-publish-your-webpage" class="level3">
-<h3>Step 3: Publish Your Webpage</h3>
+<h3 class="anchored" data-anchor-id="step-3-publish-your-webpage">Step 3: Publish Your Webpage</h3>
 <ol type="1">
 <li>After successful authentication, Quarto will detect the <code>webpage.html</code> file and ask you if you want to publish it.</li>
 <li>Confirm that you want to publish the webpage.</li>
@@ -513,27 +509,27 @@ E = mc^2
 </ol>
 </section>
 <section id="step-4-view-your-published-webpage" class="level3">
-<h3>Step 4: View Your Published Webpage</h3>
+<h3 class="anchored" data-anchor-id="step-4-view-your-published-webpage">Step 4: View Your Published Webpage</h3>
 <ol type="1">
 <li>Open the URL provided by Quarto in your web browser.</li>
 <li>You should see your webpage hosted on Quarto Pub.</li>
 </ol>
 </section>
 <section id="step-5-updating-your-published-page." class="level3">
-<h3>Step 5: Updating your published page.</h3>
+<h3 class="anchored" data-anchor-id="step-5-updating-your-published-page.">Step 5: Updating your published page.</h3>
 <p>If you edit the <code>webpage.qmd</code> file, you will need to re-render the html file, and then republish.</p>
 <ol type="1">
 <li><p>Edit <code>webpage.qmd</code> with your text editor.</p></li>
 <li><p>Render the html file again.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render webpage.qmd</span></code></pre></div></li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render webpage.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Republish the webpage.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Quarto Pub will update the existing webpage with the new content.</p></li>
 </ol>
 </section>
 </section>
 <section id="important-considerations" class="level2">
-<h2>Important Considerations</h2>
+<h2 class="anchored" data-anchor-id="important-considerations">Important Considerations</h2>
 <ul>
 <li><strong>File Organization:</strong> For more complex websites, consider creating a Quarto project. This will help you organize your files and manage your website more effectively.</li>
 <li><strong>Custom Domains:</strong> Quarto Pub allows you to use custom domains for your websites. Refer to the Quarto Pub documentation for instructions.</li>
@@ -543,7 +539,7 @@ E = mc^2
 </ul>
 </section>
 <section id="further-exploration-1" class="level2">
-<h2>Further Exploration</h2>
+<h2 class="anchored" data-anchor-id="further-exploration-1">Further Exploration</h2>
 <ul>
 <li>Explore the Quarto Pub documentation for more advanced features: <a href="https://quarto.pub/docs/">quarto.pub</a>.</li>
 <li>Learn about Quarto projects for creating multi-page websites.</li>
@@ -551,29 +547,19 @@ E = mc^2
 </ul>
 </section>
 <section id="exercise-1" class="level2">
-<h2>Exercise</h2>
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise</h2>
 <p>Now create your own quarto workbook:</p>
 <p>1 - Download the <a href="https://github.com/fplmelo/rmda_ntu/blob/01f73a18d64f4d744df5db7f7f1150a585344fd5/exercises/week1-exercise.zip?raw=true">zip file of the project</a></p>
 <p>2- Tweak the <code>*qmd file</code> as you wish</p>
 <p>3 - Publish your workbook</p>
 <p>4 - Submit to the link to <a href="">NOW dropbox folder</a></p>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">Week 1 - Introduction to RMDA</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">Week 1 - Introduction to RMDA</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Home">Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/index.html">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Syllabus">Syllabus</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/syllabus.qmd">/syllabus.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Get Started">Get Started</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:1 - Install R and Rstudio">1 - Install R and Rstudio</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/get-started/1-install.html">/get-started/1-install.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:2 - Basic Introduction to R and Rstudio">2 - Basic Introduction to R and Rstudio</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/get-started/2-basic-intro.html">/get-started/2-basic-intro.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:3 - Syntax &amp; Data Structures">3 - Syntax &amp; Data Structures</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/get-started/3-syntax.html">/get-started/3-syntax.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Content">Content</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/sessions/index.html">/sessions/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Bibliography">Bibliography</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/bibliography/index.qmd">/bibliography/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Resources">Resources</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/resources/index.qmd">/resources/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Assessment">Assessment</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/assessment.html">/assessment.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Blog">Blog</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/docs/blog/index.qmd">/docs/blog/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Help">Help</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Report a Bug">Report a Bug</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:https://github.com/quarto-dev/quarto-cli/issues">https://github.com/quarto-dev/quarto-cli/issues</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Ask a Question">Ask a Question</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:https://github.com/quarto-dev/quarto-cli/discussions">https://github.com/quarto-dev/quarto-cli/discussions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:FAQ">FAQ</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/docs/faq/index.qmd">/docs/faq/index.qmd</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-navbar-tools:https://twitter.com/quarto_pub">https://twitter.com/quarto_pub</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-navbar-tools:https://github.com/quarto-dev/quarto-cli">https://github.com/quarto-dev/quarto-cli</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-navbar-tools:https://quarto.org/docs/blog/index.xml">https://quarto.org/docs/blog/index.xml</span></p>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="footer-left">
-<p>Content <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <strong>?var:course.copyright_year</strong> by <a href="?var:instructor.url"><strong>?var:instructor.name_no_title</strong></a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
-</div>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="footer-right">
-<p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="?var:course.github">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
-</div>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">Week 1 - Introduction to RMDA</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">Week 1 - Introduction to RMDA</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">Week 1 - Introduction to RMDA</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc"></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc"></span></p>
-</div>
+
+
 </section>
 </section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -997,23 +983,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <div class='footer-contents'>Content  ?var:course.copyright_year by [?var:instructor.name_no_title](?var:instructor.url) <br>
-All content licensed under a 
- 
-[Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
-</div>  
-    </div>   
+<p>Content <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <strong>?var:course.copyright_year</strong> by <a href="?var:instructor.url"><strong>?var:instructor.name_no_title</strong></a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-      <div class='footer-contents'>Made with  and [Quarto](https://quarto.org/)<br>
-[View the source at  GitHub](?var:course.github)
-</div>  
-    </div>
+<p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="?var:course.github">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
 
-</body>
 
-</html>
+
+
+</body></html>
