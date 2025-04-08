@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Felipe Melo">
-<meta name="dcterms.date" content="2025-04-06">
+<meta name="dcterms.date" content="2025-04-08">
 
 <title>R Syntax and Data Structures</title>
 <style>
@@ -217,13 +217,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#the-r-syntax" id="toc-the-r-syntax" class="nav-link" data-scroll-target="#the-r-syntax">The R syntax</a>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">Data Structures</a>
   <ul class="collapse">
-  <li><a href="#example-script" id="toc-example-script" class="nav-link" data-scroll-target="#example-script">Example script</a></li>
-  </ul></li>
-  <li><a href="#assignment-operator" id="toc-assignment-operator" class="nav-link" data-scroll-target="#assignment-operator">Assignment operator</a>
-  <ul class="collapse">
-  <li><a href="#tips-on-variable-names" id="toc-tips-on-variable-names" class="nav-link" data-scroll-target="#tips-on-variable-names">Tips on variable names</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors">Factors</a></li>
+  <li><a href="#matrix" id="toc-matrix" class="nav-link" data-scroll-target="#matrix">Matrix</a></li>
+  <li><a href="#data-frame" id="toc-data-frame" class="nav-link" data-scroll-target="#data-frame">Data Frame</a></li>
   <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
   </ul></li>
   </ul>
@@ -252,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 6, 2025</p>
+      <p class="date">April 8, 2025</p>
     </div>
   </div>
   
@@ -264,116 +264,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Approximate time: 20 min</p>
+<p>Approximate time: 70 min</p>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Become familiar with R syntax</li>
-<li>Understand variables and the assignment operator in R</li>
-<li>Understand the various data types and data structures in R</li>
+<li>Describe frequently-used data types in R.</li>
+<li>Construct data structures to store data.</li>
 </ul>
 </section>
-<section id="the-r-syntax" class="level2">
-<h2 class="anchored" data-anchor-id="the-r-syntax">The R syntax</h2>
-<p>Now that we know how to talk with R via the script editor or the console, we want to use R for something more than adding numbers. To do this, we need to know more about the R syntax.</p>
-<p>Below is an example script highlighting the many different “parts of speech” for R (syntax):</p>
+<section id="data-types" class="level2">
+<h2 class="anchored" data-anchor-id="data-types">Data Types</h2>
+<p>Variables can contain values of specific types within R. The six <strong>data types</strong> that R uses include:</p>
 <ul>
-<li>the <strong>comments</strong> <code>#</code> and how they are used to document function and its content</li>
-<li><strong>variables</strong> and <strong>functions</strong>
-<ul>
-<li>the <strong>assignment operator</strong> <code>&lt;-</code></li>
-</ul></li>
-<li>the <code>=</code> for <strong>arguments</strong> in functions</li>
+<li><code>"numeric"</code> for any numerical value, including whole numbers and decimals. This is the most common data type for performing mathematical operations.</li>
+<li><code>"character"</code> for text values, denoted by using quotes (““) around value. For instance, while 5 is a numeric value, if you were to put quotation marks around it, it would turn into a character value, and you could no longer use it for mathematical operations. Single or double quotes both work, as long as the same type is used at the beginning and end of the character value.</li>
+<li><code>"integer"</code> for whole numbers (e.g., <code>2L</code>, the <code>L</code> indicates to R that it’s an integer). It behaves similar to the <code>numeric</code> data type for most tasks or functions; however, it takes up less storage space than numeric data, so often tools will output integers if the data is known to be comprised of whole numbers. Just know that integers behave similarly to numeric values. If you wanted to create your own, you could do so by providing the whole number, followed by an upper-case L.</li>
+<li><code>"logical"</code> for <code>TRUE</code> and <code>FALSE</code> (the Boolean data type). The <code>logical</code> data type can be specified using four values, <code>TRUE</code> in all capital letters, <code>FALSE</code> in all capital letters, a single capital <code>T</code> or a single capital <code>F</code>.</li>
+<li><code>"complex"</code> to represent complex numbers with real and imaginary parts (e.g., <code>1+4i</code>) and that’s all we’re going to say about them</li>
+<li><code>"raw"</code> that we won’t discuss further</li>
 </ul>
-<p><em>NOTE: indentation and consistency in spacing is used to improve clarity and legibility</em></p>
-<section id="example-script" class="level3">
-<h3 class="anchored" data-anchor-id="example-script">Example script</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## DO NOT RUN</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Biobase)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(limma)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup directory variables</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>baseDir <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dataDir <span class="ot">&lt;-</span> <span class="fu">file.path</span>(baseDir, <span class="st">"data"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>metaDir <span class="ot">&lt;-</span> <span class="fu">file.path</span>(baseDir, <span class="st">"meta"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>resultsDir <span class="ot">&lt;-</span> <span class="fu">file.path</span>(baseDir, <span class="st">"results"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>meta <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="fu">file.path</span>(metaDir, <span class="st">'2015-1018_sample_key.csv'</span>), <span class="at">header=</span>T, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The table below provides examples of each of the commonly used data types:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Data Type</th>
+<th style="text-align: center;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">Numeric:</td>
+<td style="text-align: center;">1, 1.5, 20, pi</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Character:</td>
+<td style="text-align: center;">“anytext”, “5”, “TRUE”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">Integer:</td>
+<td style="text-align: center;">2L, 500L, -17L</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Logical:</td>
+<td style="text-align: center;">TRUE, FALSE, T, F</td>
+</tr>
+</tbody>
+</table>
+<p>The type of data will determine what you can do with it. For example, if you want to perform mathematical operations, then your data type cannot be character or logical. Whereas if you want to search for a word or pattern in your data, then you data should be of the character data type. The task or function being performed on the data will determine what type of data can be used.</p>
 </section>
-</section>
-<section id="assignment-operator" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-operator">Assignment operator</h2>
-<p>To do useful and interesting things in R, we need to assign <em>values</em> to <em>variables</em> using the assignment operator, <code>&lt;-</code>. For example, we can use the assignment operator to assign the value of <code>3</code> to <code>x</code> by executing:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The assignment operator (<code>&lt;-</code>) assigns <strong>values on the right</strong> to <strong>variables on the left</strong>.</p>
-<p><em>In RStudio, typing <code>Alt + -</code> (push <code>Alt</code> at the same time as the <code>-</code> key) will write <code>&lt;-</code> in a single keystroke.</em></p>
-<p>## Variables</p>
-<p>A variable is a symbolic name for (or reference to) information. Variables in computer programming are analogous to “buckets”, where information can be maintained and referenced. On the outside of the bucket is a name. When referring to the bucket, we use the name of the bucket, not the data stored in the bucket.</p>
-<p>In the example above, we created a variable or a ‘bucket’ called <code>x</code>. Inside we put a value, <code>3</code>.</p>
-<p>Let’s create another variable called <code>y</code> and give it a value of 5.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When assigning a value to an variable, R does not print anything to the console. You can force to print the value by using parentheses or by typing the variable name.</p>
-<pre><code>y</code></pre>
-<p>You can also view information on the variable by looking in your <code>Environment</code> window in the upper right-hand corner of the RStudio interface.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/environment.png" class="img-fluid figure-img"></p>
-<figcaption>Viewing your environment</figcaption>
-</figure>
-</div>
-<p>Now we can reference these buckets by name to perform mathematical operations on the values contained within. What do you get in the console for the following operation:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Try assigning the results of this operation to another variable called <code>number</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>number <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-<p><strong>Exercise</strong></p>
-<ol type="1">
-<li>Try changing the value of the variable <code>x</code> to 5. What happens to <code>number</code>?</li>
-<li>Now try changing the value of variable <code>y</code> to contain the value 10. What do you need to do, to update the variable <code>number</code>?</li>
-</ol>
-<hr>
-<section id="tips-on-variable-names" class="level3">
-<h3 class="anchored" data-anchor-id="tips-on-variable-names">Tips on variable names</h3>
-<p>Variables can be given almost any name, such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>. However, there are some rules / suggestions you should keep in mind:</p>
-<ul>
-<li><p>Avoid names starting with a number (<code>2x</code> is not valid but <code>x2</code> is)</p></li>
-<li><p>Keep in mind that <strong>R is case sensitive</strong> (e.g., <code>genome_length</code> is different from <code>Genome_length</code>)</p></li>
-<li><p>Make your names explicit and not too long.</p></li>
-<li><p>Be consistent with the styling of your code (where you put spaces, how you name variable, etc.). In R, two popular style guides are <a href="http://adv-r.had.co.nz/Style.html">Hadley Wickham’s style guide</a> and <a href="http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html">Google’s</a>.</p></li>
-<li><p>Avoid names of fundamental functions in R (e.g., <code>if</code>, <code>else</code>, <code>for</code>, see <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html">here</a> for a complete list). In general, even if it’s allowed, it’s best to not use other function names (e.g., <code>c</code>, <code>T</code>, <code>mean</code>, <code>data</code>) as variable names. When in doubt check the help to see if the name is already in use.</p></li>
-<li><p>Avoid dots (<code>.</code>) within a variable name as in <code>my.dataset</code>. There are many functions in R with dots in their names for historical reasons, but because dots have a special meaning in R (for methods) and other programming languages, it’s best to avoid them. - Use nouns for object names and verbs for function names</p>
-<pre><code>                                                                                                                                                                                                       ## Data Types
-
-                                                                                                                                                                                                       Variables can contain values of specific types within R. The six **data types** that R uses include: 
-
-                                                                                                                                                                                                         * `"numeric"` for any numerical value 
-                                                                                                                                                                                                       * `"character"` for text values, denoted by using quotes ("") around value   
-                                                                                                                                                                                                       * `"integer"` for integer numbers (e.g., `2L`, the `L` indicates to R that it's an integer)</code></pre></li>
-<li><p><code>"logical"</code> for <code>TRUE</code> and <code>FALSE</code> (the boolean data type)</p></li>
-<li><p><code>"complex"</code> to represent complex numbers with real and imaginary parts (e.g., <code>1+4i</code>) and that’s all we’re going to say about them</p></li>
-<li><p><code>"raw"</code> that we won’t discuss further</p>
-<pre><code>                                                                                                                                                                                                                                          The table below provides examples of each of the commonly used data types:
-
-                                                                                                                                                                                                                                            | Data Type  | Examples|
-                                                                                                                                                                                                                                            | -----------:|:-------------------------------:|
-                                                                                                                                                                                                                                            | Numeric:  | 1, 1.5, 20, pi|
-                                                                                                                                                                                                                                            | Character:  | “anytext”, “5”, “TRUE”|
-                                                                                                                                                                                                                                            | Integer:  | 2L, 500L, -17L|
-                                                                                                                                                                                                                                            | Logical:  | TRUE, FALSE, T, F|
-
-                                                                                                                                                                                                                                            ## Data Structures
-
-                                                                                                                                                                                                                                            We know that variables are like buckets, and so far we have seen that bucket filled with a single value. Even when `number` was created, the result of the mathematical operation was a single value. **Variables can store more than just a single value, they can store a multitude of different data structures.** These include, but are not limited to, vectors (`c`), factors (`factor`), matrices (`matrix`), data frames (`data.frame`) and lists (`list`).
-
-
-                                                                                                                                                                                                                                          ### Vectors
-
-                                                                                                                                                                                                                                          A vector is the most common and basic data structure in R, and is pretty much the workhorse of R. It's basically just a collection of values, mainly either numbers,</code></pre></li>
-</ul>
+<section id="data-structures" class="level2">
+<h2 class="anchored" data-anchor-id="data-structures">Data Structures</h2>
+<p>We know that variables are like buckets, and so far we have seen that bucket filled with a single value. Even when <code>number</code> was created, the result of the mathematical operation was a single value. <strong>Variables can store more than just a single value, they can store a multitude of different data structures.</strong> These include, but are not limited to, vectors (<code>c</code>), factors (<code>factor</code>), matrices (<code>matrix</code>), data frames (<code>data.frame</code>) and lists (<code>list</code>).</p>
+<section id="vectors" class="level3">
+<h3 class="anchored" data-anchor-id="vectors">Vectors</h3>
+<p>A vector is the most common and basic data structure in R, and is pretty much the workhorse of R. It’s basically just a collection of values, mainly either numbers,</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../img/vector2.png" class="img-fluid figure-img"></p>
@@ -407,60 +351,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The analogy for a vector is that your bucket now has different compartments; these compartments in a vector are called <em>elements</em>.</p>
 <p>Each <strong>element</strong> contains a single value, and there is no limit to how many elements you can have. A vector is assigned to a single variable, because regardless of how many elements it contains, in the end it is still a single entity (bucket).</p>
 <p>Let’s create a vector of genome lengths and assign it to a variable called <code>glengths</code>.</p>
-<pre><code>                                                                                                                                                                                                                                            Each element of this vector contains a single numeric value, and three values will be combined together into a vector using `c()` (the combine function). All of the values are put within the parentheses and separated with a comma.
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ```r
-                                                                                                                                                                                                                                            glengths &lt;- c(4.6, 3000, 50000)
-                                                                                                                                                                                                                                            glengths
-                                                                                                                                                                                                                                            ```
-                                                                                                                                                                                                                                            *Note your environment shows the `glengths` variable is numeric and tells you the `glengths` vector starts at element 1 and ends at element 3 (i.e. your vector contains 3 values).*
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              A vector can also contain characters. Create another vector called `species` with three elements, where each element corresponds with the genome sizes vector (in Mb).
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ```r
-                                                                                                                                                                                                                                            species &lt;- c("ecoli", "human", "corn")
-                                                                                                                                                                                                                                            species
-                                                                                                                                                                                                                                            ```
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ### Factors
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            A **factor** is a special type of vector that is used to **store categorical data**. Each unique category is referred to as a **factor level** (i.e. category = level). Factors are built on top of integer vectors such that each **factor level** is assigned an **integer value**, creating value-label pairs. 
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ![factors](../img/factors_sm.png)
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            Let's create a factor vector and explore a bit more.  We'll start by creating a character vector describing three different levels of expression:
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              ```r
-                                                                                                                                                                                                                                            expression &lt;- c("low", "high", "medium", "high", "low", "medium", "high")
-                                                                                                                                                                                                                                            ```
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            Now we can convert this character vector into a *factor* using the `factor()` function:
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              ```r
-                                                                                                                                                                                                                                            expression &lt;- factor(expression)
-                                                                                                                                                                                                                                            ```
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            So, what exactly happened when we applied the `factor()` function? 
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              ![factor_new](../img/factors_new.png)
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            The expression vector is categorical, in that all the values in the vector belong to a set of categories; in this case, the categories are `low`, `medium`, and `high`. By turning the expression vector into a factor, the **categories are assigned integers alphabetically**, with high=1, low=2, medium=3. This in effect assigns the different factor levels. You can view the newly created factor variable and the levels in the **Environment** window.
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ![Factor variables in environment](../img/factors.png)
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ### Matrix
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            A `matrix` in R is a collection of vectors of **same length and identical datatype**. Vectors can be combined as columns in the matrix or by row, to create a 2-dimensional structure.
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ![matrix](../img/matrix.png)
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            Matrices are used commonly as part of the mathematical machinery of statistics. They are usually of numeric datatype and used in computational algorithms to serve as a checkpoint. For example, if input data is not of identical data type (numeric, character, etc.), the `matrix()` function will throw an error and stop any downstream code execution.
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            ### Data Frame
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            A `data.frame` is the _de facto_ data structure for most tabular data and what we use for statistics and plotting. A `data.frame` is similar to a matrix in that it's a collection of vectors of of the **same length** and each vector represents a column. However, in a dataframe **each vector can be of a different data type** (e.g., characters, integers, factors). </code></pre>
+<p>Each element of this vector contains a single numeric value, and three values will be combined together into a vector using <code>c()</code> (the combine function). All of the values are put within the parentheses and separated with a comma.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a numeric vector and store the vector as a variable called 'glengths'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>glengths <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4.6</span>, <span class="dv">3000</span>, <span class="dv">50000</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>glengths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Note your environment shows the <code>glengths</code> variable is numeric (num) and tells you the <code>glengths</code> vector starts at element 1 and ends at element 3 (i.e.&nbsp;your vector contains 3 values) as denoted by the [1:3].</em></p>
+<p>A vector can also contain characters. Create another vector called <code>species</code> with three elements, where each element corresponds with the genome sizes vector (in Mb).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector and store the vector as a variable called 'species'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ecoli"</span>, <span class="st">"human"</span>, <span class="st">"corn"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>species</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What do you think would happen if we forgot to put quotations around one of the values? Let’s test it out with corn.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forget to put quotes around corn</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ecoli"</span>, <span class="st">"human"</span>, corn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that RStudio is quite helpful in color-coding the various data types. We can see that our numeric values are blue, the character values are green, and if we forget to surround corn with quotes, it’s black. What does this mean? Let’s try to run this code.</p>
+<p>When we try to run this code we get an error specifying that object ‘corn’ is not found. What this means is that R is looking for an object or variable in my Environment called ‘corn’, and when it doesn’t find it, it returns an error. If we had a character vector called ‘corn’ in our Environment, then it would combine the contents of the ‘corn’ vector with the values “ecoli” and “human”.</p>
+<p>Since we only want to add the value “corn” to our vector, we need to re-run the code with the quotation marks surrounding corn. A quick way to add quotes to both ends of a word in RStudio is to highlight the word, then press the quote key.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector and store the vector as a variable called 'species'</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ecoli"</span>, <span class="st">"human"</span>, <span class="st">"corn"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p><strong>Exercise</strong></p>
+<p>Try to create a vector of numeric and character values by <em>combining</em> the two vectors that we just created (<code>glengths</code> and <code>species</code>). Assign this combined vector to a new variable called <code>combined</code>. <em>Hint: you will need to use the combine <code>c()</code> function to do this</em>. Print the <code>combined</code> vector in the console, what looks different compared to the original vectors?</p>
+<hr>
+</section>
+<section id="factors" class="level3">
+<h3 class="anchored" data-anchor-id="factors">Factors</h3>
+<p>A <strong>factor</strong> is a special type of vector that is used to <strong>store categorical data</strong>. Each unique category is referred to as a <strong>factor level</strong> (i.e.&nbsp;category = level). Factors are built on top of integer vectors such that each <strong>factor level</strong> is assigned an <strong>integer value</strong>, creating value-label pairs.</p>
+<p>For instance, if we have four animals and the first animal is female, the second and third are male, and the fourth is female, we could create a factor that appears like a vector, but has integer values stored under-the-hood. The integer value assigned is a one for females and a two for males. The numbers are assigned in alphabetical order, so because the f- in females comes before the m- in males in the alphabet, females get assigned a one and males a two. In later lessons we will show you how you could change these assignments.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/factors_sm.png" class="img-fluid figure-img"></p>
+<figcaption>factors</figcaption>
+</figure>
+</div>
+<p>Let’s create a factor vector and explore a bit more. We’ll start by creating a character vector describing three different levels of expression. Perhaps the first value represents expression in mouse1, the second value represents expression in mouse2, and so on and so forth:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector and store the vector as a variable called 'expression'</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>expression <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"low"</span>, <span class="st">"high"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>, <span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now we can convert this character vector into a <em>factor</em> using the <code>factor()</code> function:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn 'expression' vector into a factor</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>expression <span class="ot">&lt;-</span> <span class="fu">factor</span>(expression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>So, what exactly happened when we applied the <code>factor()</code> function?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/factors_new.png" class="img-fluid figure-img"></p>
+<figcaption>factor_new</figcaption>
+</figure>
+</div>
+<p>The expression vector is categorical, in that all the values in the vector belong to a set of categories; in this case, the categories are <code>low</code>, <code>medium</code>, and <code>high</code>. By turning the expression vector into a factor, the <strong>categories are assigned integers alphabetically</strong>, with high=1, low=2, medium=3. This in effect assigns the different factor levels. You can view the newly created factor variable and the levels in the <strong>Environment</strong> window.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/factors.png" class="img-fluid figure-img"></p>
+<figcaption>Factor variables in environment</figcaption>
+</figure>
+</div>
+<p>So now that we have an idea of what factors are, when would you ever want to use them?</p>
+<p>Factors are extremely valuable for many operations often performed in R. For instance, factors can give order to values with no intrinsic order. In the previous ‘expression’ vector, if I wanted the low category to be less than the medium category, then we could do this using factors. Also, factors are necessary for many statistical methods. For example, descriptive statistics can be obtained for character vectors if you have the categorical information stored as a factor. Also, if you want to denote which category is your base level for a statistical comparison, then you would need to have your category variable stored as a factor with the base level assigned to 1. Anytime that it is helpful to have the categories thought of as groups in an analysis, the factor function makes this possible. For instance, if you want to color your plots by treatment type, then you would need the treatment variable to be a factor.</p>
+<hr>
+<p><strong>Exercises</strong></p>
+<p>Let’s say that in our experimental analyses, we are working with three different sets of cells: normal, cells knocked out for geneA (a very exciting gene), and cells overexpressing geneA. We have three replicates for each celltype.</p>
+<ol type="1">
+<li><p>Create a vector named <code>samplegroup</code> with nine elements: 3 control (“CTL”) values, 3 knock-out (“KO”) values, and 3 over-expressing (“OE”) values.</p></li>
+<li><p>Turn <code>samplegroup</code> into a factor data structure.</p></li>
+</ol>
+<hr>
+</section>
+<section id="matrix" class="level3">
+<h3 class="anchored" data-anchor-id="matrix">Matrix</h3>
+<p>A <code>matrix</code> in R is a collection of vectors of <strong>same length and identical datatype</strong>. Vectors can be combined as columns in the matrix or by row, to create a 2-dimensional structure.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/matrix.png" class="img-fluid figure-img"></p>
+<figcaption>matrix</figcaption>
+</figure>
+</div>
+<p>Matrices are used commonly as part of the mathematical machinery of statistics. They are usually of numeric datatype and used in computational algorithms to serve as a checkpoint. For example, if input data is not of identical data type (numeric, character, etc.), the <code>matrix()</code> function will throw an error and stop any downstream code execution.</p>
+</section>
+<section id="data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="data-frame">Data Frame</h3>
+<p>A <code>data.frame</code> is the <em>de facto</em> data structure for most tabular data and what we use for statistics and plotting. A <code>data.frame</code> is similar to a matrix in that it’s a collection of vectors of the <strong>same length</strong> and each vector represents a column. However, in a dataframe <strong>each vector can be of a different data type</strong> (e.g., characters, integers, factors). In the data frame pictured below, the first column is character, the second column is numeric, the third is character, and the fourth is logical.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../img/dataframe.png" class="img-fluid figure-img"></p>
@@ -469,8 +436,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>A data frame is the most common way of storing data in R, and if used systematically makes data analysis easier.</p>
 <p>We can create a dataframe by bringing <strong>vectors</strong> together to <strong>form the columns</strong>. We do this using the <code>data.frame()</code> function, and giving the function the different vectors we would like to bind together. <em>This function will only work for vectors of the same length.</em></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(species, glengths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Note that you can view your data.frame object by clicking on its name in the <code>Environment</code> window.</em></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame and store it as a variable called 'df'</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(species, glengths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can see that a new variable called <code>df</code> has been created in our <code>Environment</code> within a new section called <code>Data</code>. In the <code>Environment</code>, it specifies that <code>df</code> has 3 observations of 2 variables. What does that mean? In R, rows always come first, so it means that <code>df</code> has 3 rows and 2 columns. We can get additional information if we click on the blue circle with the white triangle in the middle next to <code>df</code>. It will display information about each of the columns in the data frame, giving information about what the data type is of each of the columns and the first few values of those columns.</p>
+<p>Another handy feature in RStudio is that if we hover the cursor over the variable name in the <code>Environment</code>, <code>df</code>, it will turn into a pointing finger. If you click on <code>df</code>, it will open the data frame as it’s own tab next to the script editor. We can explore the table interactively within this window. To close, just click on the X on the tab.</p>
+<p>As with any variable, we can print the values stored inside to the console if we type the variable’s name and run.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p><strong>Exercise</strong></p>
+<p>Create a data frame called <code>favorite_books</code> with the following vectors as columns:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>titles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Catch-22"</span>, <span class="st">"Pride and Prejudice"</span>, <span class="st">"Nineteen Eighty Four"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">453</span>, <span class="dv">432</span>, <span class="dv">328</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 <section id="lists" class="level3">
 <h3 class="anchored" data-anchor-id="lists">Lists</h3>
@@ -482,26 +459,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>If you have variables of different data structures you wish to combine, you can put all of those into one list object by using the <code>list()</code> function and placing all the items you wish to combine within parentheses:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(species, df, number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Print out the list to screen to take a look at the components:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>list1</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"ecoli"</span> <span class="st">"human"</span> <span class="st">"corn"</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">2</span>]]</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  species glengths</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>   ecoli      <span class="fl">4.6</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>   human   <span class="fl">3000.0</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>    corn  <span class="fl">50000.0</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">3</span>]]</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>There are three components corresponding to the three different variables we passed in, and what you see is that structure of each is retained.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(species, df, number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We see <code>list1</code> appear within the Data section of our environment as a list of 3 components or variables. If we click on the blue circle with a triangle in the middle, it’s not quite as interpretable as it was for data frames.</p>
+<p>Essentially, each component is preceded by a colon. The first colon give the <code>species</code> vector, the second colon precedes the <code>df</code> data frame, with the dollar signs indicating the different columns, the last colon gives the single value, <code>number</code>.</p>
+<p>If I click on <code>list1</code>, it opens a tab where you can explore the contents a bit more, but it’s still not super intuitive. The easiest way to view small lists is to print to the console.</p>
+<p>Let’s type list1 and print to the console by running it.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>list1</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"ecoli"</span> <span class="st">"human"</span> <span class="st">"corn"</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">2</span>]]</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  species glengths</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>   ecoli      <span class="fl">4.6</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>   human   <span class="fl">3000.0</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>    corn  <span class="fl">50000.0</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>[[<span class="dv">3</span>]]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are three components corresponding to the three different variables we passed in, and what you see is that structure of each is retained. Each component of a list is referenced based on the number position. We will talk more about how to inspect and manipulate components of lists in later lessons.</p>
+<hr>
+<p><strong>Exercise</strong></p>
+<p>Create a list called <code>list2</code> containing <code>species</code>, <code>glengths</code>, and <code>number</code>.</p>
+<hr>
+<p>Now that we know what lists are, why would we ever want to use them? When getting started with R, you will most likely encounter lists with different tools or functions that you use. Oftentimes a tool will need a list as input, so that all the information needed to run the tool is present in a single variable. Sometimes a tool will output a list when working through an analysis. Knowing how to work with them and extract necessary information will be critically important.</p>
+<p>As you become more comfortable with R, you will find yourself using lists more often. One common use of lists is to make iterative processes more efficient. For example, let’s say you had multiple data frames containing the same weather information from different cities throughout North America. You wanted to perform the same task on each of the data frames, but that would take a long time to do individually. Instead you could create a list where each data frame is a component of the list. Then, you could perform the task on the list instead, which would be applied to each of the components.</p>
 <hr>
 <p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
 <ul>
-<li><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
+<li><em>The materials used in this lesson are adapted from work that is Copyright © Data Carpentry (http://datacarpentry.org/). All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
 </ul>
 
 
