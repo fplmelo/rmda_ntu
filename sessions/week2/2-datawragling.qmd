@@ -1,5 +1,5 @@
 ---
-title: "Week 2 - Data Wrangling"
+title: "Week 2 - Data Wrangling & Research Questions"
 subtitle: "RMDA ARES40011"
 author: "Felipe Melo"
 date: "last-modified"
