@@ -6,8 +6,6 @@ date-format: "long"
 format:
   html:
     toc: true
-  pdf:
-    toc: true
 ---
 
 # Module workflow
