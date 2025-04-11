@@ -17,6 +17,8 @@ website:
         href: index.qmd
       - text: "Syllabus"
         href: syllabus.qmd
+      - text: "Schedule"
+        href: schedule.qmd
       - text: "Get Started"
         menu:
           - text: "1 - Install R and Rstudio"

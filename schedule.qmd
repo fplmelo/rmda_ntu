@@ -1,0 +1,36 @@
+---
+title: "RM&DA Schedule"
+format: html
+---
+
+## Schedule
+
+Here’s your roadmap for the semester!
+
+* [**Get-started**](content/get-started/1.install.qmd) {{< fa book-open-reader >}} Here is where you should start your journey. This is a short introduction to R and RStudio.
+
+* [**Content**](content/index.qmd) <i class="bi bi-columns-gap"></i>
+All the lessons live here, grouped by weeks.
+  * [**Preparation**]() - Every week starts here with a few steps to set up the basics in terms of `packages` and `readings`.
+  * [**Session**]() - Here you'll find the **slides** and **recorded videos** focused on the core learning outcomes
+  * [**Exercise**]() - This is your post-sesssion, auto-learning hours of study and must be organized in your Quarto workbook.
+  
+:::::: {.row .d-flex .justify-content-center}
+::::: {.col-12 .col-sm-10 .col-md-6}
+:::: {.card .bg-danger .text-white}
+::: {.card-body}
+
+**tl;dr**: You should follow this general process for each week:
+
+- Do everything on the **preparation** section ({{< fa book-open-reader >}})
+- Watch the **recorded videos** and check the **slides** of the lesson ({{< fa chalkboard-teacher >}})
+- Complete the **exercise** ({{< fa pen-ruler >}}) using your quarto workbook ({{< fa laptop-code >}}) and submit it to the respective **Dropbox**
+
+:::
+::::
+:::::
+::::::
+<br>
+
+![](/img/class-workflow.png){fig-align="center"}
+
