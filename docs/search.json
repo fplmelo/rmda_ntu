@@ -5,5 +5,33 @@
     "title": "Content",
     "section": "",
     "text": "Week 1 - Introduction to RMDA\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2 - Data Wrangling & Research Questions\n\n\n\n\n\n\nFelipe Melo\n\n\nApr 9, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "RM&DA Schedule",
+    "section": "",
+    "text": "Here’s your roadmap for the semester!\n\nGet-started  Here is where you should start your journey. This is a short introduction to R and RStudio.\nContent  All the lessons live here, grouped by weeks.\n\n[Preparation] - Every week starts here with a few steps to set up the basics in terms of packages and readings.\n[Session] - Here you’ll find the slides and recorded videos focused on the core learning outcomes\n[Exercise] - This is your post-sesssion, auto-learning hours of study and must be organized in your Quarto workbook.\n\n\n\n\n\n\ntl;dr: You should follow this general process for each week:\n\nDo everything on the preparation section ()\nWatch the recorded videos and check the slides of the lesson ()\nComplete the exercise () using your quarto workbook () and submit it to the respective Dropbox"
+  },
+  {
+    "objectID": "schedule.html#schedule",
+    "href": "schedule.html#schedule",
+    "title": "RM&DA Schedule",
+    "section": "",
+    "text": "Here’s your roadmap for the semester!\n\nGet-started  Here is where you should start your journey. This is a short introduction to R and RStudio.\nContent  All the lessons live here, grouped by weeks.\n\n[Preparation] - Every week starts here with a few steps to set up the basics in terms of packages and readings.\n[Session] - Here you’ll find the slides and recorded videos focused on the core learning outcomes\n[Exercise] - This is your post-sesssion, auto-learning hours of study and must be organized in your Quarto workbook.\n\n\n\n\n\n\ntl;dr: You should follow this general process for each week:\n\nDo everything on the preparation section ()\nWatch the recorded videos and check the slides of the lesson ()\nComplete the exercise () using your quarto workbook () and submit it to the respective Dropbox"
+  },
+  {
+    "objectID": "get-started/1-install.html",
+    "href": "get-started/1-install.html",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "Artwork by @allison_horst"
+  },
+  {
+    "objectID": "get-started/1-install.html#video-tutorials",
+    "href": "get-started/1-install.html#video-tutorials",
+    "title": "Installing R and RStudio",
+    "section": "Video Tutorials",
+    "text": "Video Tutorials"
   }
 ]

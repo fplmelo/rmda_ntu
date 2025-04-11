@@ -7,7 +7,7 @@ format: html
 
 Here’s your roadmap for the semester!
 
-* [**Get-started**](get-started/1.install.qmd) {{< fa book-open-reader >}} Here is where you should start your journey. This is a short introduction to R and RStudio.
+* [**Get-started**](get-started/1-install.qmd) {{< fa book-open-reader >}} Here is where you should start your journey. This is a short introduction to R and RStudio.
 
 * [**Content**](sessions/index.qmd) <i class="bi bi-columns-gap"></i>
 All the lessons live here, grouped by weeks.
