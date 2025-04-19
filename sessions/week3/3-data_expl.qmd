@@ -261,6 +261,9 @@ Remember to `ungroup()` the data frame if you want subsequent operations to be p
 The `dplyr` package in the tidyverse offers a powerful and flexible set of tools for data summarisation in R. By combining functions like `group_by()` and `summarise()` (along with its variants `summarise_all()`, `summarise_at()`, `summarise_if()`) with various statistical summary functions, you can efficiently generate insightful summaries of your data, both for entire datasets and for specific groups. Functions like `count()` and `tally()` provide convenient ways to create frequency tables. These capabilities make dplyr an essential package for data analysis and exploration in R.
 
 # Exercise
+Approximate time: 60 min
+
+
 
 ## Exploring Penguin Data with dplyr Summaries
 
