@@ -45,6 +45,8 @@ format:
 ## Part 1
 ## What is a scientific hypothesis?
 
+{{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/3.2_scientific_hypotheses.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
+
 According to the Britannica, a [scientific hypothesis](https://www.britannica.com/science/scientific-hypothesis) is: "... an idea that proposes a tentative explanation about a phenomenon or a narrow set of phenomena observed in the natural world."
 
 ![](/img/hypothesis.webp)
@@ -90,6 +92,8 @@ In summary, a scientific hypothesis proposes an explanation for a phenomenon and
 :::
 
 ## Part 2
+
+{{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/03_data_exploration.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
 
 ## Data summarisation with dplyr
 
