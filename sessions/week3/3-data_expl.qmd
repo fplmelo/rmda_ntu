@@ -9,7 +9,7 @@ filters:
 format:
   html:
     toc: true
-
+    toc-expanded: 3
 ---
 
 ![](/img/we_believe.png){width="500"}
@@ -42,6 +42,7 @@ format:
 
 # Lesson
 
+## Part 1
 ## What is a scientific hypothesis?
 
 According to the Britannica, a [scientific hypothesis](https://www.britannica.com/science/scientific-hypothesis) is: "... an idea that proposes a tentative explanation about a phenomenon or a narrow set of phenomena observed in the natural world."
@@ -88,5 +89,237 @@ Some key distinctions are:
 In summary, a scientific hypothesis proposes an explanation for a phenomenon and guides the research process, while a statistical hypothesis is a specific, testable statement about data relationships derived from a scientific hypothesis, which is evaluated using statistical methods. The statistical hypothesis provides a way to quantitatively assess some aspect of the broader scientific hypothesis.
 :::
 
+## Part 2
 
+## Data summarisation with dplyr
+
+Data summarisation is a crucial step in understanding your data. It involves calculating descriptive statistics and creating summary tables to get an overview of the dataset, identify patterns, and spot potential issues. The **dplyr** package within the tidyverse provides a set of intuitive functions for efficient data manipulation, including powerful tools for summarisation. **The tidyverse expands the vocabulary of R**.
+
+To begin, we first need to load the **tidyverse** package, which includes **dplyr**:
+
+```{r load_tidyverse}
+#| warning: false
+# Load the tidyverse package [5, 6]
+library(tidyverse)
+
+```
+
+## Summary Statistics for Ungrouped Data
+
+The summarise() function in dplyr is used to compute summary statistics for your data1 .... When applied to an ungrouped data frame, it calculates the specified summaries across all rows1 .
+
+Let's use the built-in `iris` dataset as an example :
+
+```{r}
+# Convert the iris dataset to a tibble
+my_data <- as_tibble(iris)
+my_data
+
+```
+
+We can compute the mean of Sepal.Length and Petal.Length, as well as the total number of observations using summarise() and the n() function1:
+
+```{r}
+# Calculate summary statistics for the entire dataset
+my_data %>%
+  summarise(
+    count = n(), # Count the number of rows [7, 8]
+    mean_sep_length = mean(Sepal.Length, na.rm = TRUE), # Calculate the mean of Sepal.Length, removing NA values [6]
+    mean_pet_length = mean(Petal.Length, na.rm = TRUE)  # Calculate the mean of Petal.Length, removing NA values [6]
+  )
+```
+
+The `na.rm = TRUE` argument is used to handle missing values by removing them before computing the mean5 . R is clear about trying to do calculations when there is an NA5 . If there is an NA, it cannot create a correct calculation, so it will return NA again5 . This is a nice way of quickly seeing that you have missing values in your data5 
+## Summary Statistics for Grouped Data
+
+Often, we want to compute summary statistics for different groups within our data. This is This is achieved by using the `group_by()` function before `summarise()` `group_by()` takes one or more column names as arguments and groups the data based on the unique values in those columns. Subsequent `summarise()` operations will then be performed within each group.
+
+Let's group the iris data by Species and calculate the same summary statistics as before:
+
+```{r}
+# Group the data by Species and then summarise [1, 9]
+my_data %>%
+  group_by(Species) %>%
+  summarise(
+    count = n(), # Count the number of rows in each group [7, 8]
+    mean_sep_length = mean(Sepal.Length), # Calculate the mean of Sepal.Length for each species [1]
+    mean_pet_length = mean(Petal.Length)  # Calculate the mean of Petal.Length for each species [1]
+  )
+```
+
+We can also group by multiple variables: Let's use the `ToothGrowth` dataset:
+
+```{r}
+# Display the head of the ToothGrowth dataset
+head(ToothGrowth)
+```
+
+Now, let's group by supp and dose and calculate the number of observations, mean, and standard deviation of len:
+
+```{r}
+# Group by two variables and calculate summaries [1]
+ToothGrowth %>%
+  group_by(supp, dose) %>%
+  summarise(
+    n = n(), # Count observations in each group [7]
+    mean_length = mean(len), # Calculate the mean of len [10]
+    sd_length = sd(len)      # Calculate the standard deviation of len [10]
+  )
+```
+
+## Summarising Multiple Variables
+
+`dplyr` provides several functions to summarise multiple variables efficiently:
+
+• `summarise_all()`: Applies a summary function to every column in the data frame.
+
+• `summarise_at()`: Applies summary functions to specific columns selected using a character vector.
+
+• `summarise_if()`: Applies summary functions to columns selected with a predicate function that returns `TRUE`. For example, we can summarise only numeric columns:
+
+The simplified formats for these functions are:
+
+• `summarise_all(.tbl, .funs, ...)`
+
+• `summarise_if(.tbl, .predicate, .funs, ...)`
+
+• `summarise_at(.tbl, .vars, .funs, ...)`
+
+Where `.funs` can be a function name or a list of function calls, and ... allows for additional arguments to the functions (e.g., `na.rm = TRUE`).
+
+## Useful Statistical Summary Functions
+
+`dplyr` works well with various R functions that compute statistical summaries:
+
+• Measures of centrality: `mean()`,` median()`;
+
+• Measures of variation: `sd()` (standard deviation), `IQR()` (interquartile range) , `range()`(range of the data);
+
+• Measures of rank: `min()` (minimum value), `max()` (maximum value), `quantile()`; 
+
+• Counts: `n()` (the number of elements), `sum(!is.na(x))` (count non-missing values), `n_distinct()` (count the number of unique values).
+
+• Counts and proportions of logical values: `sum(x > 10)` (count the number of elements where x > 10), `mean(y == 0)` (proportion of elements where y = 0).
+
+## Frequency Tables
+
+For quickly obtaining frequency tables, `dplyr` provides the `count()` and `tally()` functions, which are synonymous.
+
+Using the *penguins* dataset:
+
+```{r}
+# Load the penguins dataset [6]
+library(palmerpenguins)
+penguins <- as_tibble(palmerpenguins::penguins)
+penguins
+```
+
+We can get a frequency table of the *species* column:
+
+```{r}
+# Get a frequency table using tally
+penguins %>%
+  group_by(species) %>%
+  tally()
+```
+
+Or equivalently:
+
+```{r}
+# Get a frequency table using count
+penguins %>%
+  count(species)
+```
+
+We can also group by multiple columns to get more detailed frequency tables:
+
+```{r}
+# Get a frequency table with multiple grouping variables
+penguins %>%
+  count(species, island)
+```
+
+## Adding Summary Statistics as New Columns
+
+While `summarise()` collapses the data frame to summary rows, `mutate()` can be used in conjunction with `group_by()` to add summary statistics as new columns to the original data frame.
+
+For example, to add the mean bill_length_mm for each island16 :
+
+```{r}
+# Group by island and add the mean bill length as a new column [19]
+penguins %>%
+  drop_na(bill_length_mm) %>% # Remove rows with NA in bill_length_mm
+  group_by(island) %>%
+  mutate(mean_bill_length_island = mean(bill_length_mm)) %>%
+  head()
+```
+
+Remember to `ungroup()` the data frame if you want subsequent operations to be performed on the entire dataset rather than by groups.
+
+## Conclusion
+
+The `dplyr` package in the tidyverse offers a powerful and flexible set of tools for data summarisation in R. By combining functions like `group_by()` and `summarise()` (along with its variants `summarise_all()`, `summarise_at()`, `summarise_if()`) with various statistical summary functions, you can efficiently generate insightful summaries of your data, both for entire datasets and for specific groups. Functions like `count()` and `tally()` provide convenient ways to create frequency tables. These capabilities make dplyr an essential package for data analysis and exploration in R.
+
+# Exercise
+
+## Exploring Penguin Data with dplyr Summaries
+
+Objective: To practice using the dplyr package in R to calculate and explore summary statistics of the penguins dataset, both for the entire dataset and for specific groups.
+
+Required Packages: `dplyr` and `palmerpenguins.` 
+
+:::callout-warning
+
+Remember that you must use `install.package()` fucntion to intall R packages
+
+
+:::
+
+Steps:
+
+1. Load the necessary packages and the penguins dataset:
+
+2. Calculate basic summary statistics for the entire dataset:
+
+  - Find the average bill length (in mm) for all penguins, handling missing values.
+  - Calculate the minimum and maximum flipper length (in mm) for all penguins. 
+  - Find the number of observations in the entire dataset using n().
+
+3. Calculate summary statistics grouped by a single variable (e.g., species):
+
+  - Find the average body mass (in kg) for each penguin species. Remember to convert grams to kilograms by dividing by 1000.
+  - For each species, calculate the average and standard deviation of bill depth (in mm).
+  
+4. Calculate summary statistics grouped by multiple variables (e.g., species and island):
+
+  - Determine the number of penguins of each species found on each island using count() or tally().
+  
+  - Calculate the average flipper length for each combination of species and sex.
+
+5. Use summarise_at() and summarise_if() to summarise multiple columns:
+
+  - Calculate the mean of bill_length_mm and bill_depth_mm for each island using summarise_at().
+  - Calculate the mean of all numeric columns for each species using summarise_if().
+
+6. Explore frequency tables:
+
+  - Create a frequency table showing the number of penguins for each species.
+  
+  - Create a frequency table showing the number of penguins for each combination of island and sex.
+
+7. Add summary statistics as a new column using mutate():
+
+  - Group the data by species and then add a new column showing the average bill length for that species to each row. Remember to ungroup() if needed for subsequent operations on the entire dataset.
+
+### Further Exploration (Challenges):
+
+• Calculate the range (maximum - minimum) of body mass for each species.
+
+• Find the median flipper length for each island.
+
+• Determine the proportion of male and female penguins within each species. (Hint: You might need to combine group_by(), count(), and mutate() to calculate proportions).
+
+• Group the data by island and then find the species with the longest average bill length on each island. (This might involve multiple steps).
+
+This exercise will provide practical experience in using dplyr's powerful functions for data summarisation with the penguins dataset. Remember to refer to the help documentation (e.g., ?summarise) if you need more information on specific functions.
 

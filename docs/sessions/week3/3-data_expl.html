@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -204,8 +238,24 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a>
   <ul class="collapse">
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a></li>
   <li><a href="#what-is-a-scientific-hypothesis" id="toc-what-is-a-scientific-hypothesis" class="nav-link" data-scroll-target="#what-is-a-scientific-hypothesis">What is a scientific hypothesis?</a></li>
   <li><a href="#research-vs-statistical-hypotheses" id="toc-research-vs-statistical-hypotheses" class="nav-link" data-scroll-target="#research-vs-statistical-hypotheses">Research vs Statistical Hypotheses</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  <li><a href="#data-summarisation-with-dplyr" id="toc-data-summarisation-with-dplyr" class="nav-link" data-scroll-target="#data-summarisation-with-dplyr">Data summarisation with dplyr</a></li>
+  <li><a href="#summary-statistics-for-ungrouped-data" id="toc-summary-statistics-for-ungrouped-data" class="nav-link" data-scroll-target="#summary-statistics-for-ungrouped-data">Summary Statistics for Ungrouped Data</a></li>
+  <li><a href="#summarising-multiple-variables" id="toc-summarising-multiple-variables" class="nav-link" data-scroll-target="#summarising-multiple-variables">Summarising Multiple Variables</a></li>
+  <li><a href="#useful-statistical-summary-functions" id="toc-useful-statistical-summary-functions" class="nav-link" data-scroll-target="#useful-statistical-summary-functions">Useful Statistical Summary Functions</a></li>
+  <li><a href="#frequency-tables" id="toc-frequency-tables" class="nav-link" data-scroll-target="#frequency-tables">Frequency Tables</a></li>
+  <li><a href="#adding-summary-statistics-as-new-columns" id="toc-adding-summary-statistics-as-new-columns" class="nav-link" data-scroll-target="#adding-summary-statistics-as-new-columns">Adding Summary Statistics as New Columns</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
+  <ul class="collapse">
+  <li><a href="#exploring-penguin-data-with-dplyr-summaries" id="toc-exploring-penguin-data-with-dplyr-summaries" class="nav-link" data-scroll-target="#exploring-penguin-data-with-dplyr-summaries">Exploring Penguin Data with dplyr Summaries</a>
+  <ul class="collapse">
+  <li><a href="#further-exploration-challenges" id="toc-further-exploration-challenges" class="nav-link" data-scroll-target="#further-exploration-challenges">Further Exploration (Challenges):</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -295,6 +345,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="lesson" class="level1">
 <h1>Lesson</h1>
+<section id="part-1" class="level2">
+<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+</section>
 <section id="what-is-a-scientific-hypothesis" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-scientific-hypothesis">What is a scientific hypothesis?</h2>
 <p>According to the Britannica, a <a href="https://www.britannica.com/science/scientific-hypothesis">scientific hypothesis</a> is: “… an idea that proposes a tentative explanation about a phenomenon or a narrow set of phenomena observed in the natural world.”</p>
@@ -345,8 +398,322 @@ Note
 <p>In summary, a scientific hypothesis proposes an explanation for a phenomenon and guides the research process, while a statistical hypothesis is a specific, testable statement about data relationships derived from a scientific hypothesis, which is evaluated using statistical methods. The statistical hypothesis provides a way to quantitatively assess some aspect of the broader scientific hypothesis.</p>
 </div>
 </div>
+</section>
+<section id="part-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
+</section>
+<section id="data-summarisation-with-dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="data-summarisation-with-dplyr">Data summarisation with dplyr</h2>
+<p>Data summarisation is a crucial step in understanding your data. It involves calculating descriptive statistics and creating summary tables to get an overview of the dataset, identify patterns, and spot potential issues. The <strong>dplyr</strong> package within the tidyverse provides a set of intuitive functions for efficient data manipulation, including powerful tools for summarisation. <strong>The tidyverse expands the vocabulary of R</strong>.</p>
+<p>To begin, we first need to load the <strong>tidyverse</strong> package, which includes <strong>dplyr</strong>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tidyverse package [5, 6]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="summary-statistics-for-ungrouped-data" class="level2">
+<h2 class="anchored" data-anchor-id="summary-statistics-for-ungrouped-data">Summary Statistics for Ungrouped Data</h2>
+<p>The summarise() function in dplyr is used to compute summary statistics for your data1 …. When applied to an ungrouped data frame, it calculates the specified summaries across all rows1 .</p>
+<p>Let’s use the built-in <code>iris</code> dataset as an example :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the iris dataset to a tibble</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(iris)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 150 × 5
+   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+ 1          5.1         3.5          1.4         0.2 setosa 
+ 2          4.9         3            1.4         0.2 setosa 
+ 3          4.7         3.2          1.3         0.2 setosa 
+ 4          4.6         3.1          1.5         0.2 setosa 
+ 5          5           3.6          1.4         0.2 setosa 
+ 6          5.4         3.9          1.7         0.4 setosa 
+ 7          4.6         3.4          1.4         0.3 setosa 
+ 8          5           3.4          1.5         0.2 setosa 
+ 9          4.4         2.9          1.4         0.2 setosa 
+10          4.9         3.1          1.5         0.1 setosa 
+# ℹ 140 more rows</code></pre>
+</div>
+</div>
+<p>We can compute the mean of Sepal.Length and Petal.Length, as well as the total number of observations using summarise() and the n() function1:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate summary statistics for the entire dataset</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(), <span class="co"># Count the number of rows [7, 8]</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_sep_length =</span> <span class="fu">mean</span>(Sepal.Length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="co"># Calculate the mean of Sepal.Length, removing NA values [6]</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_pet_length =</span> <span class="fu">mean</span>(Petal.Length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)  <span class="co"># Calculate the mean of Petal.Length, removing NA values [6]</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  count mean_sep_length mean_pet_length
+  &lt;int&gt;           &lt;dbl&gt;           &lt;dbl&gt;
+1   150            5.84            3.76</code></pre>
+</div>
+</div>
+<p>The <code>na.rm = TRUE</code> argument is used to handle missing values by removing them before computing the mean5 . R is clear about trying to do calculations when there is an NA5 . If there is an NA, it cannot create a correct calculation, so it will return NA again5 . This is a nice way of quickly seeing that you have missing values in your data5 ## Summary Statistics for Grouped Data</p>
+<p>Often, we want to compute summary statistics for different groups within our data. This is This is achieved by using the <code>group_by()</code> function before <code>summarise()</code> <code>group_by()</code> takes one or more column names as arguments and groups the data based on the unique values in those columns. Subsequent <code>summarise()</code> operations will then be performed within each group.</p>
+<p>Let’s group the iris data by Species and calculate the same summary statistics as before:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group the data by Species and then summarise [1, 9]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(), <span class="co"># Count the number of rows in each group [7, 8]</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_sep_length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="co"># Calculate the mean of Sepal.Length for each species [1]</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_pet_length =</span> <span class="fu">mean</span>(Petal.Length)  <span class="co"># Calculate the mean of Petal.Length for each species [1]</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  Species    count mean_sep_length mean_pet_length
+  &lt;fct&gt;      &lt;int&gt;           &lt;dbl&gt;           &lt;dbl&gt;
+1 setosa        50            5.01            1.46
+2 versicolor    50            5.94            4.26
+3 virginica     50            6.59            5.55</code></pre>
+</div>
+</div>
+<p>We can also group by multiple variables: Let’s use the <code>ToothGrowth</code> dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the head of the ToothGrowth dataset</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ToothGrowth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   len supp dose
+1  4.2   VC  0.5
+2 11.5   VC  0.5
+3  7.3   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+6 10.0   VC  0.5</code></pre>
+</div>
+</div>
+<p>Now, let’s group by supp and dose and calculate the number of observations, mean, and standard deviation of len:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by two variables and calculate summaries [1]</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ToothGrowth <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(supp, dose) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(), <span class="co"># Count observations in each group [7]</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_length =</span> <span class="fu">mean</span>(len), <span class="co"># Calculate the mean of len [10]</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_length =</span> <span class="fu">sd</span>(len)      <span class="co"># Calculate the standard deviation of len [10]</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'supp'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+# Groups:   supp [2]
+  supp   dose     n mean_length sd_length
+  &lt;fct&gt; &lt;dbl&gt; &lt;int&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+1 OJ      0.5    10       13.2       4.46
+2 OJ      1      10       22.7       3.91
+3 OJ      2      10       26.1       2.66
+4 VC      0.5    10        7.98      2.75
+5 VC      1      10       16.8       2.52
+6 VC      2      10       26.1       4.80</code></pre>
+</div>
+</div>
+</section>
+<section id="summarising-multiple-variables" class="level2">
+<h2 class="anchored" data-anchor-id="summarising-multiple-variables">Summarising Multiple Variables</h2>
+<p><code>dplyr</code> provides several functions to summarise multiple variables efficiently:</p>
+<p>• <code>summarise_all()</code>: Applies a summary function to every column in the data frame.</p>
+<p>• <code>summarise_at()</code>: Applies summary functions to specific columns selected using a character vector.</p>
+<p>• <code>summarise_if()</code>: Applies summary functions to columns selected with a predicate function that returns <code>TRUE</code>. For example, we can summarise only numeric columns:</p>
+<p>The simplified formats for these functions are:</p>
+<p>• <code>summarise_all(.tbl, .funs, ...)</code></p>
+<p>• <code>summarise_if(.tbl, .predicate, .funs, ...)</code></p>
+<p>• <code>summarise_at(.tbl, .vars, .funs, ...)</code></p>
+<p>Where <code>.funs</code> can be a function name or a list of function calls, and … allows for additional arguments to the functions (e.g., <code>na.rm = TRUE</code>).</p>
+</section>
+<section id="useful-statistical-summary-functions" class="level2">
+<h2 class="anchored" data-anchor-id="useful-statistical-summary-functions">Useful Statistical Summary Functions</h2>
+<p><code>dplyr</code> works well with various R functions that compute statistical summaries:</p>
+<p>• Measures of centrality: <code>mean()</code>,<code>median()</code>;</p>
+<p>• Measures of variation: <code>sd()</code> (standard deviation), <code>IQR()</code> (interquartile range) , <code>range()</code>(range of the data);</p>
+<p>• Measures of rank: <code>min()</code> (minimum value), <code>max()</code> (maximum value), <code>quantile()</code>;</p>
+<p>• Counts: <code>n()</code> (the number of elements), <code>sum(!is.na(x))</code> (count non-missing values), <code>n_distinct()</code> (count the number of unique values).</p>
+<p>• Counts and proportions of logical values: <code>sum(x &gt; 10)</code> (count the number of elements where x &gt; 10), <code>mean(y == 0)</code> (proportion of elements where y = 0).</p>
+</section>
+<section id="frequency-tables" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-tables">Frequency Tables</h2>
+<p>For quickly obtaining frequency tables, <code>dplyr</code> provides the <code>count()</code> and <code>tally()</code> functions, which are synonymous.</p>
+<p>Using the <em>penguins</em> dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins dataset [6]</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(palmerpenguins<span class="sc">::</span>penguins)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# ℹ 334 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+<p>We can get a frequency table of the <em>species</em> column:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a frequency table using tally</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  species       n
+  &lt;fct&gt;     &lt;int&gt;
+1 Adelie      152
+2 Chinstrap    68
+3 Gentoo      124</code></pre>
+</div>
+</div>
+<p>Or equivalently:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a frequency table using count</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  species       n
+  &lt;fct&gt;     &lt;int&gt;
+1 Adelie      152
+2 Chinstrap    68
+3 Gentoo      124</code></pre>
+</div>
+</div>
+<p>We can also group by multiple columns to get more detailed frequency tables:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a frequency table with multiple grouping variables</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species, island)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  species   island        n
+  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;
+1 Adelie    Biscoe       44
+2 Adelie    Dream        56
+3 Adelie    Torgersen    52
+4 Chinstrap Dream        68
+5 Gentoo    Biscoe      124</code></pre>
+</div>
+</div>
+</section>
+<section id="adding-summary-statistics-as-new-columns" class="level2">
+<h2 class="anchored" data-anchor-id="adding-summary-statistics-as-new-columns">Adding Summary Statistics as New Columns</h2>
+<p>While <code>summarise()</code> collapses the data frame to summary rows, <code>mutate()</code> can be used in conjunction with <code>group_by()</code> to add summary statistics as new columns to the original data frame.</p>
+<p>For example, to add the mean bill_length_mm for each island16 :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by island and add the mean bill length as a new column [19]</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(bill_length_mm) <span class="sc">%&gt;%</span> <span class="co"># Remove rows with NA in bill_length_mm</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island) <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_bill_length_island =</span> <span class="fu">mean</span>(bill_length_mm)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 9
+# Groups:   island [1]
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           36.7          19.3               193        3450
+5 Adelie  Torgersen           39.3          20.6               190        3650
+6 Adelie  Torgersen           38.9          17.8               181        3625
+# ℹ 3 more variables: sex &lt;fct&gt;, year &lt;int&gt;, mean_bill_length_island &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Remember to <code>ungroup()</code> the data frame if you want subsequent operations to be performed on the entire dataset rather than by groups.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The <code>dplyr</code> package in the tidyverse offers a powerful and flexible set of tools for data summarisation in R. By combining functions like <code>group_by()</code> and <code>summarise()</code> (along with its variants <code>summarise_all()</code>, <code>summarise_at()</code>, <code>summarise_if()</code>) with various statistical summary functions, you can efficiently generate insightful summaries of your data, both for entire datasets and for specific groups. Functions like <code>count()</code> and <code>tally()</code> provide convenient ways to create frequency tables. These capabilities make dplyr an essential package for data analysis and exploration in R.</p>
+</section>
+</section>
+<section id="exercise" class="level1">
+<h1>Exercise</h1>
+<section id="exploring-penguin-data-with-dplyr-summaries" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-penguin-data-with-dplyr-summaries">Exploring Penguin Data with dplyr Summaries</h2>
+<p>Objective: To practice using the dplyr package in R to calculate and explore summary statistics of the penguins dataset, both for the entire dataset and for specific groups.</p>
+<p>Required Packages: <code>dplyr</code> and <code>palmerpenguins.</code></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember that you must use <code>install.package()</code> fucntion to intall R packages</p>
+</div>
+</div>
+<p>Steps:</p>
+<ol type="1">
+<li><p>Load the necessary packages and the penguins dataset:</p></li>
+<li><p>Calculate basic summary statistics for the entire dataset:</p></li>
+</ol>
+<ul>
+<li>Find the average bill length (in mm) for all penguins, handling missing values.</li>
+<li>Calculate the minimum and maximum flipper length (in mm) for all penguins.</li>
+<li>Find the number of observations in the entire dataset using n().</li>
+</ul>
+<ol start="3" type="1">
+<li>Calculate summary statistics grouped by a single variable (e.g., species):</li>
+</ol>
+<ul>
+<li>Find the average body mass (in kg) for each penguin species. Remember to convert grams to kilograms by dividing by 1000.</li>
+<li>For each species, calculate the average and standard deviation of bill depth (in mm).</li>
+</ul>
+<ol start="4" type="1">
+<li>Calculate summary statistics grouped by multiple variables (e.g., species and island):</li>
+</ol>
+<ul>
+<li><p>Determine the number of penguins of each species found on each island using count() or tally().</p></li>
+<li><p>Calculate the average flipper length for each combination of species and sex.</p></li>
+</ul>
+<ol start="5" type="1">
+<li>Use summarise_at() and summarise_if() to summarise multiple columns:</li>
+</ol>
+<ul>
+<li>Calculate the mean of bill_length_mm and bill_depth_mm for each island using summarise_at().</li>
+<li>Calculate the mean of all numeric columns for each species using summarise_if().</li>
+</ul>
+<ol start="6" type="1">
+<li>Explore frequency tables:</li>
+</ol>
+<ul>
+<li><p>Create a frequency table showing the number of penguins for each species.</p></li>
+<li><p>Create a frequency table showing the number of penguins for each combination of island and sex.</p></li>
+</ul>
+<ol start="7" type="1">
+<li>Add summary statistics as a new column using mutate():</li>
+</ol>
+<ul>
+<li>Group the data by species and then add a new column showing the average bill length for that species to each row. Remember to ungroup() if needed for subsequent operations on the entire dataset.</li>
+</ul>
+<section id="further-exploration-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="further-exploration-challenges">Further Exploration (Challenges):</h3>
+<p>• Calculate the range (maximum - minimum) of body mass for each species.</p>
+<p>• Find the median flipper length for each island.</p>
+<p>• Determine the proportion of male and female penguins within each species. (Hint: You might need to combine group_by(), count(), and mutate() to calculate proportions).</p>
+<p>• Group the data by island and then find the species with the longest average bill length on each island. (This might involve multiple steps).</p>
+<p>This exercise will provide practical experience in using dplyr’s powerful functions for data summarisation with the penguins dataset. Remember to refer to the help documentation (e.g., ?summarise) if you need more information on specific functions.</p>
 
 
+</section>
 </section>
 </section>
 
