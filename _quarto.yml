@@ -9,7 +9,7 @@ website:
   navbar:
     background: light
     logo: img/ntu_logo.png
-    logo-alt: "Quarto logo."
+    logo-alt: "NTU logo"
     title: false
     collapse-below: lg
     left:
