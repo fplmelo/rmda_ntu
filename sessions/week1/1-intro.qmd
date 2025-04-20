@@ -98,15 +98,31 @@ Before you begin, make sure you have the following installed:
     ```
     ```
 
-    **Explanation of the code:**
+**Explanation of the code:**
 
-    * `--- title: "My First Quarto Webpage" format: html ---` : This is the YAML header, which sets the title of your webpage and specifies the output format (HTML in this case).
-    * `## Welcome!` : This is a level 2 heading.
-    * `* Item 1` : This creates a bulleted list.
-    * ````{r}`: This begins a R code block.
-    * `$$E = mc^2$$`: This inserts a LaTeX equation.
-    * ````{r}`: This begins an R code block.
-    * `knitr::include_graphics("https://quarto.org/quarto.png")`: This includes an image from a URL.
+  * `---`
+    
+    `title: "My First Quarto Webpage"`
+    
+    `format: html`
+    
+    `--- `
+  
+  This is the YAML header, which sets the title of your webpage and specifies the output format (HTML in this case).
+  
+  * `## Welcome!` : This is a level 2 heading.
+    
+  * `* Item 1` : This creates a bulleted list.
+    
+  * ````{r}`: This begins a R code block.
+  
+:::callout-tip
+Use keyborad shrotcut `crtl+alt+i` to create a R code chunk
+:::
+    
+  * `$$E = mc^2$$`: This inserts a LaTeX equation.
+  
+  * `knitr::include_graphics("https://quarto.org/quarto.png")`: This includes an image from a URL.
 
 ### Step 3: Render the Webpage
 

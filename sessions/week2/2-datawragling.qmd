@@ -33,9 +33,9 @@ Before you begin, ensure you have the following installed:
 
 -   **tidyverse package**: Install the **tidyverse** package within R. Open RStudio and in the **Console** pane, type and run the following command \[12\]:
 
-    ``` r
-    install.packages("tidyverse")
-    ```
+``` {r}
+install.packages("tidyverse")
+```
 
 This command needs to be run **only the first time** you want to use the **tidyverse**. You can also install packages by navigating to **Tools** -\> **Install Packages** in RStudio.
 
@@ -47,23 +47,16 @@ This command needs to be run **only the first time** you want to use the **tidyv
 
 # Lesson
 
+## Part 1
+
 {{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/02_data_wrangling.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
-
-
-
-
-{{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/2.2_research_question.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
-
-# Exercise
-
-Approximate time: 60 min
 
 ## Learning Objectives
 
 -   Demonstrate how to subset, merge, and create new datasets from existing data structures in R.
 -   Perform basic data wrangling with functions in the Tidyverse package.
 
-# Data Wrangling with Tidyverse
+## Data Wrangling with Tidyverse
 
 The [Tidyverse suite of integrated packages](https://www.tidyverse.org/packages/) are designed to work together to make common data science operations more user friendly. The packages have functions for data wrangling, tidying, reading/writing, parsing, and visualizing, among others. There is a freely available book, [R for Data Science](http://r4ds.had.co.nz/index.html), with detailed descriptions and practical examples of the tools available and how they work together. We will explore the basic syntax for working with these packages, as well as, specific functions for data wrangling with the 'dplyr' package and data visualization with the 'ggplot2' package.
 
@@ -75,7 +68,7 @@ The Tidyverse suite of packages introduces users to a set of data structures, fu
 
 Before we get started with pipes or tibbles, let's load the library:
 
-```         
+``` {r}        
 library(tidyverse)
 ```
 
@@ -89,7 +82,7 @@ To make R code more human readable, the Tidyverse tools use the pipe, `%>%`, whi
 
 An example of using the pipe to run multiple commands:
 
-``` r
+``` {r}
 ## A single command
 sqrt(83)
 
@@ -108,7 +101,7 @@ The pipe represents a much easier way of writing and deciphering R code, and so 
 
 1.  Create a vector of random numbers using the code below:
 
-    ``` r
+    ``` {r}
     random_numbers <- c(81, 90, 65, 43, 71, 29)
     ```
 
@@ -129,17 +122,74 @@ Tibbles can be created directly using the `tibble()` function or data frames can
 
 > **NOTE:** The function `as_tibble()` will ignore row names, so if a column representing the row names is needed, then the function `rownames_to_column(name_of_df)` should be run prior to turning the data.frame into a tibble. Also, `as_tibble()` will not coerce character vectors to factors by default.
 
+
+## Part 2
+
+
+{{< revealjs file="https://fplmelo.github.io/rmda_ntu/slides/2.2_research_question.html#/title-slide" height="500px" class="ratio ratio-16x9" >}}
+
+## Introduction: The Logic of Scientific Inquiry
+
+In science, the pursuit of knowledge often begins with a question about the world around us [1-3]. A well-defined research question acts as the **cornerstone of the scientific process**, guiding investigation and shaping findings [4-6]. The logic underpinning scientific inquiry frequently involves **hypothetico-deductive reasoning**. This approach involves formulating a hypothesis (a testable explanation), and then deducing specific, observable predictions from that hypothesis. The research question, therefore, needs to be framed in a way that allows for the development of such testable hypotheses [7]. It should pinpoint exactly what you want to find out and give your work a clear purpose and focus [6].
+
+## What Makes a "Sounding" Research Question?
+
+A "sounding" or **strong research question** is one that is carefully constructed to be effective and answerable through systematic investigation [4]. Key characteristics include:
+
+*   **Focused:** It should address a single problem or issue, ensuring that your research remains within a feasible scope [8-10].
+*   **Clear:** The question should be unambiguous and easily understood by your target audience, specifying all necessary details and context [8, 10].
+*   **Specific:** It clearly defines the variables, participants, and context involved, leaving no room for vagueness [8, 10, 11].
+*   **Researchable:** The question must be answerable by collecting empirical data or through existing literature [12, 13].
+*   **Feasible:** The research needed to answer the question should be achievable within the constraints of time, resources, and ethical considerations [2, 8, 13].
+*   **Interesting:** The topic should be engaging to you, and ideally to others in your field [2, 12].
+*   **Novel:** The question should aim to establish new facts or find a new aspect of already established facts, addressing gaps in current knowledge [2, 10, 12, 14].
+*   **Ethical:** The research should not cause harm and should be approved by relevant bodies if necessary [2, 12].
+*   **Relevant:** The answer to the question should be wanted and desired in your field or contribute to society [2, 12, 15].
+*   **Complex:** The question should require analysis and interpretation, rather than a simple yes/no answer or easily found facts [7, 10, 11].
+*   **Arguable:** The question should not be answerable with simple repetition of facts and should allow for different potential answers or perspectives [10].
+*   **Objective:** The question should avoid subjective judgments and focus on measurable or observable aspects [10].
+*   **Appropriate:** The question should align well with the data and methods that can be used to answer it [10].
+
+## Steps to Develop Your Research Question
+
+Developing a strong research question is often an iterative process [14, 16, 17]. Here's a step-by-step guide based on the sources:
+
+1.  **Choose a broad topic of interest:** Select a subject that you are passionate about and that is relevant to your field [6, 12, 18].
+2.  **Conduct preliminary research:** Gather background information through a literature review to understand what has already been researched and to identify potential gaps [12, 14, 18, 19]. Pay attention to what questions existing research raises and what authors haven't addressed [1, 20].
+3.  **Narrow down your focus:** Based on your initial research, refine your broad topic to a more specific area that is manageable for your research project [19, 21, 22].
+4.  **Identify a research problem or gap:** Determine what specific issue or unanswered question exists within your narrowed focus [12, 14, 21, 22]. Ask yourself what still needs to be known [21].
+5.  **Formulate initial research questions:** Based on the identified problem or gap, start drafting open-ended "how" and "why" questions about your specific topic [1, 12, 14, 22].
+6.  **Evaluate and refine your question:** Assess your drafted questions using the criteria for a strong research question outlined earlier [2, 7-14]. Is it focused, clear, specific, researchable, feasible, interesting, novel, ethical, relevant, complex, arguable, objective, and appropriate? Refine the wording to improve clarity and precision [14].
+7.  **Consider the type of research:** Determine whether your question is best suited for exploratory, descriptive, comparative, experimental, qualitative, or quantitative research, as this will influence the phrasing and focus [9, 23-25].
+
+## Examples
+
+Here are a few examples of "sounding" research questions:
+
+*   Instead of: "Are social media bad?"
+    Try: "What are the correlations between the frequency of social media use and self-reported levels of anxiety in young adults aged 18-25?" [25, 26].
+*   Instead of: "What about climate change?"
+    Try: "How has the melting rate of glaciers in the Antarctic Peninsula changed over the past decade, and what are the potential impacts on local penguin populations?" [26, 27].
+*   Instead of: "Is online learning effective?"
+    Try: "How does student engagement differ between undergraduate students enrolled in fully online courses compared to those in traditional face-to-face courses in higher education?" [24].
+
+
+
+# Exercise
+
+Approximate time: 60 min
+
 ## Penguin Data Wrangling with Tidyverse
 
 Objective: To practice fundamental data wrangling techniques using the dplyr package within the tidyverse on the palmerpenguins dataset. This exercise will cover selecting, filtering, mutating, grouping, and summarizing data to gain insights into the penguin populations.
 
 **Prerequisites**:
 
-• Ensure you have the tidyverse package installed (`install.packages("tidyverse")`).
+• Ensure you have the tidyverse package installed (`install.packages(c("tidyverse","palmerpenguins"))`).
 
 • Load the tidyverse library at the beginning of your R session (`library(tidyverse)`). This will automatically load dplyr and the `palmerpenguins` dataset.
 
-Instructions:
+**Instructions**:
 
 1. Inspect the Data: Begin by examining the penguins dataset. Use the `glimpse()` function from dplyr to get a concise overview of the dataset's structure, including the column names and data types. You can also use `head()` to view the first few rows.
 
@@ -164,7 +214,7 @@ Instructions:
 
 • Use the `count()` function to see the number of observations in each group before calculating the mean.
 
-• Experiment with creating other new variables using mutate(), such as the ratio of bill length to bill depth.
+• Experiment with creating other new variables using `mutate()`, such as the ratio of bill length to bill depth.
 
 This exercise provides a hands-on introduction to several key data wrangling verbs in dplyr, demonstrating how to transform and summarize data effectively within the tidyverse framework. The use of the pipe operator `%>%` allows for a more readable and sequential flow of data manipulation.
 
@@ -178,6 +228,19 @@ Now that we have our results ready for plotting, we can use the [ggplot2](https:
 -   [teach the tidyverse](http://varianceexplained.org/r/teach-tidyverse/)
 -   [tidy style guide](http://style.tidyverse.org/)
 
-------------------------------------------------------------------------
 
-*This lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.*
+**References used in this post**
+
+1.  [4 Data Wrangling | Introduction to Data Exploration and Analysis with R]().
+2.  [Chapter 3 Wrangling Census data with tidyverse tools | Analyzing US Census Data]()
+3.  [Chapter 3 Wrangling Data in the Tidyverse | Tidyverse Skills for Data Science]()
+4.  [Data Wrangling with Tidyverse - R Introductory Series 2023](https://ncibtep.github.io/R_Introductory_Series/data_wrangling_tidyverse.html)
+5.  [Data wrangling with R in 27 minutes](https://www.youtube.com/watch?v=0n0HsYkGz7Y) uploaded by **Equitable Equations**
+6.  [Develop\_a\_Research\_Question.pdf]() - No direct link was found in the sources.
+7.  [How To Write A Research Question/Hypothesis & Template | The Research Process Beginners Guide](https://www.youtube.com/watch?v=u-5n4YQ0v8k) uploaded by **Dr Amina Yonis**
+8.  [How to Craft a Strong Research Question (With Research Question Examples) | Researcher.Life](https://researcher.life/articles/research-process/how-to-craft-a-strong-research-question-with-research-question-examples/)
+9.  [How to Develop a STRONG Research Question | Scribbr 🎓](https://www.youtube.com/watch?v=WyW7HLq11vg) uploaded by **Scribbr**
+10. [How to write good research questions: What even is a research question? – Data Impact blog @ 10](https://blog.ukdataservice.ac.uk/how-to-write-good-research-questions-what-even-is-a-research-question/) by **Dr J. Kasmire**
+11. [Tidyverse data wrangling | Introduction to R - ARCHIVED](https://github.com/hbctraining/Intro-to-R) - The specific page for data wrangling is likely within this repository, but not directly linked in the excerpts.
+
+*Parts of this lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.*
