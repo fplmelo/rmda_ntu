@@ -6,5 +6,12 @@
       "/sessions/week2/2-datawragling.html",
       "/sessions/week3/3-data_expl.html"
     ]
+  },
+  {
+    "listing": "/resources/index.html",
+    "items": [
+      "/resources/r.html",
+      "/resources/quarto.html"
+    ]
   }
 ]

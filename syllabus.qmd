@@ -1,0 +1,140 @@
+---
+title: "Syllabus"
+subtitle: "What this module is all about?"
+description: ""
+title-block-banner: "#9e043d"
+format:
+  html:
+    toc: true
+---
+
+
+## Course objectives
+
+This module aims to provide you with advanced skills in interpretation of quantitative and qualitative research data and to develop critical understanding of the ethical considerations involved in the collection of data. The module also aims to underpin the other modules in the Masters Framework by investigating experimental design, ethics, project management and funding.
+
+You will be able to present findings of scientific research in a variety of appropriate ways, as well as critically evaluating, interpreting and relaying knowledge gained from secondary sources to peers.
+
+## Delivery mode
+
+The RMDA module takes a blended approach to learning, as such many of the sessions provided, including drop-in sessions, will be via TEAMS or in-person bu this is essentially a FLEXI Module. This means that you must take control of your time and progress and long hours of self learning are expected.
+
+Issues will arise especially if this is your first opportunity to use R, that's ok, we will support you so don't be afraid to speak up and get the help you need right away.  
+
+
+## Important pep talk!
+
+Learning R can be difficult at first—it's like learning a new language, just like Spanish, French, or Chinese. Hadley Wickham—the chief data scientist at RStudio and the author of some amazing R packages you'll be using like {ggplot2}—[made this wise observation](https://r-posts.com/advice-to-young-and-old-programmers-a-conversation-with-hadley-wickham/): 
+
+> It's easy when you start out programming to get really frustrated and think, "Oh it's me, I'm really stupid," or, "I'm not made out to program." But, that is absolutely not the case. Everyone gets frustrated. I still get frustrated occasionally when writing R code. It's just a natural part of programming. So, it happens to everyone and gets less and less over time. Don't blame yourself. Just take a break, do something fun, and then come back and try again later.
+
+Even experienced programmers find themselves bashing their heads against seemingly intractable errors. If you're finding yourself taking way too long hitting your head against a wall and not understanding, take a break, talk to classmates, e-mail me, etc. 
+
+
+## Course materials
+
+All of the readings and software in this class are **free**. There are free online version of all the textbooks, R and RStudio are inherently free. We are going to use different sources of **videos**, **e-books**, **forums** and **datasets**, all freely avaialbe and widely used in the online environment of larnign R and stats.
+
+We'll rely heavily on these books, which are all available online (**for free!**). 
+
+There will occasionally be additional articles and videos to read and watch. When this happens, links to these other resources will be included on the content page for that session.
+
+I also highly recommend subscribing to the [R Weekly newsletter](https://rweekly.org/). This e-mail is sent every Monday and is full of helpful tutorials about how to do stuff with R.
+
+### R and RStudio
+
+You will do all of your analysis with the open source (and free!) programming language [R](https://cran.r-project.org/). You will use [RStudio](https://www.rstudio.com/) as the main program to access R. **Think of R as an engine and RStudio as a car dashboard**—R handles all the calculations produces the actual statistics and graphical output, while RStudio provides a nice interface for running R code.
+
+R is free, but it can sometimes be a pain to install and configure. To make life easier, you can (and should!) use the free [Posit.cloud](http://posit.cloud/) service, which lets you run a full instance of RStudio in your web browser. This means you won't have to install anything on your computer to get started with R! We will have a shared class workspace in Posit.cloud that will let you quickly copy templates for examples, exercises, and mini projects.
+
+Posit.cloud is convenient, but it can be slow and it is not designed to be able to handle larger datasets or more complicated analysis and graphics. You also can't use your own custom fonts with Posit.cloud. Over the course of the semester, you'll probably want to get around to installing R, RStudio, and other R packages on your computer and wean yourself off of Posit.cloud. This isn't 100% necessary, but it's helpful.
+
+You can [find instructions for installing R, RStudio, and all the tidyverse packages here.](/resource/install.qmd)
+
+### Finding help
+
+Data science and statistical programming can be difficult. Computers are stupid and little errors in your code can cause hours of headache (even if you've been doing this stuff for years!).
+
+Fortunately there are tons of online resources to help you with this. Two of the most important are [StackOverflow](https://stackoverflow.com/) (a Q&A site with hundreds of thousands of answers to all sorts of programming questions) and [Posit Community](https://community.rstudio.com/) (a forum specifically designed for people using RStudio and the tidyverse (i.e. you)).
+
+If you use Bluesky or Mastodon or Threads or LinkedIn, post R-related questions and content with `#rstats`. The R community is exceptionally generous and helpful.
+
+Searching for help with R on Google can sometimes be tricky because the program name is, um, a single letter. Google is generally smart enough to figure out what you mean when you search for "r scatterplot", but if it does struggle, try searching for "rstats" instead (e.g. "rstats scatterplot").  
+
+Additionally, we have a class chatroom at [MS Teams](update) where anyone in the class can ask questions and anyone can answer. **I will monitor MS Teams regularly and will respond quickly.** (It's one of the rare MS Teams workspaces where I actually have notifications enabled!) Ask questions about the readings, exercises, and mini projects. You'll likely have similar questions as your peers, and you'll likely be able to answer other peoples' questions too.
+
+## AI, LLMs, and BS
+
+I *highly recommend* **not** using ChatGPT or similar large language models (LLMs) in this class. 
+
+I am deeply opposed to LLMs for writing and learning how to code.
+
+I am not opposed to LLMs for code when you are expereinecd, but I am deeply opposed to them for beginners at code.
+
+By definition, LLMs and other AI tools cannot produce truth (or even lies). They generate [bullshit](https://doi.org/10.1007/s10676-024-09775-5) a formal philosophical term that refers to text or speech that has no regard for truth.
+
+**Do not replace the important work of writing with AI BS slop.** The point of writing is to help crystallize your thinking. Chugging out words that make it look like you read and understood the content will not help you learn.
+
+In your weekly reflections and formative exercises, I expect to see good engagement with the readings. I want to see your thinking process. I want to see you make connections between the readings. I want to see your personal insights. I don't want to see a bunch of words that look like a human wrote them. That's not useful for future-you. That's not useful for me. That's a waste of time.
+
+
+## Course schedule
+
+100% of the class content is asynchronous. You can do the readings and watch the videos on your own schedule at whatever time works best for you. Many of you work full time and you have childcare and parental care responsibilities, leaving you with only evenings for coursework. I've designed this asynchronous system with *you specifically* in mind. 
+
+Each week has (1) a set of readings and an accompanying lecture, (2) a lesson, (3) an example with lots of reference code, and (4) a short exercise. The [schedule page](/schedule.qmd) provides an overview of all these moving parts.
+
+I recommend following this general process for each session:
+
+- Do everything on the content page ({{< fa book-open-reader >}})
+- Work through the lesson page ({{< fa chalkboard-teacher >}})
+- Complete the exercise ({{< fa pen-ruler >}}) while updating your workbook ({{< fa laptop-code >}})
+
+
+## Course policies
+
+**Be nice. Be honest. Don't cheat.**
+
+We will also follow [NTU's Code of Conduct]().
+
+This syllabus reflects a plan for the semester. Deviations may become necessary as the course progresses.
+
+### Communication
+
+Due to large size of cohorts, previous experience proved that email communication must be restricted to the maximum. Doubts and difficulties must be taken using the following order of priorities:
+
+1- Our dedicated [Teams Channel](): this is linked to the course NOW page. Just go there, create a new post with your doubt and ALL of us (including other colleagues will do our best to help you). Rememeber to place te code error and/or your code for reproducibility.
+
+2- Tutorial sessions: These are either on-line or in-person sessions where we can discuss problems and do some demonstrations
+
+3- Email me, only (really!) if you have tried all the above and your problem was not sorted. 
+
+::: callout-tip
+Many of you will experience problems with coding in R for the first time. However, this module is not focused on teaching R. Instead, we use R and you learn by using. If you require more specialized help with R, the Brackenhurst Library has a dedicated team that can help you with this. Book time with them!
+:::
+
+### Learning
+
+**I'm fully committed to making sure that you learn everything you were hoping to learn from this class!**. Under ordinary conditions, I am flexible and lenient with grading and course expectations when students face difficult challenges.
+
+If you tell me you're having trouble, I will not judge you or think less of you. I hope you'll extend me the same grace.
+
+You *never* owe me personal information about your health (mental or physical). You are *always* welcome to talk to me about things that you're going through, though. If I can't help you, I usually know somebody who can.
+
+If you need extra help, or if you need more time with something, or if you feel like you're behind or not understanding everything, **do not suffer in silence!** Talk to me!
+
+
+### Late work (to be edited)
+
+
+
+### Special needs
+
+
+
+
+## Assignments and grades
+
+You can find descriptions for all the assignments on the [assessment page](/assessment.qmd).
+
+

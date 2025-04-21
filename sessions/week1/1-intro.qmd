@@ -147,7 +147,7 @@ You can add more content to your webpage by editing `webpage.qmd`. Quarto suppor
 * **Headings:** Use `#`, `##`, `###`, etc. for different heading levels.
 * **Paragraphs:** Just type your text.
 * **Lists:** Use `*` or `-` for unordered lists, and `1.`, `2.`, etc. for ordered lists.
-* **Code Blocks:** Use ````{language}` to insert code blocks.
+* **Code Blocks:** Use ````{r}` to insert code blocks.
 * **Mathematical Equations:** Use `$$` for LaTeX equations.
 * **Images:** Use `![alt text](path/to/image.png)` or ````{r} knitr::include_graphics("path/to/image.png") ````.
 * **Links:** Use `[link text](url)`.

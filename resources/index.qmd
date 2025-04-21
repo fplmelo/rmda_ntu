@@ -1,0 +1,7 @@
+---
+title: Helpful resources
+listing:
+  type: table
+---
+
+I have included a bunch of extra resources and guides related to graphic design, visualization, R, data, and other relevant topics. Enjoy!

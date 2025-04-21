@@ -24,7 +24,7 @@ All the lessons live here, grouped by weeks.
 
 - Do everything on the **preparation** section ({{< fa book-open-reader >}})
 - Watch the **recorded videos** and check the **slides** of the lesson ({{< fa chalkboard-teacher >}})
-- Complete the **exercise** ({{< fa pen-ruler >}}) using your quarto workbook ({{< fa laptop-code >}}) and submit it to the respective **Dropbox**
+- Complete the **exercise** ({{< fa pen-ruler >}}) using your quarto workbook ({{< fa laptop-code >}}) and submit it to the respective **NOW Dropbox**
 
 :::
 ::::

@@ -1,0 +1,49 @@
+---
+title: "Nice & Free R Courses"
+author: "Felipe Melo"
+---
+## Free R and RStudio Tutorials and Statistics Resources
+
+Here is a list of websites and YouTube channels offering free tutorials and resources for learning R, RStudio, and statistics, now with direct links:
+
+## Websites:
+
+* [**R-Project.org:**]((https://www.r-project.org/)) The official website for the R programming language. It contains comprehensive documentation, manuals, and links to various resources. While not structured as a tutorial, it's an invaluable reference.
+
+* [**RStudio Education (Posit Education):**]((https://education.rstudio.com/)) The official education page from RStudio (now Posit). They offer a wealth of free resources, including webinars, guides, and links to other learning materials.
+
+* [**Quarto tips:**](https://www.productive-r-workflow.com/quarto-tricks) Loads of tips to tweak your Quarto website and workbook.
+
+## Books
+
+* [**R for Data Science (r4ds.had.co.nz):**]((https://r4ds.had.co.nz/)) A comprehensive free online book by Hadley Wickham and Garrett Grolemund, focusing on using R for data science tasks.
+
+* [**Advanced R (adv-r.hadley.nz):**]((https://adv-r.hadley.nz/)) Another excellent free online book by Hadley Wickham, delving into more advanced aspects of R programming.
+ 
+ 
+## Free online R courses
+
+* [**R and the Tidyverse for working with data**:](https://carpentries-incubator.github.io/r-tidyverse-4-datasets/) Basics of R and Tidyverse, including ggplot and data wrnagling;
+
+* [**Introduction to R**:](https://hbctraining.github.io/Intro-to-R-flipped/schedules/links-to-lessons.html) Another simple and straightforward online course of R
+
+
+## Forums
+
+* [**Stack Overflow:**]((https://stackoverflow.com/)) A question-and-answer website where you can find solutions to specific R and statistics-related problems.
+
+* [**Cross Validated (stats.stackexchange.com):**]((https://stats.stackexchange.com/)) A dedicated Stack Exchange site for statistics questions.
+
+
+## YouTube Channels:
+
+* [**Posit PBC:**](https://www.youtube.com/@PositPBC) Offical site of the Posit company (Rstudio, Quarto and Tidyverse).
+
+* [**StatQuest with Josh Starmer:**]((https://www.youtube.com/@statquest)) While not exclusively focused on R, this channel provides excellent and intuitive explanations of statistical concepts.
+    
+* [**Equitable Equations:**](https://www.youtube.com/@EquitableEquations)Offers a wide range of statistics tutorials, many demonstrating implementation in R.
+    
+* [**RichardOnData:**]((https://www.youtube.com/@RichardOnData)) Provides tutorials and explanations on various data science topics, including R programming and statistical analysis.
+
+
+Please note that the availability of free content on these platforms may change over time. Always check the specific website or channel for their current offerings.
