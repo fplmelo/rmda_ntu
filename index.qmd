@@ -39,7 +39,7 @@ course-logo: img/course_logo.png
 ::: {.g-col-12 .g-col-md-4 .contact-policy}
 ### Contacting 
 
-Doubts and enquires are preferably brought to tutorial sessions. It is not possible to solve problems via e-mail individually for large cohorts.
+Doubts and enquires are preferably brought to tutorial sessions and shared in our dedicated [Teams Channel]().
 
 :::
 
