@@ -27,6 +27,8 @@ Here is a list of websites and YouTube channels offering free tutorials and reso
 
 * [**Introduction to R**:](https://hbctraining.github.io/Intro-to-R-flipped/schedules/links-to-lessons.html) Another simple and straightforward online course of R
 
+* [**STAT 545:**](https://stat545.com/) Data wrangling, exploration, and analysis with R
+
 
 ## Forums
 
