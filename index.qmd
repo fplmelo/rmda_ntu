@@ -14,41 +14,33 @@ format:
 course-logo: img/course_logo.png
 ---
 
-::: {.home}
-
-:::: {.grid .course-details}
-
+::::::: home
+:::::: {.grid .course-details}
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
 ### Instructor
 
-- {{< fa user >}} [Felipe Melo](https://www.ntu.ac.uk/staff-profiles/animal-rural-environmental-sciences/felipe-melo)
-- {{< fa university >}} [NTU](https://www.ntu.ac.uk)
-- {{< fa house >}} [ecoaplic.org](https://www.ecoaplic.org)
-
+-   {{< fa user >}} [{{< var instructor.name >}}]({{< var instructor.url >}})
+-   {{< fa university >}} {{< var instructor.office >}}
+-   {{< fa envelope >}} <a href='mailto:{{< var instructor.email >}}'>{{< var instructor.email >}}</a>
+-   <i class="fa-brands fa-bluesky"></i> [Bluesky]({{< var instructor.bluesky >}})
 :::
 
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
 ### Course details
 
-- {{< fa calendar >}} Any day
-- {{< fa calendar-alt >}} Sep-Dec 2025
-- {{< fa clock >}} Asynchronous
-- {{< fa location-dot >}} This is a FLEXI module
+-   {{< fa calendar >}} {{< var course.days >}}
+-   {{< fa calendar-alt >}} {{< var course.dates >}}
+-   {{< fa clock >}} {{< var course.time >}}
+-   {{< fa location-dot >}} {{< var course.location >}}
 :::
 
 ::: {.g-col-12 .g-col-md-4 .contact-policy}
-### Contacting 
+### Contacting
 
 Doubts and enquires are preferably brought to tutorial sessions and shared in our dedicated [Teams Channel](https://teams.microsoft.com/v2/).
-
 :::
-
-::::
-
-:::
-
-
-
+::::::
+:::::::
 
 ## Welcome
 
@@ -57,5 +49,3 @@ We hope this module will be an opportunity to enhance your critical and analytic
 We have tried to make this module as accessible as possible, knowing that some of the content is challenging. We have based all materials in our own research expertise, we are not statisticians, rather we are statistic users, just like you!
 
 We are looking forward to meeting you all
-
-

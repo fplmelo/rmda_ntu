@@ -1,0 +1,32 @@
+author: Felipe Melo
+
+instructor:
+  name: Dr. Felipe Melo
+  name_no_title: felipe Melo
+  email: felipe.melo@nt.ac.uk
+  url: "https://ecoaplic.org/"
+  bluesky: "https://bsky.app/profile/fplmelo.bsky.social"
+  github: fplmelo
+  office: "Brachenhurst Campus. Southill building, room 372 (1st floor)"
+  contact_policy: "E-mail and Slack are the best ways to get in contact with me. I will try to respond to all course-related e-mails and Slack messages within 24 hours (*really*), but also remember that life can be busy and chaotic for everyone (including me!), so if I don't respond right away, don't worry!"
+  appointment_url: "https://outlook.office.com/bookwithme/user/5120d559d4e9484488ccaebe321870d1@ntu.ac.uk/meetingtype/kHsxHM8VN06_wL272nMy1Q2?anonymous&ep=mlink"
+  
+course:
+  number: "ARES40011"
+  semester: "Fall 2024"
+  days: "Any day"
+  time: "Asynchronous"
+  location: "Anywhere"
+  dates: "September 26–December 16, 2025"
+  github: "https://github.com/fplmelo/rmda_ntu"
+  url: "https://fplmelo.github.io/rmda_ntu/"
+  copyright_year: "2025"
+  
+
+university:
+  name: Nottingham Trent University
+  url: "https://www.ntu.ac.uk"
+
+school:
+  name: School of Animal Rural and Enviormental Sciences
+  url: "https://www.ntu.ac.uk/study-and-courses/academic-schools/animal-rural-and-environmental-sciences"
