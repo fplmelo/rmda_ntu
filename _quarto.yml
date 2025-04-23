@@ -46,10 +46,10 @@ website:
         menu:
           - text: "Main NOW Page"
             icon: "house"
-            href: "https://github.com/quarto-dev/quarto-cli/issues"
+            href: "https://now.ntu.ac.uk/d2l/home/1048957#_"
           - text: "Dropbox"
             icon: "dropbox"
-            href: "https://github.com/quarto-dev/quarto-cli/discussions"
+            href: "https://now.ntu.ac.uk/d2l/lms/dropbox/admin/folders_manage.d2l?ou=1048957"
           
     tools:
       - icon: twitter
