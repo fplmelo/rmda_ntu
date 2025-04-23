@@ -7,7 +7,7 @@ format: html
 
 Here’s your roadmap for the semester!
 
-* [**Get-started**](get-started/1-install.qmd) {{< fa book-open-reader >}} Here is where you should start your journey. This is a short introduction to R and RStudio.
+* [**Get-started**](get-started/1-install.qmd) {{< fa book-open-reader >}} Here is where you should start your journey. This is a short introduction to R and RStudio and you MUST go though this session before we start the module. If you are already used to code in R you can skip this part, but if this is your first time coding in R or your skills in R are limited, **YOU CANNOT SKIP THIS STEP**
 
 * [**Content**](sessions/index.qmd) <i class="bi bi-columns-gap"></i>
 All the lessons live here, grouped by weeks.
