@@ -3490,7 +3490,7 @@
     "href": "resources/quarto.html#output-formats",
     "title": "Using Quarto",
     "section": "Output formats",
-    "text": "Output formats\nYou can specify what kind of document you create when you render in the YAML front matter.\ntitle: \"My document\"\nformat:\n  html: default\n  pdf: default\n  docx: default\nThe indentation of the YAML section matters, especially when you have settings nested under each output type. Here’s what a typical format section might look like:\n---\ntitle: \"My document\"\nauthor: \"My name\"\ndate: \"June 4, 2024\"\nformat: \n  html_document: \n    toc: yes\n  pdf_document: \n    toc: yes\n  word_document: \n    toc: yes\n---\n\nPage reproduced from: Andrew Heiss"
+    "text": "Output formats\nYou can specify what kind of document you create when you render in the YAML front matter.\ntitle: \"My document\"\nformat:\n  html: default\n  pdf: default\n  docx: default\nThe indentation of the YAML section matters, especially when you have settings nested under each output type. Here’s what a typical format section might look like:\n---\ntitle: \"My document\"\nauthor: \"My name\"\ndate: \"June 4, 2024\"\nformat: \n  html_document: \n    toc: yes\n  pdf_document: \n    toc: yes\n  word_document: \n    toc: yes\n---\n\nPage reproduced from: Andrew Heiss All content licensed under a Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)"
   },
   {
     "objectID": "resources/r.html",

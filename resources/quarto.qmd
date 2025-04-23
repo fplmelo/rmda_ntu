@@ -1,6 +1,7 @@
 ---
 title: "Using Quarto"
 author: "Andrew Heiss"
+toc: true
 ---
 
 ```{r setup, include=FALSE}
@@ -182,3 +183,4 @@ format:
 --------------------------------------------------------------------------------------------
 
 Page reproduced from: [Andrew Heiss](https://datavizf24.classes.andrewheiss.com/resource/quarto.html)
+All content licensed under a Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)
