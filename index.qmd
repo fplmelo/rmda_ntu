@@ -21,9 +21,9 @@ course-logo: img/course_logo.png
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
 ### Instructor
 
-- {{< fa user >}} [Felipe Melo]()
-- {{< fa university >}} [NTU](www.ntu.ac.uk)
-- {{< fa house >}} [ecoaplic.org](www.ecoaplic.org)
+- {{< fa user >}} [Felipe Melo](https://www.ntu.ac.uk/staff-profiles/animal-rural-environmental-sciences/felipe-melo)
+- {{< fa university >}} [NTU](https://www.ntu.ac.uk)
+- {{< fa house >}} [ecoaplic.org](https://www.ecoaplic.org)
 
 :::
 
