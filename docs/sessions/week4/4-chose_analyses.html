@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Felipe Melo">
+<meta name="dcterms.date" content="2025-04-24">
+
+<title>Week 4 - Choosing the right analyses &amp; Hypothetical-Deductive reasoning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/ntu_logo.png" alt="NTU logo" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-get-started" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Get Started</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-get-started">    
+        <li>
+    <a class="dropdown-item" href="../../get-started/1-install.html"><i class="bi bi-emoji-sunglasses-fill" role="img">
+</i> 
+ <span class="dropdown-text">1 - Install R and Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../get-started/2-basic-intro.html"><i class="bi bi-tools" role="img">
+</i> 
+ <span class="dropdown-text">2 - Basic Introduction to R and Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../get-started/3-syntax.html"><i class="bi bi-tools" role="img">
+</i> 
+ <span class="dropdown-text">3 - Syntax &amp; Data Structures</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../get-started/4-functions.html"><i class="bi bi-tools" role="img">
+</i> 
+ <span class="dropdown-text">4 - Functions and Arguments</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../get-started/5-data.html"><i class="bi bi-tools" role="img">
+</i> 
+ <span class="dropdown-text">5 - Reading data in R</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../sessions/index.html"> 
+<span class="menu-text">Content</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources/index.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../assessment.html"> 
+<span class="menu-text">Assessment</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ntu-now-page" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">NTU NOW Page</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ntu-now-page">    
+        <li>
+    <a class="dropdown-item" href="https://now.ntu.ac.uk/d2l/home/1048957#_"><i class="bi bi-house" role="img">
+</i> 
+ <span class="dropdown-text">Main NOW Page</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://now.ntu.ac.uk/d2l/lms/dropbox/admin/folders_manage.d2l?ou=1048957"><i class="bi bi-dropbox" role="img">
+</i> 
+ <span class="dropdown-text">Dropbox</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://twitter.com/quarto_pub" title="Quarto Twitter" class="quarto-navigation-tool px-1" aria-label="Quarto Twitter"><i class="bi bi-twitter"></i></a>
+    <a href="https://github.com/quarto-dev/quarto-cli" title="Quarto GitHub" class="quarto-navigation-tool px-1" aria-label="Quarto GitHub"><i class="bi bi-github"></i></a>
+    <a href="https://quarto.org/docs/blog/index.xml" title="Quarto Blog RSS" class="quarto-navigation-tool px-1" aria-label="Quarto Blog RSS"><i class="bi bi-rss"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#readings-and-videos" id="toc-readings-and-videos" class="nav-link" data-scroll-target="#readings-and-videos">Readings and videos</a></li>
+  </ul></li>
+  <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a>
+  <ul class="collapse">
+  <li><a href="#part-1---research-methods" id="toc-part-1---research-methods" class="nav-link" data-scroll-target="#part-1---research-methods">Part 1 - Research Methods</a></li>
+  <li><a href="#the-hypothetico-deductive-method-explained" id="toc-the-hypothetico-deductive-method-explained" class="nav-link" data-scroll-target="#the-hypothetico-deductive-method-explained">The Hypothetico-Deductive Method Explained</a></li>
+  <li><a href="#difference-from-inductivism" id="toc-difference-from-inductivism" class="nav-link" data-scroll-target="#difference-from-inductivism">Difference from Inductivism</a></li>
+  <li><a href="#real-world-examples" id="toc-real-world-examples" class="nav-link" data-scroll-target="#real-world-examples">Real-World Examples</a></li>
+  <li><a href="#roadmap-to-applying-hypothetico-deductive-reasoning-to-research" id="toc-roadmap-to-applying-hypothetico-deductive-reasoning-to-research" class="nav-link" data-scroll-target="#roadmap-to-applying-hypothetico-deductive-reasoning-to-research">Roadmap to Applying Hypothetico-Deductive Reasoning to Research</a></li>
+  <li><a href="#part-2---data-analyses" id="toc-part-2---data-analyses" class="nav-link" data-scroll-target="#part-2---data-analyses">Part 2 - Data Analyses</a></li>
+  <li><a href="#identifying-and-describing-types-of-variables" id="toc-identifying-and-describing-types-of-variables" class="nav-link" data-scroll-target="#identifying-and-describing-types-of-variables">1) Identifying and Describing Types of Variables</a></li>
+  <li><a href="#generating-exploratory-graphs-using-ggplot2" id="toc-generating-exploratory-graphs-using-ggplot2" class="nav-link" data-scroll-target="#generating-exploratory-graphs-using-ggplot2">2) Generating Exploratory Graphs using ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#a-categorical-x-categorical" id="toc-a-categorical-x-categorical" class="nav-link" data-scroll-target="#a-categorical-x-categorical">a) Categorical x Categorical</a></li>
+  <li><a href="#b-categorical-x-numerical" id="toc-b-categorical-x-numerical" class="nav-link" data-scroll-target="#b-categorical-x-numerical">b) Categorical x Numerical</a></li>
+  <li><a href="#c-numerical-x-numerical" id="toc-c-numerical-x-numerical" class="nav-link" data-scroll-target="#c-numerical-x-numerical">c) Numerical x Numerical</a></li>
+  <li><a href="#d-numerical-x-categorical-treating-categorical-as-y" id="toc-d-numerical-x-categorical-treating-categorical-as-y" class="nav-link" data-scroll-target="#d-numerical-x-categorical-treating-categorical-as-y">d) Numerical x Categorical (treating categorical as y)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
+  <ul class="collapse">
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks:</a>
+  <ul class="collapse">
+  <li><a href="#refecences-used" id="toc-refecences-used" class="nav-link" data-scroll-target="#refecences-used">Refecences used</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 4 - Choosing the right analyses &amp; Hypothetical-Deductive reasoning</h1>
+<p class="subtitle lead">RMDA ARES40011</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Felipe Melo </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 24, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="../../img/ggplot.png" class="img-fluid" width="500"></p>
+<p><a href="https://twitter.com/allison_horst" style="text-align: center">Artwork by @allison_horst</a></p>
+<section id="preparation" class="level1">
+<h1>Preparation</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Research Methods</th>
+<th>Data Analyses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Understand hypothetical-deductive reasoning</td>
+<td>Identify types of variables</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Use <strong>ggplot</strong> for visualize data</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Choose appropriate statistical test</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="readings-and-videos" class="level2">
+<h2 class="anchored" data-anchor-id="readings-and-videos">Readings and videos</h2>
+<ul>
+<li><p><i class="fa-solid fa-book" aria-label="book"></i> Read this <a href="https://r4ds.had.co.nz/exploratory-data-analysis.html">Book chapter</a></p></li>
+<li><p><i class="fa-solid fa-video" aria-label="video"></i> Have a look at this <a href="https://www.youtube.com/watch?v=rulIUAN0U3w">youtube tutorial</a></p></li>
+<li><p><i class="fa-solid fa-video" aria-label="video"></i> Check this <a href="https://www.youtube.com/watch?v=rulIUAN0U3w">video class on Hypothetico-Deductive method</a></p></li>
+</ul>
+</section>
+</section>
+<section id="lesson" class="level1">
+<h1>Lesson</h1>
+<section id="part-1---research-methods" class="level2">
+<h2 class="anchored" data-anchor-id="part-1---research-methods">Part 1 - Research Methods</h2>
+<p><img src="../../img/hd.jpg" class="img-fluid"></p>
+<p><sup>source:https://courses.lumenlearning.com/suny-psychologyresearchmethods/chapter/4-3-using-theories-in-psychological-research/</sup></p>
+<p>This document provides an explanation of the <strong>hypothetico-deductive method (HD method)</strong>, a proposed description of how scientific inquiry often proceeds. We will compare it with <strong>inductivism</strong>, discuss its application through real-world examples, and conclude with a roadmap for applying the HD method in research, drawing upon the provided sources.</p>
+</section>
+<section id="the-hypothetico-deductive-method-explained" class="level2">
+<h2 class="anchored" data-anchor-id="the-hypothetico-deductive-method-explained">The Hypothetico-Deductive Method Explained</h2>
+<p>The hypothetico-deductive method is a process where scientific investigation begins with the <strong>formulation of a testable hypothesis</strong> . The core idea is that a hypothesis can be potentially <strong>falsified</strong> by observations that contradict its predictions. If the observations align with the predictions, the hypothesis is <strong>corroborated</strong>, making it more plausible, but not definitively proven true.</p>
+<p>The general steps of the HD method are as follows:</p>
+<ol type="1">
+<li><strong>Identify a question or problem:</strong> Begin by recognising an issue or question that requires an answer. This may involve using prior experience, gathering data, and considering existing explanations. <strong>Exploratory Data Analysis (EDA)</strong>, which uses visualisation and transformation to explore data, can be a crucial initial phase to <strong>generate questions about your data</strong>. The goal during EDA is to <strong>develop an understanding of your data</strong> by asking questions that focus your attention and help you decide which graphs, models, or transformations to make.</li>
+<li><strong>Formulate a conjecture (hypothesis):</strong> Propose a potential explanation for the identified problem. This hypothesis should be <strong>specific and testable</strong>. It needs to be formulated in a way that can be proven true or false through experimentation with scientific data. Avoid ambiguous terms like “good” or “bad”.</li>
+<li><strong>Deduce predictions from the hypothesis:</strong> Derive observable consequences that would follow if the hypothesis were true. These predictions should specify what you expect to see or measure. The deduction moves from a general statement (the hypothesis) to specific expectations.</li>
+<li><strong>Test the predictions:</strong> Conduct observations or experiments to see if the predictions hold true. The experiment should ideally have a <strong>control group and a real group</strong> to allow for comparison. Look for evidence that might <strong>conflict with your predictions</strong>, as the focus is often on attempting to <strong>disprove</strong> the hypothesis. Seeking direct proof of the hypothesis through its predictions is a logical fallacy.</li>
+<li><strong>Determine whether the observations match or contradict the predictions:</strong> Evaluate the results of your tests.
+<ul>
+<li>If the observations <strong>match the predictions</strong>, the hypothesis is <strong>corroborated</strong> or rendered more probable.</li>
+<li>If the observations <strong>contradict the predictions</strong>, the hypothesis is <strong>disconfirmed</strong>, and you may need to revise or formulate a new hypothesis.</li>
+</ul></li>
+</ol>
+<p>It is important to note that the HD method primarily aims to <strong>falsify</strong> hypotheses rather than definitively prove them. As paraphrased from Albert Einstein, “No amount of experimentation can ever prove me right; a single experiment can prove me wrong”.</p>
+<p>In practice, testing a prediction often relies on <strong>auxiliary hypotheses</strong>. These are additional assumptions about the equipment or conditions of the experiment. If a prediction fails, it might be because the main hypothesis is wrong, or because one of the auxiliary hypotheses is incorrect.</p>
+</section>
+<section id="difference-from-inductivism" class="level2">
+<h2 class="anchored" data-anchor-id="difference-from-inductivism">Difference from Inductivism</h2>
+<p>The core distinction between the hypothetico-deductive method and <strong>inductivism</strong> lies in their starting point and the direction of reasoning.</p>
+<ul>
+<li><strong>Inductivism</strong> suggests that scientific reasoning begins with <strong>numerous unbiased observations</strong>, from which <strong>inductive generalisations</strong> are drawn to form theories. The main challenge with this view is that hypotheses often precede and guide the observation process.</li>
+<li>The <strong>hypothetico-deductive method</strong>, conversely, <strong>starts with a hypothesis</strong> (a proposed explanation) before making specific observations to test that hypothesis. The reasoning then proceeds <strong>deductively</strong> to derive testable predictions.</li>
+</ul>
+<p>While the HD method uses <strong>deduction</strong> to generate predictions (“if H, then O”), evaluating the hypothesis based on the observed outcome is an <strong>inductive inference</strong>. A correct prediction increases our confidence in the hypothesis but doesn’t guarantee its absolute truth. Inductivism focuses on building general theories <strong>inductively</strong> from specific observations. The HD method recognises that hypotheses often come first and direct the search for and interpretation of observations, highlighting the creative aspect of science in generating ideas.</p>
+</section>
+<section id="real-world-examples" class="level2">
+<h2 class="anchored" data-anchor-id="real-world-examples">Real-World Examples</h2>
+<ol type="1">
+<li><strong>The Faulty Music Player</strong>:
+<ul>
+<li><strong>Problem:</strong> A music player does not turn on.</li>
+<li><strong>Hypothesis:</strong> The batteries are dead.</li>
+<li><strong>Prediction:</strong> Replacing the batteries will make the music player work.</li>
+<li><strong>Test:</strong> Replace the batteries.</li>
+<li><strong>Outcome:</strong> If the player works, the hypothesis is corroborated. If not, it is disconfirmed.</li>
+</ul></li>
+<li><strong>Bo’s Law</strong>:
+<ul>
+<li><strong>Hypothesis:</strong> For a gas at a constant temperature, pressure is inversely proportional to volume.</li>
+<li><strong>Prediction:</strong> If the volume of a gas in a sealed container is halved, the pressure will double.</li>
+<li><strong>Test:</strong> Halve the volume and measure the pressure.</li>
+<li><strong>Outcome:</strong> If the pressure doubles, the hypothesis is corroborated. As noted, this confirmation is an inductive inference. It’s also important to remember that Bo’s law describes an ideal gas and has limitations for real gases under extreme conditions.</li>
+</ul></li>
+<li><strong>Discovery of Neptune</strong> (as discussed previously):
+<ul>
+<li><strong>Problem:</strong> The orbit of Uranus deviated from predictions based on Newtonian physics.</li>
+<li><strong>Hypothesis:</strong> There is an undiscovered planet whose gravitational pull affects Uranus’s orbit.</li>
+<li><strong>Prediction:</strong> Based on the deviations, the location of this new planet can be calculated, and astronomers should find it there.</li>
+<li><strong>Test:</strong> Astronomers searched in the predicted location.</li>
+<li><strong>Outcome:</strong> The discovery of Neptune corroborated the hypothesis.</li>
+</ul></li>
+</ol>
+</section>
+<section id="roadmap-to-applying-hypothetico-deductive-reasoning-to-research" class="level2">
+<h2 class="anchored" data-anchor-id="roadmap-to-applying-hypothetico-deductive-reasoning-to-research">Roadmap to Applying Hypothetico-Deductive Reasoning to Research</h2>
+<p>To apply the hypothetico-deductive method in research, follow these steps:</p>
+<ol type="1">
+<li><strong>Identify a clear research question or problem</strong>. This often stems from observations, existing theories, or gaps in knowledge. <strong>Exploratory data analysis (EDA)</strong> is a valuable initial step to uncover patterns and formulate relevant questions about your data. Define your research question with specific variables in mind.</li>
+<li><strong>Formulate a specific and testable hypothesis</strong>. This hypothesis should propose a potential answer to your research question and be capable of being proven true or false with scientific data. Consider the <strong>types of variables</strong> involved, such as categorical, continuous, nominal, ordinal, or scale, as this will influence how you can test your hypothesis.</li>
+<li><strong>Deduce one or more observable predictions</strong> from your hypothesis. These predictions should clearly state what you would expect to observe or measure if your hypothesis is correct.</li>
+<li><strong>Design and conduct a study or experiment</strong> to test these predictions. This may involve collecting new data or analysing existing datasets. The design should allow for the measurement of changes and ideally include control and experimental groups for comparison.</li>
+<li><strong>Analyse the data</strong> collected to determine if the observations align with your predictions. This step often involves using <strong>statistical tests</strong>, and the choice of test depends on your research question, the <strong>type of data</strong> (e.g., nominal, ordinal, scale, normally distributed or skewed), the number of variables, and whether the comparisons are between independent or paired groups. <strong>Visualising distributions</strong> using bar charts for categorical variables, histograms for continuous variables, and <strong>examining covariation</strong> between variables using boxplots or scatterplots are essential parts of this analysis. You will need to consider the <strong>assumptions</strong> of any statistical tests you use and understand the concept of <strong>statistical significance</strong> and <strong>p-values</strong>.</li>
+<li><strong>Evaluate your hypothesis based on the results</strong>.
+<ul>
+<li>If the predictions are supported by the data, your hypothesis is <strong>corroborated</strong>, and its plausibility increases [3, 4]. However, remember that this is not definitive proof.</li>
+<li>If the predictions are not supported by the data, your hypothesis is <strong>disconfirmed</strong>, and you may need to revise it or propose a new one. Consider whether any <strong>auxiliary hypotheses</strong> might have been incorrect.</li>
+</ul></li>
+<li><strong>Refine and repeat the process</strong>. Scientific inquiry is often iterative. Even if your hypothesis is corroborated, further testing with different predictions and in various contexts is usually necessary to build a robust and well-supported theory.</li>
+</ol>
+<p>By following this systematic approach, researchers can use the hypothetico-deductive method to investigate questions, test their ideas against evidence, and contribute to the body of scientific knowledge. Seeking advice from statisticians during the planning phase is recommended to ensure appropriate statistical analysis.</p>
+</section>
+<section id="part-2---data-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="part-2---data-analyses">Part 2 - Data Analyses</h2>
+<p>This document provides a brief tutorial on how to identify and describe different types of variables in a dataset. Understanding your data types is crucial for choosing appropriate exploratory data analysis (EDA) techniques and statistical tests. We will then explore how to generate insightful visualisations using the <code>ggplot2</code> package in R for various combinations of variable types. Finally, an exercise will be provided for you to practice these concepts using pre-built R datasets.</p>
+<p>First, ensure you have the necessary package installed:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install ggplot2 if you haven't already</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tidyverse library</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="identifying-and-describing-types-of-variables" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-and-describing-types-of-variables">1) Identifying and Describing Types of Variables</h2>
+<p>A variable is a quantity, quality, or property that you can measure. The value is the state of a variable when you measure it. Understanding the types of variables in your dataset is fundamental to performing effective data analysis. Here are the main types of variables you will encounter:</p>
+<p>• Categorical Variables: These variables can take on a limited, and usually fixed, number of possible values. They represent qualities or groupings. In R, categorical variables are often stored as factors or character vectors.</p>
+<p>◦ <strong>Nominal Variables:</strong> These are categorical variables without any intrinsic order or ranking. Examples include gender, eye colour, or types of fruit.</p>
+<p>◦ <strong>Ordinal Variables:</strong> These are categorical variables that have a natural order or ranking among their categories. Examples include education level (e.g., high school, bachelor’s, master’s), customer satisfaction ratings (e.g., very dissatisfied, dissatisfied, neutral, satisfied, very satisfied), or the cut quality of a diamond (Fair, Good, Very Good, Premium, Ideal).</p>
+<p>• <strong>Numerical (or Quantitative) Variables:</strong> These variables represent quantities that can be measured and often have a numerical value. In R, these are typically stored as numeric or integer data types.</p>
+<p>◦ <strong>Continuous Variables:</strong> These can take on any value within a given range. Examples include height, weight, temperature, or the carat size or price of a diamond.</p>
+<p>◦ <strong>Discrete Variables:</strong> These can only take on specific, separate values, often integers. Examples include the number of children in a family or the number of cars in a parking lot. It’s also useful to consider the role of variables in your analysis:</p>
+<p>• <strong>Dependent Variable (Outcome Variable):</strong> This is the variable you are trying to understand, explain, or predict. Its value is thought to depend on other variables.</p>
+<p>• <strong>Independent Variable (Explanatory Variable or Predictor):</strong> These are the variables that are thought to influence or explain the dependent variable.</p>
+<p>Identifying the type and role of each variable in your dataset will guide your choice of visualisation techniques and statistical models.</p>
+<p><img src="../../img/types_tests.png" class="img-fluid"></p>
+</section>
+<section id="generating-exploratory-graphs-using-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="generating-exploratory-graphs-using-ggplot2">2) Generating Exploratory Graphs using ggplot2</h2>
+<p>Exploratory Data Analysis (EDA) involves using visualisation and transformation to explore your data in a systematic way. ggplot2 is a powerful and flexible package in R for creating elegant and informative graphs. Let’s look at how to create plots for different combinations of variable types using the diamonds dataset, which is included in the ggplot2 package.</p>
+<p>First, let’s load the dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the diamonds dataset</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the structure of the dataset</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [53,940 × 10] (S3: tbl_df/tbl/data.frame)
+ $ carat  : num [1:53940] 0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...
+ $ cut    : Ord.factor w/ 5 levels "Fair"&lt;"Good"&lt;..: 5 4 2 4 2 3 3 3 1 3 ...
+ $ color  : Ord.factor w/ 7 levels "D"&lt;"E"&lt;"F"&lt;"G"&lt;..: 2 2 2 6 7 7 6 5 2 5 ...
+ $ clarity: Ord.factor w/ 8 levels "I1"&lt;"SI2"&lt;"SI1"&lt;..: 2 3 5 4 2 6 7 3 4 5 ...
+ $ depth  : num [1:53940] 61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...
+ $ table  : num [1:53940] 55 61 65 58 58 57 57 55 61 61 ...
+ $ price  : int [1:53940] 326 326 327 334 335 336 336 337 337 338 ...
+ $ x      : num [1:53940] 3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...
+ $ y      : num [1:53940] 3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...
+ $ z      : num [1:53940] 2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...</code></pre>
+</div>
+</div>
+<p>See <a href="https://rpubs.com/gokusun327/diamonddatatest">this link</a> for a summary of the <code>dimanonds</code> dataset</p>
+<section id="a-categorical-x-categorical" class="level3">
+<h3 class="anchored" data-anchor-id="a-categorical-x-categorical">a) Categorical x Categorical</h3>
+<p>To visualise the relationship between two categorical variables, we can use a bar chart with a fill aesthetic or a geom_count plot. Another effective method is using geom_tile to create a heatmap of the counts.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with fill</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill =</span> color)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Diamond Color by Cut"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_count</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> color)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Joint Distribution of Diamond Cut and Color"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Color"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_tile</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>diamonds_counts <span class="ot">&lt;-</span> diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(color, cut)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds_counts, <span class="fu">aes</span>(<span class="at">x =</span> color, <span class="at">y =</span> cut, <span class="at">fill =</span> n)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Heatmap of Diamond Cut and Color Combinations"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Color"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In these plots, <code>geom_bar</code> shows the count of each cut category, with bars segmented by color. geom_count displays the frequency of each cut-color combination using the size of circles. geom_tile uses colour intensity to represent the counts of each combination. These visualisations help reveal if certain combinations of categorical variables are more frequent than others.</p>
+</section>
+<section id="b-categorical-x-numerical" class="level3">
+<h3 class="anchored" data-anchor-id="b-categorical-x-numerical">b) Categorical x Numerical</h3>
+<p>To explore the distribution of a numerical variable across different categories, boxplots are highly effective. We can also use violin plots or frequency polygons (though boxplots are often preferred for this comparison).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Diamond Price by Cut"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Violin plot</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Diamond Price by Cut"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The boxplots show the median, quartiles, and potential outliers of the price for each cut category, allowing for easy comparison of the distributions. Violin plots provide a smoothed density estimate of the distribution.</p>
+</section>
+<section id="c-numerical-x-numerical" class="level3">
+<h3 class="anchored" data-anchor-id="c-numerical-x-numerical">c) Numerical x Numerical</h3>
+<p>The primary way to visualise the relationship between two numerical variables is using a scatterplot with geom_point(). For large datasets, you might need to adjust the alpha (transparency) to handle overplotting or use 2D binning with geom_bin2d() or geom_hex().</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatterplot</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship between Diamond Carat and Price"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Carat"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatterplot with transparency for large datasets</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship between Diamond Carat and Price (with Transparency)"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Carat"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D binning</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2D Binning of Diamond Carat and Price"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Carat"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The scatterplot reveals patterns or trends in the relationship between carat and price. Transparency helps when many points overlap. 2D binning divides the plot area into bins and colours them based on the number of points within each bin, highlighting areas of high density.</p>
+</section>
+<section id="d-numerical-x-categorical-treating-categorical-as-y" class="level3">
+<h3 class="anchored" data-anchor-id="d-numerical-x-categorical-treating-categorical-as-y">d) Numerical x Categorical (treating categorical as y)</h3>
+<p>This is NOT conceptually the same as (b) Categorical x Numerical. This is actually applied to logistic models where response variables are categorical as a function of numerical factors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(color <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"J"</span>, <span class="st">"D"</span>)) <span class="sc">%&gt;%</span> <span class="co">#diamond colour, from J (worst) to D (best)</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">color2=</span> <span class="fu">ifelse</span>(color<span class="sc">==</span><span class="st">"J"</span>,<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">%&gt;%</span>  <span class="co"># tranforming categories into binary numbers 0 = worst and 1 = best</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> price, <span class="at">y =</span> color2)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> .<span class="dv">1</span>, <span class="at">alpha=</span><span class="fl">0.2</span>) <span class="sc">+</span> <span class="co"># expore these argumentes using documentation</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">method.args=</span><span class="fu">list</span> (<span class="at">family=</span><span class="st">"binomial"</span>), <span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Price (USD)"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot shows an interesting pattern: high-prices diamonds tend to present the “worst” colour. At least this is what the graph suggests.</p>
+</section>
+</section>
+</section>
+<section id="exercise" class="level1">
+<h1>Exercise</h1>
+<p>Use the built-in iris dataset in R to practice identifying variable types and creating exploratory graphs with ggplot2. First, load the iris dataset and examine its structure:</p>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks:</h2>
+<ol type="1">
+<li><p>Identify the type of each variable in the <code>penguins</code> dataset (species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year). Describe whether each variable is numerical (continuous or discrete) or categorical (nominal or ordinal).</p></li>
+<li><p>Create a scatterplot to explore the relationship between <code>bill_length_mm</code> (x-axis) and <code>flipper_length_mm</code> (y-axis). Add colour to the points based on the <code>species</code> of the penguin. Add appropriate titles and labels to your plot using labs().</p></li>
+<li><p>Generate a boxplot to visualise the distribution of <code>body_mass_g</code> (y-axis) for each <code>species</code> (x-axis). Add a title and labels.</p></li>
+<li><p>Create a bar chart to show the count of each <code>species</code> in the dataset. Add appropriate labels.</p></li>
+<li><p>Explore the relationship between <code>bill_depth_mm</code> and <code>species</code> using a visualisation method of your choice (e.g., boxplot, violin plot). Justify why you chose that particular method.</p></li>
+</ol>
+<p>This exercise will help you solidify your understanding of variable types and how to use ggplot2 to create meaningful exploratory visualisations. Remember that Data Analysis is an iterative process, so feel free to create other plots and ask questions about the patterns you observe in the iris dataset.</p>
+<section id="refecences-used" class="level3">
+<h3 class="anchored" data-anchor-id="refecences-used">Refecences used</h3>
+<ul>
+<li><p>Wickham, Hadley, and Garrett Grolemund. (n.d.). [<em>7 Exploratory Data Analysis | R for Data Science</em>](https://r4ds.had.co.nz/exploratory-data-analysis.html.</p></li>
+<li><p>UCLA OARC. (2024). <em>Choosing the Correct Statistical Test in SAS, Stata, SPSS and R</em>. Retrieved from <a href="https://stats.oarc.ucla.edu/other/mult-pkg/whatstat/">stats.oarc.ucla.edu</a>. (Adapted from Leeper, James D., Ph.D., <em>Choosing the Correct Statistic</em>).</p></li>
+<li><p>Nayak, Barun K., and Avijit Hazra. (2011). How to choose the right statistical test? <em>Indian Journal of Ophthalmology</em>, <em>59</em>(2), 85–86. <a href="https://doi.org/10.4103/0301-4738.77005" class="uri">https://doi.org/10.4103/0301-4738.77005</a></p></li>
+<li><p>Mangiafico, Salvatore S. (2016). <em>R Handbook: Choosing a Statistical Test</em> (version 1.20.07, revised 2024). Retrieved from <a href="https://rcompanion.org/handbook/">rcompanion.org/handbook/</a>. (Part of <em>Summary and Analysis of Extension Program Evaluation in R</em>).</p></li>
+<li><p>Maths Skills Centre, University of York. (Last Updated: Apr 9, 2025). <em>Which statistical test? - Maths Skills Centre: a practical guide to maths &amp; statistics - Subject Guides at University of York</em>. Retrieved from <a href="https://subjectguides.york.ac.uk/maths-skills-centre/which-statistical-test" class="uri">https://subjectguides.york.ac.uk/maths-skills-centre/which-statistical-test</a>.</p></li>
+<li><p>Ranganathan, Priya. (2021). An Introduction to Statistics: Choosing the Correct Statistical Test. <em>Indian Journal of Critical Care Medicine</em>, <em>25</em>(Suppl 2), S184–S186. <a href="https://doi.org/10.5005/jp-journals-10071-23815" class="uri">https://doi.org/10.5005/jp-journals-10071-23815</a></p></li>
+<li><p>Marshall, Ellen. (n.d.). <em>The Statistics Tutor’s Quick Guide to Commonly Used Statistical Tests</em>. statstutor community project, stcp-marshallowen-7. Retrieved from <a href="www.statstutor.ac.uk">www.statstutor.ac.uk</a>.</p></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Content <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2025 by <a href="https://ecoaplic.org/">felipe Melo</a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/fplmelo/rmda_ntu">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-contrib/alpine-3.12/alpine@3.12.min.js"></script>
+</body></html>

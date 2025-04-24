@@ -47,9 +47,9 @@ You are going to work on the assessment using your **Quarto workbook** construct
 
 ::: callout-note
 ## 
+
 The **dataset** and **context description** for the Summative exam will be shared by the end of the module sessions (probably in the last week of classes).
 :::
-
 
 ## Transferable skills developed in this assessment
 
