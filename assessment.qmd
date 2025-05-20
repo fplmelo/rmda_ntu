@@ -31,7 +31,7 @@ You must not be shy or embarrassed to share your workbook. Nobody will judge you
 
 ## Type of Assessment
 
-**Your Summative** is to produce an "article-like" dynamic document containing an analytical workflow for a given dataset where critically interpret the results and draw your conclusions.
+**Your Summative** is to produce an dynamic document (i.e. a simple Quarto document) containing an analytical workflow for a given dataset where critically interpret the results and draw your conclusions.
 
 ### Step 1 - Context
 
