@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name/Course Name">
-<meta name="dcterms.date" content="2023-10-27">
+<meta name="author" content="Felipe Melo">
+<meta name="dcterms.date" content="2025-05-22">
 
-<title>Analysing Categorical Data - Frequency Tests and Contingency Tables</title>
+<title>Week 4 - Choosing the right analyses &amp; Hypothetical-Deductive reasoning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,6 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-54de66cacb366c8cc3f4015b801727df.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/alpine-3.12/buttons.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -105,35 +106,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -241,31 +213,67 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#readings-and-videos" id="toc-readings-and-videos" class="nav-link" data-scroll-target="#readings-and-videos">Readings and videos</a></li>
+  </ul></li>
+  <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a>
+  <ul class="collapse">
+  <li><a href="#part-1---research-methods" id="toc-part-1---research-methods" class="nav-link" data-scroll-target="#part-1---research-methods">Part 1 - Research Methods</a></li>
+  <li><a href="#the-hypothetico-deductive-method-explained" id="toc-the-hypothetico-deductive-method-explained" class="nav-link" data-scroll-target="#the-hypothetico-deductive-method-explained">The Hypothetico-Deductive Method Explained</a></li>
+  <li><a href="#difference-from-inductivism" id="toc-difference-from-inductivism" class="nav-link" data-scroll-target="#difference-from-inductivism">Difference from Inductivism</a></li>
+  <li><a href="#real-world-examples" id="toc-real-world-examples" class="nav-link" data-scroll-target="#real-world-examples">Real-World Examples</a></li>
+  <li><a href="#roadmap-to-applying-hypothetico-deductive-reasoning-to-research" id="toc-roadmap-to-applying-hypothetico-deductive-reasoning-to-research" class="nav-link" data-scroll-target="#roadmap-to-applying-hypothetico-deductive-reasoning-to-research">Roadmap to Applying Hypothetico-Deductive Reasoning to Research</a></li>
+  <li><a href="#part-2---data-analyses" id="toc-part-2---data-analyses" class="nav-link" data-scroll-target="#part-2---data-analyses">Part 2 - Data Analyses</a></li>
+  <li><a href="#identifying-and-describing-types-of-variables" id="toc-identifying-and-describing-types-of-variables" class="nav-link" data-scroll-target="#identifying-and-describing-types-of-variables">1) Identifying and Describing Types of Variables</a></li>
+  <li><a href="#generating-exploratory-graphs-using-ggplot2" id="toc-generating-exploratory-graphs-using-ggplot2" class="nav-link" data-scroll-target="#generating-exploratory-graphs-using-ggplot2">2) Generating Exploratory Graphs using ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#a-categorical-x-categorical" id="toc-a-categorical-x-categorical" class="nav-link" data-scroll-target="#a-categorical-x-categorical">a) Categorical x Categorical</a></li>
+  <li><a href="#b-categorical-x-numerical" id="toc-b-categorical-x-numerical" class="nav-link" data-scroll-target="#b-categorical-x-numerical">b) Categorical x Numerical</a></li>
+  <li><a href="#c-numerical-x-numerical" id="toc-c-numerical-x-numerical" class="nav-link" data-scroll-target="#c-numerical-x-numerical">c) Numerical x Numerical</a></li>
+  <li><a href="#d-numerical-x-categorical-treating-categorical-as-y" id="toc-d-numerical-x-categorical-treating-categorical-as-y" class="nav-link" data-scroll-target="#d-numerical-x-categorical-treating-categorical-as-y">d) Numerical x Categorical (treating categorical as y)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
+  <ul class="collapse">
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks:</a>
+  <ul class="collapse">
+  <li><a href="#refecences-used" id="toc-refecences-used" class="nav-link" data-scroll-target="#refecences-used">Refecences used</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysing Categorical Data - Frequency Tests and Contingency Tables</h1>
-<p class="subtitle lead">Using R for Chi-Square Tests</p>
+<h1 class="title">Week 4 - Choosing the right analyses &amp; Hypothetical-Deductive reasoning</h1>
+<p class="subtitle lead">RMDA ARES40011</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name/Course Name </p>
+             <p>Felipe Melo </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 27, 2023</p>
+      <p class="date">May 22, 2025</p>
     </div>
   </div>
   
@@ -277,167 +285,330 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction-to-categorical-data-analysis" class="level1">
-<h1>Introduction to Categorical Data Analysis</h1>
-<p>When working with data, we often encounter variables that represent categories rather than numerical quantities. These are known as <strong>categorical variables</strong> [1, 2]. Examples might include eye colour (blue, brown, green), habitat type (rural, industrial), or survival status (yes, no) [1, 3, 4]. Understanding the frequency distribution of a single categorical variable is straightforward, but researchers are frequently interested in the relationship or association between <em>two or more</em> categorical variables [1, 5].</p>
-<p>For example, we might want to know if there is a relationship between eye colour and sex in a group of students, or whether the frequency of different ladybird colour forms varies between different habitats [1, 3]. To explore these relationships and test for associations, we use tools like contingency tables and the Chi-Square contingency table test [1, 2, 5, 6].</p>
+<p><img src="../../img/ggplot.png" class="img-fluid" width="500"></p>
+<p><a href="https://twitter.com/allison_horst" style="text-align: center">Artwork by @allison_horst</a></p>
+<section id="preparation" class="level1">
+<h1>Preparation</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Research Methods</th>
+<th>Data Analyses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Understand hypothetical-deductive reasoning</td>
+<td>Identify types of variables</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Use <strong>ggplot</strong> for visualize data</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Choose appropriate statistical test</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="contingency-tables" class="level1">
-<h1>Contingency Tables</h1>
-<p>A <strong>contingency table</strong> is a fundamental tool for summarising the frequency distribution of two or more categorical variables simultaneously [2, 5]. It organises the data into a grid where each cell shows the count of observations that fall into a specific combination of categories from the variables [5].</p>
-<p>A table summarising the frequencies of two categorical variables is called a <strong>two-way contingency table</strong> [5]. If more than two variables were involved, it would be a higher-dimensional table (e.g., a three-way contingency table for three variables) [5].</p>
-<p>The term “contingency” refers to the table’s ability to capture how the frequencies of one variable are ‘contingent’ upon, or associated with, the categories of another variable [5]. This association, linkage, non-independence, or interaction is evident when the proportions of observations in one set of categories depend on a second set of categories [5, 7].</p>
-<p>Consider two possibilities for a two-way table with categories R1, R2 and C1, C2:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>C1</th>
-<th>C2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>R1</strong></td>
-<td>10</td>
-<td>20</td>
-</tr>
-<tr class="even">
-<td><strong>R2</strong></td>
-<td>40</td>
-<td>80</td>
-</tr>
-</tbody>
-</table>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>C1</th>
-<th>C2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>R1</strong></td>
-<td>10</td>
-<td>80</td>
-</tr>
-<tr class="even">
-<td><strong>R2</strong></td>
-<td>40</td>
-<td>20</td>
-</tr>
-</tbody>
-</table>
-<p>In the first table (left), there is <strong>no association</strong>. The proportion of R1 cases relative to R2 cases is the same for both C1 and C2 (10/40 = 20/80 = 1/4). The total numbers in each category are irrelevant; it’s the proportions that indicate association [7].</p>
-<p>In the second table (right), there <strong>is evidence of an association</strong>. The proportion of R1 cases relative to R2 cases changes markedly between C1 (10/40 = 1/4) and C2 (80/20 = 4) [6]. The R1 cases are less frequent in the C1 column compared to the C2 column, relative to R2 [6]. Again, the proportions, not the raw numbers, reveal the association [6].</p>
-<section id="creating-contingency-tables-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="creating-contingency-tables-in-r">Creating Contingency Tables in R</h2>
-<p>The sources discuss several ways to create contingency tables in R, depending on how the raw data is structured [8-21].</p>
-<p>The primary function for creating contingency tables from raw data is <code>table()</code> or <code>xtabs()</code> [8, 11, 19]. The <code>xtabs()</code> function is particularly useful as it can handle different data formats and is required for the <code>chisq.test()</code> function [8, 9].</p>
-<section id="case-1-one-observation-per-row" class="level3">
-<h3 class="anchored" data-anchor-id="case-1-one-observation-per-row">Case 1: One Observation per Row</h3>
-<p>When your data has one row for each individual observation and columns for each categorical variable, you can use <code>xtabs()</code> with a formula [9, 11].</p>
-<p>Let’s use the <code>penguins</code> dataset as an example. Suppose we want a contingency table of <code>species</code> and <code>island</code>.</p>
+<section id="readings-and-videos" class="level2">
+<h2 class="anchored" data-anchor-id="readings-and-videos">Readings and videos</h2>
+<ul>
+<li><p><i class="fa-solid fa-book" aria-label="book"></i> Read this <a href="https://r4ds.had.co.nz/exploratory-data-analysis.html">Book chapter</a></p></li>
+<li><p><i class="fa-solid fa-video" aria-label="video"></i> Have a look at this <a href="https://www.youtube.com/watch?v=rulIUAN0U3w">youtube tutorial</a></p></li>
+<li><p><i class="fa-solid fa-video" aria-label="video"></i> Check this <a href="https://www.youtube.com/watch?v=rulIUAN0U3w">video class on Hypothetico-Deductive method</a></p></li>
+</ul>
+</section>
+</section>
+<section id="lesson" class="level1">
+<h1>Lesson</h1>
+<section id="part-1---research-methods" class="level2">
+<h2 class="anchored" data-anchor-id="part-1---research-methods">Part 1 - Research Methods</h2>
+<p><img src="../../img/hd.jpg" class="img-fluid"></p>
+<p><sup>source:https://courses.lumenlearning.com/suny-psychologyresearchmethods/chapter/4-3-using-theories-in-psychological-research/</sup></p>
+<p>This document provides an explanation of the <strong>hypothetico-deductive method (HD method)</strong>, a proposed description of how scientific inquiry often proceeds. We will compare it with <strong>inductivism</strong>, discuss its application through real-world examples, and conclude with a roadmap for applying the HD method in research, drawing upon the provided sources.</p>
+</section>
+<section id="the-hypothetico-deductive-method-explained" class="level2">
+<h2 class="anchored" data-anchor-id="the-hypothetico-deductive-method-explained">The Hypothetico-Deductive Method Explained</h2>
+<p>The hypothetico-deductive method is a process where scientific investigation begins with the <strong>formulation of a testable hypothesis</strong> . The core idea is that a hypothesis can be potentially <strong>falsified</strong> by observations that contradict its predictions. If the observations align with the predictions, the hypothesis is <strong>corroborated</strong>, making it more plausible, but not definitively proven true.</p>
+<p>The general steps of the HD method are as follows:</p>
+<ol type="1">
+<li><strong>Identify a question or problem:</strong> Begin by recognising an issue or question that requires an answer. This may involve using prior experience, gathering data, and considering existing explanations. <strong>Exploratory Data Analysis (EDA)</strong>, which uses visualisation and transformation to explore data, can be a crucial initial phase to <strong>generate questions about your data</strong>. The goal during EDA is to <strong>develop an understanding of your data</strong> by asking questions that focus your attention and help you decide which graphs, models, or transformations to make.</li>
+<li><strong>Formulate a conjecture (hypothesis):</strong> Propose a potential explanation for the identified problem. This hypothesis should be <strong>specific and testable</strong>. It needs to be formulated in a way that can be proven true or false through experimentation with scientific data. Avoid ambiguous terms like “good” or “bad”.</li>
+<li><strong>Deduce predictions from the hypothesis:</strong> Derive observable consequences that would follow if the hypothesis were true. These predictions should specify what you expect to see or measure. The deduction moves from a general statement (the hypothesis) to specific expectations.</li>
+<li><strong>Test the predictions:</strong> Conduct observations or experiments to see if the predictions hold true. The experiment should ideally have a <strong>control group and a real group</strong> to allow for comparison. Look for evidence that might <strong>conflict with your predictions</strong>, as the focus is often on attempting to <strong>disprove</strong> the hypothesis. Seeking direct proof of the hypothesis through its predictions is a logical fallacy.</li>
+<li><strong>Determine whether the observations match or contradict the predictions:</strong> Evaluate the results of your tests.
+<ul>
+<li>If the observations <strong>match the predictions</strong>, the hypothesis is <strong>corroborated</strong> or rendered more probable.</li>
+<li>If the observations <strong>contradict the predictions</strong>, the hypothesis is <strong>disconfirmed</strong>, and you may need to revise or formulate a new hypothesis.</li>
+</ul></li>
+</ol>
+<p>It is important to note that the HD method primarily aims to <strong>falsify</strong> hypotheses rather than definitively prove them. As paraphrased from Albert Einstein, “No amount of experimentation can ever prove me right; a single experiment can prove me wrong”.</p>
+<p>In practice, testing a prediction often relies on <strong>auxiliary hypotheses</strong>. These are additional assumptions about the equipment or conditions of the experiment. If a prediction fails, it might be because the main hypothesis is wrong, or because one of the auxiliary hypotheses is incorrect.</p>
+</section>
+<section id="difference-from-inductivism" class="level2">
+<h2 class="anchored" data-anchor-id="difference-from-inductivism">Difference from Inductivism</h2>
+<p>The core distinction between the hypothetico-deductive method and <strong>inductivism</strong> lies in their starting point and the direction of reasoning.</p>
+<ul>
+<li><strong>Inductivism</strong> suggests that scientific reasoning begins with <strong>numerous unbiased observations</strong>, from which <strong>inductive generalisations</strong> are drawn to form theories. The main challenge with this view is that hypotheses often precede and guide the observation process.</li>
+<li>The <strong>hypothetico-deductive method</strong>, conversely, <strong>starts with a hypothesis</strong> (a proposed explanation) before making specific observations to test that hypothesis. The reasoning then proceeds <strong>deductively</strong> to derive testable predictions.</li>
+</ul>
+<p>While the HD method uses <strong>deduction</strong> to generate predictions (“if H, then O”), evaluating the hypothesis based on the observed outcome is an <strong>inductive inference</strong>. A correct prediction increases our confidence in the hypothesis but doesn’t guarantee its absolute truth. Inductivism focuses on building general theories <strong>inductively</strong> from specific observations. The HD method recognises that hypotheses often come first and direct the search for and interpretation of observations, highlighting the creative aspect of science in generating ideas.</p>
+</section>
+<section id="real-world-examples" class="level2">
+<h2 class="anchored" data-anchor-id="real-world-examples">Real-World Examples</h2>
+<ol type="1">
+<li><strong>The Faulty Music Player</strong>:
+<ul>
+<li><strong>Problem:</strong> A music player does not turn on.</li>
+<li><strong>Hypothesis:</strong> The batteries are dead.</li>
+<li><strong>Prediction:</strong> Replacing the batteries will make the music player work.</li>
+<li><strong>Test:</strong> Replace the batteries.</li>
+<li><strong>Outcome:</strong> If the player works, the hypothesis is corroborated. If not, it is disconfirmed.</li>
+</ul></li>
+<li><strong>Bo’s Law</strong>:
+<ul>
+<li><strong>Hypothesis:</strong> For a gas at a constant temperature, pressure is inversely proportional to volume.</li>
+<li><strong>Prediction:</strong> If the volume of a gas in a sealed container is halved, the pressure will double.</li>
+<li><strong>Test:</strong> Halve the volume and measure the pressure.</li>
+<li><strong>Outcome:</strong> If the pressure doubles, the hypothesis is corroborated. As noted, this confirmation is an inductive inference. It’s also important to remember that Bo’s law describes an ideal gas and has limitations for real gases under extreme conditions.</li>
+</ul></li>
+<li><strong>Discovery of Neptune</strong> (as discussed previously):
+<ul>
+<li><strong>Problem:</strong> The orbit of Uranus deviated from predictions based on Newtonian physics.</li>
+<li><strong>Hypothesis:</strong> There is an undiscovered planet whose gravitational pull affects Uranus’s orbit.</li>
+<li><strong>Prediction:</strong> Based on the deviations, the location of this new planet can be calculated, and astronomers should find it there.</li>
+<li><strong>Test:</strong> Astronomers searched in the predicted location.</li>
+<li><strong>Outcome:</strong> The discovery of Neptune corroborated the hypothesis.</li>
+</ul></li>
+</ol>
+</section>
+<section id="roadmap-to-applying-hypothetico-deductive-reasoning-to-research" class="level2">
+<h2 class="anchored" data-anchor-id="roadmap-to-applying-hypothetico-deductive-reasoning-to-research">Roadmap to Applying Hypothetico-Deductive Reasoning to Research</h2>
+<p>To apply the hypothetico-deductive method in research, follow these steps:</p>
+<ol type="1">
+<li><strong>Identify a clear research question or problem</strong>. This often stems from observations, existing theories, or gaps in knowledge. <strong>Exploratory data analysis (EDA)</strong> is a valuable initial step to uncover patterns and formulate relevant questions about your data. Define your research question with specific variables in mind.</li>
+<li><strong>Formulate a specific and testable hypothesis</strong>. This hypothesis should propose a potential answer to your research question and be capable of being proven true or false with scientific data. Consider the <strong>types of variables</strong> involved, such as categorical, continuous, nominal, ordinal, or scale, as this will influence how you can test your hypothesis.</li>
+<li><strong>Deduce one or more observable predictions</strong> from your hypothesis. These predictions should clearly state what you would expect to observe or measure if your hypothesis is correct.</li>
+<li><strong>Design and conduct a study or experiment</strong> to test these predictions. This may involve collecting new data or analysing existing datasets. The design should allow for the measurement of changes and ideally include control and experimental groups for comparison.</li>
+<li><strong>Analyse the data</strong> collected to determine if the observations align with your predictions. This step often involves using <strong>statistical tests</strong>, and the choice of test depends on your research question, the <strong>type of data</strong> (e.g., nominal, ordinal, scale, normally distributed or skewed), the number of variables, and whether the comparisons are between independent or paired groups. <strong>Visualising distributions</strong> using bar charts for categorical variables, histograms for continuous variables, and <strong>examining covariation</strong> between variables using boxplots or scatterplots are essential parts of this analysis. You will need to consider the <strong>assumptions</strong> of any statistical tests you use and understand the concept of <strong>statistical significance</strong> and <strong>p-values</strong>.</li>
+<li><strong>Evaluate your hypothesis based on the results</strong>.
+<ul>
+<li>If the predictions are supported by the data, your hypothesis is <strong>corroborated</strong>, and its plausibility increases [3, 4]. However, remember that this is not definitive proof.</li>
+<li>If the predictions are not supported by the data, your hypothesis is <strong>disconfirmed</strong>, and you may need to revise it or propose a new one. Consider whether any <strong>auxiliary hypotheses</strong> might have been incorrect.</li>
+</ul></li>
+<li><strong>Refine and repeat the process</strong>. Scientific inquiry is often iterative. Even if your hypothesis is corroborated, further testing with different predictions and in various contexts is usually necessary to build a robust and well-supported theory.</li>
+</ol>
+<p>By following this systematic approach, researchers can use the hypothetico-deductive method to investigate questions, test their ideas against evidence, and contribute to the body of scientific knowledge. Seeking advice from statisticians during the planning phase is recommended to ensure appropriate statistical analysis.</p>
+</section>
+<section id="part-2---data-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="part-2---data-analyses">Part 2 - Data Analyses</h2>
+<p>This document provides a brief tutorial on how to identify and describe different types of variables in a dataset. Understanding your data types is crucial for choosing appropriate exploratory data analysis (EDA) techniques and statistical tests. We will then explore how to generate insightful visualisations using the <code>ggplot2</code> package in R for various combinations of variable types. Finally, an exercise will be provided for you to practice these concepts using pre-built R datasets.</p>
+<p>First, ensure you have the necessary package installed:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins data (assuming it's available, e.g., from the palmerpenguins package)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("palmerpenguins")</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Anexando pacote: 'palmerpenguins'</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install ggplot2 if you haven't already</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tidyverse library</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Os seguintes objetos são mascarados por 'package:datasets':
-
-    penguins, penguins_raw</code></pre>
+</section>
+<section id="identifying-and-describing-types-of-variables" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-and-describing-types-of-variables">1) Identifying and Describing Types of Variables</h2>
+<p>A variable is a quantity, quality, or property that you can measure. The value is the state of a variable when you measure it. Understanding the types of variables in your dataset is fundamental to performing effective data analysis. Here are the main types of variables you will encounter:</p>
+<p>• Categorical Variables: These variables can take on a limited, and usually fixed, number of possible values. They represent qualities or groupings. In R, categorical variables are often stored as factors or character vectors.</p>
+<p>◦ <strong>Nominal Variables:</strong> These are categorical variables without any intrinsic order or ranking. Examples include gender, eye colour, or types of fruit.</p>
+<p>◦ <strong>Ordinal Variables:</strong> These are categorical variables that have a natural order or ranking among their categories. Examples include education level (e.g., high school, bachelor’s, master’s), customer satisfaction ratings (e.g., very dissatisfied, dissatisfied, neutral, satisfied, very satisfied), or the cut quality of a diamond (Fair, Good, Very Good, Premium, Ideal).</p>
+<p>• <strong>Numerical (or Quantitative) Variables:</strong> These variables represent quantities that can be measured and often have a numerical value. In R, these are typically stored as numeric or integer data types.</p>
+<p>◦ <strong>Continuous Variables:</strong> These can take on any value within a given range. Examples include height, weight, temperature, or the carat size or price of a diamond.</p>
+<p>◦ <strong>Discrete Variables:</strong> These can only take on specific, separate values, often integers. Examples include the number of children in a family or the number of cars in a parking lot. It’s also useful to consider the role of variables in your analysis:</p>
+<p>• <strong>Dependent Variable (Outcome Variable):</strong> This is the variable you are trying to understand, explain, or predict. Its value is thought to depend on other variables.</p>
+<p>• <strong>Independent Variable (Explanatory Variable or Predictor):</strong> These are the variables that are thought to influence or explain the dependent variable.</p>
+<p>Identifying the type and role of each variable in your dataset will guide your choice of visualisation techniques and statistical models.</p>
+<p><img src="../../img/types_tests.png" class="img-fluid"></p>
+</section>
+<section id="generating-exploratory-graphs-using-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="generating-exploratory-graphs-using-ggplot2">2) Generating Exploratory Graphs using ggplot2</h2>
+<p>Exploratory Data Analysis (EDA) involves using visualisation and transformation to explore your data in a systematic way. ggplot2 is a powerful and flexible package in R for creating elegant and informative graphs. Let’s look at how to create plots for different combinations of variable types using the diamonds dataset, which is included in the ggplot2 package.</p>
+<p>First, let’s load the dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the diamonds dataset</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine the structure of the dataset</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [53,940 × 10] (S3: tbl_df/tbl/data.frame)
+ $ carat  : num [1:53940] 0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...
+ $ cut    : Ord.factor w/ 5 levels "Fair"&lt;"Good"&lt;..: 5 4 2 4 2 3 3 3 1 3 ...
+ $ color  : Ord.factor w/ 7 levels "D"&lt;"E"&lt;"F"&lt;"G"&lt;..: 2 2 2 6 7 7 6 5 2 5 ...
+ $ clarity: Ord.factor w/ 8 levels "I1"&lt;"SI2"&lt;"SI1"&lt;..: 2 3 5 4 2 6 7 3 4 5 ...
+ $ depth  : num [1:53940] 61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...
+ $ table  : num [1:53940] 55 61 65 58 58 57 57 55 61 61 ...
+ $ price  : int [1:53940] 326 326 327 334 335 336 336 337 337 338 ...
+ $ x      : num [1:53940] 3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...
+ $ y      : num [1:53940] 3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...
+ $ z      : num [1:53940] 2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
+</div>
+<p>See <a href="https://rpubs.com/gokusun327/diamonddatatest">this link</a> for a summary of the <code>dimanonds</code> dataset</p>
+<section id="a-categorical-x-categorical" class="level3">
+<h3 class="anchored" data-anchor-id="a-categorical-x-categorical">a) Categorical x Categorical</h3>
+<p>To visualise the relationship between two categorical variables, we can use a bar chart with a fill aesthetic or a geom_count plot. Another effective method is using geom_tile to create a heatmap of the counts.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart with fill</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with missing values for species or island</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>penguins_complete <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins[, <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"island"</span>)])</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the contingency table using xtabs</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>species_island_table <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="sc">~</span> species <span class="sc">+</span> island, <span class="at">data =</span> penguins_complete)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>species_island_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>           island
-species     Biscoe Dream Torgersen
-  Adelie        44    56        52
-  Chinstrap      0    68         0
-  Gentoo       124     0         0</code></pre>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill =</span> color)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Diamond Color by Cut"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p>Here, <code>xtabs()</code> counts the number of occurrences for each combination of species and island. Alternatively, the <code>table()</code> function can be used, which is often simpler for this data structure.</p>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_count</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> color)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Joint Distribution of Diamond Cut and Color"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Color"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_tile</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>diamonds_counts <span class="ot">&lt;-</span> diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(color, cut)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds_counts, <span class="fu">aes</span>(<span class="at">x =</span> color, <span class="at">y =</span> cut, <span class="at">fill =</span> n)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Heatmap of Diamond Cut and Color Combinations"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Color"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In these plots, <code>geom_bar</code> shows the count of each cut category, with bars segmented by color. geom_count displays the frequency of each cut-color combination using the size of circles. geom_tile uses colour intensity to represent the counts of each combination. These visualisations help reveal if certain combinations of categorical variables are more frequent than others.</p>
 </section>
+<section id="b-categorical-x-numerical" class="level3">
+<h3 class="anchored" data-anchor-id="b-categorical-x-numerical">b) Categorical x Numerical</h3>
+<p>To explore the distribution of a numerical variable across different categories, boxplots are highly effective. We can also use violin plots or frequency polygons (though boxplots are often preferred for this comparison).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Diamond Price by Cut"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Violin plot</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Diamond Price by Cut"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Cut"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The boxplots show the median, quartiles, and potential outliers of the price for each cut category, allowing for easy comparison of the distributions. Violin plots provide a smoothed density estimate of the distribution.</p>
 </section>
+<section id="c-numerical-x-numerical" class="level3">
+<h3 class="anchored" data-anchor-id="c-numerical-x-numerical">c) Numerical x Numerical</h3>
+<p>The primary way to visualise the relationship between two numerical variables is using a scatterplot with geom_point(). For large datasets, you might need to adjust the alpha (transparency) to handle overplotting or use 2D binning with geom_bin2d() or geom_hex().</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatterplot</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship between Diamond Carat and Price"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Carat"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatterplot with transparency for large datasets</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship between Diamond Carat and Price (with Transparency)"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Carat"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D binning</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bin2d</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2D Binning of Diamond Carat and Price"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Carat"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The scatterplot reveals patterns or trends in the relationship between carat and price. Transparency helps when many points overlap. 2D binning divides the plot area into bins and colours them based on the number of points within each bin, highlighting areas of high density.</p>
 </section>
-<section id="create-the-contingency-table-using-table" class="level1">
-<h1>Create the contingency table using table</h1>
+<section id="d-numerical-x-categorical-treating-categorical-as-y" class="level3">
+<h3 class="anchored" data-anchor-id="d-numerical-x-categorical-treating-categorical-as-y">d) Numerical x Categorical (treating categorical as y)</h3>
+<p>This is NOT conceptually the same as (b) Categorical x Numerical. This is actually applied to logistic models where response variables are categorical as a function of numerical factors.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>species_island_table_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins_complete<span class="sc">$</span>species, penguins_complete<span class="sc">$</span>island)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>species_island_table_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>           
-            Biscoe Dream Torgersen
-  Adelie        44    56        52
-  Chinstrap      0    68         0
-  Gentoo       124     0         0</code></pre>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(color <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"J"</span>, <span class="st">"D"</span>)) <span class="sc">%&gt;%</span> <span class="co">#diamond colour, from J (worst) to D (best)</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">color2=</span> <span class="fu">ifelse</span>(color<span class="sc">==</span><span class="st">"J"</span>,<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">%&gt;%</span>  <span class="co"># tranforming categories into binary numbers 0 = worst and 1 = best</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> price, <span class="at">y =</span> color2)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> .<span class="dv">1</span>, <span class="at">alpha=</span><span class="fl">0.2</span>) <span class="sc">+</span> <span class="co"># expore these argumentes using documentation</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">method.args=</span><span class="fu">list</span> (<span class="at">family=</span><span class="st">"binomial"</span>), <span class="at">se=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Price (USD)"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
-</div>
-<p>Notice that <code>table()</code> requires you to specify the columns using the $ operator, while <code>xtabs()</code> uses a formula. Case 2: Partially Summarised Data (Counts per Site/Group) Sometimes data is partially summarised, for example, counts within different sub-locations. In this case, you’ll have a column containing the counts and columns identifying the categories. You use <code>xtabs()</code> with the count variable on the left side of the formula <code>~</code>.</p>
-<p>Let’s simulate a similar structure using mtcars, grouping by cylinder (cyl) and transmission type (am), and having a ‘count’ variable. This isn’t a natural fit for mtcars, but we can illustrate the concept.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate partially summarised data from mtcars (e.g., counts per car type group)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is for illustration of the data format, not a real mtcars use case</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mtcars_summary <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> am, <span class="at">data =</span> mtcars, <span class="at">FUN =</span> length)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use xtabs with the count variable on the left</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>cyl_am_table_summary <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> am, <span class="at">data =</span> mtcars_summary)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>cyl_am_table_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   am
-cyl  0  1
-  4  3  8
-  6  4  3
-  8 12  2</code></pre>
-</div>
-</div>
-<p>In this structure, xtabs(mpg ~ cyl + am, …) tells R to sum the <code>mpg</code> variable for each combination of cyl and am.</p>
-<p>Case 3: Fully Summarised Data If your data is already in a summarised format, with each row representing a unique combination of categories and a column for the total count for that combination, xtabs() can still be used. The syntax is the same as Case 2, with the count variable on the left side of ~. xtabs will essentially ‘sum’ over the single count for each combination, effectively converting the data frame format into an xtabs contingency table object, which is needed for <code>chisq.test()</code>. Let’s use the ladybird example table:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manual creation of the ladybird table as a data frame (similar to LADYBIRDS3.CSV)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ladybird_df_summarised <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Habitat =</span> <span class="fu">c</span>(<span class="st">"Industrial"</span>, <span class="st">"Industrial"</span>, <span class="st">"Rural"</span>, <span class="st">"Rural"</span>),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Colour =</span> <span class="fu">c</span>(<span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>),</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Number =</span> <span class="fu">c</span>(<span class="dv">115</span>, <span class="dv">85</span>, <span class="dv">30</span>, <span class="dv">70</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>ladybird_df_summarised</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     Habitat Colour Number
-1 Industrial  Black    115
-2 Industrial    Red     85
-3      Rural  Black     30
-4      Rural    Red     70</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use xtabs to convert to a contingency table object</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ladybird_table_xtabs <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(Number <span class="sc">~</span> Habitat <span class="sc">+</span> Colour, <span class="at">data =</span> ladybird_df_summarised)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ladybird_table_xtabs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            Colour
-Habitat      Black Red
-  Industrial   115  85
-  Rural         30  70</code></pre>
-</div>
-</div>
-<p>This produces the desired contingency table object. ## Visualizing Contingency Tables Visualising contingency tables can provide quick insights into potential associations. Mosaic plots are particularly useful as they represent combinations of categories by rectangles whose size is proportional to the count, and can use colour to indicate deviation from expected counts under independence. Using the penguins species by island table:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(graphics) <span class="co"># mosaicplot is in the built-in graphics package</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the table</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(species_island_table, <span class="at">shade =</span> <span class="cn">TRUE</span>, <span class="at">las=</span><span class="dv">2</span>, <span class="at">main =</span> <span class="st">"Penguin Species by Island"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -446,191 +617,34 @@ Habitat      Black Red
 </div>
 </div>
 </div>
-<p>In a mosaic plot with <code>shade = TRUE</code>, blue colours indicate that the observed cell count is higher than expected under independence, while red indicates it is lower than expected. This helps identify which specific category combinations contribute most to any detected association. For example, the plot shows a strong positive association (blue) between Adelie penguins and Biscoe island, and Gentoo penguins and Torgersen island. ## Chi-Square Contingency Table Test The Pearson’s Chi-Square ((^2)) contingency table test is the most widely used method to evaluate whether there is a significant association between two or more categorical variables summarised in a contingency table.</p>
-<p>How the Test Works? The core idea of the Chi-Square test is to compare the observed frequencies in the contingency table (the actual counts from the data) to the expected frequencies that would be observed if the variables were truly independent (i.e., if there was no association). The test addresses the question of dependence between different kinds of outcomes or events by setting up a null hypothesis. • Null Hypothesis ((H_0)): The row and column variables (the two categorical variables) are independent of one another. The occurrence of one event does not depend on the other. • Alternative Hypothesis ((H_1)): The row and column variables are dependent; there is a significant association between the categories.</p>
-<p>Step 1: Calculate Expected Frequencies Under the null hypothesis of independence, the expected number of observations in each cell of the table is calculated. The logic is based on probability: if two events are independent, the probability of both occurring is the product of their individual probabilities. For any cell in the table, the expected value is calculated as: <span class="math display">\[ E = \frac{(\text{Row Total}) \times (\text{Column Total})}{\text{Grand Total}} \]</span> Let’s calculate the expected values for the ladybird colour by habitat table: Black Red Totals Rural 30 70 100 Industrial 115 85 200 Totals 145 155 300 • Expected (Rural, Black) = ( ) • Expected (Rural, Red) = ( ) • Expected (Industrial, Black) = ( ) • Expected (Industrial, Red) = ( )</p>
-<p>Compare these to the observed counts (30, 70, 115, 85). There are differences, but are they large enough to be statistically significant?</p>
-<p>Step 2: Calculate the Chi-Square Test Statistic The Chi-Square test statistic ((^2)) quantifies the overall discrepancy between the observed counts ((o)) and the expected counts ((e)) across all cells in the table. The formula is: <span class="math display">\[ \chi^2 = \sum{\frac{(o - e)^2}{e}} \]</span> The sum is taken over all cells in the contingency table. A larger (^2) value indicates a greater mismatch between observed and expected counts, suggesting stronger evidence against the null hypothesis of independence.</p>
-<p>For a 2x2 table, there is a shortcut formula, but it doesn’t show the expected values: <span class="math display">\[ \chi^{2}=\frac{k(bc-ad)^{2}}{efgh} \]</span> where k is the grand total, a, b, c, d are the cell counts, and e, f, g, h are the row and column totals. Step 3: Determine the p-value The calculated (^2) statistic is compared to a theoretical Chi-Square distribution to determine the p-value. The p-value is the probability of observing a (^2) statistic as large as, or larger than, the one calculated from the data, assuming the null hypothesis of no association is true.</p>
-<p>• A low p-value (typically less than a chosen significance level like 0.05) indicates that the observed pattern is unlikely under the null hypothesis, providing evidence against the null hypothesis and suggesting a significant association. • A high p-value suggests the observed pattern is reasonably likely under the null hypothesis, meaning we fail to reject the null hypothesis; there is insufficient evidence to conclude a significant association.</p>
-<p>The Chi-Square distribution used depends on the degrees of freedom (df), which for a two-way contingency table is calculated as ((r-1) (c-1)), where (r) is the number of rows and (c) is the number of columns. For a 2x2 table, df = (2-1) * (2-1) = 1.</p>
-<section id="assumptions-of-the-chi-square-test" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-of-the-chi-square-test">Assumptions of the Chi-Square Test</h2>
-<p>Like most statistical tests, the Chi-Square contingency test has assumptions. 1. Independent Observations: The counts in each cell must be independent. This means each observation should only contribute to one cell in the table, and the observations should not be related (e.g., repeated measurements on the same individuals are not independent). 2. Sufficiently Large Expected Counts: The expected counts (not the observed counts) should not be too low. A common rule of thumb is that all expected values should be greater than 5. If this assumption is violated, the p-values generated by the test can become unreliable. In such cases, Fisher’s exact test is a more appropriate alternative.</p>
+<p>This plot shows an interesting pattern: high-prices diamonds tend to present the “worst” colour. At least this is what the graph suggests.</p>
 </section>
-<section id="performing-the-chi-square-test-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="performing-the-chi-square-test-in-r">Performing the Chi-Square Test in R</h2>
-<p>The <code>chisq.test()</code> function in R performs the Chi-Square contingency table test. Its primary input is a contingency table object (like those created by <code>xtabs()</code> or <code>table()</code>). Let’s perform the test on the ladybird data:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ladybird_table_xtabs was created earlier using xtabs</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ladybird_table_xtabs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's Chi-squared test with Yates' continuity correction
-
-data:  ladybird_table_xtabs
-X-squared = 19.103, df = 1, p-value = 1.239e-05</code></pre>
-</div>
-</div>
-<p>The output provides the test reminder, data used, the calculated (^2) statistic (X-squared), the degrees of freedom (df), and the p-value.</p>
-<p>Notice the output mentions “Yates’ continuity correction”. This correction is applied by default in R for 2x2 tables to provide more reliable p-values under certain circumstances. You can turn it off using correct = FALSE, but the default is generally safer for 2x2 tables.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing the test without Yates' correction (not recommended for 2x2)</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ladybird_table_xtabs, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's Chi-squared test
-
-data:  ladybird_table_xtabs
-X-squared = 20.189, df = 1, p-value = 7.015e-06</code></pre>
-</div>
-</div>
-<p>The results are similar but slightly different. Stick with the default correct = TRUE for 2x2 tables. Interpreting the Output and Nature of Association The p-value from the <code>chisq.test()</code> tells you whether there is a statistically significant association between the variables. A p-value less than your chosen significance level (e.g., 0.05) leads you to reject the null hypothesis and conclude that there is a significant association.</p>
-<p>For the ladybird example, the p-value was very small (1.239e-05 with correction), which is much less than 0.05. We reject the null hypothesis and conclude there is a significant association between ladybird colour type and habitat. Merely stating that an association exists isn’t always sufficient. We should also describe the nature of the association. For 2x2 tables, this is relatively easy: black individuals are more likely to be found in industrial areas in the ladybird example. For larger tables, interpreting the association is harder. Visualisations (like mosaic plots) and examining the differences between observed and expected counts can help.</p>
-<p>A more formal way to investigate the nature of the association, especially for larger tables, is by examining the residuals for each cell. Pearson residuals (or standardized residuals) are calculated as: <span class="math display">\[ r = \frac{o - e}{\sqrt{e}} \]</span> Cells with large absolute residuals contribute most to the overall (^2) statistic. The sign of the residual indicates the direction of the association:</p>
-<p>• Positive residuals (often shown in blue in plots like corrplot) indicate an attraction or positive association between the corresponding row and column categories – the observed count is higher than expected. • Negative residuals (often shown in red) indicate a repulsion or negative association – the observed count is lower than expected. You can access the observed counts, expected counts, and residuals from the output of the <code>chisq.test()</code> function using the $ operator.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ladybird_test_result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(ladybird_table_xtabs)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Observed counts</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>ladybird_test_result<span class="sc">$</span>observed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            Colour
-Habitat      Black Red
-  Industrial   115  85
-  Rural         30  70</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected counts</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ladybird_test_result<span class="sc">$</span>expected, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            Colour
-Habitat      Black    Red
-  Industrial 96.67 103.33
-  Rural      48.33  51.67</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pearson residuals</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ladybird_test_result<span class="sc">$</span>residuals, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            Colour
-Habitat       Black    Red
-  Industrial  1.865 -1.804
-  Rural      -2.637  2.551</code></pre>
-</div>
-</div>
-<p>Looking at the residuals, the positive residuals for (Industrial, Black) and (Rural, Red) indicate these combinations occur more often than expected under independence, while (Rural, Black) and (Industrial, Red) occur less often than expected. This confirms the conclusion that black forms are more frequent in industrial areas relative to red forms, compared to rural areas. The contribution of each cell to the total (^2) score can also be calculated ( (r^2 / ^2) ) to see which cells drive the significant result.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate cell contributions in percentage</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>cell_contributions <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> ladybird_test_result<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> ladybird_test_result<span class="sc">$</span>statistic</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cell_contributions, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            Colour
-Habitat       Black    Red
-  Industrial 18.201 17.027
-  Rural      36.403 34.054</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize contributions (requires corrplot package)</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("corrplot")</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>corrplot 0.92 loaded</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cell_contributions, <span class="at">is.cor =</span> <span class="cn">FALSE</span>, <span class="at">main =</span> <span class="st">"Cell Contributions to Chi-Square"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="4-chose_analyses_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The plot shows that the Industrial/Black and Rural/Red cells contribute the most to the significant Chi-Square result. Accessing Test Results The result of <code>chisq.test()</code> is a list containing several components. You can access these using the $ operator: • statistic: The (^2) test statistic value. • parameter: The degrees of freedom. • p.value: The p-value of the test. • observed: The observed contingency table. • expected: The expected contingency table under (H_0). • residuals: The Pearson residuals for each cell.</p>
 </section>
-<section id="fishers-exact-test" class="level2">
-<h2 class="anchored" data-anchor-id="fishers-exact-test">Fisher’s Exact Test</h2>
-<p>When the assumption of sufficiently large expected counts for the Chi-Square test is not met (e.g., expected counts less than 5), Fisher’s exact test is a more reliable alternative. It calculates the exact probability of observing the given table (or a more extreme one) assuming independence, without relying on approximations.</p>
-<p>Fisher’s exact test is performed using the fisher.test() function in R. It also takes a contingency table as input. Let’s use the Titanic data example from the sources.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually create the Titanic sex vs survival table</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>titanic_table <span class="ot">&lt;-</span> <span class="fu">as.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">307</span>, <span class="dv">708</span>, <span class="dv">142</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>titanic_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>        no yes
-female 156 307
-male   708 142</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check expected counts for Chi-Square assumption</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(titanic_table)<span class="sc">$</span>expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>             no      yes
-female 304.6702 158.3298
-male   559.3298 290.6702</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected counts are &gt; 5 here, so Chi-Square is appropriate, but Fisher's is also fine and often preferred computationally.</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Fisher's exact test</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(titanic_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Fisher's Exact Test for Count Data
-
-data:  titanic_table
-p-value &lt; 2.2e-16
-alternative hypothesis: true odds ratio is not equal to 1
-95 percent confidence interval:
- 0.07759301 0.13384845
-sample estimates:
-odds ratio 
- 0.1021212 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually create the Titanic sex vs survival table</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>titanic_table <span class="ot">&lt;-</span> <span class="fu">as.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">307</span>, <span class="dv">708</span>, <span class="dv">142</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>titanic_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>        no yes
-female 156 307
-male   708 142</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check expected counts for Chi-Square assumption</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(titanic_table)<span class="sc">$</span>expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>             no      yes
-female 304.6702 158.3298
-male   559.3298 290.6702</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected counts are &gt; 5 here, so Chi-Square is appropriate, but Fisher's is also fine and often preferred computationally.</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Fisher's exact test</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(titanic_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Fisher's Exact Test for Count Data
-
-data:  titanic_table
-p-value &lt; 2.2e-16
-alternative hypothesis: true odds ratio is not equal to 1
-95 percent confidence interval:
- 0.07759301 0.13384845
-sample estimates:
-odds ratio 
- 0.1021212 </code></pre>
-</div>
-</div>
-<p>The output includes the p-value. It also conveniently provides an estimate of the odds ratio and its 95% confidence interval. The odds ratio is another way to quantify the strength and direction of the association.</p>
-<p>For the Titanic data, the odds ratio is about 0.10, indicating the odds of a male surviving were about one-tenth the odds of a female surviving. The confidence interval gives a range of plausible values for this odds ratio in the population. Fisher’s exact test is particularly recommended for 2x2 tables with small expected counts, but the <code>fisher.test()</code> function in R can handle larger tables as well, although it won’t calculate odds ratios for tables larger than 2x2. ## Exercises Apply what you’ve learned to explore associations in different datasets. ### Exercise 1: Car Characteristics () The mtcars dataset contains various characteristics for different car models. We can treat some of these as categorical variables. Let’s investigate the relationship between the number of cylinders (cyl) and the transmission type (am, where 0 = automatic, 1 = manual). 1. Load the mtcars dataset. 2. Create a contingency table showing the frequencies of cyl by am. 3. Examine the expected counts for a Chi-Square test. Are the assumptions met (all expected values &gt; 5)? 4. Perform the appropriate hypothesis test (Chi-Square if assumptions met, otherwise Fisher’s exact test) to determine if there is a significant association between the number of cylinders and transmission type. 5. Interpret the results of the test, including the p-value and conclusion regarding the null hypothesis. 6. Based on the observed counts or residuals/contributions, describe the nature of any significant association found. For example, are cars with more cylinders more likely to have automatic or manual transmission?</p>
-<section id="exercise-2-penguin-species-and-sex" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2-penguin-species-and-sex">Exercise 2: Penguin Species and Sex ()</h3>
-<p>The penguins dataset contains data on penguins from different islands. 1. Load the penguins dataset and ensure you handle any missing values in the species and sex columns. 2. Create a contingency table showing the frequencies of species by sex. 3. Create a mosaic plot of the contingency table, using shading (shade=TRUE) to visualise deviations from independence. 4. Examine the expected counts for a Chi-Square test. Are the assumptions met? 5. Perform the appropriate hypothesis test to determine if there is a significant association between penguin species and sex. 6. Interpret the test results. If there is a significant association, use the mosaic plot or residuals to describe how the distribution of sexes differs among the species.</p>
 </section>
-<section id="exercise-3-food-poisoning-investigation" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3-food-poisoning-investigation">Exercise 3: Food Poisoning Investigation</h3>
-<p>This exercise revisits the classic epidemiology case. The data is available in the file “oswego.csv”. Assume you have downloaded the data and set your working directory or know the full file path. 1. Load the “oswego.csv” data into R. 2. Using <code>table()</code> and <code>chisq.test()$expected</code>, calculate the expected values for a (^2) contingency test of the relationship between eating “fruit salad” and being “ill”. Would it be legitimate to use a (^2) contingency analysis to test this association based on the expected counts? What test would be best to use? 3. The foods suspected were spinach, baked ham, vanilla ice cream, and chocolate ice cream. Use fisher.test() to calculate an odds ratio for illness for each of these foods (comparing those who ate the food to those who did not). Which food has the largest odds ratio? 4. For the food identified as most likely vehicle, report the 95% confidence interval of the odds ratio for illness. 5. Draw a mosaic plot to illustrate the association between eating the likely vehicle food and becoming ill.&nbsp;</p>
-</section>
-<section id="exercise-4-shufflebottoms-vs.-walkers" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4-shufflebottoms-vs.-walkers">Exercise 4: Shufflebottoms vs.&nbsp;Walkers ()</h3>
-<p>This exercise investigates a quirky study on infant movement and last names. The data is in “shufflebottoms.csv”. Assume the file is accessible. 1. Load the “shufflebottoms.csv” data. This data is likely already summarised (counts). Create the contingency table using the appropriate xtabs() method for summarised data (Case 3). The table should compare Bottom-shuffling frequency between infants named “Shufflebottom” and “Walker”. (Observed counts: 9 out of 41 Walkers bottom-shuffled; 9 out of 43 Shufflebottoms bottom-shuffled). 2. Calculate the odds ratio for the association between name and bottom-shuffling. Provide a 95% confidence interval for this odds ratio. 3. Based only on the 95% confidence interval for the odds ratio, would you expect a hypothesis test (like Fisher’s exact test) to find a significant association? Why or why not? (Hint: Consider if the confidence interval includes 1, which represents no association). 4. Perform Fisher’s exact test to formally test for a significant difference in bottom-shuffling frequency between the two name groups. What is the p-value and your conclusion? Does this match your expectation from step 3? [Based on source 101]</p>
+<section id="exercise" class="level1">
+<h1>Exercise</h1>
+<p>Use the built-in iris dataset in R to practice identifying variable types and creating exploratory graphs with ggplot2. First, load the iris dataset and examine its structure:</p>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks:</h2>
+<ol type="1">
+<li><p>Identify the type of each variable in the <code>penguins</code> dataset (species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year). Describe whether each variable is numerical (continuous or discrete) or categorical (nominal or ordinal).</p></li>
+<li><p>Create a scatterplot to explore the relationship between <code>bill_length_mm</code> (x-axis) and <code>flipper_length_mm</code> (y-axis). Add colour to the points based on the <code>species</code> of the penguin. Add appropriate titles and labels to your plot using labs().</p></li>
+<li><p>Generate a boxplot to visualise the distribution of <code>body_mass_g</code> (y-axis) for each <code>species</code> (x-axis). Add a title and labels.</p></li>
+<li><p>Create a bar chart to show the count of each <code>species</code> in the dataset. Add appropriate labels.</p></li>
+<li><p>Explore the relationship between <code>bill_depth_mm</code> and <code>species</code> using a visualisation method of your choice (e.g., boxplot, violin plot). Justify why you chose that particular method.</p></li>
+</ol>
+<p>This exercise will help you solidify your understanding of variable types and how to use ggplot2 to create meaningful exploratory visualisations. Remember that Data Analysis is an iterative process, so feel free to create other plots and ask questions about the patterns you observe in the iris dataset.</p>
+<section id="refecences-used" class="level3">
+<h3 class="anchored" data-anchor-id="refecences-used">Refecences used</h3>
+<ul>
+<li><p>Wickham, Hadley, and Garrett Grolemund. (n.d.). [<em>7 Exploratory Data Analysis | R for Data Science</em>](https://r4ds.had.co.nz/exploratory-data-analysis.html.</p></li>
+<li><p>UCLA OARC. (2024). <em>Choosing the Correct Statistical Test in SAS, Stata, SPSS and R</em>. Retrieved from <a href="https://stats.oarc.ucla.edu/other/mult-pkg/whatstat/">stats.oarc.ucla.edu</a>. (Adapted from Leeper, James D., Ph.D., <em>Choosing the Correct Statistic</em>).</p></li>
+<li><p>Nayak, Barun K., and Avijit Hazra. (2011). How to choose the right statistical test? <em>Indian Journal of Ophthalmology</em>, <em>59</em>(2), 85–86. <a href="https://doi.org/10.4103/0301-4738.77005" class="uri">https://doi.org/10.4103/0301-4738.77005</a></p></li>
+<li><p>Mangiafico, Salvatore S. (2016). <em>R Handbook: Choosing a Statistical Test</em> (version 1.20.07, revised 2024). Retrieved from <a href="https://rcompanion.org/handbook/">rcompanion.org/handbook/</a>. (Part of <em>Summary and Analysis of Extension Program Evaluation in R</em>).</p></li>
+<li><p>Maths Skills Centre, University of York. (Last Updated: Apr 9, 2025). <em>Which statistical test? - Maths Skills Centre: a practical guide to maths &amp; statistics - Subject Guides at University of York</em>. Retrieved from <a href="https://subjectguides.york.ac.uk/maths-skills-centre/which-statistical-test" class="uri">https://subjectguides.york.ac.uk/maths-skills-centre/which-statistical-test</a>.</p></li>
+<li><p>Ranganathan, Priya. (2021). An Introduction to Statistics: Choosing the Correct Statistical Test. <em>Indian Journal of Critical Care Medicine</em>, <em>25</em>(Suppl 2), S184–S186. <a href="https://doi.org/10.5005/jp-journals-10071-23815" class="uri">https://doi.org/10.5005/jp-journals-10071-23815</a></p></li>
+<li><p>Marshall, Ellen. (n.d.). <em>The Statistics Tutor’s Quick Guide to Commonly Used Statistical Tests</em>. statstutor community project, stcp-marshallowen-7. Retrieved from <a href="www.statstutor.ac.uk">www.statstutor.ac.uk</a>.</p></li>
+</ul>
 
 
 </section>
@@ -1073,4 +1087,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-contrib/alpine-3.12/alpine@3.12.min.js"></script>
 </body></html>

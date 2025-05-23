@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Felipe Melo">
-<meta name="dcterms.date" content="2025-05-22">
+<meta name="dcterms.date" content="2025-05-23">
 
-<title>Analysing Categorical Data - Frequency Tests and Contingency Tables</title>
+<title>Week 5 - Analysing Categorical Data - Frequency Tests and Contingency Tables</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -247,25 +247,28 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1---research-methods" id="toc-part-1---research-methods" class="nav-link active" data-scroll-target="#part-1---research-methods">Part 1 - Research Methods</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  </ul></li>
+  <li><a href="#lesson" id="toc-lesson" class="nav-link" data-scroll-target="#lesson">Lesson</a></li>
+  <li><a href="#part-1---research-methods" id="toc-part-1---research-methods" class="nav-link" data-scroll-target="#part-1---research-methods">Part 1 - Research Methods</a></li>
   <li><a href="#part-2---data-analyses" id="toc-part-2---data-analyses" class="nav-link" data-scroll-target="#part-2---data-analyses">Part 2 - Data Analyses</a>
   <ul class="collapse">
   <li><a href="#introduction-to-categorical-data-analysis" id="toc-introduction-to-categorical-data-analysis" class="nav-link" data-scroll-target="#introduction-to-categorical-data-analysis">Introduction to Categorical Data Analysis</a></li>
   <li><a href="#contingency-tables" id="toc-contingency-tables" class="nav-link" data-scroll-target="#contingency-tables">Contingency Tables</a></li>
-  <li><a href="#creating-contingency-tables-in-r" id="toc-creating-contingency-tables-in-r" class="nav-link" data-scroll-target="#creating-contingency-tables-in-r">Creating Contingency Tables in R</a>
-  <ul class="collapse">
-  <li><a href="#case-1-one-observation-per-row" id="toc-case-1-one-observation-per-row" class="nav-link" data-scroll-target="#case-1-one-observation-per-row">Case 1: One Observation per Row</a></li>
-  </ul></li>
-  <li><a href="#create-the-contingency-table-using-table" id="toc-create-the-contingency-table-using-table" class="nav-link" data-scroll-target="#create-the-contingency-table-using-table">Create the contingency table using table</a></li>
+  <li><a href="#creating-contingency-tables-in-r" id="toc-creating-contingency-tables-in-r" class="nav-link" data-scroll-target="#creating-contingency-tables-in-r">Creating Contingency Tables in R</a></li>
+  <li><a href="#create-the-contingency-table-using-table" id="toc-create-the-contingency-table-using-table" class="nav-link" data-scroll-target="#create-the-contingency-table-using-table">Create the contingency table using <code>table</code></a></li>
   <li><a href="#chi-square-contingency-table-test" id="toc-chi-square-contingency-table-test" class="nav-link" data-scroll-target="#chi-square-contingency-table-test">Chi-Square Contingency Table Test</a></li>
   <li><a href="#assumptions-of-the-chi-square-test" id="toc-assumptions-of-the-chi-square-test" class="nav-link" data-scroll-target="#assumptions-of-the-chi-square-test">Assumptions of the Chi-Square Test</a></li>
   <li><a href="#performing-the-chi-square-test-in-r" id="toc-performing-the-chi-square-test-in-r" class="nav-link" data-scroll-target="#performing-the-chi-square-test-in-r">Performing the Chi-Square Test in R</a></li>
-  <li><a href="#fishers-exact-test" id="toc-fishers-exact-test" class="nav-link" data-scroll-target="#fishers-exact-test">Fisher’s Exact Test</a>
+  <li><a href="#fishers-exact-test" id="toc-fishers-exact-test" class="nav-link" data-scroll-target="#fishers-exact-test">Fisher’s Exact Test</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
   <li><a href="#exercise-1-car-characteristics" id="toc-exercise-1-car-characteristics" class="nav-link" data-scroll-target="#exercise-1-car-characteristics">Exercise 1: Car Characteristics</a></li>
   <li><a href="#exercise-2-penguin-species-and-sex" id="toc-exercise-2-penguin-species-and-sex" class="nav-link" data-scroll-target="#exercise-2-penguin-species-and-sex">Exercise 2: Penguin Species and Sex</a></li>
   <li><a href="#refereces-for-this-class" id="toc-refereces-for-this-class" class="nav-link" data-scroll-target="#refereces-for-this-class">Refereces for this class</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -275,7 +278,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysing Categorical Data - Frequency Tests and Contingency Tables</h1>
+<h1 class="title">Week 5 - Analysing Categorical Data - Frequency Tests and Contingency Tables</h1>
 <p class="subtitle lead">RMDA ARES40011</p>
 </div>
 
@@ -293,7 +296,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 22, 2025</p>
+      <p class="date">May 23, 2025</p>
     </div>
   </div>
   
@@ -305,6 +308,57 @@ window.Quarto = {
 </header>
 
 
+<p><img src="../../img/fig_data.jpeg" class="img-fluid" width="500"></p>
+<p><a href="https://twitter.com/allison_horst" style="text-align: center">Artwork by @allison_horst</a></p>
+<section id="preparation" class="level1">
+<h1>Preparation</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Research Methods</th>
+<th>Data Analyses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Understand replicates</td>
+<td>Develop a basic analytical approach to categorical data</td>
+</tr>
+<tr class="even">
+<td>Using replicates to plan experiments</td>
+<td>Create and analyse contingency tables</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Basics of data visualization</td>
+</tr>
+</tbody>
+</table>
+<p><strong>For Data Analyses</strong></p>
+<ul>
+<li><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://brad-cannell.github.io/r_notes/contingency-tables.html">Check chapter this e-book, R Notes</a></li>
+<li><i class="fa-solid fa-book" aria-label="book"></i> <a href="http://www.cookbook-r.com/Manipulating_data/Converting_between_data_frames_and_contingency_tables/">Cookbook for R</a></li>
+<li><i class="fa-solid fa-tools" aria-label="tools"></i> <a href="https://sbc.shef.ac.uk/stats-in-r/practical.nb.html">Nice Tutorial for Contignecy Tables</a></li>
+<li><i class="fa-solid fa-tools" aria-label="tools"></i> <a href="https://www.sthda.com/english/wiki/chi-square-test-of-independence-in-r">Nice Tutorial for Chi-Square tests</a></li>
+</ul>
+<p><strong>For Research Methods</strong></p>
+<ul>
+<li><p><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://en.wikipedia.org/wiki/Replication_(statistics)">What is replication?</a></p></li>
+<li><p><i class="fa-solid fa-video" aria-label="video"></i> <a href="https://youtu.be/oFz8iOx96mw">Degrees of Freeedom</a></p></li>
+<li><p><i class="fa-solid fa-video" aria-label="video"></i> <a href="https://youtu.be/sk5ttlX2i5I">About statistical power and replicates in experimental design</a></p></li>
+<li><p><i class="fa-solid fa-video" aria-label="video"></i> <a href="https://youtu.be/Mufk0ZJVqQY">Understanding Replication and Randomization</a></p></li>
+</ul>
+</section>
+</section>
+<section id="lesson" class="level1">
+<h1>Lesson</h1>
+</section>
 <section id="part-1---research-methods" class="level1">
 <h1>Part 1 - Research Methods</h1>
 </section>
@@ -312,14 +366,14 @@ window.Quarto = {
 <h1>Part 2 - Data Analyses</h1>
 <section id="introduction-to-categorical-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-categorical-data-analysis">Introduction to Categorical Data Analysis</h2>
-<p>When working with data, we often encounter variables that represent categories rather than numerical quantities. These are known as <strong>categorical variables</strong> [1, 2]. Examples might include eye colour (blue, brown, green), habitat type (rural, industrial), or survival status (yes, no) [1, 3, 4]. Understanding the frequency distribution of a single categorical variable is straightforward, but researchers are frequently interested in the relationship or association between <em>two or more</em> categorical variables [1, 5].</p>
-<p>For example, we might want to know if there is a relationship between eye colour and sex in a group of students, or whether the frequency of different ladybird colour forms varies between different habitats [1, 3]. To explore these relationships and test for associations, we use tools like contingency tables and the Chi-Square contingency table test [1, 2, 5, 6].</p>
+<p>When working with data, we often encounter variables that represent categories rather than numerical quantities. These are known as <strong>categorical variables</strong>. Examples might include eye colour (blue, brown, green), habitat type (rural, industrial), or survival status (yes, no). Understanding the frequency distribution of a single categorical variable is straightforward, but researchers are frequently interested in the relationship or association between <em>two or more</em> categorical variables.</p>
+<p>For example, we might want to know if there is a relationship between eye colour and sex in a group of students, or whether the frequency of different ladybird colour forms varies between different habitats. To explore these relationships and test for associations, we use tools like contingency tables and the Chi-Square contingency table test.</p>
 </section>
 <section id="contingency-tables" class="level2">
 <h2 class="anchored" data-anchor-id="contingency-tables">Contingency Tables</h2>
-<p>A <strong>contingency table</strong> is a fundamental tool for summarising the frequency distribution of two or more categorical variables simultaneously [2, 5]. It organises the data into a grid where each cell shows the count of observations that fall into a specific combination of categories from the variables [5].</p>
-<p>A table summarising the frequencies of two categorical variables is called a <strong>two-way contingency table</strong> [5]. If more than two variables were involved, it would be a higher-dimensional table (e.g., a three-way contingency table for three variables) [5].</p>
-<p>The term “contingency” refers to the table’s ability to capture how the frequencies of one variable are ‘contingent’ upon, or associated with, the categories of another variable [5]. This association, linkage, non-independence, or interaction is evident when the proportions of observations in one set of categories depend on a second set of categories [5, 7].</p>
+<p>A <strong>contingency table</strong> is a fundamental tool for summarising the frequency distribution of two or more categorical variables simultaneously. It organises the data into a grid where each cell shows the count of observations that fall into a specific combination of categories from the variables.</p>
+<p>A table summarising the frequencies of two categorical variables is called a <strong>two-way contingency table</strong>. If more than two variables were involved, it would be a higher-dimensional table (e.g., a three-way contingency table for three variables).</p>
+<p>The term “contingency” refers to the table’s ability to capture how the frequencies of one variable are ‘contingent’ upon, or associated with, the categories of another variable. This association, linkage, non-independence, or interaction is evident when the proportions of observations in one set of categories depend on a second set of categories.</p>
 <p>Consider two possibilities for a two-way table with categories R1, R2 and C1, C2:</p>
 <table class="caption-top table">
 <thead>
@@ -363,52 +417,28 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>In the first table (left), there is <strong>no association</strong>. The proportion of R1 cases relative to R2 cases is the same for both C1 and C2 (10/40 = 20/80 = 1/4). The total numbers in each category are irrelevant; it’s the proportions that indicate association [7].</p>
-<p>In the second table (right), there <strong>is evidence of an association</strong>. The proportion of R1 cases relative to R2 cases changes markedly between C1 (10/40 = 1/4) and C2 (80/20 = 4) [6]. The R1 cases are less frequent in the C1 column compared to the C2 column, relative to R2 [6]. Again, the proportions, not the raw numbers, reveal the association [6].</p>
+<p>In the first table (left), there is <strong>no association</strong>. The proportion of R1 cases relative to R2 cases is the same for both C1 and C2 (10/40 = 20/80 = 1/4). The total numbers in each category are irrelevant; it’s the proportions that indicate association.</p>
+<p>In the second table (right), there <strong>is evidence of an association</strong>. The proportion of R1 cases relative to R2 cases changes markedly between C1 (10/40 = 1/4) and C2 (80/20 = 4). The R1 cases are less frequent in the C1 column compared to the C2 column, relative to R2. Again, the proportions, not the raw numbers, reveal the association.</p>
 </section>
 <section id="creating-contingency-tables-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="creating-contingency-tables-in-r">Creating Contingency Tables in R</h2>
-<p>The sources discuss several ways to create contingency tables in R, depending on how the raw data is structured [8-21].</p>
-<p>The primary function for creating contingency tables from raw data is <code>table()</code> or <code>xtabs()</code> [8, 11, 19]. The <code>xtabs()</code> function is particularly useful as it can handle different data formats and is required for the <code>chisq.test()</code> function [8, 9].</p>
-<section id="case-1-one-observation-per-row" class="level3">
-<h3 class="anchored" data-anchor-id="case-1-one-observation-per-row">Case 1: One Observation per Row</h3>
-<p>When your data has one row for each individual observation and columns for each categorical variable, you can use <code>xtabs()</code> with a formula [9, 11].</p>
+<p>The sources discuss several ways to create contingency tables in R, depending on how the raw data is structured.</p>
+<p>The primary function for creating contingency tables from raw data is <code>table()</code> or <code>xtabs()</code>. The <code>xtabs()</code> function is particularly useful as it can handle different data formats and is required for the <code>chisq.test()</code> function.</p>
+<p>When your data has one row for each individual observation and columns for each categorical variable, you can use <code>xtabs()</code> with a formula.</p>
 <p>Let’s use the <code>penguins</code> dataset as an example. Suppose we want a contingency table of <code>species</code> and <code>island</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the penguins data (assuming it's available, e.g., from the palmerpenguins package)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("palmerpenguins")</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Anexando pacote: 'palmerpenguins'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Os seguintes objetos são mascarados por 'package:datasets':
-
-    penguins, penguins_raw</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.0.4     </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with missing values for species or island</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>penguins_complete <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins[, <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"island"</span>)])</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the contingency table using xtabs</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>species_island_table <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="sc">~</span> species <span class="sc">+</span> island, <span class="at">data =</span> penguins_complete)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>species_island_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with missing values for species or island</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>penguins_complete <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins[, <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"island"</span>)])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the contingency table using xtabs</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>species_island_table <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="sc">~</span> species <span class="sc">+</span> island, <span class="at">data =</span> penguins_complete)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>species_island_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           island
 species     Biscoe Dream Torgersen
@@ -419,12 +449,11 @@ species     Biscoe Dream Torgersen
 </div>
 <p>Here, <code>xtabs()</code> counts the number of occurrences for each combination of species and island. Alternatively, the <code>table()</code> function can be used, which is often simpler for this data structure.</p>
 </section>
-</section>
 <section id="create-the-contingency-table-using-table" class="level2">
-<h2 class="anchored" data-anchor-id="create-the-contingency-table-using-table">Create the contingency table using table</h2>
+<h2 class="anchored" data-anchor-id="create-the-contingency-table-using-table">Create the contingency table using <code>table</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>species_island_table_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins_complete<span class="sc">$</span>species, penguins_complete<span class="sc">$</span>island)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>species_island_table_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>species_island_table_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins_complete<span class="sc">$</span>species, penguins_complete<span class="sc">$</span>island)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>species_island_table_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           
             Biscoe Dream Torgersen
@@ -437,14 +466,14 @@ species     Biscoe Dream Torgersen
 <p>Case 2: Partially Summarised Data (Counts per Site/Group) Sometimes data is partially summarised, for example, counts within different sub-locations. In this case, you’ll have a column containing the counts and columns identifying the categories. You use <code>xtabs()</code> with the count variable on the left side of the formula <code>~</code>.</p>
 <p>Let’s simulate a similar structure using mtcars, grouping by cylinder (cyl) and transmission type (am), and having a ‘mpg’ variable. This isn’t a natural fit for mtcars, but we can illustrate the concept.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate partially summarised data from mtcars (e.g., counts per car type group)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is for illustration of the data format, not a real mtcars use case</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>mtcars_summary <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> am, <span class="at">data =</span> mtcars, <span class="at">FUN =</span> length)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use xtabs with the count variable on the left</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>cyl_am_table_summary <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> am, <span class="at">data =</span> mtcars_summary)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>cyl_am_table_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate partially summarised data from mtcars (e.g., counts per car type group)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is for illustration of the data format, not a real mtcars use case</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mtcars_summary <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> am, <span class="at">data =</span> mtcars, <span class="at">FUN =</span> length)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use xtabs with the count variable on the left</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>cyl_am_table_summary <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> am, <span class="at">data =</span> mtcars_summary)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>cyl_am_table_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   am
 cyl  0  1
@@ -456,13 +485,13 @@ cyl  0  1
 <p>In this structure, xtabs(mpg ~ cyl + am, …) tells R to sum the <code>mpg</code> variable for each combination of cyl and am.</p>
 <p>Case 3: Fully Summarised Data If your data is already in a summarised format, with each row representing a unique combination of categories and a column for the total count for that combination,<code>xtabs()</code> can still be used. The syntax is the same as Case 2, with the count variable on the left side of ~. xtabs will essentially ‘sum’ over the single count for each combination, effectively converting the data frame format into an xtabs contingency table object, which is needed for <code>chisq.test()</code>. Let’s use the ladybird example table:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manual creation of the ladybird table as a data frame (similar to LADYBIRDS3.CSV)</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ladybird_df_summarised <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Habitat =</span> <span class="fu">c</span>(<span class="st">"Industrial"</span>, <span class="st">"Industrial"</span>, <span class="st">"Rural"</span>, <span class="st">"Rural"</span>),</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Colour =</span> <span class="fu">c</span>(<span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>),</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Number =</span> <span class="fu">c</span>(<span class="dv">115</span>, <span class="dv">85</span>, <span class="dv">30</span>, <span class="dv">70</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>ladybird_df_summarised</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manual creation of the ladybird table as a data frame (similar to LADYBIRDS3.CSV)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ladybird_df_summarised <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Habitat =</span> <span class="fu">c</span>(<span class="st">"Industrial"</span>, <span class="st">"Industrial"</span>, <span class="st">"Rural"</span>, <span class="st">"Rural"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Colour =</span> <span class="fu">c</span>(<span class="st">"Black"</span>, <span class="st">"Red"</span>, <span class="st">"Black"</span>, <span class="st">"Red"</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Number =</span> <span class="fu">c</span>(<span class="dv">115</span>, <span class="dv">85</span>, <span class="dv">30</span>, <span class="dv">70</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ladybird_df_summarised</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Habitat Colour Number
 1 Industrial  Black    115
@@ -472,9 +501,9 @@ cyl  0  1
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use xtabs to convert to a contingency table object</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ladybird_table_xtabs <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(Number <span class="sc">~</span> Habitat <span class="sc">+</span> Colour, <span class="at">data =</span> ladybird_df_summarised)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>ladybird_table_xtabs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use xtabs to convert to a contingency table object</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ladybird_table_xtabs <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(Number <span class="sc">~</span> Habitat <span class="sc">+</span> Colour, <span class="at">data =</span> ladybird_df_summarised)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>ladybird_table_xtabs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Colour
 Habitat      Black Red
@@ -484,9 +513,9 @@ Habitat      Black Red
 </div>
 <p>This produces the desired contingency table object. ## Visualizing Contingency Tables Visualising contingency tables can provide quick insights into potential associations. Mosaic plots are particularly useful as they represent combinations of categories by rectangles whose size is proportional to the count, and can use colour to indicate deviation from expected counts under independence. Using the penguins species by island table:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(graphics) <span class="co"># mosaicplot is in the built-in graphics package</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the table</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(species_island_table, <span class="at">shade =</span> <span class="cn">TRUE</span>, <span class="at">las=</span><span class="dv">2</span>, <span class="at">main =</span> <span class="st">"Penguin Species by Island"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(graphics) <span class="co"># mosaicplot is in the built-in graphics package</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the table</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(species_island_table, <span class="at">shade =</span> <span class="cn">TRUE</span>, <span class="at">las=</span><span class="dv">2</span>, <span class="at">main =</span> <span class="st">"Penguin Species by Island"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -499,7 +528,7 @@ Habitat      Black Red
 </section>
 <section id="chi-square-contingency-table-test" class="level2">
 <h2 class="anchored" data-anchor-id="chi-square-contingency-table-test">Chi-Square Contingency Table Test</h2>
-<p>The Pearson’s Chi-Square ((^2)) contingency table test is the most widely used method to evaluate whether there is a significant association between two or more categorical variables summarised in a contingency table.</p>
+<p>The Pearson’s Chi-Square (chi-square) contingency table test is the most widely used method to evaluate whether there is a significant association between two or more categorical variables summarised in a contingency table.</p>
 <p>How the Test Works? The core idea of the Chi-Square test is to compare the observed frequencies in the contingency table (the actual counts from the data) to the expected frequencies that would be observed if the variables were truly independent (i.e., if there was no association).</p>
 <p>The test addresses the question of dependence between different kinds of outcomes or events by setting up a null hypothesis.</p>
 <p>• Null Hypothesis ((H_0)): The row and column variables (the two categorical variables) are independent of one another. The occurrence of one event does not depend on the other. • Alternative Hypothesis ((H_1)): The row and column variables are dependent; there is a significant association between the categories.</p>
@@ -550,8 +579,8 @@ Habitat      Black Red
 <h2 class="anchored" data-anchor-id="performing-the-chi-square-test-in-r">Performing the Chi-Square Test in R</h2>
 <p>The <code>chisq.test()</code> function in R performs the Chi-Square contingency table test. Its primary input is a contingency table object (like those created by <code>xtabs()</code> or <code>table()</code>). Let’s perform the test on the ladybird data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ladybird_table_xtabs was created earlier using xtabs</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ladybird_table_xtabs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ladybird_table_xtabs was created earlier using xtabs</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ladybird_table_xtabs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test with Yates' continuity correction
@@ -560,11 +589,11 @@ data:  ladybird_table_xtabs
 X-squared = 19.103, df = 1, p-value = 1.239e-05</code></pre>
 </div>
 </div>
-<p>The output provides the test reminder, data used, the calculated (^2) statistic (X-squared), the degrees of freedom (df), and the p-value.</p>
+<p>The output provides the test reminder, data used, the calculated chi-square statistic (X-squared), the degrees of freedom (df), and the p-value.</p>
 <p>Notice the output mentions “Yates’ continuity correction”. This correction is applied by default in R for 2x2 tables to provide more reliable p-values under certain circumstances. You can turn it off using correct = FALSE, but the default is generally safer for 2x2 tables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing the test without Yates' correction (not recommended for 2x2)</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ladybird_table_xtabs, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing the test without Yates' correction (not recommended for 2x2)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(ladybird_table_xtabs, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -575,28 +604,28 @@ X-squared = 20.189, df = 1, p-value = 7.015e-06</code></pre>
 </div>
 <p>The results are similar but slightly different. Stick with the default correct = TRUE for 2x2 tables. Interpreting the Output and Nature of Association The p-value from the <code>chisq.test()</code> tells you whether there is a statistically significant association between the variables. A p-value less than your chosen significance level (e.g., 0.05) leads you to reject the null hypothesis and conclude that there is a significant association.</p>
 <p>For the ladybird example, the p-value was very small (1.239e-05 with correction), which is much less than 0.05. We reject the null hypothesis and conclude there is a significant association between ladybird colour type and habitat. Merely stating that an association exists isn’t always sufficient. We should also describe the nature of the association. For 2x2 tables, this is relatively easy: black individuals are more likely to be found in industrial areas in the ladybird example. For larger tables, interpreting the association is harder. Visualisations (like mosaic plots) and examining the differences between observed and expected counts can help.</p>
-<p>A more formal way to investigate the nature of the association, especially for larger tables, is by examining the residuals for each cell. Pearson residuals (or standardized residuals) are calculated as: <span class="math display">\[ r = \frac{o - e}{\sqrt{e}} \]</span> Cells with large absolute residuals contribute most to the overall (^2) statistic. The sign of the residual indicates the direction of the association:</p>
+<p>A more formal way to investigate the nature of the association, especially for larger tables, is by examining the residuals for each cell. Pearson residuals (or standardized residuals) are calculated as: <span class="math display">\[ r = \frac{o - e}{\sqrt{e}} \]</span> Cells with large absolute residuals contribute most to the overall chi-square statistic. The sign of the residual indicates the direction of the association:</p>
 <p>• Positive residuals (often shown in blue in plots like corrplot) indicate an attraction or positive association between the corresponding row and column categories – the observed count is higher than expected. • Negative residuals (often shown in red) indicate a repulsion or negative association – the observed count is lower than expected. You can access the observed counts, expected counts, and residuals from the output of the <code>chisq.test()</code> function using the $ operator.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ladybird_test_result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(ladybird_table_xtabs)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Observed counts</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>ladybird_test_result<span class="sc">$</span>observed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ladybird_test_result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(ladybird_table_xtabs)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Observed counts</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ladybird_test_result<span class="sc">$</span>observed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Colour
 Habitat      Black Red
   Industrial   115  85
   Rural         30  70</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected counts</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ladybird_test_result<span class="sc">$</span>expected, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected counts</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ladybird_test_result<span class="sc">$</span>expected, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Colour
 Habitat      Black    Red
   Industrial 96.67 103.33
   Rural      48.33  51.67</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pearson residuals</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ladybird_test_result<span class="sc">$</span>residuals, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pearson residuals</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ladybird_test_result<span class="sc">$</span>residuals, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Colour
 Habitat       Black    Red
@@ -604,24 +633,24 @@ Habitat       Black    Red
   Rural      -2.637  2.551</code></pre>
 </div>
 </div>
-<p>Looking at the residuals, the positive residuals for (Industrial, Black) and (Rural, Red) indicate these combinations occur more often than expected under independence, while (Rural, Black) and (Industrial, Red) occur less often than expected. This confirms the conclusion that black forms are more frequent in industrial areas relative to red forms, compared to rural areas. The contribution of each cell to the total (^2) score can also be calculated ( (r^2 / ^2) ) to see which cells drive the significant result.</p>
+<p>Looking at the residuals, the positive residuals for (Industrial, Black) and (Rural, Red) indicate these combinations occur more often than expected under independence, while (Rural, Black) and (Industrial, Red) occur less often than expected. This confirms the conclusion that black forms are more frequent in industrial areas relative to red forms, compared to rural areas. The contribution of each cell to the total chi-square score can also be calculated ( (r^2 / ^2) ) to see which cells drive the significant result.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate cell contributions in percentage</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>cell_contributions <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> ladybird_test_result<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> ladybird_test_result<span class="sc">$</span>statistic</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cell_contributions, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate cell contributions in percentage</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>cell_contributions <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> ladybird_test_result<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> ladybird_test_result<span class="sc">$</span>statistic</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cell_contributions, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Colour
 Habitat       Black    Red
   Industrial 18.201 17.027
   Rural      36.403 34.054</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize contributions (requires corrplot package)</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("corrplot")</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize contributions (requires corrplot package)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("corrplot")</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>corrplot 0.92 loaded</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cell_contributions, <span class="at">is.cor =</span> <span class="cn">FALSE</span>, <span class="at">main =</span> <span class="st">"Cell Contributions to Chi-Square"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cell_contributions, <span class="at">is.cor =</span> <span class="cn">FALSE</span>, <span class="at">main =</span> <span class="st">"Cell Contributions to Chi-Square"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -630,13 +659,47 @@ Habitat       Black    Red
 </div>
 </div>
 </div>
-<p>The plot shows that the Industrial/Black and Rural/Red cells contribute the most to the significant Chi-Square result. Accessing Test Results The result of <code>chisq.test()</code> is a list containing several components. You can access these using the $ operator: • statistic: The (^2) test statistic value. • parameter: The degrees of freedom. • p.value: The p-value of the test. • observed: The observed contingency table. • expected: The expected contingency table under (H_0). • residuals: The Pearson residuals for each cell.</p>
+<p>The plot shows that the Industrial/Black and Rural/Red cells contribute the most to the significant Chi-Square result. Accessing Test Results The result of <code>chisq.test()</code> is a list containing several components. You can access these using the $ operator: • statistic: The chi-square test statistic value. • parameter: The degrees of freedom. • p.value: The p-value of the test. • observed: The observed contingency table. • expected: The expected contingency table under (H_0). • residuals: The Pearson residuals for each cell.</p>
 </section>
 <section id="fishers-exact-test" class="level2">
 <h2 class="anchored" data-anchor-id="fishers-exact-test">Fisher’s Exact Test</h2>
 <p>When the assumption of sufficiently large expected counts for the Chi-Square test is not met (e.g., expected counts less than 5), Fisher’s exact test is a more reliable alternative. It calculates the exact probability of observing the given table (or a more extreme one) assuming independence, without relying on approximations.</p>
 <p>Fisher’s exact test is performed using the fisher.test() function in R. It also takes a contingency table as input. Let’s use the Titanic data example from the sources.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually create the Titanic sex vs survival table</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>titanic_table <span class="ot">&lt;-</span> <span class="fu">as.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">307</span>, <span class="dv">708</span>, <span class="dv">142</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>titanic_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        no yes
+female 156 307
+male   708 142</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check expected counts for Chi-Square assumption</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(titanic_table)<span class="sc">$</span>expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             no      yes
+female 304.6702 158.3298
+male   559.3298 290.6702</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected counts are &gt; 5 here, so Chi-Square is appropriate, but Fisher's is also fine and often preferred computationally.</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Fisher's exact test</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(titanic_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Fisher's Exact Test for Count Data
+
+data:  titanic_table
+p-value &lt; 2.2e-16
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.07759301 0.13384845
+sample estimates:
+odds ratio 
+ 0.1021212 </code></pre>
+</div>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually create the Titanic sex vs survival table</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>titanic_table <span class="ot">&lt;-</span> <span class="fu">as.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">307</span>, <span class="dv">708</span>, <span class="dv">142</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>)</span>
@@ -671,43 +734,14 @@ sample estimates:
 odds ratio 
  0.1021212 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually create the Titanic sex vs survival table</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>titanic_table <span class="ot">&lt;-</span> <span class="fu">as.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">307</span>, <span class="dv">708</span>, <span class="dv">142</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(titanic_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>titanic_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>        no yes
-female 156 307
-male   708 142</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check expected counts for Chi-Square assumption</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(titanic_table)<span class="sc">$</span>expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>             no      yes
-female 304.6702 158.3298
-male   559.3298 290.6702</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected counts are &gt; 5 here, so Chi-Square is appropriate, but Fisher's is also fine and often preferred computationally.</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Fisher's exact test</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(titanic_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Fisher's Exact Test for Count Data
-
-data:  titanic_table
-p-value &lt; 2.2e-16
-alternative hypothesis: true odds ratio is not equal to 1
-95 percent confidence interval:
- 0.07759301 0.13384845
-sample estimates:
-odds ratio 
- 0.1021212 </code></pre>
-</div>
 </div>
 <p>The output includes the p-value. It also conveniently provides an estimate of the odds ratio and its 95% confidence interval. The odds ratio is another way to quantify the strength and direction of the association.</p>
-<p>For the Titanic data, the odds ratio is about 0.10, indicating the odds of a male surviving were about one-tenth the odds of a female surviving. The confidence interval gives a range of plausible values for this odds ratio in the population. Fisher’s exact test is particularly recommended for 2x2 tables with small expected counts, but the <code>fisher.test()</code> function in R can handle larger tables as well, although it won’t calculate odds ratios for tables larger than 2x2. ## Exercises Apply what you’ve learned to explore associations in different datasets.</p>
+<p>For the Titanic data, the odds ratio is about 0.10, indicating the odds of a male surviving were about one-tenth the odds of a female surviving. The confidence interval gives a range of plausible values for this odds ratio in the population. Fisher’s exact test is particularly recommended for 2x2 tables with small expected counts, but the <code>fisher.test()</code> function in R can handle larger tables as well, although it won’t calculate odds ratios for tables larger than 2x2.</p>
+</section>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<p>Apply what you’ve learned to explore associations in different datasets.</p>
 <section id="exercise-1-car-characteristics" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1-car-characteristics">Exercise 1: Car Characteristics</h3>
 <p>The mtcars dataset contains various characteristics for different car models. We can treat some of these as categorical variables. Let’s investigate the relationship between the number of cylinders (cyl) and the transmission type (am, where 0 = automatic, 1 = manual). 1. Load the mtcars dataset. 2. Create a contingency table showing the frequencies of cyl by am. 3. Examine the expected counts for a Chi-Square test. Are the assumptions met (all expected values &gt; 5)? 4. Perform the appropriate hypothesis test (Chi-Square if assumptions met, otherwise Fisher’s exact test) to determine if there is a significant association between the number of cylinders and transmission type. 5. Interpret the results of the test, including the p-value and conclusion regarding the null hypothesis. 6. Based on the observed counts or residuals/contributions, describe the nature of any significant association found. For example, are cars with more cylinders more likely to have automatic or manual transmission?</p>
@@ -735,7 +769,6 @@ odds ratio
 </ol>
 
 
-</section>
 </section>
 </section>
 
